@@ -20,8 +20,6 @@ import sys
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from src.models.sc_omni_attention import omni_attn_mask_vectorized
-
 
 def read_cell_features(adata, local_start=None, local_end=None, flatten=False):
     """
