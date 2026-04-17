@@ -87,19 +87,16 @@ class CellTransformerForSFTCW(nn.Module):
     def _load_pretrained_pathway_qformer_assets(self):
         ckpt_path = self.pathway_qformer_ckpt_path
         if not ckpt_path:
-            print("[Model] No pathway Q-Former checkpoint configured; using random pathway embeddings.")
-            return
+            raise ValueError("Pathway Q-Former checkpoint path is required when use_pathway_cell_qformer=true")
 
         ckpt_file = Path(ckpt_path)
         if not ckpt_file.exists():
-            print(f"[Model] Pathway Q-Former checkpoint not found: {ckpt_file}; using random pathway embeddings.")
-            return
+            raise FileNotFoundError(f"Pathway Q-Former checkpoint not found: {ckpt_file}")
 
         payload = torch.load(str(ckpt_file), map_location="cpu")
         pathway_embeddings = payload.get("pathway_embeddings_768d") if isinstance(payload, dict) else None
         if pathway_embeddings is None:
-            print(f"[Model] Checkpoint missing pathway_embeddings_768d: {ckpt_file}; using random pathway embeddings.")
-            return
+            raise KeyError(f"Checkpoint missing required key pathway_embeddings_768d: {ckpt_file}")
 
         if tuple(pathway_embeddings.shape) != (self.cell_feature_tokens, self.cell_feature_dim):
             raise ValueError(
@@ -123,7 +120,7 @@ class CellTransformerForSFTCW(nn.Module):
                 f"(missing={len(missing)}, unexpected={len(unexpected)})."
             )
         else:
-            print(f"[Model] Loaded pathway embeddings from {ckpt_file}; no compatible Q-Former state_dict found, keeping module weights as initialized.")
+            raise KeyError(f"Checkpoint missing compatible Q-Former state_dict (expected pathway_qformer_state_dict or model_state_dict): {ckpt_file}")
 
     def freeze_llm_backbone(self):
         """冻结 LLM 与 Q-Former 分支，仅保留 token projector 可训练"""
