@@ -7,7 +7,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from transformers import AutoConfig, Qwen2ForCausalLM
 
-PROJECT_ROOT = Path("/data/bgi/data/projects/multimodal/zyh/scData")
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
 SRC_ROOT = PROJECT_ROOT / "src"
 if str(SRC_ROOT) not in sys.path:
     sys.path.insert(0, str(SRC_ROOT))
@@ -32,7 +32,7 @@ class CellTransformerForSFTCW(nn.Module):
         self.qformer_num_layers = int(model_cfg.get("qformer_num_layers", 2))
         self.pathway_qformer_ckpt_path = model_cfg.get(
             "pathway_qformer_ckpt_path",
-            "/data/bgi/data/projects/multimodal/zyh/scData/outputs/training_runs/scgene_qformer_compact_cellfeat_ranked_v2/scgene_qformer_cellfeat_checkpoint.pt",
+            str(PROJECT_ROOT / "outputs/training_runs/scgene_qformer_compact_cellfeat_ranked_v2/scgene_qformer_cellfeat_checkpoint.pt"),
         )
 
         llm_path = model_cfg["llm_model_path"]
