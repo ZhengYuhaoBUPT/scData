@@ -1,0 +1,2942 @@
+[
+  {
+    "id": "TCTTCGGAGTGAACAT_TSP14_LymphNode_NA_10X_2_1_5Prime",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a macrophage",
+        "pred_answer": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "ACGTAACGTTAGGACG_TSP2_LymphNode_NA_10X_2_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a memory B cell",
+        "pred_answer": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "GCCAGCAGTTGCACGC_TSP2_Spleen_NA_10X_2_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a macrophage",
+        "pred_answer": "This cell is a monocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a monocyte"
+      }
+    ]
+  },
+  {
+    "id": "ATGGGTTTCACGTAGT_TSP14_Lung_Proximal_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a type II pneumocyte",
+        "pred_answer": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "CTGGTCTCAGAATTCC_TSP2_Blood_NA_10X_1_3",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a CD8-positive, alpha-beta T cell",
+        "pred_answer": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "TTACGCCTCCTATGGA_TSP14_SI_Proximal_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a CD4-positive, alpha-beta T cell",
+        "pred_answer": "This cell is a CD1c-positive myeloid dendritic cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD1c-positive myeloid dendritic cell"
+      }
+    ]
+  },
+  {
+    "id": "GCGGATCTCGCTTGCT_TSP1_lung_2",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a type II pneumocyte",
+        "pred_answer": "This cell is a type II pneumocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a type II pneumocyte"
+      }
+    ]
+  },
+  {
+    "id": "TACCCGTGTTGTAGCT_TSP7_Tongue_Posterior_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a basal cell",
+        "pred_answer": "This cell is a basal cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a basal cell"
+      }
+    ]
+  },
+  {
+    "id": "GTCTTCGGTTTGGCGC_TSP14_Spleen_NA_10X_1_1_5Prime",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a memory B cell",
+        "pred_answer": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "ATGGGAGGTTCTCGTC_TSP2_Lung_proxmedialdistal_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a respiratory goblet cell",
+        "pred_answer": "This cell is a respiratory goblet cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a respiratory goblet cell"
+      }
+    ]
+  },
+  {
+    "id": "TCACACCCAAATCCCA_TSP14_Lung_Distal_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a type II pneumocyte",
+        "pred_answer": "This cell is a type II pneumocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a type II pneumocyte"
+      }
+    ]
+  },
+  {
+    "id": "TCACATTAGCTAAGTA_TSP10_Blood_NA_10X_2_1_Whole",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a CD4-positive, alpha-beta memory T cell",
+        "pred_answer": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "CCCGGAAAGTTAGAAC_TSP14_Blood_NA_10X_3_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a neutrophil",
+        "pred_answer": "This cell is a classical monocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a classical monocyte"
+      }
+    ]
+  },
+  {
+    "id": "GCAACCGAGCCTCTTC_TSP14_Blood_NA_10X_2_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a neutrophil",
+        "pred_answer": "This cell is a neutrophil"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a neutrophil"
+      }
+    ]
+  },
+  {
+    "id": "AACAAAGAGTACCCTA_TSP2_Lung_proxmedialdistal_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a type II pneumocyte",
+        "pred_answer": "This cell is a type II pneumocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a type II pneumocyte"
+      }
+    ]
+  },
+  {
+    "id": "TCTTAGTCACTGCACG_TSP10_Blood_NA_10X_2_1_Whole",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a classical monocyte",
+        "pred_answer": "This cell is a classical monocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a classical monocyte"
+      }
+    ]
+  },
+  {
+    "id": "CCTCCTCCAATAAGGT_TSP14_Spleen_NA_10X_2_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a classical monocyte",
+        "pred_answer": "This cell is a monocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a monocyte"
+      }
+    ]
+  },
+  {
+    "id": "GTGGGTCTCAAGCCTA_TSP2_Blood_NA_10X_1_4_5prime",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a CD4-positive, alpha-beta T cell",
+        "pred_answer": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "GTATTTCGTTAGAAGT_TSP2_Lung_proxmedialdistal_10X_1_2",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a macrophage",
+        "pred_answer": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "CTGTATTCAGGTCAGA_TSP2_Lung_proxmedialdistal_10X_1_2",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a club cell",
+        "pred_answer": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "ACTTACTCATCCTAGA_TSP14_Spleen_NA_10X_2_1_5Prime",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a classical monocyte",
+        "pred_answer": "This cell is a monocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a monocyte"
+      }
+    ]
+  },
+  {
+    "id": "TCTCAGCTCCTACAAG_TSP14_Liver_NA_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a hepatocyte",
+        "pred_answer": "This cell is a hepatocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a hepatocyte"
+      }
+    ]
+  },
+  {
+    "id": "AGCGTATTCGGCTATA_TSP14_SalivaryGland_Parotid_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a macrophage",
+        "pred_answer": "This cell is a neuron from the cerebral cortex, specifically from the Middle Temporal Gyrus (MTG) region."
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a neuron from the cerebral cortex, specifically from the Middle Temporal Gyrus (MTG) region."
+      }
+    ]
+  },
+  {
+    "id": "TGGCGTGTCGTAACAC_TSP2_Blood_NA_10X_1_2_SheelaPrep",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a monocyte",
+        "pred_answer": "This cell is a classical monocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a classical monocyte"
+      }
+    ]
+  },
+  {
+    "id": "TGGATCAAGCGGCTCT_TSP7_Blood_NA_10X_2_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a classical monocyte",
+        "pred_answer": "This cell is a monocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a monocyte"
+      }
+    ]
+  },
+  {
+    "id": "TGTGCGGCAGGAGACT_TSP2_LymphNode_NA_10X_2_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a memory B cell",
+        "pred_answer": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "ACGCAGCAGTAGATGT_TSP14_Blood_NA_10X_1_1_5Prime",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a neutrophil",
+        "pred_answer": "This cell is a classical monocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a classical monocyte"
+      }
+    ]
+  },
+  {
+    "id": "GCCATGGAGCGCGTTC_TSP2_Spleen_NA_10X_2_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a classical monocyte",
+        "pred_answer": "This cell is a monocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a monocyte"
+      }
+    ]
+  },
+  {
+    "id": "GCATGATTCTCTGCTG_TSP14_Blood_NA_10X_1_1_5Prime",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a neutrophil",
+        "pred_answer": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "TTGCGTCTCACGATAC_TSP2_Trachea_NA_10X_1_2",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a basal cell",
+        "pred_answer": "This cell is a basal cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a basal cell"
+      }
+    ]
+  },
+  {
+    "id": "TSP4_Muscle_diaphragm_SS2_B114833_B134044_Immune_G22_L001",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a CD8-positive, alpha-beta T cell",
+        "pred_answer": "This cell is a CD8-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD8-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "CACAACACAGAGAGGG_TSP8_Blood_NA_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a neutrophil",
+        "pred_answer": "This cell is a neutrophil"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a neutrophil"
+      }
+    ]
+  },
+  {
+    "id": "TCTTCCTAGCGTGTCC_TSP2_BM_vertebralbody_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a monocyte",
+        "pred_answer": "This cell is a monocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a monocyte"
+      }
+    ]
+  },
+  {
+    "id": "GGGATGATCGTTCGCT_TSP7_Spleen_NA_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a naive B cell",
+        "pred_answer": "This cell is a naive B cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a naive B cell"
+      }
+    ]
+  },
+  {
+    "id": "ACACTGAGTCGACTTA_TSP2_Blood_NA_10X_1_3",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a CD4-positive, alpha-beta T cell",
+        "pred_answer": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "GGGTGTCAGTCTCCTC_TSP12_Heart_Atria_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a hepatocyte",
+        "pred_answer": "This cell is a myofibroblast"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a myofibroblast"
+      }
+    ]
+  },
+  {
+    "id": "TGTTTGTAGGTCCCTG_TSP14_Lung_NA_10X_2_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a type II pneumocyte",
+        "pred_answer": "This cell is a type II pneumocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a type II pneumocyte"
+      }
+    ]
+  },
+  {
+    "id": "CGTGTCTTCCGTGGTG_TSP14_SalivaryGland_Sublingual_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a macrophage",
+        "pred_answer": "This cell is a macrophage"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a macrophage"
+      }
+    ]
+  },
+  {
+    "id": "AACCTTTGTATTTCCT_TSP1_muscle_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a capillary endothelial cell",
+        "pred_answer": "This cell is a mesenchymal cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a mesenchymal cell"
+      }
+    ]
+  },
+  {
+    "id": "TCTCAGCGTCCAGCGT_TSP1_bladder_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a macrophage",
+        "pred_answer": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "TACAGGTGTAAGCGGT_TSP14_Spleen_NA_10X_2_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a NK cell",
+        "pred_answer": "This cell is a NK cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a NK cell"
+      }
+    ]
+  },
+  {
+    "id": "GTGCTTCCATTCGATG_TSP14_SI_Distal_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a CD4-positive, alpha-beta T cell",
+        "pred_answer": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "GCGTTTCAGGAGAGTA_TSP1_lung_3",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a macrophage",
+        "pred_answer": "This cell is a monocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a monocyte"
+      }
+    ]
+  },
+  {
+    "id": "CAGGGCTGTGAAGCGT_TSP7_Blood_NA_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a erythrocyte",
+        "pred_answer": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "ACAGCTAGTTATCCGA_TSP14_Spleen_NA_10X_1_1_5Prime",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a memory B cell",
+        "pred_answer": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "GGAATCTCAATTCACG_TSP7_Tongue_Posterior_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a basal cell",
+        "pred_answer": "This cell is a basal cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a basal cell"
+      }
+    ]
+  },
+  {
+    "id": "TSP7_Blood_NA_SS2_B134149_B133913_Monocyte_E21_L001",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a neutrophil",
+        "pred_answer": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "CGATGGCTCGTTCTGC_TSP2_Lung_proxmedialdistal_10X_1_2",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a CD8-positive, alpha-beta T cell",
+        "pred_answer": "This cell is a neuron from the cerebral cortex, specifically from the Middle Temporal Gyrus (MTG) region."
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a neuron from the cerebral cortex, specifically from the Middle Temporal Gyrus (MTG) region."
+      }
+    ]
+  },
+  {
+    "id": "GAGAAATCAACCAGAG_TSP1_blood_3",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a CD4-positive, alpha-beta T cell",
+        "pred_answer": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "GCATCTCCAAGCCATT_TSP1_lung_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a macrophage",
+        "pred_answer": "This cell is a macrophage"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a macrophage"
+      }
+    ]
+  },
+  {
+    "id": "GTTGTAGAGGTCATAA_TSP10_Blood_NA_10X_1_1_Enriched",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a classical monocyte",
+        "pred_answer": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "CCTCCTCTCTAACGGT_TSP12_Heart_Atria_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a hepatocyte",
+        "pred_answer": "This cell is a neutrophil"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a neutrophil"
+      }
+    ]
+  },
+  {
+    "id": "CCCGAAGGTTAGAGTA_TSP1_lung_3",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a macrophage",
+        "pred_answer": "This cell is a monocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a monocyte"
+      }
+    ]
+  },
+  {
+    "id": "CTAGACACATTGACCA_TSP7_Blood_NA_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a erythrocyte",
+        "pred_answer": "This cell is a erythrocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a erythrocyte"
+      }
+    ]
+  },
+  {
+    "id": "CCGATGGAGTCGAGGT_TSP10_FAT_SCAT_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a macrophage",
+        "pred_answer": "This cell is a monocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a monocyte"
+      }
+    ]
+  },
+  {
+    "id": "GGTTGTAGTGAGACCA_TSP14_Muscle_Abdomen_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a capillary endothelial cell",
+        "pred_answer": "This cell is a capillary endothelial cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a capillary endothelial cell"
+      }
+    ]
+  },
+  {
+    "id": "AACAGGGGTTGCAACT_TSP2_Lung_proxmedialdistal_10X_1_2",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a respiratory goblet cell",
+        "pred_answer": "This cell is a classical monocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a classical monocyte"
+      }
+    ]
+  },
+  {
+    "id": "CTAGACAAGGGTATAT_TSP2_Lung_proxmedialdistal_10X_1_2",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a macrophage",
+        "pred_answer": "This cell is a classical monocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a classical monocyte"
+      }
+    ]
+  },
+  {
+    "id": "AGTGATCTCTAAGCCA_TSP2_Lung_proxmedialdistal_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a macrophage",
+        "pred_answer": "This cell is a macrophage"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a macrophage"
+      }
+    ]
+  },
+  {
+    "id": "TSP2_Blood_NA_SS2_B113459_B133094_LinNeg_H5_S173",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a erythrocyte",
+        "pred_answer": "This cell is a CD8-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD8-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "GCCAGTGTCGTTCGCT_TSP2_Thymus_NA_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a NK cell",
+        "pred_answer": "This cell is a CD8-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD8-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "GAAGGGTTCGGACAAG_TSP2_Blood_NA_10X_1_3",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a monocyte",
+        "pred_answer": "This cell is a monocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a monocyte"
+      }
+    ]
+  },
+  {
+    "id": "TTAATCCTCCATACTT_TSP7_Blood_NA_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a neutrophil",
+        "pred_answer": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "ACTGTCCAGACTACGG_TSP14_Skin_Chest_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a CD4-positive, alpha-beta memory T cell",
+        "pred_answer": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "AACAACCAGCTGACCC_TSP1_lung_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a macrophage",
+        "pred_answer": "This cell is a monocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a monocyte"
+      }
+    ]
+  },
+  {
+    "id": "CGTTGGGTCCTGCTTG_TSP14_Spleen_NA_10X_1_1_5Prime",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a classical monocyte",
+        "pred_answer": "This cell is a monocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a monocyte"
+      }
+    ]
+  },
+  {
+    "id": "TAGTGCACAACCGATT_TSP14_SalivaryGland_Sublingual_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a macrophage",
+        "pred_answer": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "TCTTAGTTCTTGTTAC_TSP1_blood_2",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a monocyte",
+        "pred_answer": "This cell is a classical monocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a classical monocyte"
+      }
+    ]
+  },
+  {
+    "id": "CCATCACGTTGTAAAG_TSP1_lung_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a macrophage",
+        "pred_answer": "This cell is a macrophage"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a macrophage"
+      }
+    ]
+  },
+  {
+    "id": "AACCCAAGTACCTAGT_TSP1_lung_3",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a macrophage",
+        "pred_answer": "This cell is a classical monocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a classical monocyte"
+      }
+    ]
+  },
+  {
+    "id": "TATTCCACACACACGC_TSP2_Lung_proxmedialdistal_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a CD8-positive, alpha-beta T cell",
+        "pred_answer": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "AGATAGAAGCTGCGAA_TSP8_Blood_NA_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a classical monocyte",
+        "pred_answer": "This cell is a macrophage"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a macrophage"
+      }
+    ]
+  },
+  {
+    "id": "TTGAACGAGTGTACCT_TSP14_Blood_NA_10X_1_1_5Prime",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a erythrocyte",
+        "pred_answer": "This cell is a erythrocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a erythrocyte"
+      }
+    ]
+  },
+  {
+    "id": "TCACATTCATAGACTC_TSP14_SalivaryGland_Sublingual_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a macrophage",
+        "pred_answer": "This cell is a CD8+ T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD8+ T cell"
+      }
+    ]
+  },
+  {
+    "id": "CTTTCAAAGTTGGCTT_TSP2_LymphNode_NA_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a naive B cell",
+        "pred_answer": "This cell is a naive B cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a naive B cell"
+      }
+    ]
+  },
+  {
+    "id": "CTCAGTCAGACATATG_TSP14_Vasculature_AortaVeneCava_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a macrophage",
+        "pred_answer": "This cell is a neuron from the cerebral cortex, specifically from the Middle Temporal Gyrus (MTG) region."
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a neuron from the cerebral cortex, specifically from the Middle Temporal Gyrus (MTG) region."
+      }
+    ]
+  },
+  {
+    "id": "ATCCCTGAGGTTCCAT_TSP7_Blood_NA_10X_2_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a classical monocyte",
+        "pred_answer": "This cell is a classical monocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a classical monocyte"
+      }
+    ]
+  },
+  {
+    "id": "GAATAGAGTCTTCGAA_TSP2_Trachea_NA_10X_1_2",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a basal cell",
+        "pred_answer": "This cell is a basal cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a basal cell"
+      }
+    ]
+  },
+  {
+    "id": "TACGTCCTCAAGGAGC_TSP14_Blood_NA_10X_2_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a neutrophil",
+        "pred_answer": "This cell is a classical monocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a classical monocyte"
+      }
+    ]
+  },
+  {
+    "id": "TTCTTAGAGGTGTTAA_TSP14_Blood_NA_10X_1_1_5Prime",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a CD4-positive, alpha-beta memory T cell",
+        "pred_answer": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "TGATGCAGTTGGGAAC_TSP2_Lung_proxmedialdistal_10X_1_2",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a type II pneumocyte",
+        "pred_answer": "This cell is a type II pneumocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a type II pneumocyte"
+      }
+    ]
+  },
+  {
+    "id": "TGATGGTGTATGAGAT_TSP14_Liver_NA_10X_2_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a hepatocyte",
+        "pred_answer": "This cell is a hepatocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a hepatocyte"
+      }
+    ]
+  },
+  {
+    "id": "TGTTTGTGTGTCCCTT_TSP6_Liver_NA_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a macrophage",
+        "pred_answer": "This cell is a monocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a monocyte"
+      }
+    ]
+  },
+  {
+    "id": "TGCGGCAGTAACATCC_TSP8_Blood_NA_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a neutrophil",
+        "pred_answer": "This cell is a neutrophil"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a neutrophil"
+      }
+    ]
+  },
+  {
+    "id": "GCAACCGTCGGTCTAA_TSP2_Lung_proxmedialdistal_10X_1_2",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a non-classical monocyte",
+        "pred_answer": "This cell is a classical monocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a classical monocyte"
+      }
+    ]
+  },
+  {
+    "id": "CTAATGGTCCAAAGTC_TSP14_Blood_NA_10X_1_1_5Prime",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a erythrocyte",
+        "pred_answer": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "AGTCATGAGGTTAAAC_TSP1_blood_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a monocyte",
+        "pred_answer": "This cell is a classical monocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a classical monocyte"
+      }
+    ]
+  },
+  {
+    "id": "CTTCGGTTCCGCACTT_TSP10_Blood_NA_10X_1_1_Whole",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a CD4-positive, alpha-beta memory T cell",
+        "pred_answer": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "CCGTTCACAGACACTT_TSP2_Blood_NA_10X_1_4_5prime",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a CD4-positive, alpha-beta T cell",
+        "pred_answer": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "AACAAAGCATCGGATT_TSP2_Lung_proxmedialdistal_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a club cell",
+        "pred_answer": "This cell is a club cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a club cell"
+      }
+    ]
+  },
+  {
+    "id": "TAACCAGCAAGAATGT_TSP2_Thymus_NA_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a macrophage",
+        "pred_answer": "This cell is a classical monocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a classical monocyte"
+      }
+    ]
+  },
+  {
+    "id": "TSP7_Tongue_anterior_SS2_B134165_B133700_Epithelial_I9_L004",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a basal cell",
+        "pred_answer": "This cell is a basal cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a basal cell"
+      }
+    ]
+  },
+  {
+    "id": "GAATAAGGTAGGAGTC_TSP14_Blood_NA_10X_1_1_5Prime",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a neutrophil",
+        "pred_answer": "This cell is a neutrophil"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a neutrophil"
+      }
+    ]
+  },
+  {
+    "id": "TGTAGACGTCGGTGTC_TSP7_SalivaryGland_Parotid_10X_1_2",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a monocyte",
+        "pred_answer": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "TCTATTGAGCAGGTCA_TSP14_Spleen_NA_10X_2_1_5Prime",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a memory B cell",
+        "pred_answer": "This cell is a memory B cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a memory B cell"
+      }
+    ]
+  },
+  {
+    "id": "GGGCACTTCAACGAAA_TSP14_Blood_NA_10X_1_1_5Prime",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a neutrophil",
+        "pred_answer": "This cell is a classical monocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a classical monocyte"
+      }
+    ]
+  },
+  {
+    "id": "CATTTCAGTCTGTGAT_TSP2_Lung_proxmedialdistal_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a basal cell",
+        "pred_answer": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "ACATTTCTCAAGTGGG_TSP7_Spleen_NA_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a naive B cell",
+        "pred_answer": "This cell is a monocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a monocyte"
+      }
+    ]
+  },
+  {
+    "id": "ATGGGTTTCTACTGCC_TSP14_Spleen_NA_10X_2_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a classical monocyte",
+        "pred_answer": "This cell is a classical monocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a classical monocyte"
+      }
+    ]
+  },
+  {
+    "id": "TTCACCGTCATTCCTA_TSP2_Lung_proxmedialdistal_10X_1_2",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a club cell",
+        "pred_answer": "This cell is a club cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a club cell"
+      }
+    ]
+  },
+  {
+    "id": "CAGGCCAGTTCTCACC_TSP14_SI_Distal_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a CD4-positive, alpha-beta T cell",
+        "pred_answer": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "ACTATTCCATGCCATA_TSP2_Lung_proxmedialdistal_10X_1_2",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a capillary endothelial cell",
+        "pred_answer": "This cell is a capillary endothelial cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a capillary endothelial cell"
+      }
+    ]
+  },
+  {
+    "id": "TCATCCGTCGCCGTGA_TSP2_Thymus_NA_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a memory B cell",
+        "pred_answer": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "AGCGTATGTCCGCAGT_TSP2_LymphNode_NA_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a CD4-positive, alpha-beta memory T cell",
+        "pred_answer": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "TTCTTCCTCACTTGGA_TSP14_Spleen_NA_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a classical monocyte",
+        "pred_answer": "This cell is a CD8-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD8-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "GAAATGACAGCACACC_TSP7_Spleen_NA_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a memory B cell",
+        "pred_answer": "This cell is a naive B cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a naive B cell"
+      }
+    ]
+  },
+  {
+    "id": "GATCTAGTCAGCACAT_TSP14_Spleen_NA_10X_1_1_5Prime",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a neutrophil",
+        "pred_answer": "This cell is a neutrophil"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a neutrophil"
+      }
+    ]
+  },
+  {
+    "id": "AACAACCAGCAGCAGT_TSP14_SI_Proximal_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a CD4-positive, alpha-beta T cell",
+        "pred_answer": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "CCTACGTAGGGTTTCT_TSP14_Spleen_NA_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a classical monocyte",
+        "pred_answer": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "CGTGCTTTCTGATTCT_TSP7_Blood_NA_10X_2_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a erythrocyte",
+        "pred_answer": "This cell is a erythrocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a erythrocyte"
+      }
+    ]
+  },
+  {
+    "id": "GGTGAAGAGTTGGAGC_TSP14_Spleen_NA_10X_2_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a classical monocyte",
+        "pred_answer": "This cell is a classical monocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a classical monocyte"
+      }
+    ]
+  },
+  {
+    "id": "TCAGTCCGTTTGACAC_TSP14_Lung_NA_10X_2_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a type II pneumocyte",
+        "pred_answer": "This cell is a type II pneumocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a type II pneumocyte"
+      }
+    ]
+  },
+  {
+    "id": "B107810_C7_S185.homo.gencode.v30.ERCC.chrM",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a classical monocyte",
+        "pred_answer": "This cell is a CD8-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD8-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "ATCCACCGTCTCAAGT_TSP14_SI_Proximal_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a CD4-positive, alpha-beta T cell",
+        "pred_answer": "This cell is a CD8-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD8-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "CTAACTTCATGCAATC_TSP14_Blood_NA_10X_1_1_5Prime",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a classical monocyte",
+        "pred_answer": "This cell is a erythrocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a erythrocyte"
+      }
+    ]
+  },
+  {
+    "id": "GGTTGTAGTTTCCATT_TSP2_Lung_proxmedialdistal_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a non-classical monocyte",
+        "pred_answer": "This cell is a monocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a monocyte"
+      }
+    ]
+  },
+  {
+    "id": "TSP2_Blood_NA_SS2_B114659_B133345_Lymphocytes_A3_S195",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a CD4-positive, alpha-beta T cell",
+        "pred_answer": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "ATAGAGATCCATCTAT_TSP10_Blood_NA_10X_1_1_Enriched",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a naive B cell",
+        "pred_answer": "This cell is a naive B cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a naive B cell"
+      }
+    ]
+  },
+  {
+    "id": "TSP13_BM_vertebralbody_SS2_B133712_B134041_Immune_D2_L002",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a monocyte",
+        "pred_answer": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "ACATTTCTCAGACATC_TSP1_blood_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a naive B cell",
+        "pred_answer": "This cell is a naive B cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a naive B cell"
+      }
+    ]
+  },
+  {
+    "id": "TTAGGCATCTTAGGAC_TSP14_Spleen_NA_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a memory B cell",
+        "pred_answer": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "GGGTGAACAAGTACCT_TSP2_Blood_NA_10X_2_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a CD4-positive, alpha-beta T cell",
+        "pred_answer": "This cell is a myofibroblast"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a myofibroblast"
+      }
+    ]
+  },
+  {
+    "id": "CACAACATCCTGTAAG_TSP1_lung_2",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a capillary endothelial cell",
+        "pred_answer": "This cell is a capillary endothelial cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a capillary endothelial cell"
+      }
+    ]
+  },
+  {
+    "id": "AGTCTCCTCTAAGAAG_TSP7_Tongue_Posterior_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a basal cell",
+        "pred_answer": "This cell is a basal cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a basal cell"
+      }
+    ]
+  },
+  {
+    "id": "CCCTTAGTCATTGCCC_TSP7_Tongue_Posterior_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a basal cell",
+        "pred_answer": "This cell is a hepatocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a hepatocyte"
+      }
+    ]
+  },
+  {
+    "id": "GTAGATCGTCTGGTTA_TSP2_Lung_proxmedialdistal_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a type II pneumocyte",
+        "pred_answer": "This cell is a type II pneumocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a type II pneumocyte"
+      }
+    ]
+  },
+  {
+    "id": "TTCCAATTCGCTAGCG_TSP14_Spleen_NA_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a memory B cell",
+        "pred_answer": "This cell is a monocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a monocyte"
+      }
+    ]
+  },
+  {
+    "id": "AGATCGTGTACCATAC_TSP14_Spleen_NA_10X_2_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a neutrophil",
+        "pred_answer": "This cell is a classical monocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a classical monocyte"
+      }
+    ]
+  },
+  {
+    "id": "GGAATGGCACGACGAA_TSP14_SalivaryGland_Parotid_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a CD8-positive, alpha-beta T cell",
+        "pred_answer": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "TTACCGCGTACTCGCG_TSP7_SalivaryGland_Parotid_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a memory B cell",
+        "pred_answer": "This cell is a monocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a monocyte"
+      }
+    ]
+  },
+  {
+    "id": "CCCATTGGTCTCAGAT_TSP14_Spleen_NA_10X_2_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a classical monocyte",
+        "pred_answer": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "TTGCCTGTCCGGCTTT_TSP10_FAT_SCAT_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a NK cell",
+        "pred_answer": "This cell is a CD8-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD8-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "TTCCGGTAGTACGAGC_TSP14_Spleen_NA_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a memory B cell",
+        "pred_answer": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "GCGTGCAGTATCCTTT_TSP7_Spleen_NA_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a memory B cell",
+        "pred_answer": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "CCTACCACACGTAAGG_TSP14_Blood_NA_10X_2_1_5Prime",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a erythrocyte",
+        "pred_answer": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "GTAGAAACAAGATGGC_TSP8_Blood_NA_10X_1_1",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a memory B cell",
+        "pred_answer": "This cell is a memory B cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a memory B cell"
+      }
+    ]
+  },
+  {
+    "id": "CTACGGGTCTGTGCTC_TSP2_Blood_NA_10X_1_3",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a CD4-positive, alpha-beta T cell",
+        "pred_answer": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "TSP7_Blood_NA_SS2_B134150_B133902_Lymphocyte_P5_S365",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a naive B cell",
+        "pred_answer": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ]
+  },
+  {
+    "id": "ACTTACTGTAGCTAAA_TSP14_Blood_NA_10X_2_1_5Prime",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a erythrocyte",
+        "pred_answer": "This cell is a erythrocyte"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a erythrocyte"
+      }
+    ]
+  },
+  {
+    "id": "TSP2_Spleen_NA_SS2_B113451_B133325_ImmuneLinPos_L23_S191",
+    "generated_turns": [
+      {
+        "turn_index": 1,
+        "question": "Which cell type is this cell?\n<image>",
+        "reference_answer": "This cell is a memory B cell",
+        "pred_answer": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ],
+    "final_history": [
+      {
+        "from": "human",
+        "value": "Which cell type is this cell?\n<image>"
+      },
+      {
+        "from": "gpt",
+        "value": "This cell is a CD4-positive, alpha-beta T cell"
+      }
+    ]
+  }
+]

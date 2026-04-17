@@ -1,0 +1,94 @@
+{
+  "data": {
+    "feature_dir": "/mnt/c20250607/user/wanghaoran/zxy/data_and_features/zxy/features/okrcell_features",
+    "lmdb_base_dir": "/mnt/c20250607/user/wanghaoran/zxy/data_and_features/zxy/modified_data",
+    "sft_feature_dir": "/mnt/c20250607/user/wanghaoran/zxy/data_and_features/zxy/features",
+    "sft_json_paths": [
+      "/mnt/c20250607/user/wanghaoran/zxy/data_and_features/zxy/sft_conversations/conversations/pretrain_texts.json",
+      "/mnt/c20250607/user/wanghaoran/zxy/data_and_features/zxy/sft_conversations/conversations/finetune_conversations.json"
+    ]
+  },
+  "dataset": {
+    "max_seq_len": 1024,
+    "cell_feature_dim": 768,
+    "cell_feature_tokens": 50
+  },
+  "model": {
+    "llm_model_path": "/mnt/c20250607/user/wanghaoran/zxy/models/models/qwen2.5-7b-instruct",
+    "local_files_only": true,
+    "use_pathway_cell_qformer": true,
+    "qformer_num_heads": 8,
+    "qformer_num_layers": 2,
+    "pathway_qformer_ckpt_path": "/data/bgi/data/projects/multimodal/zyh/scData/outputs/training_runs/scgene_qformer_compact_cellfeat_ranked_v2/scgene_qformer_cellfeat_checkpoint.pt"
+  },
+  "training": {
+    "batch_size": 50,
+    "num_workers": 8,
+    "gradient_accumulation_steps": 10,
+    "pin_memory": false,
+    "seed": 1,
+    "gradient_checkpointing": true,
+    "epochs": 1,
+    "steps_per_print": 5,
+    "cw_ablation": {
+      "use_system_prompt": true,
+      "append_image_tag": true,
+      "stage1_json_paths": [
+        "/mnt/c20250607/user/wanghaoran/zxy/data_and_features/zxy/sft_conversations/conversations/pretrain_texts.json"
+      ],
+      "stage2_json_paths": [
+        "/mnt/c20250607/user/wanghaoran/zxy/data_and_features/zxy/sft_conversations/conversations/finetune_conversations.json"
+      ],
+      "stage1_epochs": 1,
+      "stage1_lr": 0.0001,
+      "stage1_max_steps": 50000,
+      "stage1_resume_from": null,
+      "stage2_init_from_stage1": null,
+      "stage2_use_lora": true,
+      "lora_r": 64,
+      "lora_alpha": 128,
+      "lora_dropout": 0.1,
+      "lora_target_modules": [
+        "q_proj",
+        "k_proj",
+        "v_proj",
+        "o_proj",
+        "gate_proj",
+        "up_proj",
+        "down_proj"
+      ],
+      "stage2_epochs": 2,
+      "stage2_lora_lr": 2e-05,
+      "stage2_cell_lr": 0.0001,
+      "stage2_max_steps": 100000,
+      "stage2_resume_from": null,
+      "num_stage1_samples": 10000,
+      "stage2_mix_seed": 42,
+      "stage2_full_finetune": false
+    }
+  },
+  "optimizer": {
+    "weight_decay": 0.0001,
+    "clip_grad_norm": 1.0,
+    "stage2_lr_embedder": 0.0001,
+    "stage2_lr_llm": 1e-05
+  },
+  "scheduler": {
+    "warmup_ratio": 0.1,
+    "min_lr_ratio": 0.3,
+    "schedule_by_max_steps": true,
+    "total_steps": 0
+  },
+  "logging": {
+    "save_interval": 50,
+    "enable_swanlab": true,
+    "project": "sc_show_o_cw_ablation_with_caption",
+    "experiment_name": "stage1_1epoch",
+    "swanlab_dir": "/mnt/c20250607/user/wanghaoran/zxy/zxy/zxy/project/sc_showo/logs/swanlab",
+    "log_interval": 5
+  },
+  "checkpoint": {
+    "save_dir": "/mnt/c20250607_hs/wanghaoran/wanghaoran/sc_showo_ablation_with_caption/stage1",
+    "resume_from": null
+  }
+}

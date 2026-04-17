@@ -1,0 +1,12 @@
+{
+  "num_samples": 400,
+  "num_candidates": 20,
+  "accuracy": 0.4325,
+  "eval_target": "stage2_ablation_cw",
+  "use_explicit_mask": false,
+  "use_system_metadata": false,
+  "question_template": null,
+  "answer_template": "This cell is a {celltype}",
+  "candidate_source": "eval_json_labels",
+  "notes": "CW-style forced-choice evaluation for cell-only ablation."
+}

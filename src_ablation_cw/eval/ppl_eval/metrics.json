@@ -1,0 +1,21 @@
+{
+  "num_samples": 200,
+  "num_all_items": 200,
+  "num_easy_cases": 213,
+  "num_all_cases": 516,
+  "eval_scope": "full",
+  "num_negative_pool_ids": 200,
+  "num_negatives": 30,
+  "mean_quantile": 0.7485,
+  "top1_match_rate": 0.175,
+  "matched_mean_ppl": 2.8274572747945785,
+  "mismatched_mean_ppl": 3.000097017864386,
+  "log_perplexity_ratio": -0.0592668091336761,
+  "eval_target": "stage2_ablation_cw",
+  "mismatch_mode": "cell_only",
+  "use_explicit_mask": false,
+  "use_system_metadata": false,
+  "stratify_negatives_by_id_kind": false,
+  "avoid_same_answer": true,
+  "notes": "Matched keeps true cell+QA; mismatched swaps conditioning cell only (cell-only ablation)."
+}
