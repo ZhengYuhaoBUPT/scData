@@ -82,13 +82,13 @@
   "logging": {
     "save_interval": 50,
     "enable_wandb": true,
-    "project": "sc_show_o_cw_ablation_with_caption",
+    "project": "zyh_sc_show_o",
     "experiment_name": "stage1_1epoch",
-    "wandb_dir": "/mnt/c20250607/user/wanghaoran/zxy/zxy/zxy/project/sc_showo/logs/wandb",
+    "wandb_dir": "/mnt/c20250607/user/wanghaoran/zyh/scData/logs/wandb",
     "log_interval": 5
   },
   "checkpoint": {
-    "save_dir": "/mnt/c20250607_hs/wanghaoran/wanghaoran/sc_showo_ablation_with_caption/stage1",
+    "save_dir": "/mnt/c20250607/user/wanghaoran/zyh/scData/outputs",
     "resume_from": null
   }
 }

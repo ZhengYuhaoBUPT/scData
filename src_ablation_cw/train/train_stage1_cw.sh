@@ -18,7 +18,7 @@ export https_proxy=http://10.8.36.50:3143
 export HTTP_PROXY=http://10.8.36.50:3143
 export HTTPS_PROXY=http://10.8.36.50:3143
 
-JOB_NAME="same_as_cw_ablation_stage1"
+JOB_NAME="zyh_stage1"
 PROJECT_ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
 LOG_DIR="$PROJECT_ROOT/run/logs"
 LOG_FILE="$LOG_DIR/${JOB_NAME}.log"
@@ -41,7 +41,7 @@ echo "╚═══════════════════════�
 echo ""
 
 CONDA_BASE=$(conda info --base 2>/dev/null || echo "/opt/conda")
-ENV_PATH="/mnt/c20250607/user/wanghaoran/envs/envs/sc_showo"
+ENV_PATH="/mnt/c20250607/user/wanghaoran/envs/envs/zyh"
 if [ -f "$CONDA_BASE/etc/profile.d/conda.sh" ]; then
     source "$CONDA_BASE/etc/profile.d/conda.sh"
     conda activate "$ENV_PATH"                                                                                                                                                                    
