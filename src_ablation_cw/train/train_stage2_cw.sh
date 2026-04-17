@@ -16,7 +16,7 @@ export https_proxy=http://10.8.36.50:3143
 export HTTP_PROXY=http://10.8.36.50:3143
 export HTTPS_PROXY=http://10.8.36.50:3143
 
-JOB_NAME="same_as_ablation_stage2"
+JOB_NAME="zyh_stage2"
 PROJECT_ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
 LOG_DIR="$PROJECT_ROOT/run/logs"
 LOG_FILE="$LOG_DIR/${JOB_NAME}.log"

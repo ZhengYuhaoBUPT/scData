@@ -43,7 +43,7 @@
       "stage1_lr": 0.0001,
       "stage1_max_steps": 50000,
       "stage1_resume_from": null,
-      "stage2_init_from_stage1": null,
+      "stage2_init_from_stage1": "/mnt/c20250607/user/wanghaoran/zyh/scData/outputs/cw_ablation_stage1/checkpoint-step-1200",
       "stage2_use_lora": true,
       "lora_r": 64,
       "lora_alpha": 128,
