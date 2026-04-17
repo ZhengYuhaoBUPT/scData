@@ -17,7 +17,7 @@ export HTTP_PROXY=http://10.8.36.50:3143
 export HTTPS_PROXY=http://10.8.36.50:3143
 
 JOB_NAME="same_as_ablation_stage2"
-PROJECT_ROOT="/mnt/c20250607/user/wanghaoran/zxy/zxy/zxy/project/sc_showo"
+PROJECT_ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
 LOG_DIR="$PROJECT_ROOT/run/logs"
 LOG_FILE="$LOG_DIR/${JOB_NAME}.log"
 mkdir -p "$LOG_DIR"
@@ -25,7 +25,7 @@ mkdir -p "$LOG_DIR"
 echo "🚀 启动训练任务：$JOB_NAME"
 echo "📝 日志路径：$LOG_FILE"
 
-export SWANLAB_TIMEZONE="Asia/Shanghai"
+export WANDB_DIR="$PROJECT_ROOT/logs/wandb"
 set -e
 
 

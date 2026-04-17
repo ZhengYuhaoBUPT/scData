@@ -26,7 +26,7 @@ from torch.optim import AdamW
 from torch.utils.data import DataLoader
 from transformers import AutoTokenizer
 
-project_root = Path("/mnt/c20250607/user/wanghaoran/zxy/zxy/zxy/project/sc_showo")
+project_root = Path(__file__).resolve().parents[2]
 if str(project_root) not in sys.path:
     sys.path.insert(0, str(project_root))
 
@@ -264,7 +264,7 @@ def main():
     parser.add_argument(
         "--config",
         type=str,
-        default="/mnt/c20250607/user/wanghaoran/zxy/zxy/zxy/project/sc_showo/src_ablation_cw/config/config_cw_ablation_cell_only.json",
+        default=str(project_root / "src_ablation_cw/config/config_cw_ablation_cell_only.json"),
     )
     args = parser.parse_args()
 
