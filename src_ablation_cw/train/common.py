@@ -6,6 +6,11 @@ from typing import Any, Dict, Optional, Tuple
 
 import torch
 
+try:
+    import wandb
+except Exception:
+    wandb = None
+
 
 def load_config(path: str) -> Dict[str, Any]:
     with open(path, "r") as f:
@@ -78,3 +83,48 @@ def load_state_pt(
         "extra": state.get("extra", {}),
     }
     return int(state.get("global_step", 0)), extra
+
+
+class WandbLogger:
+    def __init__(self, config: Dict[str, Any], accelerator):
+        self.accelerator = accelerator
+        self.enabled = False
+        self.run = None
+
+        if not getattr(accelerator, "is_main_process", True):
+            return
+
+        log_cfg = config.get("logging", {})
+        use_wandb = bool(log_cfg.get("enable_wandb", log_cfg.get("enable_swanlab", False)))
+        if not use_wandb:
+            return
+        if wandb is None:
+            print("[WandbLogger] wandb is not installed; logging disabled.")
+            return
+
+        project = log_cfg.get("project", "scdata")
+        name = log_cfg.get("experiment_name", log_cfg.get("run_name"))
+        save_dir = log_cfg.get("wandb_dir", log_cfg.get("swanlab_dir"))
+
+        init_kwargs = {
+            "project": project,
+            "name": name,
+            "config": config,
+            "dir": save_dir,
+            "reinit": False,
+        }
+        init_kwargs = {k: v for k, v in init_kwargs.items() if v is not None}
+        self.run = wandb.init(**init_kwargs)
+        self.enabled = self.run is not None
+
+    def log(self, metrics: Dict[str, Any], step: Optional[int] = None):
+        if not self.enabled:
+            return
+        wandb.log(metrics, step=step)
+
+    def finish(self):
+        if not self.enabled:
+            return
+        wandb.finish()
+        self.enabled = False
+        self.run = None

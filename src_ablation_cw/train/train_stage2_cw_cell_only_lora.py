@@ -33,8 +33,7 @@ if str(project_root) not in sys.path:
 from src_ablation_cw.datasets.metadata_formatter import MetadataFormatter
 from src_ablation_cw.datasets.cw_sft_cell_only_dataset import CWSFTCellOnlyDataset, cw_cell_only_collate
 from src_ablation_cw.models.modeling_cell_transformer_for_sft_cw import CellTransformerForSFTCW
-from src_ablation_cw.train.common import ensure_dir, load_config, load_state_pt, resolve_resume_path, save_state_pt
-from src.train.utils.utils import SwanLabLogger
+from src_ablation_cw.train.common import WandbLogger, ensure_dir, load_config, load_state_pt, resolve_resume_path, save_state_pt
 
 
 try:
@@ -299,8 +298,8 @@ def main():
     )
 
     logger = None
-    if bool(config.get("logging", {}).get("enable_swanlab", False)):
-        logger = SwanLabLogger(config, accelerator)
+    if bool(config.get("logging", {}).get("enable_wandb", config.get("logging", {}).get("enable_swanlab", False))):
+        logger = WandbLogger(config, accelerator)
 
     seed = int(tr_cfg.get("seed", 1))
     torch.manual_seed(seed + accelerator.process_index)

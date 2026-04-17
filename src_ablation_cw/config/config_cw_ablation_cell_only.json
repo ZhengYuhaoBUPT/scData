@@ -81,10 +81,10 @@
   },
   "logging": {
     "save_interval": 50,
-    "enable_swanlab": true,
+    "enable_wandb": true,
     "project": "sc_show_o_cw_ablation_with_caption",
     "experiment_name": "stage1_1epoch",
-    "swanlab_dir": "/mnt/c20250607/user/wanghaoran/zxy/zxy/zxy/project/sc_showo/logs/swanlab",
+    "wandb_dir": "/mnt/c20250607/user/wanghaoran/zxy/zxy/zxy/project/sc_showo/logs/wandb",
     "log_interval": 5
   },
   "checkpoint": {
