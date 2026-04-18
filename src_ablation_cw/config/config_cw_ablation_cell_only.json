@@ -19,7 +19,7 @@
     "use_pathway_cell_qformer": true,
     "qformer_num_heads": 8,
     "qformer_num_layers": 2,
-    "pathway_qformer_ckpt_path": "/data/bgi/data/projects/multimodal/zyh/scData/outputs/training_runs/scgene_qformer_compact_cellfeat_ranked_v2/scgene_qformer_cellfeat_checkpoint.pt"
+    "pathway_qformer_ckpt_path": "/mnt/c20250607/user/wanghaoran/zyh/scData/outputs/training_runs/scgene_qformer_compact_cellfeat_ranked_v2/scgene_qformer_cellfeat_checkpoint.pt"
   },
   "training": {
     "batch_size": 50,
