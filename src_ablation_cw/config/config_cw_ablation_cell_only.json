@@ -2,7 +2,7 @@
   "data": {
     "feature_dir": "/mnt/c20250607/user/wanghaoran/zxy/data_and_features/zxy/features/okrcell_features",
     "lmdb_base_dir": "/mnt/c20250607/user/wanghaoran/zxy/data_and_features/zxy/modified_data",
-    "sft_feature_dir": "/mnt/c20250607/user/wanghaoran/zxy/data_and_features/zxy/features",
+    "sft_feature_dir": "/mnt/c20250607/user/wanghaoran/zxy/data_and_features/zxy/features/sft_features",
     "sft_json_paths": [
       "/mnt/c20250607/user/wanghaoran/zxy/data_and_features/zxy/sft_conversations/conversations/pretrain_texts.json",
       "/mnt/c20250607/user/wanghaoran/zxy/data_and_features/zxy/sft_conversations/conversations/finetune_conversations.json"
@@ -22,7 +22,7 @@
     "pathway_qformer_ckpt_path": "/mnt/c20250607/user/wanghaoran/zyh/scData/outputs/training_runs/scgene_qformer_compact_cellfeat_ranked_v2/scgene_qformer_cellfeat_checkpoint.pt"
   },
   "training": {
-    "batch_size": 50,
+    "batch_size": 16,
     "num_workers": 8,
     "gradient_accumulation_steps": 10,
     "pin_memory": false,
