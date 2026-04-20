@@ -19,12 +19,12 @@
     "use_pathway_cell_qformer": true,
     "qformer_num_heads": 8,
     "qformer_num_layers": 2,
-    "pathway_qformer_ckpt_path": "/mnt/c20250607/user/wanghaoran/zyh/scData/outputs/training_runs/scgene_qformer_compact_cellfeat_ranked_v2/scgene_qformer_cellfeat_checkpoint.pt"
+    "pathway_qformer_ckpt_path": "/mnt/c20250607/user/wanghaoran/zyh/scData/outputs/training_runs/scgene_qformer_compact_cellfeat_rankaux_top128_v1/scgene_qformer_cellfeat_checkpoint.pt"
   },
   "training": {
-    "batch_size": 16,
+    "batch_size": 50,
     "num_workers": 8,
-    "gradient_accumulation_steps": 10,
+    "gradient_accumulation_steps": 2,
     "pin_memory": false,
     "seed": 1,
     "gradient_checkpointing": true,
@@ -37,7 +37,8 @@
         "/mnt/c20250607/user/wanghaoran/zxy/data_and_features/zxy/sft_conversations/conversations/pretrain_texts.json"
       ],
       "stage2_json_paths": [
-        "/mnt/c20250607/user/wanghaoran/zxy/data_and_features/zxy/sft_conversations/conversations/finetune_conversations.json"
+        "/mnt/c20250607/user/wanghaoran/zxy/data_and_features/zxy/sft_conversations/conversations/finetune_conversations.json",
+        "/mnt/c20250607/user/wanghaoran/zxy/data_and_features/zxy/sft_conversations/conversations/tabula_sapiens_conversations.json"
       ],
       "stage1_epochs": 1,
       "stage1_lr": 0.0001,

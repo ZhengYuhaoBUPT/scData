@@ -26,14 +26,14 @@ from common_eval_utils import (
 def parse_args():
     parser = argparse.ArgumentParser(description="Stage-2 matched vs mismatched PPL evaluation (ablation cw)")
     parser.add_argument('--config', type=str,
-                        default='/mnt/c20250607/user/wanghaoran/zxy/zxy/zxy/project/sc_showo/src_ablation_cw/config/config_cw_ablation_cell_only.json')
+                        default='/mnt/c20250607/user/wanghaoran/zyh/scData/src_ablation_cw/config/config_cw_ablation_cell_only.json')
     parser.add_argument('--ckpt-path', type=str,
-                        default="/mnt/c20250607_hs/wanghaoran/wanghaoran/sc_showo_ablation/same_as_cw_ablation_stage2/cw_ablation_stage2/checkpoint-step-504")
+                        default="/mnt/c20250607/user/wanghaoran/zyh/scData/outputs/cw_ablation_stage2/checkpoint-step-252")
     parser.add_argument('--feature-path', type=str,
                         default="/mnt/c20250607/user/wanghaoran/zxy/data_and_features/zxy/features/cw_test_features/test_200")
     parser.add_argument('--qa-jsons', type=str, nargs='+',
                         default=["/mnt/c20250607/user/wanghaoran/zxy/data_and_features/zxy/sft_conversations/conversations/main_conversations.json"])
-    parser.add_argument('--output-dir', type=str, default='/mnt/c20250607/user/wanghaoran/zxy/zxy/zxy/project/sc_showo/eval_results/ablation_cw/ppl_eval')
+    parser.add_argument('--output-dir', type=str, default='/mnt/c20250607/user/wanghaoran/zyh/scData/eval_results/ablation_cw/ppl_eval')
     parser.add_argument('--device', type=str, default='cuda:1')
     parser.add_argument('--dtype', type=str, choices=['bf16', 'fp16', 'fp32'], default='bf16')
     parser.add_argument('--num-negatives', type=int, default=30)
