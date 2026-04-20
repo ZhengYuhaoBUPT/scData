@@ -9,7 +9,7 @@
     ]
   },
   "dataset": {
-    "max_seq_len": 1024,
+    "max_seq_len": 1500,
     "cell_feature_dim": 768,
     "cell_feature_tokens": 50
   },
@@ -19,7 +19,12 @@
     "use_pathway_cell_qformer": true,
     "qformer_num_heads": 8,
     "qformer_num_layers": 2,
-    "pathway_qformer_ckpt_path": "/mnt/c20250607/user/wanghaoran/zyh/scData/outputs/training_runs/scgene_qformer_compact_cellfeat_rankaux_top128_v1/scgene_qformer_cellfeat_checkpoint.pt"
+    "train_pathway_cell_qformer": true,
+    "pathway_qformer_ckpt_path": null,
+    "pathway_json_path": "/data/bgi/data/projects/multimodal/zyh/datasets/pathway/pathway_anchor_genes.json",
+    "codebook_tensor_path": "/home/qijinyin/wanghaoran/zxy/features/per_gene_feat/gene_codebook/codebook_tensor_compact.pt",
+    "codebook_gene_to_idx_path": "/home/qijinyin/wanghaoran/zxy/features/per_gene_feat/gene_codebook/gene_to_compact_idx.json",
+    "codebook_gene_vocab_path": "/data/bgi/data/projects/multimodal/zyh/datasets/CellwText/scgpt/vocab.json"
   },
   "training": {
     "batch_size": 50,

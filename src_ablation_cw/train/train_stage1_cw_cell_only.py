@@ -182,6 +182,10 @@ def main():
     for module in [model.cell_embedder, model.direct_token_projector]:
         for p in module.parameters():
             p.requires_grad = True
+    if model.use_pathway_cell_qformer and model.train_pathway_cell_qformer:
+        for p in model.pathway_qformer.parameters():
+            p.requires_grad = True
+        model.pathway_embeddings.requires_grad = True
 
     trainable = [p for p in model.parameters() if p.requires_grad]
     optimizer = AdamW(trainable, lr=lr, weight_decay=weight_decay)

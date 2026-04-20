@@ -412,6 +412,10 @@ def main():
         model.freeze_llm_backbone()
         for p in model.cell_embedder.parameters():
             p.requires_grad = True
+        if model.use_pathway_cell_qformer and model.train_pathway_cell_qformer:
+            for p in model.pathway_qformer.parameters():
+                p.requires_grad = True
+            model.pathway_embeddings.requires_grad = True
 
         if LoraConfig is None or get_peft_model is None:
             raise ImportError("peft is required for stage2 LoRA but not installed")
@@ -433,7 +437,12 @@ def main():
         for n, p in model.named_parameters():
             if not p.requires_grad:
                 continue
-            if "cell_embedder" in n or "direct_token_projector" in n:
+            if (
+                "cell_embedder" in n
+                or "direct_token_projector" in n
+                or "pathway_qformer" in n
+                or "pathway_embeddings" in n
+            ):
                 cell_params.append(p)
             else:
                 lora_params.append(p)
@@ -453,12 +462,21 @@ def main():
         for module in [model.cell_embedder, model.direct_token_projector]:
             for p in module.parameters():
                 p.requires_grad = True
+        if model.use_pathway_cell_qformer and model.train_pathway_cell_qformer:
+            for p in model.pathway_qformer.parameters():
+                p.requires_grad = True
+            model.pathway_embeddings.requires_grad = True
 
         cell_params, llm_params = [], []
         for n, p in model.named_parameters():
             if not p.requires_grad:
                 continue
-            if "cell_embedder" in n or "direct_token_projector" in n:
+            if (
+                "cell_embedder" in n
+                or "direct_token_projector" in n
+                or "pathway_qformer" in n
+                or "pathway_embeddings" in n
+            ):
                 cell_params.append(p)
             else:
                 llm_params.append(p)
