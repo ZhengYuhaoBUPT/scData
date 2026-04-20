@@ -19,12 +19,12 @@ if str(SRC_ROOT) not in sys.path:
 
 from scgeneqformer.data.lmdb_dataset import build_static_gene_embeddings_from_cell_features_refs, collect_topk_cell_refs, load_json, load_topk_json
 from scgeneqformer.models.cell_encoder import encode_pathway_vectors_to_cell_features, load_cell_encoder
-from scgeneqformer.models.gene_qformer import RankedGeneCellFeatureQFormer
-from scgeneqformer.train.trainer import run_ranked_cell_feature_training
+from scgeneqformer.models.gene_qformer import PathwayCellFeatureQFormer
+from scgeneqformer.train.trainer import run_cell_feature_training_with_rank_aux
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Train ranked-gene cell-feature-input pathway Q-Former on compact 8-shard data.")
+    parser = argparse.ArgumentParser(description="Train cell-feature-input pathway Q-Former with rank auxiliary loss on compact 8-shard data.")
     parser.add_argument("--topk-json", type=str, default=str(PROJECT_ROOT / "outputs/scgpt_8shards_topk/merged_topk.json"))
     parser.add_argument("--lmdb-root", type=str, default="/home/qijinyin/wanghaoran/zxy/features/per_gene_feat/whitelist_lmdb_8shards_compact")
     parser.add_argument("--pathway-json", type=str, default="/data/bgi/data/projects/multimodal/zyh/datasets/pathway/pathway_anchor_genes.json")
@@ -36,6 +36,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--num-heads", type=int, default=8)
     parser.add_argument("--num-layers", type=int, default=2)
     parser.add_argument("--top-rank-genes", type=int, default=256)
+    parser.add_argument("--rank-loss-weight", type=float, default=0.2)
     parser.add_argument("--max-train-cells", type=int, default=512)
     parser.add_argument("--encoder-batch-size", type=int, default=16)
     parser.add_argument("--train-batch-size", type=int, default=1)
@@ -192,18 +193,16 @@ def main() -> None:
         batch_size=args.encoder_batch_size,
     )
 
-    model = RankedGeneCellFeatureQFormer(
+    model = PathwayCellFeatureQFormer(
         hidden_dim=args.hidden_dim,
         num_queries=len(pathway_names),
         num_heads=args.num_heads,
         num_layers=args.num_layers,
         out_dim=args.hidden_dim,
-        top_rank_genes=args.top_rank_genes,
     )
-    train_result = run_ranked_cell_feature_training(
+    train_result = run_cell_feature_training_with_rank_aux(
         model=model,
         pathway_embeddings=pathway_embeddings,
-        static_gene_embeddings=static_gene_embeddings,
         cell_features=train_cell_features,
         cell_expr=train_expr,
         num_epochs=args.num_epochs,
@@ -211,11 +210,13 @@ def main() -> None:
         learning_rate=args.learning_rate,
         device=device,
         max_steps=args.max_steps,
+        rank_topk=args.top_rank_genes,
+        rank_loss_weight=args.rank_loss_weight,
     )
 
     model = model.to(device).eval()
     with torch.no_grad():
-        query_tokens, recon = model(pathway_embeddings.to(device), static_gene_embeddings.to(device), train_cell_features.to(device), train_expr.to(device))
+        query_tokens, recon = model(pathway_embeddings.to(device), train_cell_features.to(device))
     query_tokens = query_tokens.cpu()
     recon = recon.cpu()
 
@@ -253,6 +254,7 @@ def main() -> None:
         "pathway_embeddings_768d": pathway_embeddings,
         "global_step": train_result.get("global_step"),
         "train_history": train_result["history"],
+        "rank_aux_head_state_dict": train_result.get("rank_aux_head_state_dict"),
     }
     torch.save(checkpoint, output_dir / "scgene_qformer_cellfeat_checkpoint.pt")
     with (output_dir / "scgene_qformer_cellfeat_run_metadata.json").open("w") as f:
@@ -263,6 +265,7 @@ def main() -> None:
                 "num_topk_cells": len(topk_ref_keys),
                 "num_train_cells": len(train_cell_keys),
                 "top_rank_genes": args.top_rank_genes,
+                "rank_loss_weight": args.rank_loss_weight,
                 "static_gene_embeddings_shape": list(static_gene_embeddings.shape),
                 "pathway_embeddings_shape": list(pathway_embeddings.shape),
                 "train_cell_features_shape": list(train_cell_features.shape),
