@@ -257,6 +257,17 @@ def main() -> None:
         "rank_aux_head_state_dict": train_result.get("rank_aux_head_state_dict"),
     }
     torch.save(checkpoint, output_dir / "scgene_qformer_cellfeat_checkpoint.pt")
+
+    lightweight_checkpoint = {
+        "model_state_dict": model.state_dict(),
+        "model_class": type(model).__name__,
+        "config": vars(args),
+        "pathway_embeddings_768d": pathway_embeddings,
+        "pathway_names": pathway_names,
+        "pathway_gene_counts": pathway_gene_counts,
+        "global_step": train_result.get("global_step"),
+    }
+    torch.save(lightweight_checkpoint, output_dir / "scgene_qformer_cellfeat_checkpoint_light.pt")
     with (output_dir / "scgene_qformer_cellfeat_run_metadata.json").open("w") as f:
         json.dump(
             {
@@ -286,6 +297,7 @@ def main() -> None:
         )
     print(f"Saved training bundle to {output_dir}")
     print(f"Saved checkpoint to {output_dir / 'scgene_qformer_cellfeat_checkpoint.pt'}")
+    print(f"Saved lightweight checkpoint to {output_dir / 'scgene_qformer_cellfeat_checkpoint_light.pt'}")
     print(f"Pathway embeddings shape: {tuple(pathway_embeddings.shape)}")
     print(f"Train cell features shape: {tuple(train_cell_features.shape)}")
     print(f"Train cell expr shape: {tuple(train_expr.shape)}")
