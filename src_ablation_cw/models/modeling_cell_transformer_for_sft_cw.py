@@ -58,6 +58,7 @@ class CellTransformerForSFTCW(nn.Module):
                 num_heads=self.qformer_num_heads,
                 num_layers=self.qformer_num_layers,
                 out_dim=self.cell_feature_dim,
+                use_reconstruction_head=False,
             )
             self.pathway_embeddings = nn.Parameter(torch.randn(self.cell_feature_tokens, self.cell_feature_dim) * 0.02)
             self._maybe_init_pathway_embeddings_from_gene_codebook()

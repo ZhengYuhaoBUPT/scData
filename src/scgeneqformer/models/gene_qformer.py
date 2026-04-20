@@ -62,8 +62,9 @@ class GeneQFormerModel(nn.Module):
 
 
 class PathwayCellFeatureQFormer(nn.Module):
-    def __init__(self, hidden_dim: int, num_queries: int, num_heads: int, num_layers: int, out_dim: int):
+    def __init__(self, hidden_dim: int, num_queries: int, num_heads: int, num_layers: int, out_dim: int, use_reconstruction_head: bool = True):
         super().__init__()
+        self.use_reconstruction_head = use_reconstruction_head
         self.query_residual = nn.Parameter(torch.randn(num_queries, hidden_dim) * 0.02)
         self.cell_to_context = nn.Sequential(
             nn.Linear(hidden_dim, hidden_dim),
@@ -77,11 +78,14 @@ class PathwayCellFeatureQFormer(nn.Module):
             nn.Sigmoid(),
         )
         self.blocks = nn.ModuleList([CrossAttentionBlock(hidden_dim, num_heads) for _ in range(num_layers)])
-        self.reconstruction_head = nn.Sequential(
-            nn.Linear(num_queries * hidden_dim, hidden_dim * 2),
-            nn.GELU(),
-            nn.Linear(hidden_dim * 2, out_dim),
-        )
+        if self.use_reconstruction_head:
+            self.reconstruction_head = nn.Sequential(
+                nn.Linear(num_queries * hidden_dim, hidden_dim * 2),
+                nn.GELU(),
+                nn.Linear(hidden_dim * 2, out_dim),
+            )
+        else:
+            self.reconstruction_head = None
 
     def forward(self, pathway_embeddings: torch.Tensor, cell_features: torch.Tensor) -> Tuple[torch.Tensor, torch.Tensor]:
         cell_context = self.cell_to_context(cell_features).unsqueeze(1)
@@ -90,7 +94,9 @@ class PathwayCellFeatureQFormer(nn.Module):
         queries = pathway_embeddings.unsqueeze(0) + self.query_residual.unsqueeze(0) + cell_context
         for block in self.blocks:
             queries = block(queries, pathway_memory)
-        recon = self.reconstruction_head(queries.reshape(queries.size(0), -1))
+        recon = None
+        if self.reconstruction_head is not None:
+            recon = self.reconstruction_head(queries.reshape(queries.size(0), -1))
         return queries, recon
 
 
@@ -115,13 +121,17 @@ class RankedGeneCellFeatureQFormer(nn.Module):
             nn.Linear(hidden_dim, hidden_dim),
             nn.Sigmoid(),
         )
+        self.use_reconstruction_head = use_reconstruction_head
         self.query_residual = nn.Parameter(torch.randn(num_queries, hidden_dim) * 0.02)
         self.blocks = nn.ModuleList([CrossAttentionBlock(hidden_dim, num_heads) for _ in range(num_layers)])
-        self.reconstruction_head = nn.Sequential(
-            nn.Linear(num_queries * hidden_dim, hidden_dim * 2),
-            nn.GELU(),
-            nn.Linear(hidden_dim * 2, out_dim),
-        )
+        if self.use_reconstruction_head:
+            self.reconstruction_head = nn.Sequential(
+                nn.Linear(num_queries * hidden_dim, hidden_dim * 2),
+                nn.GELU(),
+                nn.Linear(hidden_dim * 2, out_dim),
+            )
+        else:
+            self.reconstruction_head = None
 
     def build_ranked_memory(
         self,

@@ -21,10 +21,10 @@
     "qformer_num_layers": 2,
     "train_pathway_cell_qformer": true,
     "pathway_qformer_ckpt_path": null,
-    "pathway_json_path": "/data/bgi/data/projects/multimodal/zyh/datasets/pathway/pathway_anchor_genes.json",
-    "codebook_tensor_path": "/home/qijinyin/wanghaoran/zxy/features/per_gene_feat/gene_codebook/codebook_tensor_compact.pt",
-    "codebook_gene_to_idx_path": "/home/qijinyin/wanghaoran/zxy/features/per_gene_feat/gene_codebook/gene_to_compact_idx.json",
-    "codebook_gene_vocab_path": "/data/bgi/data/projects/multimodal/zyh/datasets/CellwText/scgpt/vocab.json"
+    "pathway_json_path": "/mnt/c20250607/user/wanghaoran/zyh/datasets/pathway/pathway_anchor_genes.json",
+    "codebook_tensor_path": "/mnt/c20250607/user/wanghaoran/zyh/datasets/pathway/codebook_tensor_compact.pt",
+    "codebook_gene_to_idx_path": "/mnt/c20250607/user/wanghaoran/zyh/datasets/pathway/gene_to_compact_idx.json",
+    "codebook_gene_vocab_path": "/mnt/c20250607/user/wanghaoran/zyh/datasets/CellwText/scgpt/vocab.json"
   },
   "training": {
     "batch_size": 50,
