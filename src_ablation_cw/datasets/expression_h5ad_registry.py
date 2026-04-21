@@ -1,6 +1,7 @@
 # coding=utf-8
 from __future__ import annotations
 
+import os
 from pathlib import Path
 from typing import Dict, List, Sequence, Tuple
 
@@ -9,6 +10,9 @@ import numpy as np
 import torch
 
 from src_ablation_cw.datasets.gene_token_utils import load_static_gene_bundle
+
+
+os.environ.setdefault("HDF5_USE_FILE_LOCKING", "FALSE")
 
 
 class ExpressionH5ADRegistry:
@@ -40,27 +44,37 @@ class ExpressionH5ADRegistry:
             self._adatas[path] = adata
         return adata
 
+    def _close_adata(self, adata) -> None:
+        file_obj = getattr(adata, 'file', None)
+        if file_obj is not None:
+            try:
+                file_obj.close()
+            except Exception:
+                pass
+
     def _build_index(self):
         for path in self.paths:
-            adata = self._open_adata(path)
-            obs_ids = [str(x) for x in adata.obs.index]
-            for i, cid in enumerate(obs_ids):
-                self._cell_to_loc.setdefault(cid, (path, i))
-            gene_names = None
-            if 'gene_name' in adata.var.columns:
-                gene_names = adata.var['gene_name'].astype(str).tolist()
-            else:
-                gene_names = [str(x) for x in adata.var.index.tolist()]
-            mapped_cols = []
-            mapped_gene_idx = []
-            for col_idx, gene_name in enumerate(gene_names):
-                static_idx = self.gene_to_idx.get(gene_name)
-                if static_idx is None:
-                    continue
-                mapped_cols.append(col_idx)
-                mapped_gene_idx.append(static_idx)
-            self._mapped_cols_by_path[path] = np.asarray(mapped_cols, dtype=np.int64)
-            self._mapped_gene_idx_by_path[path] = np.asarray(mapped_gene_idx, dtype=np.int64)
+            adata = ad.read_h5ad(path, backed='r')
+            try:
+                obs_ids = [str(x) for x in adata.obs.index]
+                for i, cid in enumerate(obs_ids):
+                    self._cell_to_loc.setdefault(cid, (path, i))
+                if 'gene_name' in adata.var.columns:
+                    gene_names = adata.var['gene_name'].astype(str).tolist()
+                else:
+                    gene_names = [str(x) for x in adata.var.index.tolist()]
+                mapped_cols = []
+                mapped_gene_idx = []
+                for col_idx, gene_name in enumerate(gene_names):
+                    static_idx = self.gene_to_idx.get(gene_name)
+                    if static_idx is None:
+                        continue
+                    mapped_cols.append(col_idx)
+                    mapped_gene_idx.append(static_idx)
+                self._mapped_cols_by_path[path] = np.asarray(mapped_cols, dtype=np.int64)
+                self._mapped_gene_idx_by_path[path] = np.asarray(mapped_gene_idx, dtype=np.int64)
+            finally:
+                self._close_adata(adata)
 
     def _load_row_values(self, adata, row_idx: int, cols: np.ndarray) -> np.ndarray:
         row = adata.X[row_idx, cols]
