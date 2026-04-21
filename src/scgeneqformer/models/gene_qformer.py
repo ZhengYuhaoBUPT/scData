@@ -88,10 +88,18 @@ class PathwayCellFeatureQFormer(nn.Module):
             self.reconstruction_head = None
 
     def forward(self, pathway_embeddings: torch.Tensor, cell_features: torch.Tensor) -> Tuple[torch.Tensor, torch.Tensor]:
-        cell_context = self.cell_to_context(cell_features).unsqueeze(1)
-        cell_gate = self.cell_to_gate(cell_features).unsqueeze(1)
-        pathway_memory = pathway_embeddings.unsqueeze(0) * (1.0 + cell_gate) + cell_context
-        queries = pathway_embeddings.unsqueeze(0) + self.query_residual.unsqueeze(0) + cell_context
+        if cell_features.dim() == 2:
+            cell_context = self.cell_to_context(cell_features).unsqueeze(1)
+            cell_gate = self.cell_to_gate(cell_features).unsqueeze(1)
+            pathway_memory = pathway_embeddings.unsqueeze(0) * (1.0 + cell_gate) + cell_context
+            queries = pathway_embeddings.unsqueeze(0) + self.query_residual.unsqueeze(0) + cell_context
+        elif cell_features.dim() == 3:
+            pathway_memory = cell_features
+            queries = pathway_embeddings.unsqueeze(0) + self.query_residual.unsqueeze(0)
+            queries = queries.expand(cell_features.size(0), -1, -1)
+        else:
+            raise ValueError(f"Unsupported cell_features ndim={cell_features.dim()}, expected 2 or 3")
+
         for block in self.blocks:
             queries = block(queries, pathway_memory)
         recon = None

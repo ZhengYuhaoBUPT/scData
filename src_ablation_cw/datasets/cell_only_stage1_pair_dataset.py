@@ -19,7 +19,7 @@ import torch
 from torch.utils.data import Dataset
 
 from src_ablation_cw.datasets.metadata_formatter import MetadataFormatter
-from src_ablation_cw.eval.common_eval_utils import read_cell_features
+from src_ablation_cw.datasets.expression_h5ad_registry import ExpressionH5ADRegistry
 
 
 os.environ["HDF5_USE_FILE_LOCKING"] = "FALSE"
@@ -46,6 +46,16 @@ class CellOnlyStage1PairDataset(Dataset):
         self.max_seq_len = int(self.dataset_config.get("max_seq_len", 1024))
         self.cell_feature_tokens = int(self.dataset_config.get("cell_feature_tokens", 8))
         self.cell_feature_dim = int(self.dataset_config.get("cell_feature_dim", 768))
+        self.gene_input_tokens = int(self.dataset_config.get("gene_input_tokens", 1200))
+        self.gene_rank_order = str(self.dataset_config.get("gene_rank_order", "asc"))
+
+        model_cfg = config_dict.get("model", {})
+        static_gene_ckpt_path = model_cfg.get("static_gene_embedding_ckpt_path")
+        if not static_gene_ckpt_path:
+            raise ValueError("model.static_gene_embedding_ckpt_path is required for gene-token training")
+        bundle = load_static_gene_bundle(static_gene_ckpt_path)
+        self.static_gene_embeddings = bundle["static_gene_embeddings"]
+        self.scgpt_id_to_idx = bundle["scgpt_id_to_idx"]
 
         self.accelerator = accelerator
         self.num_replicas = accelerator.num_processes if accelerator else 1
@@ -72,82 +82,10 @@ class CellOnlyStage1PairDataset(Dataset):
             print(f"[Stage1PairDS] Rank {self.rank}: loaded {self.total_cells} cells from {len(self.data_blocks)} blocks.")
 
     def _load_data(self):
-        import torch.distributed as dist
-        is_main = not dist.is_initialized() or dist.get_rank() == 0
-
-        h5ad_files = sorted([f for f in self.feature_dir.glob("*.h5ad")])
-        if len(h5ad_files) == 0:
-            raise ValueError(f"No .h5ad files found in {self.feature_dir}")
-
-        total_cells_all_files = 0
-        file_cell_ranges = []
-
-        for h5_path in h5ad_files:
-            file_name = h5_path.stem
-            lmdb_path = Path(self.lmdb_base_dir) / f"{file_name}.db"
-            if not lmdb_path.exists():
-                if is_main:
-                    print(f"[Stage1PairDS] Skip {file_name}: LMDB not found at {lmdb_path}")
-                continue
-
-            with h5py.File(h5_path, "r") as f:
-                n_cells = f["X"].shape[0]
-
-            start_idx = total_cells_all_files
-            total_cells_all_files += n_cells
-            file_cell_ranges.append((start_idx, start_idx + n_cells, h5_path, lmdb_path))
-
-        if total_cells_all_files == 0:
-            raise ValueError(f"No valid cells found in {self.feature_dir}")
-
-        usable_samples = (total_cells_all_files // self.num_replicas) * self.num_replicas
-        cells_per_rank = usable_samples // self.num_replicas if self.num_replicas > 0 else total_cells_all_files
-        my_start = self.rank * cells_per_rank
-        my_end = my_start + cells_per_rank
-
         self.data_blocks = []
         self.lmdb_paths = []
         self.cumulative_sizes = [0]
-
-        for range_start, range_end, h5_path, lmdb_path in file_cell_ranges:
-            overlap_start = max(range_start, my_start)
-            overlap_end = min(range_end, my_end)
-            if overlap_start >= overlap_end:
-                continue
-
-            local_start = overlap_start - range_start
-            local_end = overlap_end - range_start
-            n_cells_to_load = overlap_end - overlap_start
-
-            with h5py.File(h5_path, "r") as h5_file:
-                X_array = h5_file["X"][local_start:local_end].astype(np.float32)
-
-                # lmdb_key resolution (same logic as BidirectionalStage1Dataset)
-                try:
-                    keys_raw = h5_file["obs"]["lmdb_key"][local_start:local_end]
-                    if hasattr(keys_raw[0], "decode"):
-                        lmdb_keys = [k.decode("utf-8") for k in keys_raw]
-                    else:
-                        lmdb_keys = [str(k) for k in keys_raw]
-                except Exception:
-                    try:
-                        cats = h5_file["obs"]["__categories"]["lmdb_key"][:]
-                        codes = h5_file["obs"]["lmdb_key"][local_start:local_end]
-                        cats = [c.decode("utf-8") if hasattr(c, "decode") else str(c) for c in cats]
-                        lmdb_keys = [cats[code] for code in codes]
-                    except Exception:
-                        adata_temp = ad.read_h5ad(h5_path, backed="r")
-                        lmdb_keys = adata_temp.obs["lmdb_key"].iloc[local_start:local_end].astype(str).tolist()
-                        adata_temp.file.close()
-
-            self.data_blocks.append({
-                "X": X_array,
-                "lmdb_keys": lmdb_keys,
-            })
-            self.lmdb_paths.append(str(lmdb_path))
-            self.cumulative_sizes.append(self.cumulative_sizes[-1] + n_cells_to_load)
-
-        self.total_cells = self.cumulative_sizes[-1]
+        self.total_cells = 0
 
     def _get_lmdb_env(self, lmdb_path: str):
         if lmdb_path not in self.lmdb_envs:
@@ -164,13 +102,14 @@ class CellOnlyStage1PairDataset(Dataset):
         local_idx = idx - self.cumulative_sizes[block_idx]
         block = self.data_blocks[block_idx]
 
-        raw_feature = block["X"][local_idx]
-        cell_feature = torch.from_numpy(raw_feature)
-        if cell_feature.shape[0] < self.cell_feature_dim:
-            pad_size = self.cell_feature_dim - cell_feature.shape[0]
-            cell_feature = torch.nn.functional.pad(cell_feature, (0, pad_size))
-        elif cell_feature.shape[0] > self.cell_feature_dim:
-            cell_feature = cell_feature[:self.cell_feature_dim]
+        rank_ids = block["rank"][local_idx]
+        cell_feature = build_gene_sequence_from_rank(
+            rank_ids=rank_ids,
+            scgpt_id_to_idx=self.scgpt_id_to_idx,
+            static_gene_embeddings=self.static_gene_embeddings,
+            gene_input_tokens=self.gene_input_tokens,
+            rank_order=self.gene_rank_order,
+        )
 
         lmdb_path = self.lmdb_paths[block_idx]
         env = self._get_lmdb_env(lmdb_path)

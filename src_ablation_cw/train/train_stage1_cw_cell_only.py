@@ -17,14 +17,13 @@ from pathlib import Path
 import torch
 from accelerate import Accelerator
 from torch.optim import AdamW
-from torch.utils.data import ConcatDataset, DataLoader
+from torch.utils.data import DataLoader
 from transformers import AutoTokenizer
 
 project_root = Path(__file__).resolve().parents[2]
 if str(project_root) not in sys.path:
     sys.path.insert(0, str(project_root))
 
-from src_ablation_cw.datasets.cell_only_stage1_pair_dataset import CellOnlyStage1PairDataset
 from src_ablation_cw.datasets.cw_sft_cell_only_dataset import CWSFTCellOnlyDataset, cw_cell_only_collate
 from src_ablation_cw.models.modeling_cell_transformer_for_sft_cw import CellTransformerForSFTCW
 from src_ablation_cw.train.common import WandbLogger, ensure_dir, load_config, load_state_pt, save_state_pt
@@ -123,10 +122,8 @@ def main():
         tokenizer.pad_token = tokenizer.eos_token
 
     json_paths = get_stage1_json_paths(config)
-    feature_dir = data_cfg.get("sft_feature_dir", data_cfg.get("feature_dir"))
-
-    pretrain_dataset = CWSFTCellOnlyDataset(
-        feature_dir=feature_dir,
+    dataset = CWSFTCellOnlyDataset(
+        feature_dir=None,
         json_paths=json_paths,
         text_tokenizer=tokenizer,
         config_dict=config,
@@ -137,35 +134,8 @@ def main():
         append_image_tag=bool(cw_cfg.get("append_image_tag", True)),
     )
 
-    # Load paired metadata data for stage1 using the standard project paths
-    pair_feature_dir = data_cfg.get("feature_dir")
-    pair_lmdb_dir = data_cfg.get("lmdb_base_dir")
-
-    datasets_to_mix = [pretrain_dataset]
-    if pair_feature_dir and pair_lmdb_dir and Path(pair_feature_dir).exists() and Path(pair_lmdb_dir).exists():
-        pair_dataset = CellOnlyStage1PairDataset(
-            feature_dir=str(pair_feature_dir),
-            lmdb_base_dir=str(pair_lmdb_dir),
-            text_tokenizer=tokenizer,
-            config_dict=config,
-            special_tokens_ids=SPECIAL_TOKENS_IDS,
-            accelerator=accelerator,
-        )
-        if len(pair_dataset) > 0:
-            datasets_to_mix.append(pair_dataset)
-            if accelerator.is_main_process:
-                print(f"[Stage1-CW] Mixing pretrain ({len(pretrain_dataset)}) + pair ({len(pair_dataset)})")
-        else:
-            if accelerator.is_main_process:
-                print(f"[Stage1-CW] WARNING: pair dataset is empty, using pretrain only.")
-    else:
-        if accelerator.is_main_process:
-            print(f"[Stage1-CW] Pair data not configured or paths missing, using pretrain only.")
-
-    if len(datasets_to_mix) > 1:
-        dataset = ConcatDataset(datasets_to_mix)
-    else:
-        dataset = datasets_to_mix[0]
+    if accelerator.is_main_process:
+        print("[Stage1-CW] Using conversation-only dataset with gene_h5ad_paths input; pair/lmdb branch disabled.")
 
     dataloader = DataLoader(
         dataset,

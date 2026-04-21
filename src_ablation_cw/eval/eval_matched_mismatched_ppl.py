@@ -189,7 +189,7 @@ def main():
     if not pool_ids: raise ValueError('No IDs found in qa-jsons for negative sampling pool.')
 
     required_ids = list(dict.fromkeys(pool_ids + target_ids))
-    cells = load_cells_by_ids(args.feature_path, required_ids)
+    cells = load_cells_by_ids(args.feature_path, required_ids, config=config)
 
     id_to_answers = {}
     for item in all_items:

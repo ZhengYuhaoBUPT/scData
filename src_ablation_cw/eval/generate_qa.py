@@ -52,6 +52,7 @@ def build_generation_inputs(
     max_seq_len = dataset_cfg.get("max_seq_len", 1024)
     cell_feature_tokens = dataset_cfg.get("cell_feature_tokens", 8)
     cell_feature_dim = dataset_cfg.get("cell_feature_dim", 768)
+    gene_input_tokens = dataset_cfg.get("gene_input_tokens", 1200)
     
     pad_id = tokenizer.pad_token_id if tokenizer.pad_token_id is not None else 151643
     bos_id = getattr(tokenizer, "bos_token_id", None)
@@ -118,19 +119,30 @@ def build_generation_inputs(
         cell_start_pos = 0
 
     raw_feature = torch.tensor(cell["cell_features"], dtype=torch.float32)
-    if raw_feature.shape[0] < cell_feature_dim:
-        pad_size = cell_feature_dim - raw_feature.shape[0]
-        raw_feature = torch.nn.functional.pad(raw_feature, (0, pad_size))
-    elif raw_feature.shape[0] > cell_feature_dim:
-        raw_feature = raw_feature[:cell_feature_dim]
+    if raw_feature.dim() == 1:
+        if raw_feature.shape[0] < cell_feature_dim:
+            raw_feature = torch.nn.functional.pad(raw_feature, (0, cell_feature_dim - raw_feature.shape[0]))
+        elif raw_feature.shape[0] > cell_feature_dim:
+            raw_feature = raw_feature[:cell_feature_dim]
+    elif raw_feature.dim() == 2:
+        token_count, feat_dim = raw_feature.shape
+        if token_count < gene_input_tokens:
+            raw_feature = torch.nn.functional.pad(raw_feature, (0, 0, 0, gene_input_tokens - token_count))
+        elif token_count > gene_input_tokens:
+            raw_feature = raw_feature[:gene_input_tokens]
+        if feat_dim < cell_feature_dim:
+            raw_feature = torch.nn.functional.pad(raw_feature, (0, cell_feature_dim - feat_dim))
+        elif feat_dim > cell_feature_dim:
+            raw_feature = raw_feature[:, :cell_feature_dim]
+    else:
+        raise ValueError(f"Unsupported eval cell_features ndim={raw_feature.dim()}")
 
-    # 🚀 斩断 Expand，返回 1D [768]，然后增加 batch 维度 -> [1, 768]
     processed_cell_feature = raw_feature
 
     return {
         "input_ids": input_ids_tensor.unsqueeze(0),
         "attention_mask": attention_mask.unsqueeze(0),
-        "cell_features": processed_cell_feature.unsqueeze(0), # 最终给到模型的是 [1, 768]
+        "cell_features": processed_cell_feature.unsqueeze(0),
         "cell_positions": torch.tensor([[cell_start_pos, cell_len]], dtype=torch.long),
         "modality_positions": torch.tensor([[0, 0]], dtype=torch.long),
         "gene_mask": torch.zeros((1, 0), dtype=torch.bool),
@@ -209,7 +221,7 @@ def main():
 
     target_ids = [str(item["id"]) for item in qa_list]
     print(f"📥 正在提取 {len(target_ids)} 个细胞特征...")
-    cells_dict = load_cells_by_ids(args.feature_path, target_ids)
+    cells_dict = load_cells_by_ids(args.feature_path, target_ids, config=config)
 
     results = []
     output_path = Path(args.output_json)

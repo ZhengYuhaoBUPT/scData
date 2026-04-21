@@ -316,30 +316,9 @@ def main():
     num_stage1_samples = int(cw_cfg.get("num_stage1_samples", 10000))
     mix_seed = int(cw_cfg.get("stage2_mix_seed", seed))
 
-    # Caption-converted pair data for stage2 regularization (reuse standard project paths)
-    pair_feature_dir = data_cfg.get("feature_dir")
-    pair_lmdb_dir = data_cfg.get("lmdb_base_dir")
-    num_caption_samples = int(cw_cfg.get("num_caption_samples", 20000))
-    caption_celltype_ratio = float(cw_cfg.get("caption_celltype_ratio", 0.65))
-
     caption_json_path = None
-    if pair_feature_dir and pair_lmdb_dir and Path(pair_feature_dir).exists() and Path(pair_lmdb_dir).exists():
-        num_celltype = int(num_caption_samples * caption_celltype_ratio)
-        num_meta = num_caption_samples - num_celltype
-        caption_json_path = build_caption_converted_json(
-            feature_dir=str(pair_feature_dir),
-            lmdb_base_dir=str(pair_lmdb_dir),
-            num_celltype_samples=num_celltype,
-            num_meta_samples=num_meta,
-            seed=int(cw_cfg.get("stage2_caption_seed", mix_seed)),
-            rank=accelerator.process_index,
-        )
-        if accelerator.is_main_process:
-            print(f"[Stage2-CW] generated caption JSON: {caption_json_path} "
-                  f"({num_celltype} celltype + {num_meta} meta)")
-    else:
-        if accelerator.is_main_process:
-            print("[Stage2-CW] Pair data not configured for caption mixing, using pretrain+finetune only.")
+    if accelerator.is_main_process:
+        print("[Stage2-CW] Caption/pair mixing disabled. Using conversation JSONs only with gene_h5ad_paths input.")
 
     mixed_json_path = build_stage2_mixed_json(
         pretrain_paths=pretrain_paths,
@@ -355,9 +334,8 @@ def main():
         print(f"[Stage2-CW] finetune_paths({len(finetune_paths)})={finetune_paths}")
         print(f"[Stage2-CW] mixed json={mixed_json_path}, num_stage1_samples={num_stage1_samples}")
 
-    feature_dir = data_cfg.get("sft_feature_dir", data_cfg.get("feature_dir"))
     dataset = CWSFTCellOnlyDataset(
-        feature_dir=feature_dir,
+        feature_dir=None,
         json_paths=[mixed_json_path],
         text_tokenizer=tokenizer,
         config_dict=config,

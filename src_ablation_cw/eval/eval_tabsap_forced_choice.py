@@ -131,7 +131,7 @@ def main():
         raise ValueError('No candidate cell types found. Provide --candidate-celltypes-json or use a conversation JSON with assistant labels.')
 
     target_ids = [str(item['id']) for item in eval_items]
-    cells = load_cells_by_ids(args.feature_path, target_ids)
+    cells = load_cells_by_ids(args.feature_path, target_ids, config=config)
 
     rows = []
     correct = 0

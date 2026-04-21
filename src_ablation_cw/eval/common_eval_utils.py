@@ -13,6 +13,7 @@ import numpy as np
 import torch
 import torch.nn.functional as F
 from transformers import AutoTokenizer
+from src_ablation_cw.datasets.expression_h5ad_registry import ExpressionH5ADRegistry
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
@@ -47,6 +48,19 @@ def read_cell_features(adata, local_start=None, local_end=None, flatten=False):
     if flatten:
         feat = feat.flatten()
     return feat
+
+
+def read_rank_gene_tokens(adata, local_start=None, local_end=None):
+    if "rank" not in adata.obsm_keys():
+        raise KeyError("H5AD is missing obsm['rank'] required for gene-token Q-Former input")
+    source = adata.obsm["rank"]
+    if local_start is not None and local_end is not None:
+        chunk = source[local_start:local_end]
+    elif local_start is not None:
+        chunk = source[local_start]
+    else:
+        chunk = source
+    return np.array(chunk)
 
 
 # [统一单点事实] 所有的 Special Token IDs
@@ -168,41 +182,40 @@ def load_stage2_model(config_path: str, ckpt_path: str, device: str, dtype_name:
     return config, tokenizer, model
 
 
-def load_cells_by_ids(feature_path: str, cell_ids: List[str]) -> Dict[str, Dict]:
-    import anndata as ad
-    import numpy as np
-    from pathlib import Path
+def load_cells_by_ids(feature_path: str, cell_ids: List[str], config: Optional[Dict] = None) -> Dict[str, Dict]:
+    data_cfg = (config or {}).get("data", {})
+    model_cfg = (config or {}).get("model", {})
+    dataset_cfg = (config or {}).get("dataset", {})
 
-    path_obj = Path(feature_path)
-    h5ad_files = [path_obj] if path_obj.is_file() else list(path_obj.rglob("*.h5ad"))
+    h5ad_paths = data_cfg.get("gene_h5ad_paths", [])
+    static_gene_ckpt_path = model_cfg.get("static_gene_embedding_ckpt_path")
+    gene_input_tokens = int(dataset_cfg.get("gene_input_tokens", 1200))
+    gene_rank_order = str(dataset_cfg.get("gene_rank_order", "desc"))
 
-    result = {}
-    missing_cells = set(str(c) for c in cell_ids) 
+    if not h5ad_paths:
+        raise ValueError("config.data.gene_h5ad_paths is required for evaluation")
+    if not static_gene_ckpt_path:
+        raise ValueError("model.static_gene_embedding_ckpt_path is required for evaluation")
 
-    for h5_path in h5ad_files:
-        if not missing_cells:
-            break
+    registry = ExpressionH5ADRegistry(
+        h5ad_paths=h5ad_paths,
+        static_gene_ckpt_path=static_gene_ckpt_path,
+        gene_input_tokens=gene_input_tokens,
+        gene_rank_order=gene_rank_order,
+    )
+
+    result: Dict[str, Dict] = {}
+    missing: List[str] = []
+    for cid in cell_ids:
+        cell_id = str(cid)
         try:
-            adata = ad.read_h5ad(h5_path, backed='r')
-            obs_indices = [str(x) for x in adata.obs.index]
-            if "cell_id" in adata.obs.columns:
-                col_indices = [str(x) for x in adata.obs["cell_id"]]
-                if len(missing_cells.intersection(col_indices)) > len(missing_cells.intersection(obs_indices)):
-                    adata.obs.index = col_indices 
-                    obs_indices = col_indices
+            result[cell_id] = {"cell_features": registry.get_gene_tokens(cell_id).numpy()}
+        except KeyError:
+            missing.append(cell_id)
 
-            found_in_this_file = missing_cells.intersection(obs_indices)
-            for cid in found_in_this_file:
-                cell_adata = adata[cid]
-                feat = read_cell_features(cell_adata, flatten=True)
-                result[cid] = {"cell_features": feat}
-                missing_cells.remove(cid)
-            adata.file.close()
-        except Exception as e:
-            continue
-
-    if missing_cells:
-        raise RuntimeError(f"仍有 {len(missing_cells)} 个细胞未找到特征！")
+    if missing:
+        preview = missing[:10]
+        raise KeyError(f"{len(missing)} cell ids not found in gene_h5ad_paths, first few: {preview}")
     return result
 
 def load_conversations(json_paths: Sequence[str]) -> List[Dict]:
@@ -245,6 +258,7 @@ def build_stage2_eval_sample(
     max_seq_len = dataset_cfg.get("max_seq_len", 1024)
     cell_feature_tokens = dataset_cfg.get("cell_feature_tokens", 8)
     cell_feature_dim = dataset_cfg.get("cell_feature_dim", 768)
+    gene_input_tokens = dataset_cfg.get("gene_input_tokens", 1200)
     pad_id = tokenizer.pad_token_id if tokenizer.pad_token_id is not None else 151643
     bos_id = getattr(tokenizer, "bos_token_id", None)
 
@@ -328,13 +342,25 @@ def build_stage2_eval_sample(
         cell_start_pos = 0
 
     raw_feature = torch.tensor(condition_cell["cell_features"], dtype=torch.float32)
-    if raw_feature.shape[0] < cell_feature_dim:
-        pad_size = cell_feature_dim - raw_feature.shape[0]
-        raw_feature = torch.nn.functional.pad(raw_feature, (0, pad_size))
-    elif raw_feature.shape[0] > cell_feature_dim:
-        raw_feature = raw_feature[:cell_feature_dim]
-        
-    # 🚀 [关键修复] 杜绝 Expand，保持 1D 向量给 Embedder
+    if raw_feature.dim() == 1:
+        if raw_feature.shape[0] < cell_feature_dim:
+            pad_size = cell_feature_dim - raw_feature.shape[0]
+            raw_feature = torch.nn.functional.pad(raw_feature, (0, pad_size))
+        elif raw_feature.shape[0] > cell_feature_dim:
+            raw_feature = raw_feature[:cell_feature_dim]
+    elif raw_feature.dim() == 2:
+        token_count, feat_dim = raw_feature.shape
+        if token_count < gene_input_tokens:
+            raw_feature = torch.nn.functional.pad(raw_feature, (0, 0, 0, gene_input_tokens - token_count))
+        elif token_count > gene_input_tokens:
+            raw_feature = raw_feature[:gene_input_tokens]
+        if feat_dim < cell_feature_dim:
+            raw_feature = torch.nn.functional.pad(raw_feature, (0, cell_feature_dim - feat_dim))
+        elif feat_dim > cell_feature_dim:
+            raw_feature = raw_feature[:, :cell_feature_dim]
+    else:
+        raise ValueError(f"Unsupported eval cell_features ndim={raw_feature.dim()}")
+
     processed_cell_feature = raw_feature
 
     return {
@@ -354,7 +380,7 @@ def collate_eval_batch(samples: Sequence[Dict], pad_token_id: int) -> Dict[str, 
     input_ids = torch.full((batch_size, max_len), pad_token_id, dtype=torch.long)
     labels = torch.full((batch_size, max_len), -100, dtype=torch.long)
     attention_mask = torch.zeros((batch_size, max_len), dtype=torch.bool) # 🚀 必须为 bool
-    cell_features = torch.stack([sample["cell_features"] for sample in samples], dim=0) # 变成了 [B, 768]
+    cell_features = torch.stack([sample["cell_features"] for sample in samples], dim=0)
     cell_positions = torch.stack([sample["cell_positions"] for sample in samples], dim=0)
     modality_positions = torch.stack([sample["modality_positions"] for sample in samples], dim=0)
     gene_mask = torch.zeros((batch_size, max_len), dtype=torch.bool)
