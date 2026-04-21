@@ -27,7 +27,7 @@
     "codebook_gene_vocab_path": "/mnt/c20250607/user/wanghaoran/zyh/datasets/CellwText/scgpt/vocab.json"
   },
   "training": {
-    "batch_size": 50,
+    "batch_size": 8,
     "num_workers": 8,
     "gradient_accumulation_steps": 2,
     "pin_memory": false,
@@ -49,7 +49,7 @@
       "stage1_lr": 0.0001,
       "stage1_max_steps": 50000,
       "stage1_resume_from": null,
-      "stage2_init_from_stage1": "/mnt/c20250607/user/wanghaoran/zyh/scData/outputs/cw_ablation_stage1/checkpoint-step-1200",
+      "stage2_init_from_stage1": "/mnt/c20250607/user/wanghaoran/zyh/scData/outputs/cw_ablation_stage1/checkpoint-step-1600",
       "stage2_use_lora": true,
       "lora_r": 64,
       "lora_alpha": 128,
@@ -63,7 +63,7 @@
         "up_proj",
         "down_proj"
       ],
-      "stage2_epochs": 2,
+      "stage2_epochs": 4,
       "stage2_lora_lr": 2e-05,
       "stage2_cell_lr": 0.0001,
       "stage2_max_steps": 100000,

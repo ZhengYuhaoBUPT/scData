@@ -146,7 +146,18 @@ def load_stage2_model(config_path: str, ckpt_path: str, device: str, dtype_name:
     if critical_missing:
          raise RuntimeError(f"加载权重失败！以下关键层缺失:\n{critical_missing[:5]}...")
 
+    qformer_ckpt_keys = [k for k in clean_state_dict.keys() if "pathway_qformer" in k]
+    pathway_embedding_ckpt_keys = [k for k in clean_state_dict.keys() if "pathway_embeddings" in k]
+    qformer_missing = [k for k in missing if "pathway_qformer" in k]
+    pathway_embedding_missing = [k for k in missing if "pathway_embeddings" in k]
+
     print(f"[load_stage2_model] missing_keys={len(missing)}, unexpected_keys={len(unexpected)}")
+    print(
+        f"[load_stage2_model] qformer_ckpt_keys={len(qformer_ckpt_keys)}, "
+        f"pathway_embedding_ckpt_keys={len(pathway_embedding_ckpt_keys)}, "
+        f"qformer_missing_after_load={len(qformer_missing)}, "
+        f"pathway_embedding_missing_after_load={len(pathway_embedding_missing)}"
+    )
     
     model.eval()
     target_dtype = resolve_dtype(dtype_name)

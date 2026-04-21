@@ -22,7 +22,7 @@ def parse_args():
     parser.add_argument('--config', type=str,
                         default='/mnt/c20250607/user/wanghaoran/zyh/scData/src_ablation_cw/config/config_cw_ablation_cell_only.json')
     parser.add_argument('--ckpt-path', type=str,
-                        default ='/mnt/c20250607/user/wanghaoran/zyh/scData/outputs/cw_ablation_stage2/checkpoint-step-257')
+                        default ='/mnt/c20250607/user/wanghaoran/zyh/scData/outputs/cw_ablation_stage2/checkpoint-step-500')
     parser.add_argument('--feature-path', type=str,
                         default="/mnt/c20250607/user/wanghaoran/zxy/data_and_features/zxy/features/cw_test_features/tab_sap")
     parser.add_argument('--eval-json', type=str,
