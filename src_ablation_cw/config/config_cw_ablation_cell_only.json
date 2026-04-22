@@ -8,14 +8,14 @@
       "/mnt/c20250607/user/wanghaoran/zyh/datasets/sft_conversations/pretrain_texts.json",
       "/mnt/c20250607/user/wanghaoran/zyh/datasets/sft_conversations/finetune_conversations.json"
     ],
-    "pair_feature_dir": "/mnt/c20250607/user/wanghaoran/zxy/data_and_features/zxy/features/okrcell_features",
+    "pair_feature_dir": null,
     "pair_lmdb_base_dir": null
   },
   "dataset": {
     "max_seq_len": 1500,
     "cell_feature_dim": 768,
     "cell_feature_tokens": 50,
-    "gene_input_tokens": 1200,
+    "gene_input_tokens": 400,
     "gene_rank_order": "desc"
   },
   "model": {
@@ -27,10 +27,11 @@
     "train_pathway_cell_qformer": true,
     "pathway_qformer_ckpt_path": null,
     "pathway_json_path": "/mnt/c20250607/user/wanghaoran/zyh/datasets/pathway/pathway_anchor_genes.json",
-    "static_gene_embedding_ckpt_path": "/mnt/c20250607/user/wanghaoran/zyh/scData/outputs/static_gene_embeddings/okrcell_top100_static_gene_embeddings.pt"
+    "static_gene_embedding_ckpt_path": "/mnt/c20250607/user/wanghaoran/zyh/scData/outputs/static_gene_embeddings/okrcell_top100_static_gene_embeddings.pt",
+    "init_pathway_embeddings_from_static_genes": false
   },
   "training": {
-    "batch_size": 16,
+    "batch_size": 48,
     "num_workers": 8,
     "gradient_accumulation_steps": 8,
     "pin_memory": false,

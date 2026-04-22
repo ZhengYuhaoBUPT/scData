@@ -35,6 +35,7 @@ class CellTransformerForSFTCW(nn.Module):
         self.pathway_qformer_ckpt_path = model_cfg.get("pathway_qformer_ckpt_path")
         self.pathway_json_path = model_cfg.get("pathway_json_path", str(PROJECT_ROOT / "datasets/pathway/pathway_anchor_genes.json"))
         self.static_gene_embedding_ckpt_path = model_cfg.get("static_gene_embedding_ckpt_path")
+        self.init_pathway_embeddings_from_static_genes = bool(model_cfg.get("init_pathway_embeddings_from_static_genes", False))
 
         llm_path = model_cfg["llm_model_path"]
         local_only = bool(model_cfg.get("local_files_only", True))
@@ -88,6 +89,10 @@ class CellTransformerForSFTCW(nn.Module):
         self.dummy_float = nn.Parameter(torch.empty(0, dtype=torch.bfloat16), requires_grad=False)
 
     def _maybe_init_pathway_embeddings_from_static_genes(self):
+        if not self.init_pathway_embeddings_from_static_genes:
+            print("[Model] init_pathway_embeddings_from_static_genes=false. Keep random pathway embedding initialization.")
+            return
+
         ckpt_path = self.static_gene_embedding_ckpt_path
         if not ckpt_path:
             print("[Model] static_gene_embedding_ckpt_path is empty. Keep random pathway embedding initialization.")
@@ -123,12 +128,12 @@ class CellTransformerForSFTCW(nn.Module):
     def _maybe_load_pretrained_pathway_qformer_assets(self):
         ckpt_path = self.pathway_qformer_ckpt_path
         if not ckpt_path:
-            print("[Model] pathway_qformer_ckpt_path is empty. Keep static-gene-initialized pathway embeddings and randomly initialized Q-Former weights.")
+            print("[Model] pathway_qformer_ckpt_path is empty. Keep current pathway embeddings and randomly initialized Q-Former weights.")
             return
 
         ckpt_file = Path(ckpt_path)
         if not ckpt_file.exists():
-            print(f"[Model] pathway_qformer_ckpt_path not found: {ckpt_file}. Keep static-gene-initialized pathway embeddings and random Q-Former weights.")
+            print(f"[Model] pathway_qformer_ckpt_path not found: {ckpt_file}. Keep current pathway embeddings and random Q-Former weights.")
             return
 
         payload = torch.load(str(ckpt_file), map_location="cpu")
