@@ -1,12 +1,12 @@
 {
   "data": {
     "gene_h5ad_paths": [
-      "/data/bgi/data/projects/multimodal/RNA_data/cellwhisper_data/cellxgene/full_data.h5ad",
-      "/data/bgi/data/projects/multimodal/RNA_data/cellwhisper_data/archs4_geo/cellxgene.h5ad"
+      "/mnt/c20250607/user/wanghaoran/zyh/datasets/features/okrcell_sft_features_census.h5ad",
+      "/mnt/c20250607/user/wanghaoran/zyh/datasets/features/okrcell_sft_features_archs4.h5ad"
     ],
     "sft_json_paths": [
-      "/data/bgi/data/projects/multimodal/RNA_data/cellwhisper_data/sft_data/conversations/pretrain_texts.json",
-      "/data/bgi/data/projects/multimodal/RNA_data/cellwhisper_data/sft_data/conversations/finetune_conversations.json"
+      "/mnt/c20250607/user/wanghaoran/zyh/datasets/sft_conversations/pretrain_texts.json",
+      "/mnt/c20250607/user/wanghaoran/zyh/datasets/sft_conversations/finetune_conversations.json"
     ]
   },
   "dataset": {
@@ -24,13 +24,13 @@
     "qformer_num_layers": 2,
     "train_pathway_cell_qformer": true,
     "pathway_qformer_ckpt_path": null,
-    "pathway_json_path": "/data/bgi/data/projects/multimodal/zyh/datasets/pathway/pathway_anchor_genes.json",
-    "static_gene_embedding_ckpt_path": "/data/bgi/data/projects/multimodal/zyh/scData/outputs/static_gene_embeddings/okrcell_top100_static_gene_embeddings.pt"
+    "pathway_json_path": "/mnt/c20250607/user/wanghaoran/zyh/datasets/pathway/pathway_anchor_genes.json",
+    "static_gene_embedding_ckpt_path": "/mnt/c20250607/user/wanghaoran/zyh/scData/outputs/static_gene_embeddings/okrcell_top100_static_gene_embeddings.pt"
   },
   "training": {
-    "batch_size": 8,
+    "batch_size": 16,
     "num_workers": 8,
-    "gradient_accumulation_steps": 2,
+    "gradient_accumulation_steps": 8,
     "pin_memory": false,
     "seed": 1,
     "gradient_checkpointing": true,
@@ -40,11 +40,11 @@
       "use_system_prompt": true,
       "append_image_tag": true,
       "stage1_json_paths": [
-        "/data/bgi/data/projects/multimodal/RNA_data/cellwhisper_data/sft_data/conversations/pretrain_texts.json"
+        "/mnt/c20250607/user/wanghaoran/zyh/datasets/sft_conversations/pretrain_texts.json"
       ],
       "stage2_json_paths": [
-        "/data/bgi/data/projects/multimodal/RNA_data/cellwhisper_data/sft_data/conversations/finetune_conversations.json",
-        "/data/bgi/data/projects/multimodal/RNA_data/cellwhisper_data/sft_data/conversations/tabula_sapiens_conversations.json"
+        "/mnt/c20250607/user/wanghaoran/zyh/datasets/sft_conversations/finetune_conversations.json",
+        "/mnt/c20250607/user/wanghaoran/zyh/datasets/sft_conversations/tabula_sapiens_conversations.json"
       ],
       "stage1_epochs": 1,
       "stage1_lr": 0.0001,
