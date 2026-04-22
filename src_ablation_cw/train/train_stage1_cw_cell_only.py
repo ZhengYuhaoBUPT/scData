@@ -17,7 +17,7 @@ from pathlib import Path
 import torch
 from accelerate import Accelerator
 from torch.optim import AdamW
-from torch.utils.data import DataLoader
+from torch.utils.data import ConcatDataset, DataLoader
 from transformers import AutoTokenizer
 
 project_root = Path(__file__).resolve().parents[2]
@@ -26,6 +26,7 @@ if str(project_root) not in sys.path:
 
 from src_ablation_cw.datasets.cw_sft_cell_only_dataset import CWSFTCellOnlyDataset, cw_cell_only_collate
 from src_ablation_cw.models.modeling_cell_transformer_for_sft_cw import CellTransformerForSFTCW
+from src_ablation_cw.train.pair_data_utils import build_optional_pair_dataset
 from src_ablation_cw.train.common import WandbLogger, ensure_dir, load_config, load_state_pt, save_state_pt
 
 
@@ -122,7 +123,7 @@ def main():
         tokenizer.pad_token = tokenizer.eos_token
 
     json_paths = get_stage1_json_paths(config)
-    dataset = CWSFTCellOnlyDataset(
+    dialog_dataset = CWSFTCellOnlyDataset(
         feature_dir=None,
         json_paths=json_paths,
         text_tokenizer=tokenizer,
@@ -134,8 +135,28 @@ def main():
         append_image_tag=bool(cw_cfg.get("append_image_tag", True)),
     )
 
+    pair_dataset = build_optional_pair_dataset(
+        config=config,
+        text_tokenizer=tokenizer,
+        special_tokens_ids=SPECIAL_TOKENS_IDS,
+        accelerator=accelerator,
+        data_type_tag="stage1_pair",
+        max_samples=int(cw_cfg.get("stage1_pair_max_samples", 0)),
+        sample_seed=seed,
+    )
+
+    datasets = [dialog_dataset]
+    if pair_dataset is not None:
+        datasets.append(pair_dataset)
+        dataset = ConcatDataset(datasets)
+    else:
+        dataset = dialog_dataset
+
     if accelerator.is_main_process:
-        print("[Stage1-CW] Using conversation-only dataset with gene_h5ad_paths input; pair/lmdb branch disabled.")
+        pair_len = 0 if pair_dataset is None else len(pair_dataset)
+        print(
+            f"[Stage1-CW] dataset_mix dialog={len(dialog_dataset)} pair={pair_len} total={len(dataset)}"
+        )
 
     dataloader = DataLoader(
         dataset,

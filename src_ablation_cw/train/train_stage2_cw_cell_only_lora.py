@@ -23,7 +23,7 @@ import numpy as np
 import torch
 from accelerate import Accelerator
 from torch.optim import AdamW
-from torch.utils.data import DataLoader
+from torch.utils.data import ConcatDataset, DataLoader
 from transformers import AutoTokenizer
 
 project_root = Path(__file__).resolve().parents[2]
@@ -34,6 +34,7 @@ from src_ablation_cw.datasets.metadata_formatter import MetadataFormatter
 from src_ablation_cw.datasets.cw_sft_cell_only_dataset import CWSFTCellOnlyDataset, cw_cell_only_collate
 from src_ablation_cw.models.modeling_cell_transformer_for_sft_cw import CellTransformerForSFTCW
 from src_ablation_cw.train.common import WandbLogger, ensure_dir, load_config, load_state_pt, resolve_resume_path, save_state_pt
+from src_ablation_cw.train.pair_data_utils import build_optional_pair_dataset
 
 
 try:
@@ -318,7 +319,7 @@ def main():
 
     caption_json_path = None
     if accelerator.is_main_process:
-        print("[Stage2-CW] Caption/pair mixing disabled. Using conversation JSONs only with gene_h5ad_paths input.")
+        print("[Stage2-CW] Building conversation dataset first; paired H5AD/LMDB data will be concatenated if configured.")
 
     mixed_json_path = build_stage2_mixed_json(
         pretrain_paths=pretrain_paths,
@@ -334,7 +335,7 @@ def main():
         print(f"[Stage2-CW] finetune_paths({len(finetune_paths)})={finetune_paths}")
         print(f"[Stage2-CW] mixed json={mixed_json_path}, num_stage1_samples={num_stage1_samples}")
 
-    dataset = CWSFTCellOnlyDataset(
+    dialog_dataset = CWSFTCellOnlyDataset(
         feature_dir=None,
         json_paths=[mixed_json_path],
         text_tokenizer=tokenizer,
@@ -345,6 +346,27 @@ def main():
         data_type_tag="stage2",
         append_image_tag=bool(cw_cfg.get("append_image_tag", True)),
     )
+
+    pair_dataset = build_optional_pair_dataset(
+        config=config,
+        text_tokenizer=tokenizer,
+        special_tokens_ids=SPECIAL_TOKENS_IDS,
+        accelerator=accelerator,
+        data_type_tag="stage2_pair",
+        max_samples=int(cw_cfg.get("stage2_pair_max_samples", 0)),
+        sample_seed=seed,
+    )
+
+    datasets = [dialog_dataset]
+    if pair_dataset is not None:
+        datasets.append(pair_dataset)
+        dataset = ConcatDataset(datasets)
+    else:
+        dataset = dialog_dataset
+
+    if accelerator.is_main_process:
+        pair_len = 0 if pair_dataset is None else len(pair_dataset)
+        print(f"[Stage2-CW] dataset_mix dialog={len(dialog_dataset)} pair={pair_len} total={len(dataset)}")
 
     dataloader = DataLoader(
         dataset,

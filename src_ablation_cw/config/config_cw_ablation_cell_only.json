@@ -7,7 +7,9 @@
     "sft_json_paths": [
       "/mnt/c20250607/user/wanghaoran/zyh/datasets/sft_conversations/pretrain_texts.json",
       "/mnt/c20250607/user/wanghaoran/zyh/datasets/sft_conversations/finetune_conversations.json"
-    ]
+    ],
+    "pair_feature_dir": "/mnt/c20250607/user/wanghaoran/zxy/data_and_features/zxy/features/okrcell_features",
+    "pair_lmdb_base_dir": null
   },
   "dataset": {
     "max_seq_len": 1500,
@@ -71,7 +73,9 @@
       "stage2_resume_from": null,
       "num_stage1_samples": 10000,
       "stage2_mix_seed": 42,
-      "stage2_full_finetune": false
+      "stage2_full_finetune": false,
+      "stage1_pair_max_samples": 0,
+      "stage2_pair_max_samples": 0
     }
   },
   "optimizer": {

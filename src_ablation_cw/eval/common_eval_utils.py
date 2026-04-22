@@ -4,8 +4,13 @@
 import copy
 import csv
 import json
+import sys
 from pathlib import Path
 from typing import Dict, Iterable, List, Optional, Sequence, Tuple
+
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
 import anndata as ad
 import h5py
@@ -14,12 +19,7 @@ import torch
 import torch.nn.functional as F
 from transformers import AutoTokenizer
 from src_ablation_cw.datasets.expression_h5ad_registry import ExpressionH5ADRegistry
-
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
-
-import sys
-if str(PROJECT_ROOT) not in sys.path:
-    sys.path.insert(0, str(PROJECT_ROOT))
+from src_ablation_cw.datasets.gene_token_utils import load_static_gene_bundle
 
 
 def read_cell_features(adata, local_start=None, local_end=None, flatten=False):
@@ -109,6 +109,23 @@ def _safe_torch_load(path: Path):
     except TypeError:
         return torch.load(path, map_location="cpu")
 
+
+def resolve_model_path(model_path: str) -> str:
+    candidate = Path(model_path)
+    if candidate.exists():
+        return str(candidate)
+
+    fallbacks = [
+        Path('/data/bgi/data/projects/multimodal/zxy/zxy/models/qwen2.5-7b-instruct'),
+        Path('/data/bgi/data/projects/multimodal/zyh/hf_cache/Qwen2.5-7B-Instruct'),
+    ]
+    for fb in fallbacks:
+        if fb.exists():
+            print(f"[resolve_model_path] configured llm_model_path not found: {model_path}")
+            print(f"[resolve_model_path] fallback to local model path: {fb}")
+            return str(fb)
+    return model_path
+
 def load_stage2_model(config_path: str, ckpt_path: str, device: str, dtype_name: str):
     import sys
     if str(PROJECT_ROOT) not in sys.path:
@@ -117,7 +134,7 @@ def load_stage2_model(config_path: str, ckpt_path: str, device: str, dtype_name:
     from src_ablation_cw.models.modeling_cell_transformer_for_sft_cw import CellTransformerForSFTCW
 
     config = load_config(config_path)
-    model_path = config["model"]["llm_model_path"]
+    model_path = resolve_model_path(config["model"]["llm_model_path"])
     tokenizer = AutoTokenizer.from_pretrained(model_path, trust_remote_code=True)
 
     if tokenizer.pad_token_id is None:
@@ -183,10 +200,49 @@ def load_stage2_model(config_path: str, ckpt_path: str, device: str, dtype_name:
 
 
 def load_cells_by_ids(feature_path: str, cell_ids: List[str], config: Optional[Dict] = None) -> Dict[str, Dict]:
-    data_cfg = (config or {}).get("data", {})
-    model_cfg = (config or {}).get("model", {})
+    feature_path_obj = Path(feature_path)
     dataset_cfg = (config or {}).get("dataset", {})
 
+    # Preferred fast path: precomputed per-cell top1200 intersected gene JSON.
+    if feature_path_obj.is_file() and feature_path_obj.suffix == ".json":
+        payload = json.loads(feature_path_obj.read_text())
+        items = payload.get("items", []) if isinstance(payload, dict) else payload
+        model_cfg = (config or {}).get("model", {})
+        static_gene_ckpt_path = model_cfg.get("static_gene_embedding_ckpt_path")
+        if not static_gene_ckpt_path:
+            raise ValueError("model.static_gene_embedding_ckpt_path is required for JSON-backed evaluation")
+        bundle = load_static_gene_bundle(static_gene_ckpt_path)
+        static_gene_embeddings = bundle["static_gene_embeddings"].numpy()
+        gene_input_tokens = int(dataset_cfg.get("gene_input_tokens", 1200))
+        hidden_dim = int(static_gene_embeddings.shape[1])
+
+        cell_map = {}
+        for item in items:
+            cell_id = str(item["cell_id"])
+            static_idx = np.asarray(item.get("top_static_gene_indices", []), dtype=np.int64)
+            out = np.zeros((gene_input_tokens, hidden_dim), dtype=np.float32)
+            if static_idx.size > 0:
+                use_idx = static_idx[:gene_input_tokens]
+                out[: len(use_idx)] = static_gene_embeddings[use_idx]
+            cell_map[cell_id] = {"cell_features": out, "item": item}
+
+        missing = []
+        result: Dict[str, Dict] = {}
+        for cid in cell_ids:
+            cell_id = str(cid)
+            record = cell_map.get(cell_id)
+            if record is None:
+                missing.append(cell_id)
+                continue
+            result[cell_id] = {"cell_features": record["cell_features"]}
+
+        if missing:
+            preview = missing[:10]
+            raise KeyError(f"{len(missing)} cell ids not found in feature JSON, first few: {preview}")
+        return result
+
+    data_cfg = (config or {}).get("data", {})
+    model_cfg = (config or {}).get("model", {})
     h5ad_paths = data_cfg.get("gene_h5ad_paths", [])
     static_gene_ckpt_path = model_cfg.get("static_gene_embedding_ckpt_path")
     gene_input_tokens = int(dataset_cfg.get("gene_input_tokens", 1200))
