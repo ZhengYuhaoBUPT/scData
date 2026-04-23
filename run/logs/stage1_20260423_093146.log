@@ -1,0 +1,416 @@
+W0423 09:32:17.583000 56993 site-packages/torch/distributed/run.py:852] 
+W0423 09:32:17.583000 56993 site-packages/torch/distributed/run.py:852] *****************************************
+W0423 09:32:17.583000 56993 site-packages/torch/distributed/run.py:852] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0423 09:32:17.583000 56993 site-packages/torch/distributed/run.py:852] *****************************************
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57155 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57155 [0] NCCL INFO Bootstrap: Using eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57155 [0] NCCL INFO cudaDriverVersion 12080
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57155 [0] NCCL INFO NCCL version 2.27.5+cuda12.9
+is-dcsn7qhxjihsjqes-devmachine-0:57156:57156 [1] NCCL INFO cudaDriverVersion 12080
+is-dcsn7qhxjihsjqes-devmachine-0:57156:57156 [1] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:57156:57156 [1] NCCL INFO Bootstrap: Using eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:57156:57156 [1] NCCL INFO NCCL version 2.27.5+cuda12.9
+is-dcsn7qhxjihsjqes-devmachine-0:57157:57157 [2] NCCL INFO cudaDriverVersion 12080
+is-dcsn7qhxjihsjqes-devmachine-0:57157:57157 [2] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:57156:57156 [1] NCCL INFO Comm config Blocking set to 1
+is-dcsn7qhxjihsjqes-devmachine-0:57157:57157 [2] NCCL INFO Bootstrap: Using eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:57157:57157 [2] NCCL INFO NCCL version 2.27.5+cuda12.9
+is-dcsn7qhxjihsjqes-devmachine-0:57157:57157 [2] NCCL INFO Comm config Blocking set to 1
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57155 [0] NCCL INFO Comm config Blocking set to 1
+is-dcsn7qhxjihsjqes-devmachine-0:57158:57158 [3] NCCL INFO cudaDriverVersion 12080
+is-dcsn7qhxjihsjqes-devmachine-0:57158:57158 [3] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:57158:57158 [3] NCCL INFO Bootstrap: Using eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:57158:57158 [3] NCCL INFO NCCL version 2.27.5+cuda12.9
+is-dcsn7qhxjihsjqes-devmachine-0:57158:57158 [3] NCCL INFO Comm config Blocking set to 1
+is-dcsn7qhxjihsjqes-devmachine-0:57157:57293 [2] NCCL INFO NET/Plugin: Could not find: libnccl-net.so. 
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57294 [0] NCCL INFO NET/Plugin: Could not find: libnccl-net.so. 
+is-dcsn7qhxjihsjqes-devmachine-0:57156:57292 [1] NCCL INFO NET/Plugin: Could not find: libnccl-net.so. 
+is-dcsn7qhxjihsjqes-devmachine-0:57158:57295 [3] NCCL INFO NET/Plugin: Could not find: libnccl-net.so. 
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57294 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:57156:57292 [1] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:57157:57293 [2] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:57158:57295 [3] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:57158:57295 [3] NCCL INFO NET/IB : No device found.
+is-dcsn7qhxjihsjqes-devmachine-0:57158:57295 [3] NCCL INFO NET/IB : Using [RO]; OOB eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:57158:57295 [3] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:57157:57293 [2] NCCL INFO NET/IB : No device found.
+is-dcsn7qhxjihsjqes-devmachine-0:57157:57293 [2] NCCL INFO NET/IB : Using [RO]; OOB eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57294 [0] NCCL INFO NET/IB : No device found.
+is-dcsn7qhxjihsjqes-devmachine-0:57156:57292 [1] NCCL INFO NET/IB : No device found.
+is-dcsn7qhxjihsjqes-devmachine-0:57157:57293 [2] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57294 [0] NCCL INFO NET/IB : Using [RO]; OOB eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:57156:57292 [1] NCCL INFO NET/IB : Using [RO]; OOB eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57294 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:57156:57292 [1] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:57158:57295 [3] NCCL INFO NET/Socket : Using [0]eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57294 [0] NCCL INFO NET/Socket : Using [0]eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:57157:57293 [2] NCCL INFO NET/Socket : Using [0]eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57294 [0] NCCL INFO Initialized NET plugin Socket
+is-dcsn7qhxjihsjqes-devmachine-0:57156:57292 [1] NCCL INFO NET/Socket : Using [0]eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:57158:57295 [3] NCCL INFO Initialized NET plugin Socket
+is-dcsn7qhxjihsjqes-devmachine-0:57157:57293 [2] NCCL INFO Initialized NET plugin Socket
+is-dcsn7qhxjihsjqes-devmachine-0:57156:57292 [1] NCCL INFO Initialized NET plugin Socket
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57294 [0] NCCL INFO Assigned NET plugin Socket to comm
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57294 [0] NCCL INFO Using network Socket
+is-dcsn7qhxjihsjqes-devmachine-0:57158:57295 [3] NCCL INFO Assigned NET plugin Socket to comm
+is-dcsn7qhxjihsjqes-devmachine-0:57158:57295 [3] NCCL INFO Using network Socket
+is-dcsn7qhxjihsjqes-devmachine-0:57156:57292 [1] NCCL INFO Assigned NET plugin Socket to comm
+is-dcsn7qhxjihsjqes-devmachine-0:57157:57293 [2] NCCL INFO Assigned NET plugin Socket to comm
+is-dcsn7qhxjihsjqes-devmachine-0:57156:57292 [1] NCCL INFO Using network Socket
+is-dcsn7qhxjihsjqes-devmachine-0:57157:57293 [2] NCCL INFO Using network Socket
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57294 [0] NCCL INFO ncclCommInitRankConfig comm 0xc743e90 rank 0 nranks 4 cudaDev 0 nvmlDev 0 busId 5d000 commId 0xfb53d2ea05eb570b - Init START
+is-dcsn7qhxjihsjqes-devmachine-0:57157:57293 [2] NCCL INFO ncclCommInitRankConfig comm 0xcbca4b0 rank 2 nranks 4 cudaDev 2 nvmlDev 2 busId ab000 commId 0xfb53d2ea05eb570b - Init START
+is-dcsn7qhxjihsjqes-devmachine-0:57156:57292 [1] NCCL INFO ncclCommInitRankConfig comm 0xd155320 rank 1 nranks 4 cudaDev 1 nvmlDev 1 busId 9b000 commId 0xfb53d2ea05eb570b - Init START
+is-dcsn7qhxjihsjqes-devmachine-0:57158:57295 [3] NCCL INFO ncclCommInitRankConfig comm 0xc68f370 rank 3 nranks 4 cudaDev 3 nvmlDev 3 busId bb000 commId 0xfb53d2ea05eb570b - Init START
+is-dcsn7qhxjihsjqes-devmachine-0:57156:57292 [1] NCCL INFO RAS client listening socket at ::1<28028>
+is-dcsn7qhxjihsjqes-devmachine-0:57157:57293 [2] NCCL INFO RAS client listening socket at ::1<28028>
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57294 [0] NCCL INFO RAS client listening socket at ::1<28028>
+is-dcsn7qhxjihsjqes-devmachine-0:57158:57295 [3] NCCL INFO RAS client listening socket at ::1<28028>
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57294 [0] NCCL INFO Bootstrap timings total 0.005090 (create 0.000049, send 0.000101, recv 0.004223, ring 0.000122, delay 0.000000)
+is-dcsn7qhxjihsjqes-devmachine-0:57157:57293 [2] NCCL INFO Bootstrap timings total 0.005077 (create 0.000044, send 0.000098, recv 0.004341, ring 0.000182, delay 0.000000)
+is-dcsn7qhxjihsjqes-devmachine-0:57156:57292 [1] NCCL INFO Bootstrap timings total 0.000978 (create 0.000046, send 0.000114, recv 0.000136, ring 0.000289, delay 0.000000)
+is-dcsn7qhxjihsjqes-devmachine-0:57158:57295 [3] NCCL INFO Bootstrap timings total 0.000910 (create 0.000048, send 0.000117, recv 0.000201, ring 0.000065, delay 0.000001)
+is-dcsn7qhxjihsjqes-devmachine-0:57156:57292 [1] NCCL INFO NCCL_P2P_DISABLE set by environment to 1
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57294 [0] NCCL INFO NCCL_P2P_DISABLE set by environment to 1
+is-dcsn7qhxjihsjqes-devmachine-0:57157:57293 [2] NCCL INFO NCCL_P2P_DISABLE set by environment to 1
+is-dcsn7qhxjihsjqes-devmachine-0:57158:57295 [3] NCCL INFO NCCL_P2P_DISABLE set by environment to 1
+is-dcsn7qhxjihsjqes-devmachine-0:57157:57293 [2] NCCL INFO Setting affinity for GPU 2 to 48-89,165-185
+is-dcsn7qhxjihsjqes-devmachine-0:57157:57293 [2] NCCL INFO NVLS multicast support is available on dev 2 (NVLS_NCHANNELS 16)
+is-dcsn7qhxjihsjqes-devmachine-0:57156:57292 [1] NCCL INFO Setting affinity for GPU 1 to 48-89,165-185
+is-dcsn7qhxjihsjqes-devmachine-0:57156:57292 [1] NCCL INFO NVLS multicast support is available on dev 1 (NVLS_NCHANNELS 16)
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57294 [0] NCCL INFO Setting affinity for GPU 0 to 96-116
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57294 [0] NCCL INFO NVLS multicast support is available on dev 0 (NVLS_NCHANNELS 16)
+is-dcsn7qhxjihsjqes-devmachine-0:57158:57295 [3] NCCL INFO Setting affinity for GPU 3 to 48-89,165-185
+is-dcsn7qhxjihsjqes-devmachine-0:57158:57295 [3] NCCL INFO NVLS multicast support is available on dev 3 (NVLS_NCHANNELS 16)
+is-dcsn7qhxjihsjqes-devmachine-0:57157:57293 [2] NCCL INFO comm 0xcbca4b0 rank 2 nRanks 4 nNodes 1 localRanks 4 localRank 2 MNNVL 0
+is-dcsn7qhxjihsjqes-devmachine-0:57158:57295 [3] NCCL INFO comm 0xc68f370 rank 3 nRanks 4 nNodes 1 localRanks 4 localRank 3 MNNVL 0
+is-dcsn7qhxjihsjqes-devmachine-0:57156:57292 [1] NCCL INFO comm 0xd155320 rank 1 nRanks 4 nNodes 1 localRanks 4 localRank 1 MNNVL 0
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57294 [0] NCCL INFO comm 0xc743e90 rank 0 nRanks 4 nNodes 1 localRanks 4 localRank 0 MNNVL 0
+is-dcsn7qhxjihsjqes-devmachine-0:57157:57293 [2] NCCL INFO Trees [0] 3/-1/-1->2->1 [1] 3/-1/-1->2->1 [2] 3/-1/-1->2->1 [3] 3/-1/-1->2->1 [4] 3/-1/-1->2->1 [5] 3/-1/-1->2->1 [6] 3/-1/-1->2->1 [7] 3/-1/-1->2->1 [8] 3/-1/-1->2->1 [9] 3/-1/-1->2->1 [10] 3/-1/-1->2->1 [11] 3/-1/-1->2->1 [12] 3/-1/-1->2->1 [13] 3/-1/-1->2->1 [14] 3/-1/-1->2->1 [15] 3/-1/-1->2->1
+is-dcsn7qhxjihsjqes-devmachine-0:57158:57295 [3] NCCL INFO Trees [0] -1/-1/-1->3->2 [1] -1/-1/-1->3->2 [2] -1/-1/-1->3->2 [3] -1/-1/-1->3->2 [4] -1/-1/-1->3->2 [5] -1/-1/-1->3->2 [6] -1/-1/-1->3->2 [7] -1/-1/-1->3->2 [8] -1/-1/-1->3->2 [9] -1/-1/-1->3->2 [10] -1/-1/-1->3->2 [11] -1/-1/-1->3->2 [12] -1/-1/-1->3->2 [13] -1/-1/-1->3->2 [14] -1/-1/-1->3->2 [15] -1/-1/-1->3->2
+is-dcsn7qhxjihsjqes-devmachine-0:57157:57293 [2] NCCL INFO P2P Chunksize set to 131072
+is-dcsn7qhxjihsjqes-devmachine-0:57156:57292 [1] NCCL INFO Trees [0] 2/-1/-1->1->0 [1] 2/-1/-1->1->0 [2] 2/-1/-1->1->0 [3] 2/-1/-1->1->0 [4] 2/-1/-1->1->0 [5] 2/-1/-1->1->0 [6] 2/-1/-1->1->0 [7] 2/-1/-1->1->0 [8] 2/-1/-1->1->0 [9] 2/-1/-1->1->0 [10] 2/-1/-1->1->0 [11] 2/-1/-1->1->0 [12] 2/-1/-1->1->0 [13] 2/-1/-1->1->0 [14] 2/-1/-1->1->0 [15] 2/-1/-1->1->0
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57294 [0] NCCL INFO Channel 00/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:57158:57295 [3] NCCL INFO P2P Chunksize set to 131072
+is-dcsn7qhxjihsjqes-devmachine-0:57156:57292 [1] NCCL INFO P2P Chunksize set to 131072
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57294 [0] NCCL INFO Channel 01/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57294 [0] NCCL INFO Channel 02/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57294 [0] NCCL INFO Channel 03/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57294 [0] NCCL INFO Channel 04/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57294 [0] NCCL INFO Channel 05/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57294 [0] NCCL INFO Channel 06/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57294 [0] NCCL INFO Channel 07/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57294 [0] NCCL INFO Channel 08/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57294 [0] NCCL INFO Channel 09/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57294 [0] NCCL INFO Channel 10/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57294 [0] NCCL INFO Channel 11/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57294 [0] NCCL INFO Channel 12/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57294 [0] NCCL INFO Channel 13/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57294 [0] NCCL INFO Channel 14/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57294 [0] NCCL INFO Channel 15/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57294 [0] NCCL INFO Trees [0] 1/-1/-1->0->-1 [1] 1/-1/-1->0->-1 [2] 1/-1/-1->0->-1 [3] 1/-1/-1->0->-1 [4] 1/-1/-1->0->-1 [5] 1/-1/-1->0->-1 [6] 1/-1/-1->0->-1 [7] 1/-1/-1->0->-1 [8] 1/-1/-1->0->-1 [9] 1/-1/-1->0->-1 [10] 1/-1/-1->0->-1 [11] 1/-1/-1->0->-1 [12] 1/-1/-1->0->-1 [13] 1/-1/-1->0->-1 [14] 1/-1/-1->0->-1 [15] 1/-1/-1->0->-1
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57294 [0] NCCL INFO P2P Chunksize set to 131072
+is-dcsn7qhxjihsjqes-devmachine-0:57157:57293 [2] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57294 [0] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57294 [0] NCCL INFO Check P2P Type isAllDirectP2p 0 directMode 0
+is-dcsn7qhxjihsjqes-devmachine-0:57158:57295 [3] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+is-dcsn7qhxjihsjqes-devmachine-0:57157:57300 [2] NCCL INFO [Proxy Service] Device 2 CPU core 167
+is-dcsn7qhxjihsjqes-devmachine-0:57157:57301 [2] NCCL INFO [Proxy Service UDS] Device 2 CPU core 168
+is-dcsn7qhxjihsjqes-devmachine-0:57156:57292 [1] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57302 [0] NCCL INFO [Proxy Service] Device 0 CPU core 97
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57303 [0] NCCL INFO [Proxy Service UDS] Device 0 CPU core 98
+is-dcsn7qhxjihsjqes-devmachine-0:57158:57304 [3] NCCL INFO [Proxy Service] Device 3 CPU core 169
+is-dcsn7qhxjihsjqes-devmachine-0:57158:57305 [3] NCCL INFO [Proxy Service UDS] Device 3 CPU core 170
+is-dcsn7qhxjihsjqes-devmachine-0:57156:57306 [1] NCCL INFO [Proxy Service] Device 1 CPU core 50
+is-dcsn7qhxjihsjqes-devmachine-0:57156:57307 [1] NCCL INFO [Proxy Service UDS] Device 1 CPU core 52
+is-dcsn7qhxjihsjqes-devmachine-0:57157:57293 [2] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+is-dcsn7qhxjihsjqes-devmachine-0:57157:57293 [2] NCCL INFO 16 coll channels, 16 collnet channels, 16 nvls channels, 16 p2p channels, 2 p2p channels per peer
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57294 [0] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57294 [0] NCCL INFO 16 coll channels, 16 collnet channels, 16 nvls channels, 16 p2p channels, 2 p2p channels per peer
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57294 [0] NCCL INFO CC Off, workFifoBytes 1048576
+is-dcsn7qhxjihsjqes-devmachine-0:57156:57292 [1] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+is-dcsn7qhxjihsjqes-devmachine-0:57156:57292 [1] NCCL INFO 16 coll channels, 16 collnet channels, 16 nvls channels, 16 p2p channels, 2 p2p channels per peer
+is-dcsn7qhxjihsjqes-devmachine-0:57158:57295 [3] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+is-dcsn7qhxjihsjqes-devmachine-0:57158:57295 [3] NCCL INFO 16 coll channels, 16 collnet channels, 16 nvls channels, 16 p2p channels, 2 p2p channels per peer
+is-dcsn7qhxjihsjqes-devmachine-0:57156:57292 [1] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+is-dcsn7qhxjihsjqes-devmachine-0:57156:57292 [1] NCCL INFO ncclCommInitRankConfig comm 0xd155320 rank 1 nranks 4 cudaDev 1 nvmlDev 1 busId 9b000 commId 0xfb53d2ea05eb570b - Init COMPLETE
+is-dcsn7qhxjihsjqes-devmachine-0:57156:57292 [1] NCCL INFO Init timings - ncclCommInitRankConfig: rank 1 nranks 4 total 0.96 (kernels 0.37, alloc 0.14, bootstrap 0.00, allgathers 0.00, topo 0.35, graphs 0.00, connections 0.08, rest 0.00)
+is-dcsn7qhxjihsjqes-devmachine-0:57158:57295 [3] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+is-dcsn7qhxjihsjqes-devmachine-0:57158:57295 [3] NCCL INFO ncclCommInitRankConfig comm 0xc68f370 rank 3 nranks 4 cudaDev 3 nvmlDev 3 busId bb000 commId 0xfb53d2ea05eb570b - Init COMPLETE
+is-dcsn7qhxjihsjqes-devmachine-0:57158:57295 [3] NCCL INFO Init timings - ncclCommInitRankConfig: rank 3 nranks 4 total 0.94 (kernels 0.36, alloc 0.14, bootstrap 0.00, allgathers 0.00, topo 0.35, graphs 0.00, connections 0.08, rest 0.00)
+is-dcsn7qhxjihsjqes-devmachine-0:57157:57293 [2] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+is-dcsn7qhxjihsjqes-devmachine-0:57157:57293 [2] NCCL INFO ncclCommInitRankConfig comm 0xcbca4b0 rank 2 nranks 4 cudaDev 2 nvmlDev 2 busId ab000 commId 0xfb53d2ea05eb570b - Init COMPLETE
+is-dcsn7qhxjihsjqes-devmachine-0:57157:57293 [2] NCCL INFO Init timings - ncclCommInitRankConfig: rank 2 nranks 4 total 0.96 (kernels 0.37, alloc 0.14, bootstrap 0.01, allgathers 0.00, topo 0.35, graphs 0.00, connections 0.08, rest 0.00)
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57294 [0] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57294 [0] NCCL INFO ncclCommInitRankConfig comm 0xc743e90 rank 0 nranks 4 cudaDev 0 nvmlDev 0 busId 5d000 commId 0xfb53d2ea05eb570b - Init COMPLETE
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57294 [0] NCCL INFO Init timings - ncclCommInitRankConfig: rank 0 nranks 4 total 0.96 (kernels 0.37, alloc 0.14, bootstrap 0.01, allgathers 0.00, topo 0.35, graphs 0.00, connections 0.08, rest 0.00)
+📄 使用配置: /mnt/c20250607/user/wanghaoran/zyh/scDataTest/config/config.json
+✅ 从配置加载模型参数:
+   - hidden_size: 3584
+   - num_diffusion_layers: 8
+   - attention_type: omni
+   - weight_decay: 0.0001
+   - clip_grad_norm: 1.0
+   - gradient_checkpointing: True
+   - disable_gene_position_ids: True
+   - gene_position_buckets: 100
+✅ 从配置加载模型参数:
+   - hidden_size: 3584
+   - num_diffusion_layers: 8
+   - attention_type: omni
+   - weight_decay: 0.0001
+   - clip_grad_norm: 1.0
+   - gradient_checkpointing: True
+   - disable_gene_position_ids: True
+   - gene_position_buckets: 100
+✅ 从配置加载模型参数:
+   - hidden_size: 3584
+   - num_diffusion_layers: 8
+   - attention_type: omni
+   - weight_decay: 0.0001
+   - clip_grad_norm: 1.0
+   - gradient_checkpointing: True
+   - disable_gene_position_ids: True
+   - gene_position_buckets: 100
+✅ 从配置加载模型参数:
+   - hidden_size: 3584
+   - num_diffusion_layers: 8
+   - attention_type: omni
+   - weight_decay: 0.0001
+   - clip_grad_norm: 1.0
+   - gradient_checkpointing: True
+   - disable_gene_position_ids: True
+   - gene_position_buckets: 100
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:04<00:12,  4.06s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:04<00:12,  4.14s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:04<00:12,  4.09s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:04<00:12,  4.10s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:08<00:08,  4.00s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:07<00:07,  3.97s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:07<00:07,  3.98s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:07<00:07,  3.98s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:11<00:03,  3.94s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:11<00:03,  3.92s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:11<00:03,  3.93s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:11<00:03,  3.93s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:15<00:00,  3.80s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:15<00:00,  3.87s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:15<00:00,  3.79s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:15<00:00,  3.85s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:15<00:00,  3.79s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:15<00:00,  3.86s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:15<00:00,  3.79s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:15<00:00,  3.86s/it]
+✅ Gradient Checkpointing 已启用
+✅ Gradient Checkpointing 已启用
+✅ Gradient Checkpointing 已启用
+✅ Gradient Checkpointing 已启用
+✅ 使用 compact codebook: codebook_tensor_compact.pt
+✅ 使用 compact codebook: codebook_tensor_compact.pt
+✅ 使用 compact codebook: codebook_tensor_compact.pt
+✅ 使用 compact codebook: codebook_tensor_compact.pt
+⚠️  gene_vocab_size 调整: 0 -> 741440
+⚠️  gene_vocab_size 调整: 0 -> 741440
+⚠️  gene_vocab_size 调整: 0 -> 741440
+⚠️  gene_vocab_size 调整: 0 -> 741440
+✅ 初始化 gene_embed_tokens: vocab=741440, base=11585 genes x 64 clusters, frozen
+✅ 初始化 gene_embed_tokens: vocab=741440, base=11585 genes x 64 clusters, frozen
+✅ 初始化 gene_embed_tokens: vocab=741440, base=11585 genes x 64 clusters, frozen
+✅ 初始化 gene_embed_tokens: vocab=741440, base=11585 genes x 64 clusters, frozen
+
+🔧 Diffusion Head 配置对齐 Qwen2.5 底座:
+   - Qwen hidden_size: 3584
+   - Qwen num_attention_heads: 28
+   - Qwen intermediate_size: 18944
+   - head_dim: 128
+
+🔧 Diffusion Head 配置对齐 Qwen2.5 底座:
+   - Qwen hidden_size: 3584
+   - Qwen num_attention_heads: 28
+   - Qwen intermediate_size: 18944
+   - head_dim: 128
+
+🔧 Diffusion Head 配置对齐 Qwen2.5 底座:
+   - Qwen hidden_size: 3584
+   - Qwen num_attention_heads: 28
+   - Qwen intermediate_size: 18944
+   - head_dim: 128
+
+🔧 Diffusion Head 配置对齐 Qwen2.5 底座:
+   - Qwen hidden_size: 3584
+   - Qwen num_attention_heads: 28
+   - Qwen intermediate_size: 18944
+   - head_dim: 128
+[BidirectionalStage1DS] initialized:
+   - max_genes: 1200
+   - understanding_ratio: 1.0
+   - generation_ratio: 0.0
+   - Rank 0/1
+[BidirectionalStage1DS] initialized:
+   - max_genes: 1200
+   - understanding_ratio: 1.0
+   - generation_ratio: 0.0
+   - Rank 0/1
+[BidirectionalStage1DS] compact gene vocab: 11585 genes x 64 = 741440 tokens
+[BidirectionalStage1DS] compact gene vocab: 11585 genes x 64 = 741440 tokens
+
+⚠️  Stage1 使用弱 rank signal + 1D RoPE
+
+🧬 初始化理解数据加载器...
+   模式分布: 100% 理解 [Gene->Text]
+[BidirectionalStage1DS] initialized:
+   - max_genes: 1200
+   - understanding_ratio: 1.0
+   - generation_ratio: 0.0
+   - Rank 0/1
+[BidirectionalStage1DS] compact gene vocab: 11585 genes x 64 = 741440 tokens
+
+============================================================
+[BidirectionalStage1DS] Distributed data allocation (global sample split + lazy keys)
+============================================================
+[BidirectionalStage1DS] Total cells(all ranks): 32,061,933
+[BidirectionalStage1DS] Per-rank target ~= 32,061,933 (+1 for first 0 ranks)
+[BidirectionalStage1DS] initialized:
+   - max_genes: 1200
+   - understanding_ratio: 1.0
+   - generation_ratio: 0.0
+   - Rank 0/1
+is-dcsn7qhxjihsjqes-devmachine-0:57156:57316 [1] NCCL INFO NVLS comm 0xd155320 headRank 1 nHeads 4 nvlsRanks 4 buffSize 1048576 nvlsPerRankSize 33554432 nvlsTotalSize 134217728
+is-dcsn7qhxjihsjqes-devmachine-0:57158:57317 [3] NCCL INFO NVLS comm 0xc68f370 headRank 3 nHeads 4 nvlsRanks 4 buffSize 1048576 nvlsPerRankSize 33554432 nvlsTotalSize 134217728
+[BidirectionalStage1DS] compact gene vocab: 11585 genes x 64 = 741440 tokens
+is-dcsn7qhxjihsjqes-devmachine-0:57157:57318 [2] NCCL INFO NVLS comm 0xcbca4b0 headRank 2 nHeads 4 nvlsRanks 4 buffSize 1048576 nvlsPerRankSize 33554432 nvlsTotalSize 134217728
+is-dcsn7qhxjihsjqes-devmachine-0:57155:57319 [0] NCCL INFO NVLS comm 0xc743e90 headRank 0 nHeads 4 nvlsRanks 4 buffSize 1048576 nvlsPerRankSize 33554432 nvlsTotalSize 134217728
+[BidirectionalStage1DS] Rank 0: cells=32,061,933, blocks=35[BidirectionalStage1DS] Rank 0: cells=32,061,933, blocks=35[BidirectionalStage1DS] Rank 0: cells=32,061,933, blocks=35[BidirectionalStage1DS] Rank 0: cells=32,061,933, blocks=35
+
+
+
+⚠️ disable_gene_position_ids=True: 已关闭 rank_signal_injector 训练与注入
+
+📊 参数组统计:
+   总参数量: 11,207,733,274 (11.21B)
+   可训练参数量: 3,009,834,265 (3009.83M)
+   冻结参数量: 8,197,899,009 (8.20B)
+   训练比例: 26.85%
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/mnt/c20250607/user/wanghaoran/zyh/scDataTest/train/train_stage1_bidirectional_rank_sin.py", line 597, in <module>
+[rank1]:     main()
+[rank1]:   File "/mnt/c20250607/user/wanghaoran/zyh/scDataTest/train/train_stage1_bidirectional_rank_sin.py", line 338, in main
+[rank1]:     model, optimizer, lr_scheduler, dataloader = accelerator.prepare(
+[rank1]:   File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/accelerator.py", line 1551, in prepare
+[rank1]:     result = self._prepare_deepspeed(*args)
+[rank1]:   File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/accelerator.py", line 2092, in _prepare_deepspeed
+[rank1]:     result = [
+[rank1]:   File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/accelerator.py", line 2093, in <listcomp>
+[rank1]:     self._prepare_one(obj, first_pass=True) if isinstance(obj, torch.utils.data.DataLoader) else obj
+[rank1]:   File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/accelerator.py", line 1400, in _prepare_one
+[rank1]:     return self.prepare_data_loader(obj, device_placement=device_placement)
+[rank1]:   File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/accelerator.py", line 2603, in prepare_data_loader
+[rank1]:     prepared_data_loader = prepare_data_loader(
+[rank1]:   File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/data_loader.py", line 1205, in prepare_data_loader
+[rank1]:     from datasets import IterableDataset as DatasetsIterableDataset
+[rank1]: ImportError: cannot import name 'IterableDataset' from 'datasets' (/mnt/c20250607/user/wanghaoran/zyh/scDataTest/datasets/__init__.py)
+[rank2]: Traceback (most recent call last):
+[rank2]:   File "/mnt/c20250607/user/wanghaoran/zyh/scDataTest/train/train_stage1_bidirectional_rank_sin.py", line 597, in <module>
+[rank2]:     main()
+[rank2]:   File "/mnt/c20250607/user/wanghaoran/zyh/scDataTest/train/train_stage1_bidirectional_rank_sin.py", line 338, in main
+[rank2]:     model, optimizer, lr_scheduler, dataloader = accelerator.prepare(
+[rank2]:   File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/accelerator.py", line 1551, in prepare
+[rank2]:     result = self._prepare_deepspeed(*args)
+[rank2]:   File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/accelerator.py", line 2092, in _prepare_deepspeed
+[rank2]:     result = [
+[rank2]:   File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/accelerator.py", line 2093, in <listcomp>
+[rank2]:     self._prepare_one(obj, first_pass=True) if isinstance(obj, torch.utils.data.DataLoader) else obj
+[rank2]:   File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/accelerator.py", line 1400, in _prepare_one
+[rank2]:     return self.prepare_data_loader(obj, device_placement=device_placement)
+[rank2]:   File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/accelerator.py", line 2603, in prepare_data_loader
+[rank2]:     prepared_data_loader = prepare_data_loader(
+[rank2]:   File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/data_loader.py", line 1205, in prepare_data_loader
+[rank2]:     from datasets import IterableDataset as DatasetsIterableDataset
+[rank2]: ImportError: cannot import name 'IterableDataset' from 'datasets' (/mnt/c20250607/user/wanghaoran/zyh/scDataTest/datasets/__init__.py)
+[rank3]: Traceback (most recent call last):
+[rank3]:   File "/mnt/c20250607/user/wanghaoran/zyh/scDataTest/train/train_stage1_bidirectional_rank_sin.py", line 597, in <module>
+[rank3]:     main()
+[rank3]:   File "/mnt/c20250607/user/wanghaoran/zyh/scDataTest/train/train_stage1_bidirectional_rank_sin.py", line 338, in main
+[rank3]:     model, optimizer, lr_scheduler, dataloader = accelerator.prepare(
+[rank3]:   File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/accelerator.py", line 1551, in prepare
+[rank3]:     result = self._prepare_deepspeed(*args)
+[rank3]:   File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/accelerator.py", line 2092, in _prepare_deepspeed
+[rank3]:     result = [
+[rank3]:   File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/accelerator.py", line 2093, in <listcomp>
+[rank3]:     self._prepare_one(obj, first_pass=True) if isinstance(obj, torch.utils.data.DataLoader) else obj
+[rank3]:   File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/accelerator.py", line 1400, in _prepare_one
+[rank3]:     return self.prepare_data_loader(obj, device_placement=device_placement)
+[rank3]:   File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/accelerator.py", line 2603, in prepare_data_loader
+[rank3]:     prepared_data_loader = prepare_data_loader(
+[rank3]:   File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/data_loader.py", line 1205, in prepare_data_loader
+[rank3]:     from datasets import IterableDataset as DatasetsIterableDataset
+[rank3]: ImportError: cannot import name 'IterableDataset' from 'datasets' (/mnt/c20250607/user/wanghaoran/zyh/scDataTest/datasets/__init__.py)
+is-dcsn7qhxjihsjqes-devmachine-0:57156:57335 [1] NCCL INFO misc/socket.cc:64 -> 3
+is-dcsn7qhxjihsjqes-devmachine-0:57156:57335 [1] NCCL INFO misc/socket.cc:81 -> 3
+is-dcsn7qhxjihsjqes-devmachine-0:57156:57335 [1] NCCL INFO misc/socket.cc:863 -> 3
+is-dcsn7qhxjihsjqes-devmachine-0:57157:57337 [2] NCCL INFO misc/socket.cc:64 -> 3
+is-dcsn7qhxjihsjqes-devmachine-0:57157:57337 [2] NCCL INFO misc/socket.cc:81 -> 3
+is-dcsn7qhxjihsjqes-devmachine-0:57157:57337 [2] NCCL INFO misc/socket.cc:863 -> 3
+is-dcsn7qhxjihsjqes-devmachine-0:57158:57339 [3] NCCL INFO misc/socket.cc:64 -> 3
+is-dcsn7qhxjihsjqes-devmachine-0:57158:57339 [3] NCCL INFO misc/socket.cc:81 -> 3
+is-dcsn7qhxjihsjqes-devmachine-0:57158:57339 [3] NCCL INFO misc/socket.cc:863 -> 3
+is-dcsn7qhxjihsjqes-devmachine-0:57156:57335 [1] NCCL INFO comm 0xd155320 rank 1 nranks 4 cudaDev 1 busId 9b000 - Abort COMPLETE
+is-dcsn7qhxjihsjqes-devmachine-0:57157:57337 [2] NCCL INFO comm 0xcbca4b0 rank 2 nranks 4 cudaDev 2 busId ab000 - Abort COMPLETE
+is-dcsn7qhxjihsjqes-devmachine-0:57158:57339 [3] NCCL INFO comm 0xc68f370 rank 3 nranks 4 cudaDev 3 busId bb000 - Abort COMPLETE
+swanlab: Tracking run with swanlab version 0.7.15
+swanlab: Run data will be saved locally in 
+/mnt/c20250607/user/wanghaoran/zyh/scDataTest/logs/swanlab/run-20260423_093317-4
+noa6m24g14f6lyn5wjmq
+swanlab: 👋 Hi yuhao_zheng,welcome to swanlab!
+swanlab: Syncing run stage1 to the cloud
+swanlab: 🏠 View project at 
+https://swanlab.cn/@yuhao_zheng/sc_showo_understanding_only
+swanlab: 🚀 View run at 
+https://swanlab.cn/@yuhao_zheng/sc_showo_understanding_only/runs/4noa6m24g14f6ly
+n5wjmq
+✅ SwanLab 初始化成功：sc_showo_understanding_only (exp: stage1)
+swanlab: Error happened while training
+swanlab: 🏠 View project at 
+https://swanlab.cn/@yuhao_zheng/sc_showo_understanding_only
+swanlab: 🚀 View run at 
+https://swanlab.cn/@yuhao_zheng/sc_showo_understanding_only/runs/4noa6m24g14f6ly
+n5wjmq
+W0423 09:33:20.029000 56993 site-packages/torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 57155 closing signal SIGTERM
+W0423 09:33:20.030000 56993 site-packages/torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 57157 closing signal SIGTERM
+W0423 09:33:20.031000 56993 site-packages/torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 57158 closing signal SIGTERM
+E0423 09:33:21.998000 56993 site-packages/torch/distributed/elastic/multiprocessing/api.py:984] failed (exitcode: 1) local_rank: 1 (pid: 57156) of binary: /mnt/c20250607/user/wanghaoran/envs/envs/zyh/bin/python3.10
+Traceback (most recent call last):
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/bin/accelerate", line 6, in <module>
+    sys.exit(main())
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/commands/accelerate_cli.py", line 50, in main
+    args.func(args)
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/commands/launch.py", line 1220, in launch_command
+    deepspeed_launcher(args)
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/commands/launch.py", line 906, in deepspeed_launcher
+    distrib_run.run(args)
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/torch/distributed/run.py", line 982, in run
+    elastic_launch(
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 170, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 317, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+/mnt/c20250607/user/wanghaoran/zyh/scDataTest/train/train_stage1_bidirectional_rank_sin.py FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2026-04-23_09:33:21
+  host      : is-dcsn7qhxjihsjqes-devmachine-0
+  rank      : 0 (local_rank: 0)
+  exitcode  : -15 (pid: 57155)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 57155
+[2]:
+  time      : 2026-04-23_09:33:21
+  host      : is-dcsn7qhxjihsjqes-devmachine-0
+  rank      : 2 (local_rank: 2)
+  exitcode  : 1 (pid: 57157)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[3]:
+  time      : 2026-04-23_09:33:21
+  host      : is-dcsn7qhxjihsjqes-devmachine-0
+  rank      : 3 (local_rank: 3)
+  exitcode  : 1 (pid: 57158)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-04-23_09:33:20
+  host      : is-dcsn7qhxjihsjqes-devmachine-0
+  rank      : 1 (local_rank: 1)
+  exitcode  : 1 (pid: 57156)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
