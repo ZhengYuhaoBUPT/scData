@@ -109,7 +109,7 @@
     },
     "scheduler": {
         "type": "linear_warmup_cosine_decay",
-        "warmup_ratio": 0.05,
+        "warmup_ratio": 0.02,
         "min_lr_ratio": 0.5
     },
     "lora": {
@@ -132,8 +132,8 @@
     },
     "logging": {
         "tool": "swanlab",
-        "project": "sc_showo_aligned_to_showo",
-        "experiment_name": "stage1_no_cls_rankloss_bucketpe",
+        "project": "sc_showo_understanding_only",
+        "experiment_name": "stage1",
         "log_interval": 5,
         "save_interval": 200,
         "tensorboard_dir": "./logs/tensorboard",
@@ -149,7 +149,7 @@
         "mm_gap_stage2_target": "stage2"
     },
     "checkpoint": {
-        "save_dir": "/mnt/c20250607_hs/wanghaoran/wanghaoran/ckpts_aligned_to_showo/stage1",
+        "save_dir": "/mnt/c20250607_hs/wanghaoran/wanghaoran/zyh/scshowo/stage1",
         "stage1_weights_path": null,
         "save_total_limit": 5,
         "resume_from": null,

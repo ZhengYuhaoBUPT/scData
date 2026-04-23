@@ -1,0 +1,220 @@
+W0423 09:23:44.183000 56306 site-packages/torch/distributed/run.py:852] 
+W0423 09:23:44.183000 56306 site-packages/torch/distributed/run.py:852] *****************************************
+W0423 09:23:44.183000 56306 site-packages/torch/distributed/run.py:852] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0423 09:23:44.183000 56306 site-packages/torch/distributed/run.py:852] *****************************************
+/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/utils/dataclasses.py:1301: UserWarning: DeepSpeed Zero3 Init flag is only applicable for ZeRO Stage 3. Setting it to False.
+  warnings.warn("DeepSpeed Zero3 Init flag is only applicable for ZeRO Stage 3. Setting it to False.")
+/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/utils/dataclasses.py:1301: UserWarning: DeepSpeed Zero3 Init flag is only applicable for ZeRO Stage 3. Setting it to False.
+  warnings.warn("DeepSpeed Zero3 Init flag is only applicable for ZeRO Stage 3. Setting it to False.")
+/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/utils/dataclasses.py:1301: UserWarning: DeepSpeed Zero3 Init flag is only applicable for ZeRO Stage 3. Setting it to False.
+  warnings.warn("DeepSpeed Zero3 Init flag is only applicable for ZeRO Stage 3. Setting it to False.")
+/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/utils/dataclasses.py:1301: UserWarning: DeepSpeed Zero3 Init flag is only applicable for ZeRO Stage 3. Setting it to False.
+  warnings.warn("DeepSpeed Zero3 Init flag is only applicable for ZeRO Stage 3. Setting it to False.")
+/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/utils/dataclasses.py:1301: UserWarning: DeepSpeed Zero3 Init flag is only applicable for ZeRO Stage 3. Setting it to False.
+  warnings.warn("DeepSpeed Zero3 Init flag is only applicable for ZeRO Stage 3. Setting it to False.")
+/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/utils/dataclasses.py:1301: UserWarning: DeepSpeed Zero3 Init flag is only applicable for ZeRO Stage 3. Setting it to False.
+  warnings.warn("DeepSpeed Zero3 Init flag is only applicable for ZeRO Stage 3. Setting it to False.")
+/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/utils/dataclasses.py:1301: UserWarning: DeepSpeed Zero3 Init flag is only applicable for ZeRO Stage 3. Setting it to False.
+  warnings.warn("DeepSpeed Zero3 Init flag is only applicable for ZeRO Stage 3. Setting it to False.")
+/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/utils/dataclasses.py:1301: UserWarning: DeepSpeed Zero3 Init flag is only applicable for ZeRO Stage 3. Setting it to False.
+  warnings.warn("DeepSpeed Zero3 Init flag is only applicable for ZeRO Stage 3. Setting it to False.")
+Traceback (most recent call last):
+  File "/mnt/c20250607/user/wanghaoran/zyh/scDataTest/train/train_stage1_bidirectional_rank_sin.py", line 597, in <module>
+    main()
+  File "/mnt/c20250607/user/wanghaoran/zyh/scDataTest/train/train_stage1_bidirectional_rank_sin.py", line 226, in main
+    accelerator = Accelerator()
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/accelerator.py", line 461, in __init__
+    self.state = AcceleratorState(
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/state.py", line 912, in __init__
+    PartialState(cpu, **kwargs)
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/state.py", line 216, in __init__
+    dist.init_distributed(dist_backend=self.backend, auto_mpi_discovery=False, **kwargs)
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/deepspeed/comm/comm.py", line 854, in init_distributed
+Traceback (most recent call last):
+  File "/mnt/c20250607/user/wanghaoran/zyh/scDataTest/train/train_stage1_bidirectional_rank_sin.py", line 597, in <module>
+    cdb = TorchBackend(dist_backend, timeout, init_method, rank, world_size)
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/deepspeed/comm/torch.py", line 120, in __init__
+    main()
+  File "/mnt/c20250607/user/wanghaoran/zyh/scDataTest/train/train_stage1_bidirectional_rank_sin.py", line 226, in main
+    self.init_process_group(backend, timeout, init_method, rank, world_size)
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/deepspeed/comm/torch.py", line 160, in init_process_group
+    accelerator = Accelerator()
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/accelerator.py", line 461, in __init__
+    torch.distributed.init_process_group(backend, **kwargs)
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/torch/distributed/c10d_logger.py", line 83, in wrapper
+Traceback (most recent call last):
+  File "/mnt/c20250607/user/wanghaoran/zyh/scDataTest/train/train_stage1_bidirectional_rank_sin.py", line 597, in <module>
+    self.state = AcceleratorState(
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/state.py", line 912, in __init__
+    return func(*args, **kwargs)
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/torch/distributed/c10d_logger.py", line 97, in wrapper
+    main()
+  File "/mnt/c20250607/user/wanghaoran/zyh/scDataTest/train/train_stage1_bidirectional_rank_sin.py", line 226, in main
+    func_return = func(*args, **kwargs)
+      File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py", line 1738, in init_process_group
+PartialState(cpu, **kwargs)
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/state.py", line 216, in __init__
+    accelerator = Accelerator()
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/accelerator.py", line 461, in __init__
+    dist.init_distributed(dist_backend=self.backend, auto_mpi_discovery=False, **kwargs)
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/deepspeed/comm/comm.py", line 854, in init_distributed
+    self.state = AcceleratorState(
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/state.py", line 912, in __init__
+    raise ValueError(
+ValueError: device_id cuda:5 is out of range. Please use a device index less than the number of accelerators available: 4.
+    cdb = TorchBackend(dist_backend, timeout, init_method, rank, world_size)
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/deepspeed/comm/torch.py", line 120, in __init__
+    PartialState(cpu, **kwargs)
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/state.py", line 216, in __init__
+        Traceback (most recent call last):
+self.init_process_group(backend, timeout, init_method, rank, world_size)dist.init_distributed(dist_backend=self.backend, auto_mpi_discovery=False, **kwargs)
+
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/deepspeed/comm/torch.py", line 160, in init_process_group
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/deepspeed/comm/comm.py", line 854, in init_distributed
+  File "/mnt/c20250607/user/wanghaoran/zyh/scDataTest/train/train_stage1_bidirectional_rank_sin.py", line 597, in <module>
+    main()
+  File "/mnt/c20250607/user/wanghaoran/zyh/scDataTest/train/train_stage1_bidirectional_rank_sin.py", line 226, in main
+    torch.distributed.init_process_group(backend, **kwargs)
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/torch/distributed/c10d_logger.py", line 83, in wrapper
+    cdb = TorchBackend(dist_backend, timeout, init_method, rank, world_size)
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/deepspeed/comm/torch.py", line 120, in __init__
+            return func(*args, **kwargs)accelerator = Accelerator()self.init_process_group(backend, timeout, init_method, rank, world_size)
+
+
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/torch/distributed/c10d_logger.py", line 97, in wrapper
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/accelerator.py", line 461, in __init__
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/deepspeed/comm/torch.py", line 160, in init_process_group
+            torch.distributed.init_process_group(backend, **kwargs)func_return = func(*args, **kwargs)self.state = AcceleratorState(
+
+
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/torch/distributed/c10d_logger.py", line 83, in wrapper
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py", line 1738, in init_process_group
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/state.py", line 912, in __init__
+        return func(*args, **kwargs)PartialState(cpu, **kwargs)
+
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/torch/distributed/c10d_logger.py", line 97, in wrapper
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/state.py", line 216, in __init__
+    raise ValueError(
+ValueError: device_id cuda:4 is out of range. Please use a device index less than the number of accelerators available: 4.
+        func_return = func(*args, **kwargs)dist.init_distributed(dist_backend=self.backend, auto_mpi_discovery=False, **kwargs)
+
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py", line 1738, in init_process_group
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/deepspeed/comm/comm.py", line 854, in init_distributed
+    cdb = TorchBackend(dist_backend, timeout, init_method, rank, world_size)
+      File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/deepspeed/comm/torch.py", line 120, in __init__
+raise ValueError(
+ValueError: device_id cuda:6 is out of range. Please use a device index less than the number of accelerators available: 4.
+    self.init_process_group(backend, timeout, init_method, rank, world_size)
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/deepspeed/comm/torch.py", line 160, in init_process_group
+    torch.distributed.init_process_group(backend, **kwargs)
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/torch/distributed/c10d_logger.py", line 83, in wrapper
+    return func(*args, **kwargs)
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/torch/distributed/c10d_logger.py", line 97, in wrapper
+    func_return = func(*args, **kwargs)
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py", line 1738, in init_process_group
+    raise ValueError(
+ValueError: device_id cuda:7 is out of range. Please use a device index less than the number of accelerators available: 4.
+is-dcsn7qhxjihsjqes-devmachine-0:56468:56468 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:56468:56468 [0] NCCL INFO Bootstrap: Using eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:56468:56468 [0] NCCL INFO cudaDriverVersion 12080
+is-dcsn7qhxjihsjqes-devmachine-0:56468:56468 [0] NCCL INFO NCCL version 2.27.5+cuda12.9
+is-dcsn7qhxjihsjqes-devmachine-0:56470:56470 [2] NCCL INFO cudaDriverVersion 12080
+is-dcsn7qhxjihsjqes-devmachine-0:56470:56470 [2] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:56470:56470 [2] NCCL INFO Bootstrap: Using eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:56470:56470 [2] NCCL INFO NCCL version 2.27.5+cuda12.9
+is-dcsn7qhxjihsjqes-devmachine-0:56469:56469 [1] NCCL INFO cudaDriverVersion 12080
+is-dcsn7qhxjihsjqes-devmachine-0:56469:56469 [1] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:56469:56469 [1] NCCL INFO Bootstrap: Using eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:56469:56469 [1] NCCL INFO NCCL version 2.27.5+cuda12.9
+is-dcsn7qhxjihsjqes-devmachine-0:56470:56470 [2] NCCL INFO Comm config Blocking set to 1
+is-dcsn7qhxjihsjqes-devmachine-0:56468:56468 [0] NCCL INFO Comm config Blocking set to 1
+is-dcsn7qhxjihsjqes-devmachine-0:56469:56469 [1] NCCL INFO Comm config Blocking set to 1
+is-dcsn7qhxjihsjqes-devmachine-0:56471:56471 [3] NCCL INFO cudaDriverVersion 12080
+is-dcsn7qhxjihsjqes-devmachine-0:56471:56471 [3] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:56471:56471 [3] NCCL INFO Bootstrap: Using eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:56471:56471 [3] NCCL INFO NCCL version 2.27.5+cuda12.9
+is-dcsn7qhxjihsjqes-devmachine-0:56471:56471 [3] NCCL INFO Comm config Blocking set to 1
+W0423 09:24:00.975000 56306 site-packages/torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 56468 closing signal SIGTERM
+W0423 09:24:00.977000 56306 site-packages/torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 56469 closing signal SIGTERM
+W0423 09:24:00.978000 56306 site-packages/torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 56470 closing signal SIGTERM
+W0423 09:24:00.978000 56306 site-packages/torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 56471 closing signal SIGTERM
+E0423 09:24:01.543000 56306 site-packages/torch/distributed/elastic/multiprocessing/api.py:984] failed (exitcode: 1) local_rank: 4 (pid: 56472) of binary: /mnt/c20250607/user/wanghaoran/envs/envs/zyh/bin/python3.10
+Traceback (most recent call last):
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/bin/accelerate", line 6, in <module>
+    sys.exit(main())
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/commands/accelerate_cli.py", line 50, in main
+    args.func(args)
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/commands/launch.py", line 1220, in launch_command
+    deepspeed_launcher(args)
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/commands/launch.py", line 906, in deepspeed_launcher
+    distrib_run.run(args)
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/torch/distributed/run.py", line 982, in run
+    elastic_launch(
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 170, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 317, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+/mnt/c20250607/user/wanghaoran/zyh/scDataTest/train/train_stage1_bidirectional_rank_sin.py FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2026-04-23_09:24:00
+  host      : is-dcsn7qhxjihsjqes-devmachine-0
+  rank      : 5 (local_rank: 5)
+  exitcode  : 1 (pid: 56473)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[2]:
+  time      : 2026-04-23_09:24:00
+  host      : is-dcsn7qhxjihsjqes-devmachine-0
+  rank      : 6 (local_rank: 6)
+  exitcode  : 1 (pid: 56474)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[3]:
+  time      : 2026-04-23_09:24:00
+  host      : is-dcsn7qhxjihsjqes-devmachine-0
+  rank      : 7 (local_rank: 7)
+  exitcode  : 1 (pid: 56475)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+[4]:
+  time      : 2026-04-23_09:24:01
+  host      : is-dcsn7qhxjihsjqes-devmachine-0
+  rank      : 0 (local_rank: 0)
+  exitcode  : -15 (pid: 56468)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 56468
+[5]:
+  time      : 2026-04-23_09:24:01
+  host      : is-dcsn7qhxjihsjqes-devmachine-0
+  rank      : 1 (local_rank: 1)
+  exitcode  : -15 (pid: 56469)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 56469
+[6]:
+  time      : 2026-04-23_09:24:01
+  host      : is-dcsn7qhxjihsjqes-devmachine-0
+  rank      : 2 (local_rank: 2)
+  exitcode  : -15 (pid: 56470)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 56470
+[7]:
+  time      : 2026-04-23_09:24:01
+  host      : is-dcsn7qhxjihsjqes-devmachine-0
+  rank      : 3 (local_rank: 3)
+  exitcode  : -15 (pid: 56471)
+  error_file: <N/A>
+  traceback : Signal 15 (SIGTERM) received by PID 56471
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-04-23_09:24:00
+  host      : is-dcsn7qhxjihsjqes-devmachine-0
+  rank      : 4 (local_rank: 4)
+  exitcode  : 1 (pid: 56472)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

@@ -1,0 +1,32 @@
+compute_environment: LOCAL_MACHINE
+deepspeed_config:
+  deepspeed_multinode_launcher: standard
+  gradient_accumulation_steps: 30
+  # 🚀 ZeRO-2 优化：A100 80GB 显存足够，关闭 CPU Offload 以获取最高训练速度
+  offload_optimizer_device: none
+  offload_param_device: none
+  zero3_init_flag: false
+  zero_stage: 2
+  steps_per_print: 5
+  
+  # ZeRO-2 不需要这些 ZeRO-3 专用的权重收集配置
+  # zero3_save_16bit_model: false 
+  
+  timeout_minutes: 60
+  
+  # ZeRO-2 的通信逻辑更简单，不需要关闭 overlap_comm
+  overlap_comm: true
+  
+distributed_type: DEEPSPEED
+downcast_bf16: 'no'
+machine_rank: 0
+main_training_function: main
+mixed_precision: bf16
+num_machines: 1
+num_processes: 4
+rdzv_backend: static
+same_network: true
+tpu_env: []
+tpu_use_cluster: false
+tpu_use_sudo: false
+use_cpu: false
