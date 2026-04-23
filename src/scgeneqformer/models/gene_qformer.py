@@ -8,15 +8,16 @@ import torch.nn as nn
 
 
 class CrossAttentionBlock(nn.Module):
-    def __init__(self, hidden_dim: int, num_heads: int, dropout: float = 0.1):
+    def __init__(self, hidden_dim: int, num_heads: int, dropout: float = 0.1, ffn_mult: int = 4):
         super().__init__()
+        ffn_dim = hidden_dim * ffn_mult
         self.attn = nn.MultiheadAttention(hidden_dim, num_heads, batch_first=True, dropout=dropout)
         self.norm1 = nn.LayerNorm(hidden_dim)
         self.ffn = nn.Sequential(
-            nn.Linear(hidden_dim, hidden_dim * 4),
+            nn.Linear(hidden_dim, ffn_dim),
             nn.GELU(),
             nn.Dropout(dropout),
-            nn.Linear(hidden_dim * 4, hidden_dim),
+            nn.Linear(ffn_dim, hidden_dim),
         )
         self.norm2 = nn.LayerNorm(hidden_dim)
 
@@ -41,11 +42,21 @@ class GeneExpressionConditioner(nn.Module):
 
 
 class GeneQFormerModel(nn.Module):
-    def __init__(self, hidden_dim: int, num_queries: int, num_heads: int, num_layers: int, num_genes: int):
+    def __init__(
+        self,
+        hidden_dim: int,
+        num_queries: int,
+        num_heads: int,
+        num_layers: int,
+        num_genes: int,
+        ffn_mult: int = 4,
+    ):
         super().__init__()
         self.conditioner = GeneExpressionConditioner(hidden_dim)
         self.query_tokens = nn.Parameter(torch.randn(num_queries, hidden_dim) * 0.02)
-        self.blocks = nn.ModuleList([CrossAttentionBlock(hidden_dim, num_heads) for _ in range(num_layers)])
+        self.blocks = nn.ModuleList([
+            CrossAttentionBlock(hidden_dim, num_heads, ffn_mult=ffn_mult) for _ in range(num_layers)
+        ])
         self.reconstruction_head = nn.Sequential(
             nn.Linear(num_queries * hidden_dim, hidden_dim * 2),
             nn.GELU(),
@@ -62,7 +73,16 @@ class GeneQFormerModel(nn.Module):
 
 
 class PathwayCellFeatureQFormer(nn.Module):
-    def __init__(self, hidden_dim: int, num_queries: int, num_heads: int, num_layers: int, out_dim: int, use_reconstruction_head: bool = True):
+    def __init__(
+        self,
+        hidden_dim: int,
+        num_queries: int,
+        num_heads: int,
+        num_layers: int,
+        out_dim: int,
+        use_reconstruction_head: bool = True,
+        ffn_mult: int = 4,
+    ):
         super().__init__()
         self.use_reconstruction_head = use_reconstruction_head
         self.query_residual = nn.Parameter(torch.randn(num_queries, hidden_dim) * 0.02)
@@ -77,7 +97,9 @@ class PathwayCellFeatureQFormer(nn.Module):
             nn.Linear(hidden_dim, hidden_dim),
             nn.Sigmoid(),
         )
-        self.blocks = nn.ModuleList([CrossAttentionBlock(hidden_dim, num_heads) for _ in range(num_layers)])
+        self.blocks = nn.ModuleList([
+            CrossAttentionBlock(hidden_dim, num_heads, ffn_mult=ffn_mult) for _ in range(num_layers)
+        ])
         if self.use_reconstruction_head:
             self.reconstruction_head = nn.Sequential(
                 nn.Linear(num_queries * hidden_dim, hidden_dim * 2),
@@ -109,7 +131,17 @@ class PathwayCellFeatureQFormer(nn.Module):
 
 
 class RankedGeneCellFeatureQFormer(nn.Module):
-    def __init__(self, hidden_dim: int, num_queries: int, num_heads: int, num_layers: int, out_dim: int, top_rank_genes: int):
+    def __init__(
+        self,
+        hidden_dim: int,
+        num_queries: int,
+        num_heads: int,
+        num_layers: int,
+        out_dim: int,
+        top_rank_genes: int,
+        use_reconstruction_head: bool = True,
+        ffn_mult: int = 4,
+    ):
         super().__init__()
         self.top_rank_genes = top_rank_genes
         self.rank_embedding = nn.Embedding(top_rank_genes, hidden_dim)
@@ -131,7 +163,9 @@ class RankedGeneCellFeatureQFormer(nn.Module):
         )
         self.use_reconstruction_head = use_reconstruction_head
         self.query_residual = nn.Parameter(torch.randn(num_queries, hidden_dim) * 0.02)
-        self.blocks = nn.ModuleList([CrossAttentionBlock(hidden_dim, num_heads) for _ in range(num_layers)])
+        self.blocks = nn.ModuleList([
+            CrossAttentionBlock(hidden_dim, num_heads, ffn_mult=ffn_mult) for _ in range(num_layers)
+        ])
         if self.use_reconstruction_head:
             self.reconstruction_head = nn.Sequential(
                 nn.Linear(num_queries * hidden_dim, hidden_dim * 2),

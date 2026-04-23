@@ -8,13 +8,13 @@
       "/mnt/c20250607/user/wanghaoran/zyh/datasets/sft_conversations/pretrain_texts.json",
       "/mnt/c20250607/user/wanghaoran/zyh/datasets/sft_conversations/finetune_conversations.json"
     ],
-    "pair_feature_dir": null,
+    "pair_feature_dir": "/mnt/c20250607/user/wanghaoran/zxy/data_and_features/zxy/features/okrcell_features",
     "pair_lmdb_base_dir": null
   },
   "dataset": {
     "max_seq_len": 1500,
     "cell_feature_dim": 768,
-    "cell_feature_tokens": 50,
+    "cell_feature_tokens": 80,
     "gene_input_tokens": 400,
     "gene_rank_order": "desc"
   },
@@ -22,16 +22,17 @@
     "llm_model_path": "/mnt/c20250607/user/wanghaoran/zxy/models/models/qwen2.5-7b-instruct",
     "local_files_only": true,
     "use_pathway_cell_qformer": true,
-    "qformer_num_heads": 8,
-    "qformer_num_layers": 2,
+    "qformer_num_heads": 16,
+    "qformer_num_layers": 5,
     "train_pathway_cell_qformer": true,
     "pathway_qformer_ckpt_path": null,
     "pathway_json_path": "/mnt/c20250607/user/wanghaoran/zyh/datasets/pathway/pathway_anchor_genes.json",
     "static_gene_embedding_ckpt_path": "/mnt/c20250607/user/wanghaoran/zyh/scData/outputs/static_gene_embeddings/okrcell_top100_static_gene_embeddings.pt",
-    "init_pathway_embeddings_from_static_genes": false
+    "init_pathway_embeddings_from_static_genes": false,
+    "qformer_ffn_mult": 16
   },
   "training": {
-    "batch_size": 48,
+    "batch_size": 32,
     "num_workers": 8,
     "gradient_accumulation_steps": 8,
     "pin_memory": false,
@@ -47,13 +48,13 @@
       ],
       "stage2_json_paths": [
         "/mnt/c20250607/user/wanghaoran/zyh/datasets/sft_conversations/finetune_conversations.json",
-        "/mnt/c20250607/user/wanghaoran/zyh/datasets/sft_conversations/tabula_sapiens_conversations.json"
+        "/mnt/c20250607/user/wanghaoran/zxy/data_and_features/zxy/sft_conversations/conversations/tabula_sapiens_conversations.json"
       ],
       "stage1_epochs": 1,
       "stage1_lr": 0.0001,
       "stage1_max_steps": 50000,
       "stage1_resume_from": null,
-      "stage2_init_from_stage1": "/mnt/c20250607/user/wanghaoran/zyh/scData/outputs/cw_ablation_stage1/checkpoint-step-1600",
+      "stage2_init_from_stage1": "/mnt/c20250607/user/wanghaoran/zyh/scData/outputs/cw_ablation_stage1/checkpoint-step-845",
       "stage2_use_lora": true,
       "lora_r": 64,
       "lora_alpha": 128,

@@ -31,6 +31,7 @@ class CellTransformerForSFTCW(nn.Module):
         self.use_pathway_cell_qformer = bool(model_cfg.get("use_pathway_cell_qformer", True))
         self.qformer_num_heads = int(model_cfg.get("qformer_num_heads", 8))
         self.qformer_num_layers = int(model_cfg.get("qformer_num_layers", 2))
+        self.qformer_ffn_mult = int(model_cfg.get("qformer_ffn_mult", 4))
         self.train_pathway_cell_qformer = bool(model_cfg.get("train_pathway_cell_qformer", True))
         self.pathway_qformer_ckpt_path = model_cfg.get("pathway_qformer_ckpt_path")
         self.pathway_json_path = model_cfg.get("pathway_json_path", str(PROJECT_ROOT / "datasets/pathway/pathway_anchor_genes.json"))
@@ -58,6 +59,7 @@ class CellTransformerForSFTCW(nn.Module):
                 num_layers=self.qformer_num_layers,
                 out_dim=self.cell_feature_dim,
                 use_reconstruction_head=False,
+                ffn_mult=self.qformer_ffn_mult,
             )
             self.pathway_embeddings = nn.Parameter(torch.randn(self.cell_feature_tokens, self.cell_feature_dim) * 0.02)
             self._maybe_init_pathway_embeddings_from_static_genes()
