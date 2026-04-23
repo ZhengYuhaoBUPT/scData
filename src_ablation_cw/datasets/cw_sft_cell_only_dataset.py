@@ -89,7 +89,11 @@ class CWSFTCellOnlyDataset(Dataset):
         if is_main:
             print(f"✅ Unique cell ids in QA map: {len(self.qa_map):,}")
 
-        all_cell_ids = sorted(self.qa_map.keys())
+        all_cell_ids_raw = sorted(self.qa_map.keys())
+        all_cell_ids = [cid for cid in all_cell_ids_raw if self.registry.has_cell(cid)]
+        dropped_cell_ids = len(all_cell_ids_raw) - len(all_cell_ids)
+        if is_main and dropped_cell_ids > 0:
+            print(f"[CWSFTCellOnlyDataset] dropped {dropped_cell_ids:,} cell ids not found in gene_h5ad_paths")
         total_cells_all_files = len(all_cell_ids)
         usable_samples = (total_cells_all_files // self.num_replicas) * self.num_replicas
         cells_per_rank = usable_samples // self.num_replicas if self.num_replicas > 0 else total_cells_all_files

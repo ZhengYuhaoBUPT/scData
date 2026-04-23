@@ -17,13 +17,12 @@ import tempfile
 import time
 from pathlib import Path
 
-import h5py
 import lmdb
 import numpy as np
 import torch
 from accelerate import Accelerator
 from torch.optim import AdamW
-from torch.utils.data import ConcatDataset, DataLoader
+from torch.utils.data import DataLoader
 from transformers import AutoTokenizer
 
 project_root = Path(__file__).resolve().parents[2]
@@ -34,7 +33,7 @@ from src_ablation_cw.datasets.metadata_formatter import MetadataFormatter
 from src_ablation_cw.datasets.cw_sft_cell_only_dataset import CWSFTCellOnlyDataset, cw_cell_only_collate
 from src_ablation_cw.models.modeling_cell_transformer_for_sft_cw import CellTransformerForSFTCW
 from src_ablation_cw.train.common import WandbLogger, ensure_dir, load_config, load_state_pt, resolve_resume_path, save_state_pt
-from src_ablation_cw.train.pair_data_utils import build_optional_pair_dataset
+from src_ablation_cw.train.pair_data_utils import resolve_pair_h5ad_paths
 
 
 try:
@@ -109,56 +108,89 @@ def get_stage2_source_paths(config):
     return pretrain_paths, finetune_paths
 
 
+def _resolve_lmdb_path(h5ad_path: str, lmdb_base_dir: str | None) -> str | None:
+    h5_path = Path(h5ad_path)
+    candidates = []
+    if lmdb_base_dir:
+        candidates.append(Path(lmdb_base_dir) / f"{h5_path.stem}.db")
+    candidates.append(h5_path.with_suffix(".db"))
+    candidates.append(h5_path.parent / f"{h5_path.stem}.db")
+    for candidate in candidates:
+        if candidate.exists():
+            return str(candidate)
+    return None
+
+
+def _clean_obs_metadata(obs_row: dict) -> dict:
+    metadata = {}
+    ignore_keys = {"gene_id", "lmdb_key", "_index"}
+    for k, v in obs_row.items():
+        if k in ignore_keys or v is None:
+            continue
+        if isinstance(v, float) and np.isnan(v):
+            continue
+        text = str(v).strip()
+        if not text or text.lower() in {"nan", "none", "unknown"}:
+            continue
+        metadata[k] = v
+    return metadata
+
+
+def _close_adata(adata) -> None:
+    file_obj = getattr(adata, "file", None)
+    if file_obj is not None:
+        try:
+            file_obj.close()
+        except Exception:
+            pass
+
+
 def build_caption_converted_json(
-    feature_dir: str,
-    lmdb_base_dir: str,
+    h5ad_paths,
+    lmdb_base_dir: str | None,
     num_celltype_samples: int,
     num_meta_samples: int,
     seed: int,
     rank: int,
 ) -> str:
-    feature_dir = Path(feature_dir)
-    lmdb_base_dir = Path(lmdb_base_dir)
+    """Convert paired h5ad/lmdb metadata to temporary ChatML-style conversation JSON.
 
-    h5ad_files = sorted(feature_dir.glob("*.h5ad"))
-    all_cells = []
+    The output ids use obs['cell_id'] when present, otherwise obs index. This keeps the
+    generated conversations compatible with ExpressionH5ADRegistry/gene_h5ad_paths.
+    """
+    import anndata as ad
 
-    for h5_path in h5ad_files:
-        file_name = h5_path.stem
-        lmdb_path = lmdb_base_dir / f"{file_name}.db"
-        if not lmdb_path.exists():
-            continue
+    file_infos = []
+    total_cells = 0
+    for h5ad_path in [str(p) for p in h5ad_paths if p]:
         try:
-            with h5py.File(h5_path, "r") as f:
-                n_cells = f["X"].shape[0]
-                try:
-                    keys_raw = f["obs"]["lmdb_key"][:]
-                    if hasattr(keys_raw[0], "decode"):
-                        lmdb_keys = [k.decode("utf-8") for k in keys_raw]
-                    else:
-                        lmdb_keys = [str(k) for k in keys_raw]
-                except Exception:
-                    lmdb_keys = [str(i) for i in range(n_cells)]
+            adata = ad.read_h5ad(h5ad_path, backed="r")
+            n_cells = int(adata.n_obs)
+            _close_adata(adata)
         except Exception:
             continue
+        lmdb_path = _resolve_lmdb_path(h5ad_path, lmdb_base_dir)
+        file_infos.append({
+            "h5ad_path": h5ad_path,
+            "lmdb_path": lmdb_path,
+            "global_start": total_cells,
+            "global_end": total_cells + n_cells,
+        })
+        total_cells += n_cells
 
-        for local_idx, key in enumerate(lmdb_keys):
-            all_cells.append((str(h5_path), str(lmdb_path), local_idx, key))
-
-    total_available = len(all_cells)
-    num_total = num_celltype_samples + num_meta_samples
-    if total_available == 0:
+    num_total = int(num_celltype_samples) + int(num_meta_samples)
+    if total_cells == 0 or num_total <= 0:
         out = Path(tempfile.gettempdir()) / f"cw_stage2_caption_empty_rank{rank}.json"
         with open(out, "w") as f:
             json.dump([], f)
         return str(out)
 
-    num_total = min(num_total, total_available)
-    actual_celltype = min(num_celltype_samples, num_total)
+    num_total = min(num_total, total_cells)
+    actual_celltype = min(int(num_celltype_samples), num_total)
     actual_meta = num_total - actual_celltype
 
     rnd = random.Random(int(seed) + rank)
-    sampled_cells = rnd.sample(all_cells, num_total)
+    sampled_global = sorted(rnd.sample(range(total_cells), num_total))
 
     formatter = MetadataFormatter()
     lmdb_env_cache = {}
@@ -171,27 +203,51 @@ def build_caption_converted_json(
         return lmdb_env_cache[lmdb_path]
 
     results = []
-    for idx, (h5_path, lmdb_path, local_idx, key) in enumerate(sampled_cells):
-        env = _get_env(lmdb_path)
-        metadata = {}
-        with env.begin(write=False) as txn:
-            sample_data = txn.get(str(key).encode())
-            if sample_data:
-                try:
-                    metadata = json.loads(sample_data.decode())
-                except Exception:
-                    pass
+    sample_idx = 0
+    for info in file_infos:
+        picked = [
+            gidx - info["global_start"]
+            for gidx in sampled_global
+            if info["global_start"] <= gidx < info["global_end"]
+        ]
+        if not picked:
+            continue
 
-        force_mode = "celltype_qa" if idx < actual_celltype else "meta"
-        q, a = formatter.format(metadata, force_mode=force_mode)
+        adata = ad.read_h5ad(info["h5ad_path"], backed="r")
+        try:
+            obs_df = adata.obs.iloc[np.asarray(picked, dtype=np.int64)]
+            obs_records = obs_df.to_dict("records")
+            obs_indices = [str(x) for x in obs_df.index.tolist()]
+        finally:
+            _close_adata(adata)
 
-        results.append({
-            "id": str(key),
-            "conversations": [
-                {"from": "human", "value": q},
-                {"from": "gpt", "value": a},
-            ],
-        })
+        for local_pos, obs_row in enumerate(obs_records):
+            cell_id = str(obs_row.get("cell_id", obs_indices[local_pos])).strip()
+            lmdb_key = str(obs_row.get("lmdb_key", cell_id)).strip()
+            metadata = _clean_obs_metadata(obs_row)
+
+            lmdb_path = info.get("lmdb_path")
+            if lmdb_path and lmdb_key:
+                env = _get_env(lmdb_path)
+                with env.begin(write=False) as txn:
+                    sample_data = txn.get(lmdb_key.encode())
+                    if sample_data:
+                        try:
+                            lmdb_metadata = json.loads(sample_data.decode())
+                            metadata = {**metadata, **lmdb_metadata}
+                        except Exception:
+                            pass
+
+            force_mode = "celltype_qa" if sample_idx < actual_celltype else "meta"
+            q, a = formatter.format(metadata, force_mode=force_mode)
+            results.append({
+                "id": cell_id,
+                "conversations": [
+                    {"from": "human", "value": q},
+                    {"from": "gpt", "value": a},
+                ],
+            })
+            sample_idx += 1
 
     out = Path(tempfile.gettempdir()) / f"cw_stage2_caption_rank{rank}.json"
     with open(out, "w", encoding="utf-8") as f:
@@ -318,8 +374,32 @@ def main():
     mix_seed = int(cw_cfg.get("stage2_mix_seed", seed))
 
     caption_json_path = None
-    if accelerator.is_main_process:
-        print("[Stage2-CW] Building conversation dataset first; paired H5AD/LMDB data will be concatenated if configured.")
+    use_pair_caption = bool(cw_cfg.get("stage2_use_pair_caption", True))
+    if use_pair_caption:
+        pair_h5ad_paths = resolve_pair_h5ad_paths(config)
+        pair_lmdb_dir = data_cfg.get("pair_lmdb_base_dir") or data_cfg.get("lmdb_base_dir")
+        num_caption_samples = int(cw_cfg.get("num_caption_samples", 20000))
+        caption_celltype_ratio = float(cw_cfg.get("caption_celltype_ratio", 0.65))
+        if pair_h5ad_paths:
+            num_celltype = int(num_caption_samples * caption_celltype_ratio)
+            num_meta = num_caption_samples - num_celltype
+            caption_json_path = build_caption_converted_json(
+                h5ad_paths=pair_h5ad_paths,
+                lmdb_base_dir=pair_lmdb_dir,
+                num_celltype_samples=num_celltype,
+                num_meta_samples=num_meta,
+                seed=int(cw_cfg.get("stage2_caption_seed", mix_seed)),
+                rank=accelerator.process_index,
+            )
+            if accelerator.is_main_process:
+                print(
+                    f"[Stage2-CW] generated caption JSON: {caption_json_path} "
+                    f"({num_celltype} celltype + {num_meta} meta)"
+                )
+        elif accelerator.is_main_process:
+            print("[Stage2-CW] Pair h5ad paths not configured; using pretrain+finetune only.")
+    elif accelerator.is_main_process:
+        print("[Stage2-CW] stage2_use_pair_caption=false; using pretrain+finetune only.")
 
     mixed_json_path = build_stage2_mixed_json(
         pretrain_paths=pretrain_paths,
@@ -347,26 +427,10 @@ def main():
         append_image_tag=bool(cw_cfg.get("append_image_tag", True)),
     )
 
-    pair_dataset = build_optional_pair_dataset(
-        config=config,
-        text_tokenizer=tokenizer,
-        special_tokens_ids=SPECIAL_TOKENS_IDS,
-        accelerator=accelerator,
-        data_type_tag="stage2_pair",
-        max_samples=int(cw_cfg.get("stage2_pair_max_samples", 0)),
-        sample_seed=seed,
-    )
-
-    datasets = [dialog_dataset]
-    if pair_dataset is not None:
-        datasets.append(pair_dataset)
-        dataset = ConcatDataset(datasets)
-    else:
-        dataset = dialog_dataset
+    dataset = dialog_dataset
 
     if accelerator.is_main_process:
-        pair_len = 0 if pair_dataset is None else len(pair_dataset)
-        print(f"[Stage2-CW] dataset_mix dialog={len(dialog_dataset)} pair={pair_len} total={len(dataset)}")
+        print(f"[Stage2-CW] dataset_mix mixed_dialog={len(dialog_dataset)} total={len(dataset)}")
 
     dataloader = DataLoader(
         dataset,

@@ -137,6 +137,9 @@ class ExpressionH5ADRegistry:
         out[: picked.shape[0]] = picked
         return out
 
+    def has_cell(self, cell_id: str) -> bool:
+        return str(cell_id) in self._cell_to_loc
+
     def get_gene_tokens(self, cell_id: str) -> torch.Tensor:
         loc = self._cell_to_loc.get(str(cell_id))
         if loc is None:

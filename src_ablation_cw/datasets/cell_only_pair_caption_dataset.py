@@ -15,10 +15,7 @@ import torch
 import torch.distributed as dist
 from torch.utils.data import Dataset
 
-from src_ablation_cw.datasets.gene_token_utils import (
-    build_gene_sequence_from_rank,
-    load_static_gene_bundle,
-)
+from src_ablation_cw.datasets.gene_token_utils import load_static_gene_bundle
 from src_ablation_cw.datasets.metadata_formatter import MetadataFormatter
 
 
@@ -56,6 +53,7 @@ class CellOnlyPairCaptionDataset(Dataset):
         bundle = load_static_gene_bundle(static_gene_ckpt_path)
         self.static_gene_embeddings = bundle["static_gene_embeddings"]
         self.scgpt_id_to_idx = bundle["scgpt_id_to_idx"]
+        self.scgpt_lookup = self._build_scgpt_lookup(self.scgpt_id_to_idx)
 
         self.text_tokenizer = text_tokenizer
         self.soc_id = special_tokens_ids.get("soc_id")
@@ -122,11 +120,58 @@ class CellOnlyPairCaptionDataset(Dataset):
                 pass
 
     @staticmethod
+    def _build_scgpt_lookup(scgpt_id_to_idx: Dict[int, int]) -> np.ndarray:
+        if not scgpt_id_to_idx:
+            return np.full(1, -1, dtype=np.int32)
+        max_gid = max(int(gid) for gid in scgpt_id_to_idx.keys())
+        lookup = np.full(max_gid + 1, -1, dtype=np.int32)
+        for gid, static_idx in scgpt_id_to_idx.items():
+            if int(gid) >= 0:
+                lookup[int(gid)] = int(static_idx)
+        return lookup
+
+    def _rank_rows_to_static_indices(self, rank_rows: np.ndarray) -> np.ndarray:
+        rank_rows = np.asarray(rank_rows, dtype=np.int64)
+        out = np.full((rank_rows.shape[0], self.gene_input_tokens), -1, dtype=np.int32)
+        max_gid = int(self.scgpt_lookup.shape[0] - 1)
+        for i, row in enumerate(rank_rows):
+            ordered = row[::-1] if self.gene_rank_order == "asc" else row
+            valid = ordered[(ordered >= 0) & (ordered <= max_gid)]
+            if valid.size == 0:
+                continue
+            static_indices = self.scgpt_lookup[valid]
+            static_indices = static_indices[static_indices >= 0]
+            if static_indices.size == 0:
+                continue
+            picked = static_indices[: self.gene_input_tokens]
+            out[i, : picked.shape[0]] = picked
+        return out
+
+    @staticmethod
     def _read_obs_records(adata, local_start: int, local_end: int, local_indices: Optional[np.ndarray]):
         if local_indices is None:
             obs_df = adata.obs.iloc[local_start:local_end]
         else:
             obs_df = adata.obs.iloc[local_indices]
+
+        wanted_exact = {
+            "lmdb_key",
+            "cell_id",
+            "celltype",
+            "cell_type",
+            "tissue",
+            "disease",
+            "stage",
+            "sex",
+            "organism",
+            "assay",
+        }
+        keep_cols = [
+            c for c in obs_df.columns
+            if c in wanted_exact or c.endswith("_name") or c.endswith("_definition")
+        ]
+        if keep_cols:
+            obs_df = obs_df.loc[:, keep_cols]
         return obs_df.to_dict("records")
 
     @staticmethod
@@ -202,6 +247,8 @@ class CellOnlyPairCaptionDataset(Dataset):
             adata = ad.read_h5ad(info["h5ad_path"], backed="r")
             try:
                 rank_rows = self._read_rank_rows(adata, local_start, local_end, local_indices)
+                gene_indices = self._rank_rows_to_static_indices(rank_rows)
+                del rank_rows
                 obs_records_raw = self._read_obs_records(adata, local_start, local_end, local_indices)
             finally:
                 self._close_adata(adata)
@@ -211,14 +258,14 @@ class CellOnlyPairCaptionDataset(Dataset):
                 str(obs_row.get("lmdb_key", "")).strip() if "lmdb_key" in obs_row else None
                 for obs_row in obs_records_raw
             ]
-            n_rows = int(rank_rows.shape[0])
+            n_rows = int(gene_indices.shape[0])
             if n_rows == 0:
                 continue
 
             self.blocks.append({
                 "h5ad_path": info["h5ad_path"],
                 "lmdb_path": info["lmdb_path"],
-                "rank": rank_rows,
+                "gene_indices": gene_indices,
                 "metadata": metadata_records,
                 "lmdb_keys": lmdb_keys,
             })
@@ -268,14 +315,16 @@ class CellOnlyPairCaptionDataset(Dataset):
         local_idx = idx - self.cumulative_sizes[block_idx]
         block = self.blocks[block_idx]
 
-        rank_ids = np.asarray(block["rank"][local_idx], dtype=np.int64).reshape(-1)
-        cell_feature = build_gene_sequence_from_rank(
-            rank_ids=rank_ids,
-            scgpt_id_to_idx=self.scgpt_id_to_idx,
-            static_gene_embeddings=self.static_gene_embeddings,
-            gene_input_tokens=self.gene_input_tokens,
-            rank_order=self.gene_rank_order,
+        gene_indices = torch.from_numpy(block["gene_indices"][local_idx].astype(np.int64, copy=False))
+        valid = gene_indices >= 0
+        cell_feature = torch.zeros(
+            self.gene_input_tokens,
+            self.static_gene_embeddings.shape[1],
+            dtype=torch.float32,
         )
+        if bool(valid.any()):
+            picked = self.static_gene_embeddings[gene_indices[valid]]
+            cell_feature[: picked.shape[0]] = picked
 
         metadata = dict(block["metadata"][local_idx])
         lmdb_key = block["lmdb_keys"][local_idx]
