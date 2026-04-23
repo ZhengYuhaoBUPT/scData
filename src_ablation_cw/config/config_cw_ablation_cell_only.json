@@ -43,6 +43,7 @@
     "cw_ablation": {
       "use_system_prompt": true,
       "append_image_tag": true,
+      "stage1_use_dialog_data": true,
       "stage1_json_paths": [
         "/mnt/c20250607/user/wanghaoran/zyh/datasets/sft_conversations/pretrain_texts.json"
       ],
@@ -76,8 +77,8 @@
       "num_stage1_samples": 10000,
       "stage2_mix_seed": 42,
       "stage2_full_finetune": false,
-      "stage1_pair_max_samples": 0,
-      "stage2_pair_max_samples": 0
+      "stage1_pair_max_samples": 50000,
+      "stage2_pair_max_samples": 50000
     }
   },
   "optimizer": {

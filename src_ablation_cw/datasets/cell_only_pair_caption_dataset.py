@@ -1,11 +1,12 @@
 # coding=utf-8
 from __future__ import annotations
 
+import bisect
 import json
 import os
 import random
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Sequence, Tuple
+from typing import Any, Dict, List, Optional, Sequence
 
 import anndata as ad
 import lmdb
@@ -78,9 +79,9 @@ class CellOnlyPairCaptionDataset(Dataset):
             raise ValueError("h5ad_paths is empty for pair dataset")
         self.lmdb_base_dir = str(lmdb_base_dir) if lmdb_base_dir else None
 
-        self._adatas: Dict[str, ad.AnnData] = {}
         self._lmdb_envs: Dict[str, lmdb.Environment] = {}
         self.blocks: List[Dict[str, Any]] = []
+        self.cumulative_sizes: List[int] = [0]
         self.total_cells = 0
         self._build_index()
 
@@ -89,7 +90,7 @@ class CellOnlyPairCaptionDataset(Dataset):
             num_with_lmdb = sum(1 for x in self.blocks if x.get("lmdb_path"))
             print(
                 f"[PairDS] rank={self.rank} total_cells={self.total_cells} max_samples={self.max_samples} "
-                f"with_lmdb={num_with_lmdb}"
+                f"blocks={len(self.blocks)} with_lmdb_blocks={num_with_lmdb}"
             )
 
     def _resolve_lmdb_path(self, h5ad_path: str) -> Optional[str]:
@@ -104,19 +105,40 @@ class CellOnlyPairCaptionDataset(Dataset):
                 return str(candidate)
         return None
 
-    def _open_adata(self, path: str):
-        adata = self._adatas.get(path)
-        if adata is None:
-            adata = ad.read_h5ad(path, backed="r")
-            self._adatas[path] = adata
-        return adata
-
     def _get_lmdb_env(self, lmdb_path: str):
         env = self._lmdb_envs.get(lmdb_path)
         if env is None:
             env = lmdb.Environment(lmdb_path, readonly=True, lock=False, readahead=False, meminit=False)
             self._lmdb_envs[lmdb_path] = env
         return env
+
+    @staticmethod
+    def _close_adata(adata) -> None:
+        file_obj = getattr(adata, "file", None)
+        if file_obj is not None:
+            try:
+                file_obj.close()
+            except Exception:
+                pass
+
+    @staticmethod
+    def _read_obs_records(adata, local_start: int, local_end: int, local_indices: Optional[np.ndarray]):
+        if local_indices is None:
+            obs_df = adata.obs.iloc[local_start:local_end]
+        else:
+            obs_df = adata.obs.iloc[local_indices]
+        return obs_df.to_dict("records")
+
+    @staticmethod
+    def _read_rank_rows(adata, local_start: int, local_end: int, local_indices: Optional[np.ndarray]) -> np.ndarray:
+        if "rank" not in adata.obsm:
+            raise KeyError("Pair h5ad must contain obsm['rank'] for gene-token Q-Former input")
+        rank_arr = adata.obsm["rank"]
+        if local_indices is None:
+            rows = rank_arr[local_start:local_end]
+        else:
+            rows = rank_arr[local_indices]
+        return np.asarray(rows, dtype=np.int32)
 
     def _build_index(self) -> None:
         file_infos: List[Dict[str, Any]] = []
@@ -147,28 +169,62 @@ class CellOnlyPairCaptionDataset(Dataset):
         my_start = self.rank * per_rank
         my_end = my_start + per_rank
 
-        sample_locs: List[Dict[str, Any]] = []
+        selected_global_indices: Optional[List[int]] = None
+        local_total = max(0, my_end - my_start)
+        if self.max_samples > 0 and local_total > self.max_samples:
+            rnd = random.Random(self.sample_seed + self.rank)
+            selected_global_indices = sorted(rnd.sample(range(my_start, my_end), self.max_samples))
+
+        self.blocks = []
+        self.cumulative_sizes = [0]
+
         for info in file_infos:
             overlap_start = max(my_start, info["global_start"])
             overlap_end = min(my_end, info["global_end"])
             if overlap_start >= overlap_end:
                 continue
+
             local_start = overlap_start - info["global_start"]
             local_end = overlap_end - info["global_start"]
-            for row_idx in range(local_start, local_end):
-                sample_locs.append({
-                    "h5ad_path": info["h5ad_path"],
-                    "lmdb_path": info["lmdb_path"],
-                    "row_idx": int(row_idx),
-                })
+            local_indices = None
+            if selected_global_indices is not None:
+                picked = [
+                    gidx - info["global_start"]
+                    for gidx in selected_global_indices
+                    if info["global_start"] <= gidx < info["global_end"]
+                ]
+                if not picked:
+                    continue
+                local_indices = np.asarray(picked, dtype=np.int64)
+                local_start = int(local_indices[0])
+                local_end = int(local_indices[-1]) + 1
 
-        if self.max_samples > 0 and len(sample_locs) > self.max_samples:
-            rnd = random.Random(self.sample_seed + self.rank)
-            sample_locs = rnd.sample(sample_locs, self.max_samples)
+            adata = ad.read_h5ad(info["h5ad_path"], backed="r")
+            try:
+                rank_rows = self._read_rank_rows(adata, local_start, local_end, local_indices)
+                obs_records_raw = self._read_obs_records(adata, local_start, local_end, local_indices)
+            finally:
+                self._close_adata(adata)
 
-        sample_locs.sort(key=lambda x: (x["h5ad_path"], x["row_idx"]))
-        self.blocks = sample_locs
-        self.total_cells = len(self.blocks)
+            metadata_records = [self._clean_obs_metadata(obs_row) for obs_row in obs_records_raw]
+            lmdb_keys = [
+                str(obs_row.get("lmdb_key", "")).strip() if "lmdb_key" in obs_row else None
+                for obs_row in obs_records_raw
+            ]
+            n_rows = int(rank_rows.shape[0])
+            if n_rows == 0:
+                continue
+
+            self.blocks.append({
+                "h5ad_path": info["h5ad_path"],
+                "lmdb_path": info["lmdb_path"],
+                "rank": rank_rows,
+                "metadata": metadata_records,
+                "lmdb_keys": lmdb_keys,
+            })
+            self.cumulative_sizes.append(self.cumulative_sizes[-1] + n_rows)
+
+        self.total_cells = self.cumulative_sizes[-1]
 
     def __len__(self) -> int:
         return self.total_cells
@@ -208,11 +264,11 @@ class CellOnlyPairCaptionDataset(Dataset):
                 return {}
 
     def __getitem__(self, idx: int) -> Dict[str, Any]:
-        entry = self.blocks[idx]
-        adata = self._open_adata(entry["h5ad_path"])
-        row_idx = int(entry["row_idx"])
+        block_idx = bisect.bisect_right(self.cumulative_sizes, idx) - 1
+        local_idx = idx - self.cumulative_sizes[block_idx]
+        block = self.blocks[block_idx]
 
-        rank_ids = np.asarray(adata.obsm["rank"][row_idx], dtype=np.int64).reshape(-1)
+        rank_ids = np.asarray(block["rank"][local_idx], dtype=np.int64).reshape(-1)
         cell_feature = build_gene_sequence_from_rank(
             rank_ids=rank_ids,
             scgpt_id_to_idx=self.scgpt_id_to_idx,
@@ -221,10 +277,9 @@ class CellOnlyPairCaptionDataset(Dataset):
             rank_order=self.gene_rank_order,
         )
 
-        obs_row = adata.obs.iloc[row_idx].to_dict()
-        metadata = self._clean_obs_metadata(obs_row)
-        lmdb_key = str(obs_row.get("lmdb_key", "")).strip() if "lmdb_key" in obs_row else None
-        lmdb_metadata = self._load_lmdb_metadata(entry.get("lmdb_path"), lmdb_key)
+        metadata = dict(block["metadata"][local_idx])
+        lmdb_key = block["lmdb_keys"][local_idx]
+        lmdb_metadata = self._load_lmdb_metadata(block.get("lmdb_path"), lmdb_key)
         if lmdb_metadata:
             metadata = {**metadata, **lmdb_metadata}
 

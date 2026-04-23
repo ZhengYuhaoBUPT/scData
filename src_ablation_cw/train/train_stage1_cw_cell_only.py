@@ -122,18 +122,21 @@ def main():
     if tokenizer.pad_token_id is None:
         tokenizer.pad_token = tokenizer.eos_token
 
-    json_paths = get_stage1_json_paths(config)
-    dialog_dataset = CWSFTCellOnlyDataset(
-        feature_dir=None,
-        json_paths=json_paths,
-        text_tokenizer=tokenizer,
-        config_dict=config,
-        special_tokens_ids=SPECIAL_TOKENS_IDS,
-        accelerator=accelerator,
-        curriculum_stage=None,
-        data_type_tag="stage1_understanding",
-        append_image_tag=bool(cw_cfg.get("append_image_tag", True)),
-    )
+    use_dialog_data = bool(cw_cfg.get("stage1_use_dialog_data", True))
+    dialog_dataset = None
+    if use_dialog_data:
+        json_paths = get_stage1_json_paths(config)
+        dialog_dataset = CWSFTCellOnlyDataset(
+            feature_dir=None,
+            json_paths=json_paths,
+            text_tokenizer=tokenizer,
+            config_dict=config,
+            special_tokens_ids=SPECIAL_TOKENS_IDS,
+            accelerator=accelerator,
+            curriculum_stage=None,
+            data_type_tag="stage1_understanding",
+            append_image_tag=bool(cw_cfg.get("append_image_tag", True)),
+        )
 
     pair_dataset = build_optional_pair_dataset(
         config=config,
@@ -145,17 +148,20 @@ def main():
         sample_seed=seed,
     )
 
-    datasets = [dialog_dataset]
+    datasets = []
+    if dialog_dataset is not None:
+        datasets.append(dialog_dataset)
     if pair_dataset is not None:
         datasets.append(pair_dataset)
-        dataset = ConcatDataset(datasets)
-    else:
-        dataset = dialog_dataset
+    if not datasets:
+        raise ValueError("No stage1 dataset enabled. Set stage1_use_dialog_data=true or configure stage1_pair_max_samples/pair paths.")
+    dataset = datasets[0] if len(datasets) == 1 else ConcatDataset(datasets)
 
     if accelerator.is_main_process:
+        dialog_len = 0 if dialog_dataset is None else len(dialog_dataset)
         pair_len = 0 if pair_dataset is None else len(pair_dataset)
         print(
-            f"[Stage1-CW] dataset_mix dialog={len(dialog_dataset)} pair={pair_len} total={len(dataset)}"
+            f"[Stage1-CW] dataset_mix use_dialog={use_dialog_data} dialog={dialog_len} pair={pair_len} total={len(dataset)}"
         )
 
     dataloader = DataLoader(
