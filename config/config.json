@@ -1,0 +1,165 @@
+{
+    "comment": {
+        "description": "统一配置文件 - 管理所有超参数（除 DeepSpeed 训练参数）",
+        "version": "2.0.0",
+        "last_updated": "2026-04-16"
+    },
+    "data": {
+        "lmdb_base_dir": "/mnt/c20250607/user/wanghaoran/zxy/data_and_features/zxy/modified_data",
+        "cluster_lmdb_dir": "/mnt/c20250607/user/wanghaoran/zxy/data_and_features/per-gene-feature/per-gene-feature/per_gene_feat/cellwtext_feature_lmdb",
+        "codebook_dir": "/mnt/c20250607/user/wanghaoran/zxy/data_and_features/per-gene-feature/per-gene-feature/per_gene_feat/gene_codebook",
+        "scgpt_gene_vocab": "/mnt/c20250607/user/wanghaoran/zxy/zxy/zxy/project/sc_showo/save/okrcell_ckpt/vocab.json",
+        "metadata_fields": [
+            "celltype_name",
+            "celltype_definition",
+            "disease_definition",
+            "tissue_name",
+            "tissue_definition",
+            "stage_name",
+            "sex_name"
+        ],
+        "sft_json_paths": [
+            "/mnt/c20250607/user/wanghaoran/zxy/data_and_features/zxy/sft_conversations/conversations/pretrain_texts.json",
+            "/mnt/c20250607/user/wanghaoran/zxy/data_and_features/zxy/sft_conversations/conversations/finetune_conversations.json"
+        ],
+        "stage1_whitelist_json": "/mnt/c20250607/user/wanghaoran/zxy/zxy/zxy/project/sc_showo/config/stage1_stratified_whitelist.json",
+        "prefer_compact_codebook": true,
+        "cluster_loader_readahead": false,
+        "cluster_loader_max_readers": 2048,
+        "key_cache_dir": "/mnt/c20250607/user/wanghaoran/zxy/data_and_features/per-gene-feature/per-gene-feature/per_gene_feat/key_cache",
+        "use_cell_cls": false,
+        "cell_cls_gene_weight": 0,
+        "cell_cls_cell_weight": 0,
+        "cell_cls_dropout": 0
+    },
+    "dataset": {
+        "max_seq_len": 2560,
+        "max_genes": 1200,
+        "clusters_per_gene": 64,
+        "mask_min_ratio": 0.01,
+        "mask_max_ratio": 0.99,
+        "conditional_dropout_prob": 0.3
+    },
+    "model": {
+        "llm_model_path": "/mnt/c20250607/user/wanghaoran/zxy/models/models/qwen2.5-7b-instruct",
+        "local_files_only": true,
+        "load_from_showo": false,
+        "hidden_size": 3584,
+        "num_diffusion_layers": 8,
+        "dropout_rate": 0.1,
+        "use_flash_attn": true,
+        "attention_type": "omni",
+        "diffusion_head_type": "discrete",
+        "disable_gene_position_ids": true,
+        "gene_position_buckets": 100
+    },
+    "tokenizer": {
+        "special_tokens": {
+            "sog": "<|startofgene|>",
+            "eog": "<|endofgene|>",
+            "mask_gene": "<|maskgene|>"
+        }
+    },
+    "training": {
+        "batch_size": 5,
+        "num_workers": 4,
+        "seed": 706938,
+        "gradient_checkpointing": true,
+        "epochs": 1,
+        "stage1": {
+            "lambda_ntp": 1.0,
+            "lambda_gene": 0.5
+        },
+        "stage2": {
+            "lambda_ntp": 1.0,
+            "lambda_gene": 0.5
+        },
+        "mtp_mask_prob_eps": 0.1,
+        "stage1_rank_loss": {
+            "lambda_rank": 0.5,
+            "tau": 0.1,
+            "k": 4,
+            "anchor_per_rank": 1,
+            "interval": 2,
+            "start_step": 0
+      },
+        "stage2_rank_loss": {
+            "lambda_rank": 0.3,
+            "tau": 0.1,
+            "k": 4,
+            "anchor_per_rank": 1,
+            "interval": 2,
+            "start_step": 0,
+            "target": "stage2"
+      }
+    },
+    "optimizer": {
+        "type": "AdamW",
+        "lr": 0.0001,
+        "betas": [
+            0.9,
+            0.999
+        ],
+        "eps": 1e-08,
+        "weight_decay": 0.0001,
+        "clip_grad_norm": 1.0,
+        "stage2_lr_rank_signal": 0.001,
+        "stage2_lr_diffusion": 0.0001,
+        "stage2_lr_llm": 1e-05
+    },
+    "scheduler": {
+        "type": "linear_warmup_cosine_decay",
+        "warmup_ratio": 0.05,
+        "min_lr_ratio": 0.5
+    },
+    "lora": {
+        "rank": 64,
+        "alpha": 128,
+        "dropout": 0.1,
+        "target_modules": [
+            "q_proj",
+            "k_proj",
+            "v_proj",
+            "o_proj",
+            "gate_proj",
+            "up_proj",
+            "down_proj"
+        ],
+        "bias": "none",
+        "task_type": "CAUSAL_LM",
+        "lr": 2e-05,
+        "cell_lr": 0.0001
+    },
+    "logging": {
+        "tool": "swanlab",
+        "project": "sc_showo_aligned_to_showo",
+        "experiment_name": "stage1_no_cls_rankloss_bucketpe",
+        "log_interval": 5,
+        "save_interval": 200,
+        "tensorboard_dir": "./logs/tensorboard",
+        "swanlab_dir": "./logs/swanlab",
+        "enable_swanlab": true,
+        "log_loss_components": true,
+        "log_grad_norm": true,
+        "log_attention_maps": true,
+        "mm_gap_enabled": true,
+        "mm_gap_interval": 5,
+        "mm_gap_max_samples": 8,
+        "mm_gap_stage1_target": "understanding",
+        "mm_gap_stage2_target": "stage2"
+    },
+    "checkpoint": {
+        "save_dir": "/mnt/c20250607_hs/wanghaoran/wanghaoran/ckpts_aligned_to_showo/stage1",
+        "stage1_weights_path": null,
+        "save_total_limit": 5,
+        "resume_from": null,
+        "save_optimizer_state": true,
+        "save_scheduler_state": true,
+        "save_random_state": true,
+        "overwrite_existing": false,
+        "save_format": "pytorch",
+        "reset_scheduler_on_resume": false,
+        "reset_epoch_on_resume": false,
+        "save_trainable_only": true
+    }
+}

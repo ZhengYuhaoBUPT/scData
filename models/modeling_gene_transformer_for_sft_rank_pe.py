@@ -492,9 +492,9 @@ class GeneTransformer(nn.Module):
         gene_logits = self.diffusion_head_b(last_hidden_states)
 
         # 7. Loss 计算：
-        # - stage2(SFT): 只算 NTP
-        # - stage1_generation(配对): 只算 MTP(gene masked token prediction)
-        # - stage1_understanding: 在 Stage2 中不参与训练目标
+        # - stage2(SFT): 计算 NTP
+        # - stage1_understanding(配对理解): 计算 NTP
+        # - stage1_generation(配对生成): 只算 MTP(gene masked token prediction)
         loss_ntp = (logits * 0.0).sum()
         loss_gene = (gene_logits * 0.0).sum()
 
@@ -527,7 +527,7 @@ class GeneTransformer(nn.Module):
             stage2_lambda_ntp = stage2_cfg.get('lambda_ntp', 1.0)
 
             sample_mask = torch.tensor(
-                [dt in {'stage2'} for dt in data_type],
+                [dt in {'stage2', 'stage1_understanding'} for dt in data_type],
                 device=shift_labels.device,
                 dtype=torch.bool,
             )

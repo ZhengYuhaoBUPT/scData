@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 # coding=utf-8
 """
-🧬 Stage 1 双向训练脚本 (Bidirectional Training)
-同时训练对齐、理解和生成:
-- 50% 理解模式: [Gene] -> [Text] (Cell Understanding)
-- 50% 生成模式: [Text] -> [Gene] -> [Answer] (Gene Generation)
+🧬 Stage 1 理解训练脚本 (Understanding-only Training)
+仅训练理解:
+- 100% 理解模式: [Gene] -> [Text] (Cell Understanding)
 
 """
 
 import os
 import sys
 import json
+import argparse
 import time
 import math
 import torch
@@ -21,16 +21,59 @@ from torch.optim import AdamW
 from accelerate import Accelerator
 from transformers import AutoTokenizer, get_scheduler
 
-# 注入项目路径
-project_root = Path("/root/wanghaoran/zxy/project/sc_showo")
-if str(project_root) not in sys.path:
-    sys.path.insert(0, str(project_root))
+# 注入项目路径：默认使用当前仓库根目录；如需原始大项目，可设置 SC_SHOWO_ROOT。
+repo_root = Path(__file__).resolve().parents[1]
+project_root = Path(os.environ.get("SC_SHOWO_ROOT", repo_root)).expanduser().resolve()
+for _path in (project_root, repo_root):
+    if str(_path) not in sys.path:
+        sys.path.insert(0, str(_path))
 
-from src.datasets.bidirectional_stage1_dataset import BidirectionalStage1Dataset
-from src.models.modeling_gene_transformer_rank_pe import GeneTransformer
-from src.train.utils.utils import SwanLabLogger, save_checkpoint, load_checkpoint, TrainingState
-from src.train.utils.scheduler_utils import build_scheduler
+try:
+    from src.datasets.bidirectional_stage1_dataset import BidirectionalStage1Dataset
+    from src.models.modeling_gene_transformer_rank_pe import GeneTransformer
+    from src.train.utils.utils import SwanLabLogger, save_checkpoint, load_checkpoint, TrainingState
+    from src.train.utils.scheduler_utils import build_scheduler
+except ModuleNotFoundError:
+    from datasets.bidirectional_stage1_dataset import BidirectionalStage1Dataset
+    from models.modeling_gene_transformer_rank_pe import GeneTransformer
+    from train.utils.utils import SwanLabLogger, save_checkpoint, load_checkpoint, TrainingState
+    from train.utils.scheduler_utils import build_scheduler
 from torch.utils.data import DataLoader, DistributedSampler
+
+
+def resolve_config_path() -> Path:
+    parser = argparse.ArgumentParser(add_help=True)
+    parser.add_argument(
+        "--config",
+        type=str,
+        default=None,
+        help="Path to config.json. Defaults to $SC_SHOWO_CONFIG or <repo>/config/config.json.",
+    )
+    args, _ = parser.parse_known_args()
+
+    candidates = []
+    if args.config:
+        candidates.append(Path(args.config))
+    env_config = os.environ.get("SC_SHOWO_CONFIG")
+    if env_config:
+        candidates.append(Path(env_config))
+    candidates.append(project_root / "config" / "config.json")
+    candidates.append(repo_root / "config" / "config.json")
+
+    seen = set()
+    for candidate in candidates:
+        candidate = candidate.expanduser().resolve()
+        if candidate in seen:
+            continue
+        seen.add(candidate)
+        if candidate.exists():
+            return candidate
+
+    searched = "\n".join(f"  - {p.expanduser()}" for p in candidates)
+    raise FileNotFoundError(
+        "Cannot find config.json. Pass --config /path/to/config.json or set SC_SHOWO_CONFIG.\n"
+        f"Searched:\n{searched}"
+    )
 
 
 def _select_probe_indices(data_types, target: str, max_samples: int):
@@ -183,7 +226,8 @@ def main():
     accelerator = Accelerator()
 
     # ==================== 2. 加载配置 ====================
-    config_path = project_root / "config/config.json"
+    config_path = resolve_config_path()
+    accelerator.print(f"📄 使用配置: {config_path}")
     with open(config_path, "r") as f:
         config = json.load(f)
 
@@ -212,8 +256,8 @@ def main():
     model.requires_grad_(True)
 
     # ==================== 6. 初始化双向数据加载器 ====================
-    accelerator.print("\n🧬 初始化双向数据加载器...")
-    accelerator.print("   模式分布: 50% 理解 [Gene->Text] + 50% 生成 [Text->Gene]")
+    accelerator.print("\n🧬 初始化理解数据加载器...")
+    accelerator.print("   模式分布: 100% 理解 [Gene->Text]")
 
     dataset = BidirectionalStage1Dataset(
         config_dict=config,
@@ -225,7 +269,7 @@ def main():
         # and cause double-sharding after accelerator.prepare(dataloader).
         accelerator=None,
         max_seq_len=config['dataset'].get('max_seq_len', 1800),
-        understanding_ratio=0.5,
+        understanding_ratio=1.0,
     )
 
     sampler = DistributedSampler(
@@ -401,7 +445,7 @@ def main():
                 accum_generation += sum(1 for dt in data_types if 'generation' in dt)
                 accum_samples += len(data_types)
 
-                # Show-o2 标准做法：理解任务计算 NTP，生成任务计算 Gene
+                # 理解-only 自回归训练：仅优化文本 NTP
                 model_kwargs = dict(
                     input_ids=batch['input_ids'],
                     attention_mask=batch.get('attention_mask'),
@@ -417,10 +461,7 @@ def main():
 
                 logits, loss_ntp, loss_gene = model(**model_kwargs)
 
-                # Show-o2 标准 Loss 融合：按配置权重
-                lambda_ntp = config['training'].get('stage1', {}).get('lambda_ntp', 1.0)
-                lambda_gene = config['training'].get('stage1', {}).get('lambda_gene', 1.0)
-                total_loss = loss_ntp * lambda_ntp + loss_gene * lambda_gene
+                total_loss = loss_ntp
 
                 # 分布式一致的 NaN/Inf 防护：任一 rank 非有限则全体跳过该步，避免状态分叉/collective hang
                 finite_local = torch.tensor(1.0 if torch.isfinite(total_loss).all() else 0.0, device=accelerator.device)

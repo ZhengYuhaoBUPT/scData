@@ -14,6 +14,7 @@
 import os
 import sys
 import json
+import argparse
 import math
 import time
 import collections
@@ -30,16 +31,60 @@ from torch.nn.utils.rnn import pad_sequence
 from pathlib import Path as PathLib
 import json as json_mod
 
-# 注入项目路径
-project_root = Path("/root/wanghaoran/zxy/project/sc_showo")
-if str(project_root) not in sys.path:
-    sys.path.insert(0, str(project_root))
+# 注入项目路径：默认使用当前仓库根目录；如需原始大项目，可设置 SC_SHOWO_ROOT。
+repo_root = Path(__file__).resolve().parents[1]
+project_root = Path(os.environ.get("SC_SHOWO_ROOT", repo_root)).expanduser().resolve()
+for _path in (project_root, repo_root):
+    if str(_path) not in sys.path:
+        sys.path.insert(0, str(_path))
 
-from src.datasets.gene_sft_dataset_no_metadata_prompt_rankloss import SFTDataset
-from src.datasets.bidirectional_stage1_dataset_rankloss import BidirectionalStage1Dataset
-from src.models.modeling_gene_transformer_for_sft_rank_pe import GeneTransformer
-from src.train.utils.utils import SwanLabLogger, save_checkpoint, load_checkpoint, TrainingState
-from src.train.utils.scheduler_utils import build_scheduler
+try:
+    from src.datasets.gene_sft_dataset_no_metadata_prompt_rankloss import SFTDataset
+    from src.datasets.bidirectional_stage1_dataset_rankloss import BidirectionalStage1Dataset
+    from src.models.modeling_gene_transformer_for_sft_rank_pe import GeneTransformer
+    from src.train.utils.utils import SwanLabLogger, save_checkpoint, load_checkpoint, TrainingState
+    from src.train.utils.scheduler_utils import build_scheduler
+except ModuleNotFoundError:
+    from datasets.gene_sft_dataset_no_metadata_prompt_rankloss import SFTDataset
+    from datasets.bidirectional_stage1_dataset_rankloss import BidirectionalStage1Dataset
+    from models.modeling_gene_transformer_for_sft_rank_pe import GeneTransformer
+    from train.utils.utils import SwanLabLogger, save_checkpoint, load_checkpoint, TrainingState
+    from train.utils.scheduler_utils import build_scheduler
+
+
+def resolve_config_path() -> Path:
+    parser = argparse.ArgumentParser(add_help=True)
+    parser.add_argument(
+        "--config",
+        type=str,
+        default=None,
+        help="Path to config.json. Defaults to $SC_SHOWO_CONFIG or <repo>/config/config.json.",
+    )
+    args, _ = parser.parse_known_args()
+
+    candidates = []
+    if args.config:
+        candidates.append(Path(args.config))
+    env_config = os.environ.get("SC_SHOWO_CONFIG")
+    if env_config:
+        candidates.append(Path(env_config))
+    candidates.append(project_root / "config" / "config.json")
+    candidates.append(repo_root / "config" / "config.json")
+
+    seen = set()
+    for candidate in candidates:
+        candidate = candidate.expanduser().resolve()
+        if candidate in seen:
+            continue
+        seen.add(candidate)
+        if candidate.exists():
+            return candidate
+
+    searched = "\n".join(f"  - {p.expanduser()}" for p in candidates)
+    raise FileNotFoundError(
+        "Cannot find config.json. Pass --config /path/to/config.json or set SC_SHOWO_CONFIG.\n"
+        f"Searched:\n{searched}"
+    )
 
 
 SPECIAL_TOKENS_IDS = {
@@ -703,7 +748,7 @@ def train_stage(
 
 
 def build_stage1_dataset(config, tokenizer, accelerator):
-    """Stage 2 中所有配对数据严格复用 Stage 1 的构造方式。"""
+    """Stage 2 中所有配对数据严格复用 Stage 1 的理解样本构造方式。"""
     stage1_full = BidirectionalStage1Dataset(
         config_dict=config,
         special_tokens_ids=SPECIAL_TOKENS_IDS,
@@ -711,7 +756,7 @@ def build_stage1_dataset(config, tokenizer, accelerator):
         # Let Accelerate handle sharding to avoid double-split.
         accelerator=None,
         max_seq_len=config['dataset'].get('max_seq_len', 1800),
-        understanding_ratio=0.0,
+        understanding_ratio=1.0,
     )
 
     whitelist_path = config['data'].get('stage1_whitelist_json')
@@ -775,7 +820,8 @@ def resolve_stage2_resume_path(config, accelerator):
 def main():
     accelerator = Accelerator()
 
-    config_path = project_root / "config/config.json"
+    config_path = resolve_config_path()
+    accelerator.print(f"📄 使用配置: {config_path}")
     with open(config_path, "r") as f:
         config = json.load(f)
 
@@ -839,11 +885,11 @@ def main():
 
     accelerator.print("\n🎓 初始化课程学习数据加载器...")
 
-    accelerator.print("\n🧬 加载 Stage 1 配对数据（严格复用 Stage 1 逻辑）...")
+    accelerator.print("\n🧬 加载 Stage 1 理解配对数据（严格复用 Stage 1 理解逻辑）...")
     stage1_dataset = build_stage1_dataset(config, tokenizer, accelerator)
     accelerator.print(f"   Stage 1 paired 数据量: {len(stage1_dataset):,}")
 
-    accelerator.print("\n🟢 EASY: 简单单轮 SFT + Stage1 paired")
+    accelerator.print("\n🟢 EASY: 简单单轮 SFT + Stage1 understanding paired")
     easy_dataset = SFTDataset(
         json_paths=config['data'].get('sft_json_paths'),
         text_tokenizer=tokenizer,
@@ -855,7 +901,7 @@ def main():
     )
     accelerator.print(f"   EASY 数据集: {len(easy_dataset):,}")
 
-    accelerator.print("\n🟡 COMPLEX: 复杂单轮/多轮 SFT + Stage1 paired")
+    accelerator.print("\n🟡 COMPLEX: 复杂单轮/多轮 SFT + Stage1 understanding paired")
     complex_dataset = SFTDataset(
         json_paths=config['data'].get('sft_json_paths'),
         text_tokenizer=tokenizer,
