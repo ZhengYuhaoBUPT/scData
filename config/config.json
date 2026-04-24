@@ -107,11 +107,11 @@
             "start_step": 0
         },
         "stage2_rank_loss": {
-            "lambda_rank": 0.3,
-            "tau": 0.07,
-            "k": 3,
+            "lambda_rank": 0.5,
+            "tau": 0.1,
+            "k": 4,
             "anchor_per_rank": 1,
-            "interval": 2,
+            "interval": 1,
             "start_step": 0,
             "target": "stage2"
         }
@@ -132,7 +132,7 @@
     },
     "scheduler": {
         "type": "linear_warmup_cosine_decay",
-        "warmup_ratio": 0.02,
+        "warmup_ratio": 0.1,
         "min_lr_ratio": 0.5
     },
     "lora": {
@@ -157,7 +157,7 @@
         "tool": "swanlab",
         "project": "sc_showo_understanding_only",
         "experiment_name": "stage1",
-        "log_interval": 1,
+        "log_interval": 5,
         "save_interval": 200,
         "tensorboard_dir": "./logs/tensorboard",
         "swanlab_dir": "./logs/swanlab",
