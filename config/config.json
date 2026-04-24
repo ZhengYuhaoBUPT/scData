@@ -157,7 +157,7 @@
         "tool": "swanlab",
         "project": "sc_showo_understanding_only",
         "experiment_name": "stage1",
-        "log_interval": 5,
+        "log_interval": 1,
         "save_interval": 200,
         "tensorboard_dir": "./logs/tensorboard",
         "swanlab_dir": "./logs/swanlab",

@@ -644,10 +644,9 @@ def train_stage(
 
                 if accelerator.sync_gradients:
                     accelerator.clip_grad_norm_(model.parameters(), config['optimizer'].get('clip_grad_norm', 1.0))
-
-                optimizer.step()
-                lr_scheduler.step()
-                optimizer.zero_grad()
+                    optimizer.step()
+                    lr_scheduler.step()
+                    optimizer.zero_grad()
 
             if accelerator.sync_gradients:
                 accum_loss_ntp += loss_ntp.item()
@@ -710,7 +709,17 @@ def train_stage(
                                 model, batch, target=mm_target, max_samples=mm_max_samples
                             )
                             if mm_gap_local is not None:
-                                mm_gap = accelerator.reduce(mm_gap_local.to(accelerator.device), reduction='mean').item()
+                                mm_val = mm_gap_local.to(accelerator.device)
+                                mm_valid = torch.tensor(1.0, device=accelerator.device)
+                            else:
+                                mm_val = torch.tensor(0.0, device=accelerator.device)
+                                mm_valid = torch.tensor(0.0, device=accelerator.device)
+
+                            mm_val_sum = accelerator.reduce(mm_val, reduction='sum')
+                            mm_valid_sum = accelerator.reduce(mm_valid, reduction='sum')
+                            valid_cnt = float(mm_valid_sum.item())
+                            if valid_cnt > 0:
+                                mm_gap = float((mm_val_sum / mm_valid_sum).item())
                                 metrics['matched_vs_mismatched_gap'] = mm_gap
                         except Exception as e:
                             if accelerator.is_main_process:
