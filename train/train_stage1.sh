@@ -47,7 +47,7 @@ MAIN_PROCESS_PORT="${SC_SHOWO_MAIN_PROCESS_PORT:-19999}"
 
 echo ""
 echo "╔════════════════════════════════════════════════════════════════════╗"
-echo "║           SC-Show-O Stage 1 Training                              ║"
+echo "║           SC-Show-O Stage 1 Training                               ║"
 echo "╚════════════════════════════════════════════════════════════════════╝"
 echo ""
 

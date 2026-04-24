@@ -18,6 +18,7 @@ import argparse
 import math
 import time
 import collections
+import pickle
 import torch
 import torch.distributed as dist
 import torch.nn.functional as F
@@ -26,10 +27,8 @@ from torch.optim import AdamW
 from accelerate import Accelerator
 from transformers import AutoTokenizer
 from peft import LoraConfig, get_peft_model
-from torch.utils.data import DataLoader, ConcatDataset, Subset
+from torch.utils.data import DataLoader, ConcatDataset
 from torch.nn.utils.rnn import pad_sequence
-from pathlib import Path as PathLib
-import json as json_mod
 
 # 注入项目路径：默认使用当前仓库根目录；如需原始大项目，可设置 SC_SHOWO_ROOT。
 repo_root = Path(__file__).resolve().parents[1]
@@ -40,13 +39,13 @@ for _path in (project_root, repo_root):
 
 try:
     from src.datasets.gene_sft_dataset_no_metadata_prompt_rankloss import SFTDataset
-    from src.datasets.bidirectional_stage1_dataset_rankloss import BidirectionalStage1Dataset
+    from src.datasets.bidirectional_stage1_dataset_rankloss import BidirectionalStage1Dataset, WhitelistKeyDataset
     from src.models.modeling_gene_transformer_for_sft_rank_pe import GeneTransformer
     from src.train.utils.utils import SwanLabLogger, save_checkpoint, load_checkpoint, TrainingState
     from src.train.utils.scheduler_utils import build_scheduler
 except ModuleNotFoundError:
     from datasets.gene_sft_dataset_no_metadata_prompt_rankloss import SFTDataset
-    from datasets.bidirectional_stage1_dataset_rankloss import BidirectionalStage1Dataset
+    from datasets.bidirectional_stage1_dataset_rankloss import BidirectionalStage1Dataset, WhitelistKeyDataset
     from models.modeling_gene_transformer_for_sft_rank_pe import GeneTransformer
     from train.utils.utils import SwanLabLogger, save_checkpoint, load_checkpoint, TrainingState
     from train.utils.scheduler_utils import build_scheduler
@@ -749,36 +748,28 @@ def train_stage(
 
 def build_stage1_dataset(config, tokenizer, accelerator):
     """Stage 2 中所有配对数据严格复用 Stage 1 的理解样本构造方式。"""
-    stage1_full = BidirectionalStage1Dataset(
+    whitelist_path = config['data'].get('stage1_whitelist_json')
+
+    if whitelist_path and os.path.exists(whitelist_path):
+        base = BidirectionalStage1Dataset(
+            config_dict=config,
+            special_tokens_ids=SPECIAL_TOKENS_IDS,
+            text_tokenizer=tokenizer,
+            accelerator=None,
+            max_seq_len=config['dataset'].get('max_seq_len', 1800),
+            understanding_ratio=1.0,
+            skip_load_data=True,
+        )
+        return WhitelistKeyDataset(base, whitelist_path, accelerator)
+
+    return BidirectionalStage1Dataset(
         config_dict=config,
         special_tokens_ids=SPECIAL_TOKENS_IDS,
         text_tokenizer=tokenizer,
-        # Let Accelerate handle sharding to avoid double-split.
-        accelerator=None,
+        accelerator=accelerator,
         max_seq_len=config['dataset'].get('max_seq_len', 1800),
         understanding_ratio=1.0,
     )
-
-    whitelist_path = config['data'].get('stage1_whitelist_json')
-    if whitelist_path and os.path.exists(whitelist_path):
-        with open(whitelist_path, 'r') as f:
-            whitelist = json_mod.load(f)
-        valid_indices = []
-        for block_idx, block in enumerate(stage1_full.data_blocks):
-            db_name = PathLib(block['cluster_path']).stem
-            if db_name.endswith('_cluster'):
-                db_name = db_name[:-len('_cluster')]
-            allowed_keys = set(whitelist.get(db_name, []))
-            if not allowed_keys:
-                continue
-            start_offset = stage1_full.cumulative_sizes[block_idx]
-            for local_idx, key in enumerate(block['lmdb_keys']):
-                kstr = key.decode('utf-8', errors='ignore') if isinstance(key, (bytes, bytearray)) else str(key)
-                if kstr in allowed_keys:
-                    valid_indices.append(start_offset + local_idx)
-        return Subset(stage1_full, valid_indices)
-
-    return stage1_full
 
 
 
@@ -815,6 +806,39 @@ def resolve_stage2_resume_path(config, accelerator):
             print("\n🚀 未配置 resume_from，Stage 2 将从头开始训练")
 
     return resume_path
+
+
+
+def _resolve_checkpoint_path(path_str: str) -> str:
+    p = Path(path_str)
+    if p.is_file():
+        return str(p)
+    if p.is_dir():
+        candidates = [
+            p / 'state.pt',
+            p / 'pytorch_model.bin',
+            p / 'model.pt',
+            p / 'checkpoint.pt',
+        ]
+        for c in candidates:
+            if c.exists() and c.is_file():
+                return str(c)
+    raise FileNotFoundError(f"Cannot resolve checkpoint from: {path_str}")
+
+
+def _load_stage1_state_dict_compat(ckpt_path: str):
+    resolved = _resolve_checkpoint_path(ckpt_path)
+    try:
+        state = torch.load(resolved, map_location='cpu', weights_only=True)
+    except Exception as e:
+        if isinstance(e, pickle.UnpicklingError) or 'Weights only load failed' in str(e):
+            state = torch.load(resolved, map_location='cpu', weights_only=False)
+        else:
+            raise
+
+    if isinstance(state, dict) and 'model' in state and isinstance(state['model'], dict):
+        state = state['model']
+    return state, resolved
 
 
 def main():
@@ -858,17 +882,19 @@ def main():
         print("⚠️ disable_gene_position_ids=True: Stage2 LoRA 已冻结 rank_signal_injector")
 
     stage1_ckpt = config['checkpoint'].get('stage1_weights_path')
-    if stage1_ckpt and os.path.exists(stage1_ckpt):
-        accelerator.print(f"📥 正在挂载一阶段对齐权重：{stage1_ckpt}")
-        state_dict = torch.load(stage1_ckpt, map_location='cpu', weights_only=True)
-        if isinstance(state_dict, dict) and 'model' in state_dict and isinstance(state_dict['model'], dict):
-            state_dict = state_dict['model']
-        missing, unexpected = model.load_state_dict(state_dict, strict=False)
-        accelerator.print(f"✅ Stage1->Stage2 权重加载完成: missing={len(missing)}, unexpected={len(unexpected)}")
-        if missing:
-            accelerator.print(f"   first_missing: {missing[:10]}")
-        if unexpected:
-            accelerator.print(f"   first_unexpected: {unexpected[:10]}")
+    if stage1_ckpt:
+        try:
+            state_dict, resolved_ckpt = _load_stage1_state_dict_compat(stage1_ckpt)
+            accelerator.print(f"📥 正在挂载一阶段对齐权重：{resolved_ckpt}")
+            missing, unexpected = model.load_state_dict(state_dict, strict=False)
+            accelerator.print(f"✅ Stage1->Stage2 权重加载完成: missing={len(missing)}, unexpected={len(unexpected)}")
+            if missing:
+                accelerator.print(f"   first_missing: {missing[:10]}")
+            if unexpected:
+                accelerator.print(f"   first_unexpected: {unexpected[:10]}")
+        except Exception as e:
+            accelerator.print(f"❌ Stage1 权重加载失败: {e}")
+            raise
     else:
         accelerator.print("⚠️ 未发现一阶段权重，将从随机初始化开始")
 
@@ -921,11 +947,8 @@ def main():
     easy_total_samples = len(easy_dataset) + len(stage1_dataset)
     complex_total_samples = len(complex_dataset) + len(stage1_dataset)
 
-    easy_global_data_steps_per_epoch = math.ceil(easy_total_samples / batch_size)
-    complex_global_data_steps_per_epoch = math.ceil(complex_total_samples / batch_size)
-
-    easy_data_steps_per_epoch = math.ceil(easy_global_data_steps_per_epoch / world_size)
-    complex_data_steps_per_epoch = math.ceil(complex_global_data_steps_per_epoch / world_size)
+    easy_data_steps_per_epoch = math.ceil(easy_total_samples / batch_size)
+    complex_data_steps_per_epoch = math.ceil(complex_total_samples / batch_size)
 
     easy_optimizer_steps_per_epoch = math.ceil(easy_data_steps_per_epoch / grad_accum)
     complex_optimizer_steps_per_epoch = math.ceil(complex_data_steps_per_epoch / grad_accum)

@@ -41,7 +41,14 @@ class SFTDataset(Dataset):
         self.max_genes = self.dataset_config.get('max_genes', 1200)
         self.max_seq_len = self.dataset_config.get('max_seq_len', max_seq_len)
 
-        self.cluster_lmdb_dir = Path(cluster_lmdb_dir) if cluster_lmdb_dir else Path(self.data_config.get('cluster_lmdb_dir', ''))
+        _sft_dirs = self.data_config.get('sft_cluster_lmdb_dirs', [])
+        if _sft_dirs:
+            self.cluster_lmdb_dirs = [Path(d) for d in (_sft_dirs if isinstance(_sft_dirs, list) else [_sft_dirs])]
+        elif cluster_lmdb_dir:
+            self.cluster_lmdb_dirs = [Path(cluster_lmdb_dir)]
+        else:
+            self.cluster_lmdb_dirs = [Path(self.data_config.get('cluster_lmdb_dir', ''))]
+
         self.codebook_dir = Path(codebook_dir) if codebook_dir else Path(self.data_config.get('codebook_dir', ''))
         self.scgpt_gene_vocab = scgpt_gene_vocab if scgpt_gene_vocab else self.data_config.get('scgpt_gene_vocab', '')
 
@@ -96,11 +103,13 @@ class SFTDataset(Dataset):
 
         # Load cluster feature index via loader
         self.cell_id_to_loc = {}
+        self.sft_use_target_id_filter = bool(self.data_config.get('sft_use_target_id_filter', False))
+        self.sft_target_id_set = self._build_sft_target_id_set() if self.sft_use_target_id_filter else None
         self.use_cell_cls = bool(self.data_config.get('use_cell_cls', False))
         if self.use_cell_cls:
             from .cell_aware_feature_loader import CellAwareFeatureLoader
             self.cell_aware_loader = CellAwareFeatureLoader(
-                cluster_lmdb_dir=self.cluster_lmdb_dir,
+                cluster_lmdb_dir=self.cluster_lmdb_dirs,
                 codebook_dir=self.codebook_dir,
                 clusters_per_gene=64,
                 prefer_compact_codebook=bool(self.data_config.get('prefer_compact_codebook', True)),
@@ -116,7 +125,7 @@ class SFTDataset(Dataset):
                 print(f"[SFTDataset] ✅ use_cell_cls=True, gene_weight={self.data_config.get('cell_cls_gene_weight', 0.5)}, cell_dropout={self.data_config.get('cell_cls_dropout', 0.0)}")
         else:
             self.feature_loader = ClusterFeatureLoader(
-                cluster_lmdb_dir=self.cluster_lmdb_dir,
+                cluster_lmdb_dir=self.cluster_lmdb_dirs,
                 readahead=bool(self.data_config.get("cluster_loader_readahead", False)),
                 max_readers=int(self.data_config.get("cluster_loader_max_readers", 2048)),
             )
@@ -126,6 +135,29 @@ class SFTDataset(Dataset):
         self.valid_indices = None
         if self.curriculum_stage is not None:
             self._build_valid_indices(is_main)
+
+    @staticmethod
+    def _load_target_ids(json_path: str) -> List[str]:
+        try:
+            with open(json_path, 'r') as f:
+                obj = json.load(f)
+            if isinstance(obj, dict) and 'target_ids' in obj:
+                return [str(x) for x in obj.get('target_ids', [])]
+            if isinstance(obj, list):
+                return [str(x) for x in obj]
+        except Exception:
+            return []
+        return []
+
+    def _build_sft_target_id_set(self):
+        paths = self.data_config.get('sft_target_id_json_paths', [])
+        if isinstance(paths, str):
+            paths = [paths]
+        target_ids = set()
+        for path in paths:
+            for tid in self._load_target_ids(path):
+                target_ids.add(str(tid))
+        return target_ids
 
     def _build_gene_vocab(self):
         nclusters_path = self.codebook_dir / "gene_nclusters.json"
@@ -140,9 +172,12 @@ class SFTDataset(Dataset):
             print(f"[SFTDataset] compact gene vocab: {len(valid_genes)} genes x 64 = {self.gene_vocab_size} tokens")
 
     def _load_cluster_data(self, is_main: bool):
-        cluster_db_files = sorted([f for f in self.cluster_lmdb_dir.glob("*_cluster.db")])
+        glob_pattern = self.data_config.get('sft_db_glob_pattern', '*_cluster.db')
+        cluster_db_files = []
+        for cluster_dir in self.cluster_lmdb_dirs:
+            cluster_db_files.extend(sorted(cluster_dir.glob(glob_pattern)))
         if len(cluster_db_files) == 0:
-            raise ValueError(f"No *_cluster.db files found in {self.cluster_lmdb_dir}")
+            raise ValueError(f"No cluster DB files found in {self.cluster_lmdb_dirs}")
 
         if is_main:
             print(f"[SFTDataset] Indexing {len(cluster_db_files)} cluster DBs...")
@@ -151,6 +186,8 @@ class SFTDataset(Dataset):
             db_name = db_path.name
             for key in self.feature_loader.list_keys(db_name, exclude_meta=True):
                 cell_id = key.decode("utf-8") if hasattr(key, "decode") else str(key)
+                if self.sft_use_target_id_filter and self.sft_target_id_set is not None and cell_id not in self.sft_target_id_set:
+                    continue
                 self.cell_id_to_loc[cell_id] = (db_name, key)
 
         if is_main:
@@ -178,13 +215,16 @@ class SFTDataset(Dataset):
             for conv_idx in range(conv_count):
                 all_valid_indices.append((cell_id_str, conv_idx))
 
-        self.valid_indices = all_valid_indices
         local_count = len(all_valid_indices)
 
         if torch.distributed.is_initialized():
             import torch.distributed as dist
             world_size = dist.get_world_size()
             rank = dist.get_rank()
+
+            self.valid_indices = all_valid_indices[rank::world_size]
+            local_count = len(self.valid_indices)
+
             count_tensor = torch.tensor(local_count, device='cuda' if torch.cuda.is_available() else 'cpu', dtype=torch.long)
             all_counts = [torch.zeros_like(count_tensor) for _ in range(world_size)]
             dist.all_gather(all_counts, count_tensor)
@@ -195,14 +235,14 @@ class SFTDataset(Dataset):
                 if local_count == 0:
                     raise RuntimeError(f"[{self.curriculum_stage}] Rank {rank} has 0 samples, cannot pad to {max_count}.")
                 rnd = random.Random(42 + rank)
-                pad_indices = [all_valid_indices[rnd.randrange(local_count)] for _ in range(max_count - local_count)]
-                all_valid_indices.extend(pad_indices)
-                local_count = len(all_valid_indices)
-            self.valid_indices = all_valid_indices
+                pad_indices = [self.valid_indices[rnd.randrange(local_count)] for _ in range(max_count - local_count)]
+                self.valid_indices.extend(pad_indices)
+                local_count = len(self.valid_indices)
             print(f"✅ [{self.curriculum_stage}] Rank {rank}: 本卡有效样本 {local_count:,}，全球总计 {global_total:,}")
             if is_main:
                 print(f"   📊 各卡分布: {counts_list}")
         else:
+            self.valid_indices = all_valid_indices
             print(f"✅ [{self.curriculum_stage}] 有效样本：{local_count:,} (非分布式)")
 
     def __len__(self) -> int:

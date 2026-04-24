@@ -30,7 +30,30 @@
         "use_cell_cls": false,
         "cell_cls_gene_weight": 0,
         "cell_cls_cell_weight": 0,
-        "cell_cls_dropout": 0
+        "cell_cls_dropout": 0,
+        "sft_use_target_id_filter": true,
+        "sft_target_id_json_paths": [
+            "/mnt/c20250607/user/wanghaoran/zxy/data_and_features/per-gene-feature/sft_data_gene_feature/sft_data_gene_feature/sft_data_gene_feature/cw_sft_data/all_archs4_target_ids.json",
+            "/mnt/c20250607/user/wanghaoran/zxy/data_and_features/per-gene-feature/sft_data_gene_feature/sft_data_gene_feature/sft_data_gene_feature/cw_sft_data/all_census_target_ids.json"
+        ],
+        "sft_cluster_lmdb_dirs": [
+            "/mnt/c20250607/user/wanghaoran/zxy/data_and_features/per-gene-feature/sft_data_gene_feature/sft_data_gene_feature/sft_data_gene_feature/cellxgene",
+            "/mnt/c20250607/user/wanghaoran/zxy/data_and_features/per-gene-feature/sft_data_gene_feature/sft_data_gene_feature/sft_data_gene_feature/arch4_geo"
+        ],
+        "sft_key_cache_dir": "/mnt/c20250607/user/wanghaoran/zxy/data_and_features/per-gene-feature/sft_data_gene_feature/sft_data_gene_feature/sft_data_gene_feature/key_cache",
+        "sft_db_glob_pattern": "*.db",
+        "sft_celltype_sources": [
+            {
+                "h5ad_path": "/mnt/c20250607/user/wanghaoran/zyh/datasets/full_data.h5ad",
+                "json_path": "/mnt/c20250607/user/wanghaoran/zxy/data_and_features/per-gene-feature/sft_data_gene_feature/sft_data_gene_feature/sft_data_gene_feature/cw_sft_data/all_census_target_ids.json",
+                "celltype_col": "cell_type"
+            },
+            {
+                "h5ad_path": "/mnt/c20250607/user/wanghaoran/zyh/datasets/cellxgene.h5ad",
+                "json_path": "/mnt/c20250607/user/wanghaoran/zxy/data_and_features/per-gene-feature/sft_data_gene_feature/sft_data_gene_feature/sft_data_gene_feature/cw_sft_data/all_archs4_target_ids.json",
+                "celltype_col": "cluster_label"
+            }
+        ]
     },
     "dataset": {
         "max_seq_len": 2560,
@@ -82,16 +105,16 @@
             "anchor_per_rank": 1,
             "interval": 1,
             "start_step": 0
-      },
+        },
         "stage2_rank_loss": {
             "lambda_rank": 0.3,
-            "tau": 0.1,
-            "k": 4,
+            "tau": 0.07,
+            "k": 3,
             "anchor_per_rank": 1,
             "interval": 2,
             "start_step": 0,
             "target": "stage2"
-      }
+        }
     },
     "optimizer": {
         "type": "AdamW",
@@ -150,7 +173,7 @@
     },
     "checkpoint": {
         "save_dir": "/mnt/c20250607_hs/wanghaoran/wanghaoran/zyh/scshowo/stage1",
-        "stage1_weights_path": null,
+        "stage1_weights_path": "/mnt/c20250607_hs/wanghaoran/wanghaoran/ckpts_aligned_to_showo/stage1/bidirectional_step_1800/checkpoint-step-1800/state.pt",
         "save_total_limit": 5,
         "resume_from": null,
         "save_optimizer_state": true,

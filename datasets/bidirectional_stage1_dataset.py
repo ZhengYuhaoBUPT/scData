@@ -252,6 +252,7 @@ class BidirectionalStage1Dataset(Dataset):
         max_seq_len: Optional[int] = None,
         accelerator=None,
         understanding_ratio: float = 0.5,
+        skip_load_data: bool = False,
     ):
         super().__init__()
 
@@ -334,7 +335,8 @@ class BidirectionalStage1Dataset(Dataset):
         self.key_cache_dir.mkdir(parents=True, exist_ok=True)
         self._key_offsets_cache = {}
         self._key_bin_handles = {}
-        self._load_data()
+        if not skip_load_data:
+            self._load_data()
 
     def _build_gene_vocab(self):
         nclusters_path = self.codebook_dir / "gene_nclusters.json"
@@ -877,3 +879,122 @@ class BidirectionalStage1Dataset(Dataset):
                     batched[k] = torch.stack(v, dim=0)
 
         return dict(batched)
+
+
+class WhitelistKeyDataset(Dataset):
+    """
+    基于白名单 key 列表的 Stage1 数据集包装器。
+
+    复用 BidirectionalStage1Dataset 的组件，但用 key-list 替代 position-based
+    索引，避免为了筛白名单而全量扫描样本。
+    """
+
+    def __init__(
+        self,
+        base_dataset: BidirectionalStage1Dataset,
+        whitelist_path: str,
+        accelerator=None,
+    ):
+        self.base = base_dataset
+
+        with open(whitelist_path, 'r', encoding='utf-8') as f:
+            whitelist = json.load(f)
+
+        self.entries = []
+        missing_dbs = []
+        for db_name, keys in whitelist.items():
+            cluster_db_name = f"{db_name}_cluster.db"
+            cluster_path = base_dataset.cluster_lmdb_dir / cluster_db_name
+            caption_path = base_dataset.caption_lmdb_dir / f"{db_name}.db"
+
+            if not cluster_path.exists():
+                missing_dbs.append(db_name)
+                continue
+
+            for key in keys:
+                self.entries.append((
+                    cluster_db_name,
+                    key,
+                    str(caption_path),
+                    str(cluster_path),
+                    db_name,
+                ))
+
+        if missing_dbs and (accelerator is None or accelerator.is_main_process):
+            print(f"[WhitelistKeyDS] Warning: {len(missing_dbs)} DBs not found in cluster_lmdb_dir, skipped")
+
+        if accelerator is not None:
+            rank = accelerator.process_index
+            world_size = accelerator.num_processes
+            self.entries = self.entries[rank::world_size]
+
+        self.total_cells = len(self.entries)
+        print(f"[WhitelistKeyDS] Rank {getattr(accelerator, 'process_index', 0)}: entries={self.total_cells:,}")
+
+    def __len__(self):
+        return self.total_cells
+
+    def __getitem__(self, idx):
+        original_idx = idx
+        for attempt in range(min(len(self), 5)):
+            entry_idx = (original_idx + attempt) % len(self)
+            result = self._get_item_inner(entry_idx)
+            if result is not None:
+                return result
+        raise RuntimeError(
+            f"WhitelistKeyDataset: 连续 5 个样本读取失败，起始 idx={original_idx}, "
+            f"entry=({self.entries[original_idx][4]}/{self.entries[original_idx][1]})"
+        )
+
+    def _get_item_inner(self, idx):
+        cluster_db_name, key_str, caption_path, _, _ = self.entries[idx]
+        key_bytes = key_str.encode('utf-8')
+        base = self.base
+
+        try:
+            if base.use_cell_cls:
+                raw = base.cell_aware_loader.get_raw(cluster_db_name, key_bytes)
+                if raw is None:
+                    return None
+                record, lookup = raw
+                fused_emb, token_ids_arr, valid_mask = base.cell_aware_loader._fuse(record, lookup)
+                flat_gene_tokens = []
+                for tid in token_ids_arr:
+                    if tid >= 0:
+                        flat_gene_tokens.append(base.text_vocab_size + int(tid))
+                gene_payload = {
+                    'fused_gene_embedding': fused_emb,
+                    'flat_gene_tokens': flat_gene_tokens,
+                    'valid_mask': valid_mask,
+                }
+            else:
+                record = base.feature_loader.get(cluster_db_name, key_bytes)
+                if record is None:
+                    return None
+                gene_payload = {
+                    'flat_gene_tokens': base._build_flat_gene_tokens(record['gene_ids'], record['cluster_ids'])
+                }
+        except Exception:
+            return None
+
+        cap_env = base._get_caption_env(caption_path)
+        if cap_env is None:
+            return None
+        try:
+            with cap_env.begin(write=False) as txn:
+                caption_raw = txn.get(key_bytes)
+        except Exception:
+            return None
+        if caption_raw is None:
+            return None
+
+        try:
+            metadata = json.loads(caption_raw.decode('utf-8'))
+        except Exception:
+            return None
+
+        is_understanding = random.random() < base.understanding_ratio
+        if is_understanding:
+            return base._build_understanding_sample(gene_payload, metadata)
+        return base._build_generation_sample(gene_payload, metadata)
+
