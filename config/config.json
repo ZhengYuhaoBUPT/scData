@@ -61,7 +61,7 @@
         }
     },
     "training": {
-        "batch_size": 5,
+        "batch_size": 4,
         "num_workers": 4,
         "seed": 706938,
         "gradient_checkpointing": true,
@@ -80,7 +80,7 @@
             "tau": 0.1,
             "k": 4,
             "anchor_per_rank": 1,
-            "interval": 2,
+            "interval": 1,
             "start_step": 0
       },
         "stage2_rank_loss": {

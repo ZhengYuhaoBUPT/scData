@@ -1,0 +1,2041 @@
+W0423 10:51:32.967000 59780 site-packages/torch/distributed/run.py:852] 
+W0423 10:51:32.967000 59780 site-packages/torch/distributed/run.py:852] *****************************************
+W0423 10:51:32.967000 59780 site-packages/torch/distributed/run.py:852] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0423 10:51:32.967000 59780 site-packages/torch/distributed/run.py:852] *****************************************
+is-dcsn7qhxjihsjqes-devmachine-0:59942:59942 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:59942:59942 [0] NCCL INFO Bootstrap: Using eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:59942:59942 [0] NCCL INFO cudaDriverVersion 12080
+is-dcsn7qhxjihsjqes-devmachine-0:59942:59942 [0] NCCL INFO NCCL version 2.27.5+cuda12.9
+is-dcsn7qhxjihsjqes-devmachine-0:59942:59942 [0] NCCL INFO Comm config Blocking set to 1
+is-dcsn7qhxjihsjqes-devmachine-0:59943:59943 [1] NCCL INFO cudaDriverVersion 12080
+is-dcsn7qhxjihsjqes-devmachine-0:59943:59943 [1] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:59945:59945 [3] NCCL INFO cudaDriverVersion 12080
+is-dcsn7qhxjihsjqes-devmachine-0:59945:59945 [3] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:59944:59944 [2] NCCL INFO cudaDriverVersion 12080
+is-dcsn7qhxjihsjqes-devmachine-0:59944:59944 [2] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:59943:59943 [1] NCCL INFO Bootstrap: Using eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:59945:59945 [3] NCCL INFO Bootstrap: Using eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:59944:59944 [2] NCCL INFO Bootstrap: Using eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:59943:59943 [1] NCCL INFO NCCL version 2.27.5+cuda12.9
+is-dcsn7qhxjihsjqes-devmachine-0:59945:59945 [3] NCCL INFO NCCL version 2.27.5+cuda12.9
+is-dcsn7qhxjihsjqes-devmachine-0:59944:59944 [2] NCCL INFO NCCL version 2.27.5+cuda12.9
+is-dcsn7qhxjihsjqes-devmachine-0:59944:59944 [2] NCCL INFO Comm config Blocking set to 1
+is-dcsn7qhxjihsjqes-devmachine-0:59943:59943 [1] NCCL INFO Comm config Blocking set to 1
+is-dcsn7qhxjihsjqes-devmachine-0:59945:59945 [3] NCCL INFO Comm config Blocking set to 1
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60079 [0] NCCL INFO NET/Plugin: Could not find: libnccl-net.so. 
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60079 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60079 [0] NCCL INFO NET/IB : No device found.
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60079 [0] NCCL INFO NET/IB : Using [RO]; OOB eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60079 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60079 [0] NCCL INFO NET/Socket : Using [0]eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60079 [0] NCCL INFO Initialized NET plugin Socket
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60079 [0] NCCL INFO Assigned NET plugin Socket to comm
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60079 [0] NCCL INFO Using network Socket
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60079 [0] NCCL INFO ncclCommInitRankConfig comm 0xd0dc140 rank 0 nranks 4 cudaDev 0 nvmlDev 0 busId 5d000 commId 0x2609a9ff47332aee - Init START
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60080 [2] NCCL INFO NET/Plugin: Could not find: libnccl-net.so. 
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60080 [2] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60080 [2] NCCL INFO NET/IB : No device found.
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60080 [2] NCCL INFO NET/IB : Using [RO]; OOB eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60080 [2] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60080 [2] NCCL INFO NET/Socket : Using [0]eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60080 [2] NCCL INFO Initialized NET plugin Socket
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60080 [2] NCCL INFO Assigned NET plugin Socket to comm
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60080 [2] NCCL INFO Using network Socket
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60082 [3] NCCL INFO NET/Plugin: Could not find: libnccl-net.so. 
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60082 [3] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60082 [3] NCCL INFO NET/IB : No device found.
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60082 [3] NCCL INFO NET/IB : Using [RO]; OOB eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60082 [3] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60082 [3] NCCL INFO NET/Socket : Using [0]eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60082 [3] NCCL INFO Initialized NET plugin Socket
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60082 [3] NCCL INFO Assigned NET plugin Socket to comm
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60082 [3] NCCL INFO Using network Socket
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60081 [1] NCCL INFO NET/Plugin: Could not find: libnccl-net.so. 
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60081 [1] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60081 [1] NCCL INFO NET/IB : No device found.
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60081 [1] NCCL INFO NET/IB : Using [RO]; OOB eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60081 [1] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60081 [1] NCCL INFO NET/Socket : Using [0]eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60081 [1] NCCL INFO Initialized NET plugin Socket
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60081 [1] NCCL INFO Assigned NET plugin Socket to comm
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60081 [1] NCCL INFO Using network Socket
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60080 [2] NCCL INFO ncclCommInitRankConfig comm 0xc32d330 rank 2 nranks 4 cudaDev 2 nvmlDev 2 busId ab000 commId 0x2609a9ff47332aee - Init START
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60082 [3] NCCL INFO ncclCommInitRankConfig comm 0xd2493b0 rank 3 nranks 4 cudaDev 3 nvmlDev 3 busId bb000 commId 0x2609a9ff47332aee - Init START
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60081 [1] NCCL INFO ncclCommInitRankConfig comm 0xceea940 rank 1 nranks 4 cudaDev 1 nvmlDev 1 busId 9b000 commId 0x2609a9ff47332aee - Init START
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60082 [3] NCCL INFO RAS client listening socket at ::1<28028>
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60081 [1] NCCL INFO RAS client listening socket at ::1<28028>
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60079 [0] NCCL INFO RAS client listening socket at ::1<28028>
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60080 [2] NCCL INFO RAS client listening socket at ::1<28028>
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60079 [0] NCCL INFO Bootstrap timings total 0.291973 (create 0.000045, send 0.000108, recv 0.291366, ring 0.000052, delay 0.000000)
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60081 [1] NCCL INFO Bootstrap timings total 0.000724 (create 0.000042, send 0.000098, recv 0.000152, ring 0.000047, delay 0.000000)
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60080 [2] NCCL INFO Bootstrap timings total 0.008586 (create 0.000042, send 0.000099, recv 0.007854, ring 0.000049, delay 0.000000)
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60082 [3] NCCL INFO Bootstrap timings total 0.000838 (create 0.000041, send 0.000101, recv 0.000144, ring 0.000154, delay 0.000000)
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60081 [1] NCCL INFO NCCL_P2P_DISABLE set by environment to 1
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60080 [2] NCCL INFO NCCL_P2P_DISABLE set by environment to 1
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60079 [0] NCCL INFO NCCL_P2P_DISABLE set by environment to 1
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60082 [3] NCCL INFO NCCL_P2P_DISABLE set by environment to 1
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60079 [0] NCCL INFO Setting affinity for GPU 0 to 96-116
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60082 [3] NCCL INFO Setting affinity for GPU 3 to 48-89,165-185
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60079 [0] NCCL INFO NVLS multicast support is available on dev 0 (NVLS_NCHANNELS 16)
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60082 [3] NCCL INFO NVLS multicast support is available on dev 3 (NVLS_NCHANNELS 16)
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60081 [1] NCCL INFO Setting affinity for GPU 1 to 48-89,165-185
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60081 [1] NCCL INFO NVLS multicast support is available on dev 1 (NVLS_NCHANNELS 16)
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60080 [2] NCCL INFO Setting affinity for GPU 2 to 48-89,165-185
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60080 [2] NCCL INFO NVLS multicast support is available on dev 2 (NVLS_NCHANNELS 16)
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60082 [3] NCCL INFO comm 0xd2493b0 rank 3 nRanks 4 nNodes 1 localRanks 4 localRank 3 MNNVL 0
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60080 [2] NCCL INFO comm 0xc32d330 rank 2 nRanks 4 nNodes 1 localRanks 4 localRank 2 MNNVL 0
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60081 [1] NCCL INFO comm 0xceea940 rank 1 nRanks 4 nNodes 1 localRanks 4 localRank 1 MNNVL 0
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60079 [0] NCCL INFO comm 0xd0dc140 rank 0 nRanks 4 nNodes 1 localRanks 4 localRank 0 MNNVL 0
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60082 [3] NCCL INFO Trees [0] -1/-1/-1->3->2 [1] -1/-1/-1->3->2 [2] -1/-1/-1->3->2 [3] -1/-1/-1->3->2 [4] -1/-1/-1->3->2 [5] -1/-1/-1->3->2 [6] -1/-1/-1->3->2 [7] -1/-1/-1->3->2 [8] -1/-1/-1->3->2 [9] -1/-1/-1->3->2 [10] -1/-1/-1->3->2 [11] -1/-1/-1->3->2 [12] -1/-1/-1->3->2 [13] -1/-1/-1->3->2 [14] -1/-1/-1->3->2 [15] -1/-1/-1->3->2
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60082 [3] NCCL INFO P2P Chunksize set to 131072
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60080 [2] NCCL INFO Trees [0] 3/-1/-1->2->1 [1] 3/-1/-1->2->1 [2] 3/-1/-1->2->1 [3] 3/-1/-1->2->1 [4] 3/-1/-1->2->1 [5] 3/-1/-1->2->1 [6] 3/-1/-1->2->1 [7] 3/-1/-1->2->1 [8] 3/-1/-1->2->1 [9] 3/-1/-1->2->1 [10] 3/-1/-1->2->1 [11] 3/-1/-1->2->1 [12] 3/-1/-1->2->1 [13] 3/-1/-1->2->1 [14] 3/-1/-1->2->1 [15] 3/-1/-1->2->1
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60081 [1] NCCL INFO Trees [0] 2/-1/-1->1->0 [1] 2/-1/-1->1->0 [2] 2/-1/-1->1->0 [3] 2/-1/-1->1->0 [4] 2/-1/-1->1->0 [5] 2/-1/-1->1->0 [6] 2/-1/-1->1->0 [7] 2/-1/-1->1->0 [8] 2/-1/-1->1->0 [9] 2/-1/-1->1->0 [10] 2/-1/-1->1->0 [11] 2/-1/-1->1->0 [12] 2/-1/-1->1->0 [13] 2/-1/-1->1->0 [14] 2/-1/-1->1->0 [15] 2/-1/-1->1->0
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60080 [2] NCCL INFO P2P Chunksize set to 131072
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60079 [0] NCCL INFO Channel 00/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60081 [1] NCCL INFO P2P Chunksize set to 131072
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60079 [0] NCCL INFO Channel 01/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60079 [0] NCCL INFO Channel 02/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60079 [0] NCCL INFO Channel 03/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60079 [0] NCCL INFO Channel 04/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60079 [0] NCCL INFO Channel 05/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60079 [0] NCCL INFO Channel 06/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60079 [0] NCCL INFO Channel 07/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60079 [0] NCCL INFO Channel 08/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60079 [0] NCCL INFO Channel 09/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60079 [0] NCCL INFO Channel 10/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60079 [0] NCCL INFO Channel 11/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60079 [0] NCCL INFO Channel 12/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60079 [0] NCCL INFO Channel 13/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60079 [0] NCCL INFO Channel 14/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60079 [0] NCCL INFO Channel 15/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60079 [0] NCCL INFO Trees [0] 1/-1/-1->0->-1 [1] 1/-1/-1->0->-1 [2] 1/-1/-1->0->-1 [3] 1/-1/-1->0->-1 [4] 1/-1/-1->0->-1 [5] 1/-1/-1->0->-1 [6] 1/-1/-1->0->-1 [7] 1/-1/-1->0->-1 [8] 1/-1/-1->0->-1 [9] 1/-1/-1->0->-1 [10] 1/-1/-1->0->-1 [11] 1/-1/-1->0->-1 [12] 1/-1/-1->0->-1 [13] 1/-1/-1->0->-1 [14] 1/-1/-1->0->-1 [15] 1/-1/-1->0->-1
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60079 [0] NCCL INFO P2P Chunksize set to 131072
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60082 [3] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60081 [1] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60087 [3] NCCL INFO [Proxy Service] Device 3 CPU core 54
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60088 [3] NCCL INFO [Proxy Service UDS] Device 3 CPU core 55
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60089 [1] NCCL INFO [Proxy Service] Device 1 CPU core 81
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60090 [1] NCCL INFO [Proxy Service UDS] Device 1 CPU core 179
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60080 [2] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60079 [0] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60079 [0] NCCL INFO Check P2P Type isAllDirectP2p 0 directMode 0
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60091 [2] NCCL INFO [Proxy Service] Device 2 CPU core 67
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60092 [2] NCCL INFO [Proxy Service UDS] Device 2 CPU core 168
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60093 [0] NCCL INFO [Proxy Service] Device 0 CPU core 102
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60094 [0] NCCL INFO [Proxy Service UDS] Device 0 CPU core 103
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60079 [0] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60079 [0] NCCL INFO 16 coll channels, 16 collnet channels, 16 nvls channels, 16 p2p channels, 2 p2p channels per peer
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60082 [3] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60082 [3] NCCL INFO 16 coll channels, 16 collnet channels, 16 nvls channels, 16 p2p channels, 2 p2p channels per peer
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60080 [2] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60080 [2] NCCL INFO 16 coll channels, 16 collnet channels, 16 nvls channels, 16 p2p channels, 2 p2p channels per peer
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60081 [1] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60081 [1] NCCL INFO 16 coll channels, 16 collnet channels, 16 nvls channels, 16 p2p channels, 2 p2p channels per peer
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60079 [0] NCCL INFO CC Off, workFifoBytes 1048576
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60080 [2] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60080 [2] NCCL INFO ncclCommInitRankConfig comm 0xc32d330 rank 2 nranks 4 cudaDev 2 nvmlDev 2 busId ab000 commId 0x2609a9ff47332aee - Init COMPLETE
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60080 [2] NCCL INFO Init timings - ncclCommInitRankConfig: rank 2 nranks 4 total 0.86 (kernels 0.33, alloc 0.09, bootstrap 0.01, allgathers 0.00, topo 0.32, graphs 0.00, connections 0.10, rest 0.00)
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60082 [3] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60082 [3] NCCL INFO ncclCommInitRankConfig comm 0xd2493b0 rank 3 nranks 4 cudaDev 3 nvmlDev 3 busId bb000 commId 0x2609a9ff47332aee - Init COMPLETE
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60082 [3] NCCL INFO Init timings - ncclCommInitRankConfig: rank 3 nranks 4 total 0.86 (kernels 0.33, alloc 0.10, bootstrap 0.00, allgathers 0.01, topo 0.32, graphs 0.00, connections 0.10, rest 0.00)
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60081 [1] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60081 [1] NCCL INFO ncclCommInitRankConfig comm 0xceea940 rank 1 nranks 4 cudaDev 1 nvmlDev 1 busId 9b000 commId 0x2609a9ff47332aee - Init COMPLETE
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60081 [1] NCCL INFO Init timings - ncclCommInitRankConfig: rank 1 nranks 4 total 0.86 (kernels 0.33, alloc 0.10, bootstrap 0.00, allgathers 0.00, topo 0.32, graphs 0.00, connections 0.10, rest 0.00)
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60079 [0] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60079 [0] NCCL INFO ncclCommInitRankConfig comm 0xd0dc140 rank 0 nranks 4 cudaDev 0 nvmlDev 0 busId 5d000 commId 0x2609a9ff47332aee - Init COMPLETE
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60079 [0] NCCL INFO Init timings - ncclCommInitRankConfig: rank 0 nranks 4 total 1.09 (kernels 0.34, alloc 0.04, bootstrap 0.29, allgathers 0.01, topo 0.32, graphs 0.00, connections 0.10, rest 0.00)
+📄 使用配置: /mnt/c20250607/user/wanghaoran/zyh/scDataTest/config/config.json
+✅ 从配置加载模型参数:
+   - hidden_size: 3584
+   - num_diffusion_layers: 8
+   - attention_type: omni
+   - weight_decay: 0.0001
+   - clip_grad_norm: 1.0
+   - gradient_checkpointing: True
+   - disable_gene_position_ids: True
+   - gene_position_buckets: 100
+✅ 从配置加载模型参数:
+   - hidden_size: 3584
+   - num_diffusion_layers: 8
+   - attention_type: omni
+   - weight_decay: 0.0001
+   - clip_grad_norm: 1.0
+   - gradient_checkpointing: True
+   - disable_gene_position_ids: True
+   - gene_position_buckets: 100
+✅ 从配置加载模型参数:
+   - hidden_size: 3584
+   - num_diffusion_layers: 8
+   - attention_type: omni
+   - weight_decay: 0.0001
+   - clip_grad_norm: 1.0
+   - gradient_checkpointing: True
+   - disable_gene_position_ids: True
+   - gene_position_buckets: 100
+✅ 从配置加载模型参数:
+   - hidden_size: 3584
+   - num_diffusion_layers: 8
+   - attention_type: omni
+   - weight_decay: 0.0001
+   - clip_grad_norm: 1.0
+   - gradient_checkpointing: True
+   - disable_gene_position_ids: True
+   - gene_position_buckets: 100
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:04<00:12,  4.04s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:04<00:12,  4.09s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:04<00:12,  4.09s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:04<00:12,  4.08s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:07<00:07,  3.94s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:07<00:07,  3.95s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:07<00:07,  3.96s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:07<00:07,  3.95s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:11<00:03,  3.88s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:11<00:03,  3.89s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:11<00:03,  3.89s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:11<00:03,  3.89s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:15<00:00,  3.74s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:15<00:00,  3.81s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:15<00:00,  3.74s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:15<00:00,  3.82s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:15<00:00,  3.74s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:15<00:00,  3.82s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:15<00:00,  3.74s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:15<00:00,  3.82s/it]
+✅ Gradient Checkpointing 已启用
+✅ Gradient Checkpointing 已启用
+✅ Gradient Checkpointing 已启用
+✅ Gradient Checkpointing 已启用
+✅ 使用 compact codebook: codebook_tensor_compact.pt
+✅ 使用 compact codebook: codebook_tensor_compact.pt✅ 使用 compact codebook: codebook_tensor_compact.pt
+
+✅ 使用 compact codebook: codebook_tensor_compact.pt
+⚠️  gene_vocab_size 调整: 0 -> 741440⚠️  gene_vocab_size 调整: 0 -> 741440⚠️  gene_vocab_size 调整: 0 -> 741440
+
+
+⚠️  gene_vocab_size 调整: 0 -> 741440
+✅ 初始化 gene_embed_tokens: vocab=741440, base=11585 genes x 64 clusters, frozen
+✅ 初始化 gene_embed_tokens: vocab=741440, base=11585 genes x 64 clusters, frozen
+✅ 初始化 gene_embed_tokens: vocab=741440, base=11585 genes x 64 clusters, frozen
+✅ 初始化 gene_embed_tokens: vocab=741440, base=11585 genes x 64 clusters, frozen
+
+🔧 Diffusion Head 配置对齐 Qwen2.5 底座:
+   - Qwen hidden_size: 3584
+   - Qwen num_attention_heads: 28
+   - Qwen intermediate_size: 18944
+   - head_dim: 128
+
+🔧 Diffusion Head 配置对齐 Qwen2.5 底座:
+   - Qwen hidden_size: 3584
+   - Qwen num_attention_heads: 28
+   - Qwen intermediate_size: 18944
+   - head_dim: 128
+
+🔧 Diffusion Head 配置对齐 Qwen2.5 底座:
+   - Qwen hidden_size: 3584
+   - Qwen num_attention_heads: 28
+   - Qwen intermediate_size: 18944
+   - head_dim: 128
+
+🔧 Diffusion Head 配置对齐 Qwen2.5 底座:
+   - Qwen hidden_size: 3584
+   - Qwen num_attention_heads: 28
+   - Qwen intermediate_size: 18944
+   - head_dim: 128
+
+⚠️  Stage1 使用弱 rank signal + 1D RoPE
+
+🧬 初始化理解数据加载器...
+   模式分布: 100% 理解 [Gene->Text]
+[BidirectionalStage1DS] initialized:
+   - max_genes: 1200
+   - understanding_ratio: 1.0
+   - generation_ratio: 0.0
+   - Rank 0/1
+[BidirectionalStage1DS] compact gene vocab: 11585 genes x 64 = 741440 tokens
+
+============================================================
+[BidirectionalStage1DS] Distributed data allocation (global sample split + lazy keys)
+============================================================
+[BidirectionalStage1DS] initialized:
+   - max_genes: 1200
+   - understanding_ratio: 1.0
+   - generation_ratio: 0.0
+   - Rank 0/1
+[BidirectionalStage1DS] initialized:
+   - max_genes: 1200
+   - understanding_ratio: 1.0
+   - generation_ratio: 0.0
+   - Rank 0/1
+[BidirectionalStage1DS] compact gene vocab: 11585 genes x 64 = 741440 tokens
+[BidirectionalStage1DS] initialized:
+   - max_genes: 1200
+   - understanding_ratio: 1.0
+   - generation_ratio: 0.0
+   - Rank 0/1
+[BidirectionalStage1DS] compact gene vocab: 11585 genes x 64 = 741440 tokens
+[BidirectionalStage1DS] compact gene vocab: 11585 genes x 64 = 741440 tokens
+[BidirectionalStage1DS] Total cells(all ranks): 32,061,933
+[BidirectionalStage1DS] Per-rank target ~= 32,061,933 (+1 for first 0 ranks)
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60103 [3] NCCL INFO NVLS comm 0xd2493b0 headRank 3 nHeads 4 nvlsRanks 4 buffSize 1048576 nvlsPerRankSize 33554432 nvlsTotalSize 134217728
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60104 [1] NCCL INFO NVLS comm 0xceea940 headRank 1 nHeads 4 nvlsRanks 4 buffSize 1048576 nvlsPerRankSize 33554432 nvlsTotalSize 134217728
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60105 [2] NCCL INFO NVLS comm 0xc32d330 headRank 2 nHeads 4 nvlsRanks 4 buffSize 1048576 nvlsPerRankSize 33554432 nvlsTotalSize 134217728
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60106 [0] NCCL INFO NVLS comm 0xd0dc140 headRank 0 nHeads 4 nvlsRanks 4 buffSize 1048576 nvlsPerRankSize 33554432 nvlsTotalSize 134217728
+[BidirectionalStage1DS] Rank 0: cells=32,061,933, blocks=35[BidirectionalStage1DS] Rank 0: cells=32,061,933, blocks=35[BidirectionalStage1DS] Rank 0: cells=32,061,933, blocks=35[BidirectionalStage1DS] Rank 0: cells=32,061,933, blocks=35
+
+
+
+⚠️ disable_gene_position_ids=True: 已关闭 rank_signal_injector 训练与注入
+
+📊 参数组统计:
+   总参数量: 11,207,733,274 (11.21B)
+   可训练参数量: 3,009,834,265 (3009.83M)
+   冻结参数量: 8,197,899,009 (8.20B)
+   训练比例: 26.85%
+swanlab: Tracking run with swanlab version 0.7.15
+swanlab: Run data will be saved locally in 
+/mnt/c20250607/user/wanghaoran/zyh/scDataTest/logs/swanlab/run-20260423_105233-9
+bwmsoymcikx70iuzsekc
+swanlab: 👋 Hi yuhao_zheng,welcome to swanlab!
+swanlab: Syncing run stage1 to the cloud
+swanlab: 🏠 View project at 
+https://swanlab.cn/@yuhao_zheng/sc_showo_understanding_only
+swanlab: 🚀 View run at 
+https://swanlab.cn/@yuhao_zheng/sc_showo_understanding_only/runs/9bwmsoymcikx70i
+uzsekc
+✅ SwanLab 初始化成功：sc_showo_understanding_only (exp: stage1)
+is-dcsn7qhxjihsjqes-devmachine-0:59943:59943 [1] NCCL INFO Comm config Blocking set to 1
+is-dcsn7qhxjihsjqes-devmachine-0:59945:59945 [3] NCCL INFO Comm config Blocking set to 1
+is-dcsn7qhxjihsjqes-devmachine-0:59942:59942 [0] NCCL INFO Comm config Blocking set to 1
+is-dcsn7qhxjihsjqes-devmachine-0:59944:59944 [2] NCCL INFO Comm config Blocking set to 1
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60140 [2] NCCL INFO Assigned NET plugin Socket to comm
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60140 [2] NCCL INFO Using network Socket
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60137 [0] NCCL INFO Assigned NET plugin Socket to comm
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60137 [0] NCCL INFO Using network Socket
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60134 [3] NCCL INFO Assigned NET plugin Socket to comm
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60131 [1] NCCL INFO Assigned NET plugin Socket to comm
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60134 [3] NCCL INFO Using network Socket
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60131 [1] NCCL INFO Using network Socket
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60137 [0] NCCL INFO ncclCommSplit comm 0x29f48000 rank 0 nranks 4 cudaDev 0 nvmlDev 0 busId 5d000 parent 0xd0dc140 splitCount 1 color 2003953581 key 0- Init START
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60140 [2] NCCL INFO ncclCommSplit comm 0x1073a280 rank 2 nranks 4 cudaDev 2 nvmlDev 2 busId ab000 parent 0xc32d330 splitCount 1 color 2003953581 key 2- Init START
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60131 [1] NCCL INFO ncclCommSplit comm 0x112ff110 rank 1 nranks 4 cudaDev 1 nvmlDev 1 busId 9b000 parent 0xceea940 splitCount 1 color 2003953581 key 1- Init START
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60134 [3] NCCL INFO ncclCommSplit comm 0x1165e950 rank 3 nranks 4 cudaDev 3 nvmlDev 3 busId bb000 parent 0xd2493b0 splitCount 1 color 2003953581 key 3- Init START
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60140 [2] NCCL INFO Setting affinity for GPU 2 to 48-89,165-185
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60140 [2] NCCL INFO NVLS multicast support is available on dev 2 (NVLS_NCHANNELS 16)
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60137 [0] NCCL INFO Setting affinity for GPU 0 to 96-116
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60131 [1] NCCL INFO Setting affinity for GPU 1 to 48-89,165-185
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60131 [1] NCCL INFO NVLS multicast support is available on dev 1 (NVLS_NCHANNELS 16)
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60137 [0] NCCL INFO NVLS multicast support is available on dev 0 (NVLS_NCHANNELS 16)
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60134 [3] NCCL INFO Setting affinity for GPU 3 to 48-89,165-185
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60134 [3] NCCL INFO NVLS multicast support is available on dev 3 (NVLS_NCHANNELS 16)
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60134 [3] NCCL INFO comm 0x1165e950 rank 3 nRanks 4 nNodes 1 localRanks 4 localRank 3 MNNVL 0
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60140 [2] NCCL INFO comm 0x1073a280 rank 2 nRanks 4 nNodes 1 localRanks 4 localRank 2 MNNVL 0
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60131 [1] NCCL INFO comm 0x112ff110 rank 1 nRanks 4 nNodes 1 localRanks 4 localRank 1 MNNVL 0
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60137 [0] NCCL INFO comm 0x29f48000 rank 0 nRanks 4 nNodes 1 localRanks 4 localRank 0 MNNVL 0
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60134 [3] NCCL INFO Trees [0] -1/-1/-1->3->2 [1] -1/-1/-1->3->2 [2] -1/-1/-1->3->2 [3] -1/-1/-1->3->2 [4] -1/-1/-1->3->2 [5] -1/-1/-1->3->2 [6] -1/-1/-1->3->2 [7] -1/-1/-1->3->2 [8] -1/-1/-1->3->2 [9] -1/-1/-1->3->2 [10] -1/-1/-1->3->2 [11] -1/-1/-1->3->2 [12] -1/-1/-1->3->2 [13] -1/-1/-1->3->2 [14] -1/-1/-1->3->2 [15] -1/-1/-1->3->2
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60140 [2] NCCL INFO Trees [0] 3/-1/-1->2->1 [1] 3/-1/-1->2->1 [2] 3/-1/-1->2->1 [3] 3/-1/-1->2->1 [4] 3/-1/-1->2->1 [5] 3/-1/-1->2->1 [6] 3/-1/-1->2->1 [7] 3/-1/-1->2->1 [8] 3/-1/-1->2->1 [9] 3/-1/-1->2->1 [10] 3/-1/-1->2->1 [11] 3/-1/-1->2->1 [12] 3/-1/-1->2->1 [13] 3/-1/-1->2->1 [14] 3/-1/-1->2->1 [15] 3/-1/-1->2->1
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60134 [3] NCCL INFO P2P Chunksize set to 131072
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60140 [2] NCCL INFO P2P Chunksize set to 131072
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60137 [0] NCCL INFO Channel 00/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60131 [1] NCCL INFO Trees [0] 2/-1/-1->1->0 [1] 2/-1/-1->1->0 [2] 2/-1/-1->1->0 [3] 2/-1/-1->1->0 [4] 2/-1/-1->1->0 [5] 2/-1/-1->1->0 [6] 2/-1/-1->1->0 [7] 2/-1/-1->1->0 [8] 2/-1/-1->1->0 [9] 2/-1/-1->1->0 [10] 2/-1/-1->1->0 [11] 2/-1/-1->1->0 [12] 2/-1/-1->1->0 [13] 2/-1/-1->1->0 [14] 2/-1/-1->1->0 [15] 2/-1/-1->1->0
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60137 [0] NCCL INFO Channel 01/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60131 [1] NCCL INFO P2P Chunksize set to 131072
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60137 [0] NCCL INFO Channel 02/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60137 [0] NCCL INFO Channel 03/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60137 [0] NCCL INFO Channel 04/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60137 [0] NCCL INFO Channel 05/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60137 [0] NCCL INFO Channel 06/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60137 [0] NCCL INFO Channel 07/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60137 [0] NCCL INFO Channel 08/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60137 [0] NCCL INFO Channel 09/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60137 [0] NCCL INFO Channel 10/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60137 [0] NCCL INFO Channel 11/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60137 [0] NCCL INFO Channel 12/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60137 [0] NCCL INFO Channel 13/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60137 [0] NCCL INFO Channel 14/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60137 [0] NCCL INFO Channel 15/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60137 [0] NCCL INFO Trees [0] 1/-1/-1->0->-1 [1] 1/-1/-1->0->-1 [2] 1/-1/-1->0->-1 [3] 1/-1/-1->0->-1 [4] 1/-1/-1->0->-1 [5] 1/-1/-1->0->-1 [6] 1/-1/-1->0->-1 [7] 1/-1/-1->0->-1 [8] 1/-1/-1->0->-1 [9] 1/-1/-1->0->-1 [10] 1/-1/-1->0->-1 [11] 1/-1/-1->0->-1 [12] 1/-1/-1->0->-1 [13] 1/-1/-1->0->-1 [14] 1/-1/-1->0->-1 [15] 1/-1/-1->0->-1
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60137 [0] NCCL INFO P2P Chunksize set to 131072
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60137 [0] NCCL INFO Check P2P Type isAllDirectP2p 0 directMode 0
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60141 [2] NCCL INFO [Proxy Service] Device 2 CPU core 169
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60142 [2] NCCL INFO [Proxy Service UDS] Device 2 CPU core 74
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60143 [3] NCCL INFO [Proxy Service] Device 3 CPU core 60
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60144 [1] NCCL INFO [Proxy Service] Device 1 CPU core 182
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60145 [0] NCCL INFO [Proxy Service] Device 0 CPU core 99
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60146 [3] NCCL INFO [Proxy Service UDS] Device 3 CPU core 61
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60147 [1] NCCL INFO [Proxy Service UDS] Device 1 CPU core 87
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60148 [0] NCCL INFO [Proxy Service UDS] Device 0 CPU core 103
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60131 [1] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60131 [1] NCCL INFO 16 coll channels, 16 collnet channels, 16 nvls channels, 16 p2p channels, 2 p2p channels per peer
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60140 [2] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60140 [2] NCCL INFO 16 coll channels, 16 collnet channels, 16 nvls channels, 16 p2p channels, 2 p2p channels per peer
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60134 [3] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60134 [3] NCCL INFO 16 coll channels, 16 collnet channels, 16 nvls channels, 16 p2p channels, 2 p2p channels per peer
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60137 [0] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60137 [0] NCCL INFO 16 coll channels, 16 collnet channels, 16 nvls channels, 16 p2p channels, 2 p2p channels per peer
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60137 [0] NCCL INFO CC Off, workFifoBytes 1048576
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60134 [3] NCCL INFO ncclCommSplit comm 0x1165e950 rank 3 nranks 4 cudaDev 3 nvmlDev 3 busId bb000 parent 0xd2493b0 splitCount 1 color 2003953581 key 3 - Init COMPLETE
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60131 [1] NCCL INFO ncclCommSplit comm 0x112ff110 rank 1 nranks 4 cudaDev 1 nvmlDev 1 busId 9b000 parent 0xceea940 splitCount 1 color 2003953581 key 1 - Init COMPLETE
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60134 [3] NCCL INFO Init timings - ncclCommSplit: rank 3 nranks 4 total 6.16 (kernels 0.00, alloc 0.00, bootstrap 0.00, allgathers 0.00, topo 0.29, graphs 0.00, connections 0.10, rest 5.77)
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60131 [1] NCCL INFO Init timings - ncclCommSplit: rank 1 nranks 4 total 6.91 (kernels 0.00, alloc 0.00, bootstrap 0.00, allgathers 0.00, topo 0.29, graphs 0.00, connections 0.10, rest 6.52)
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60140 [2] NCCL INFO ncclCommSplit comm 0x1073a280 rank 2 nranks 4 cudaDev 2 nvmlDev 2 busId ab000 parent 0xc32d330 splitCount 1 color 2003953581 key 2 - Init COMPLETE
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60137 [0] NCCL INFO ncclCommSplit comm 0x29f48000 rank 0 nranks 4 cudaDev 0 nvmlDev 0 busId 5d000 parent 0xd0dc140 splitCount 1 color 2003953581 key 0 - Init COMPLETE
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60140 [2] NCCL INFO Init timings - ncclCommSplit: rank 2 nranks 4 total 0.41 (kernels 0.00, alloc 0.00, bootstrap 0.00, allgathers 0.00, topo 0.29, graphs 0.00, connections 0.10, rest 0.02)
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60137 [0] NCCL INFO Init timings - ncclCommSplit: rank 0 nranks 4 total 2.12 (kernels 0.00, alloc 0.00, bootstrap 0.00, allgathers 0.00, topo 0.29, graphs 0.00, connections 0.12, rest 1.70)
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60152 [1] NCCL INFO Channel 00 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60149 [2] NCCL INFO Channel 00 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60151 [3] NCCL INFO Channel 00 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60149 [2] NCCL INFO Channel 01 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60152 [1] NCCL INFO Channel 01 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60151 [3] NCCL INFO Channel 01 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60150 [0] NCCL INFO Channel 00 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60152 [1] NCCL INFO Channel 02 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60149 [2] NCCL INFO Channel 02 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60150 [0] NCCL INFO Channel 01 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60151 [3] NCCL INFO Channel 02 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60152 [1] NCCL INFO Channel 03 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60150 [0] NCCL INFO Channel 02 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60149 [2] NCCL INFO Channel 03 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60151 [3] NCCL INFO Channel 03 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60151 [3] NCCL INFO Channel 04 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60150 [0] NCCL INFO Channel 03 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60152 [1] NCCL INFO Channel 04 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60149 [2] NCCL INFO Channel 04 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60151 [3] NCCL INFO Channel 05 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60152 [1] NCCL INFO Channel 05 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60150 [0] NCCL INFO Channel 04 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60149 [2] NCCL INFO Channel 05 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60152 [1] NCCL INFO Channel 06 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60151 [3] NCCL INFO Channel 06 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60150 [0] NCCL INFO Channel 05 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60149 [2] NCCL INFO Channel 06 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60152 [1] NCCL INFO Channel 07 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60150 [0] NCCL INFO Channel 06 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60151 [3] NCCL INFO Channel 07 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60149 [2] NCCL INFO Channel 07 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60152 [1] NCCL INFO Channel 08 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60150 [0] NCCL INFO Channel 07 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60151 [3] NCCL INFO Channel 08 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60149 [2] NCCL INFO Channel 08 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60152 [1] NCCL INFO Channel 09 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60150 [0] NCCL INFO Channel 08 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60151 [3] NCCL INFO Channel 09 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60149 [2] NCCL INFO Channel 09 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60152 [1] NCCL INFO Channel 10 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60150 [0] NCCL INFO Channel 09 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60151 [3] NCCL INFO Channel 10 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60149 [2] NCCL INFO Channel 10 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60151 [3] NCCL INFO Channel 11 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60152 [1] NCCL INFO Channel 11 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60150 [0] NCCL INFO Channel 10 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60149 [2] NCCL INFO Channel 11 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60152 [1] NCCL INFO Channel 12 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60151 [3] NCCL INFO Channel 12 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60150 [0] NCCL INFO Channel 11 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60149 [2] NCCL INFO Channel 12 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60150 [0] NCCL INFO Channel 12 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60152 [1] NCCL INFO Channel 13 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60152 [1] NCCL INFO Channel 14 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60149 [2] NCCL INFO Channel 13 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60151 [3] NCCL INFO Channel 13 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60152 [1] NCCL INFO Channel 15 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60150 [0] NCCL INFO Channel 13 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60151 [3] NCCL INFO Channel 14 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60149 [2] NCCL INFO Channel 14 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60149 [2] NCCL INFO Channel 15 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60151 [3] NCCL INFO Channel 15 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60150 [0] NCCL INFO Channel 14 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60150 [0] NCCL INFO Channel 15 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60151 [3] NCCL INFO Connected all rings, use ring PXN 0 GDR 1
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60149 [2] NCCL INFO Connected all rings, use ring PXN 0 GDR 1
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60152 [1] NCCL INFO Connected all rings, use ring PXN 0 GDR 1
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60150 [0] NCCL INFO Connected all rings, use ring PXN 0 GDR 1
+Before initializing optimizer states
+MA 23.72 GB         Max_MA 25.12 GB         CA 25.26 GB         Max_CA 25 GB 
+CPU Virtual Memory:  used = 12.36 GB, percent = 1.3%
+After initializing optimizer states
+MA 23.72 GB         Max_MA 26.52 GB         CA 28.06 GB         Max_CA 28 GB 
+CPU Virtual Memory:  used = 9.12 GB, percent = 1.0%
+After initializing ZeRO optimizer
+MA 23.72 GB         Max_MA 23.72 GB         CA 28.06 GB         Max_CA 28 GB 
+CPU Virtual Memory:  used = 7.38 GB, percent = 0.8%
+
+📊 训练配置:
+   - 数据步数: 2,003,870
+   - 优化步数: 57,254
+   - 梯度累积步数: 35
+   - Epochs: 1
+   - Scheduler: linear_warmup_cosine_decay
+   - Warmup Steps: 1,145
+   - Training Steps: 57,254
+
+🚀 从头开始训练 (未找到 checkpoint)
+🎭 Omni-Attention Mask: 文本=Causal, Gene=Bidirectional
+The attention layers in this model are transitioning from computing the RoPE embeddings internally through `position_ids` (2D tensor with the indexes of the tokens), to using externally computed `position_embeddings` (Tuple of tensors, containing cos and sin). In v4.46 `position_ids` will be removed and `position_embeddings` will be mandatory.
+The attention layers in this model are transitioning from computing the RoPE embeddings internally through `position_ids` (2D tensor with the indexes of the tokens), to using externally computed `position_embeddings` (Tuple of tensors, containing cos and sin). In v4.46 `position_ids` will be removed and `position_embeddings` will be mandatory.
+The attention layers in this model are transitioning from computing the RoPE embeddings internally through `position_ids` (2D tensor with the indexes of the tokens), to using externally computed `position_embeddings` (Tuple of tensors, containing cos and sin). In v4.46 `position_ids` will be removed and `position_embeddings` will be mandatory.
+The attention layers in this model are transitioning from computing the RoPE embeddings internally through `position_ids` (2D tensor with the indexes of the tokens), to using externally computed `position_embeddings` (Tuple of tensors, containing cos and sin). In v4.46 `position_ids` will be removed and `position_embeddings` will be mandatory.
+is-dcsn7qhxjihsjqes-devmachine-0:59942:60233 [0] NCCL INFO NVLS comm 0x29f48000 headRank 0 nHeads 4 nvlsRanks 4 buffSize 1048576 nvlsPerRankSize 33554432 nvlsTotalSize 134217728
+is-dcsn7qhxjihsjqes-devmachine-0:59944:60234 [2] NCCL INFO NVLS comm 0x1073a280 headRank 2 nHeads 4 nvlsRanks 4 buffSize 1048576 nvlsPerRankSize 33554432 nvlsTotalSize 134217728
+is-dcsn7qhxjihsjqes-devmachine-0:59945:60235 [3] NCCL INFO NVLS comm 0x1165e950 headRank 3 nHeads 4 nvlsRanks 4 buffSize 1048576 nvlsPerRankSize 33554432 nvlsTotalSize 134217728
+is-dcsn7qhxjihsjqes-devmachine-0:59943:60236 [1] NCCL INFO NVLS comm 0x112ff110 headRank 1 nHeads 4 nvlsRanks 4 buffSize 1048576 nvlsPerRankSize 33554432 nvlsTotalSize 134217728
+🧬 [Step 5] Avg Loss: 7.0452 (NTP: 6.5123, Gene: 0.0000, Rank: 1.0657)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 3.5e-07 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: -0.238458
+🧬 [Step 10] Avg Loss: 7.1424 (NTP: 6.6492, Gene: 0.0000, Rank: 0.9864)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 7.9e-07 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: -0.240735
+🧬 [Step 15] Avg Loss: 6.9892 (NTP: 6.4729, Gene: 0.0000, Rank: 1.0327)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.2e-06 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: -0.264331
+🧬 [Step 20] Avg Loss: 6.3889 (NTP: 5.9027, Gene: 0.0000, Rank: 0.9724)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.7e-06 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: -0.187310
+🧬 [Step 25] Avg Loss: 5.4211 (NTP: 4.8259, Gene: 0.0000, Rank: 1.1904)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 2.1e-06 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.047111
+🧬 [Step 30] Avg Loss: 5.0051 (NTP: 4.5965, Gene: 0.0000, Rank: 0.8172)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 2.5e-06 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.295882
+🧬 [Step 35] Avg Loss: 4.9785 (NTP: 4.4727, Gene: 0.0000, Rank: 1.0117)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 3.0e-06 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.372923
+🧬 [Step 40] Avg Loss: 4.7252 (NTP: 4.2406, Gene: 0.0000, Rank: 0.9692)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 3.4e-06 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.400648
+🧬 [Step 45] Avg Loss: 4.5011 (NTP: 4.0479, Gene: 0.0000, Rank: 0.9064)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 3.8e-06 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.161834
+🧬 [Step 50] Avg Loss: 4.4700 (NTP: 4.0144, Gene: 0.0000, Rank: 0.9113)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 4.3e-06 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.143104
+🧬 [Step 55] Avg Loss: 4.1018 (NTP: 3.7041, Gene: 0.0000, Rank: 0.7954)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 4.7e-06 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.113208
+🧬 [Step 60] Avg Loss: 4.2067 (NTP: 3.7388, Gene: 0.0000, Rank: 0.9358)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 5.2e-06 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.115167
+🧬 [Step 65] Avg Loss: 4.1453 (NTP: 3.7187, Gene: 0.0000, Rank: 0.8533)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 5.6e-06 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.177196
+🧬 [Step 70] Avg Loss: 3.8895 (NTP: 3.3963, Gene: 0.0000, Rank: 0.9864)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 6.0e-06 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.232356
+🧬 [Step 75] Avg Loss: 4.0895 (NTP: 3.5998, Gene: 0.0000, Rank: 0.9795)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 6.5e-06 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.062756
+🧬 [Step 80] Avg Loss: 4.1514 (NTP: 3.6295, Gene: 0.0000, Rank: 1.0438)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 6.9e-06 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: -0.016404
+🧬 [Step 85] Avg Loss: 4.1183 (NTP: 3.6035, Gene: 0.0000, Rank: 1.0295)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 7.3e-06 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: -0.015182
+🧬 [Step 90] Avg Loss: 3.8311 (NTP: 3.4072, Gene: 0.0000, Rank: 0.8480)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 7.8e-06 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: -0.006637
+🧬 [Step 95] Avg Loss: 3.9592 (NTP: 3.4472, Gene: 0.0000, Rank: 1.0241)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 8.2e-06 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: -0.024322
+🧬 [Step 100] Avg Loss: 3.8801 (NTP: 3.4145, Gene: 0.0000, Rank: 0.9312)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 8.6e-06 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: -0.060538
+🧬 [Step 105] Avg Loss: 3.7237 (NTP: 3.2753, Gene: 0.0000, Rank: 0.8967)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 9.1e-06 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: -0.064529
+🧬 [Step 110] Avg Loss: 3.8529 (NTP: 3.2949, Gene: 0.0000, Rank: 1.1161)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 9.5e-06 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.019977
+🧬 [Step 115] Avg Loss: 3.7013 (NTP: 3.1084, Gene: 0.0000, Rank: 1.1858)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: -0.016796
+🧬 [Step 120] Avg Loss: 3.4938 (NTP: 3.0302, Gene: 0.0000, Rank: 0.9272)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: -0.008233
+🧬 [Step 125] Avg Loss: 3.4744 (NTP: 2.9902, Gene: 0.0000, Rank: 0.9685)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.1e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: -0.002597
+🧬 [Step 130] Avg Loss: 3.3187 (NTP: 2.8128, Gene: 0.0000, Rank: 1.0118)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.1e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.047424
+🧬 [Step 135] Avg Loss: 3.4268 (NTP: 2.9323, Gene: 0.0000, Rank: 0.9890)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.2e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.019869
+🧬 [Step 140] Avg Loss: 3.5907 (NTP: 3.0302, Gene: 0.0000, Rank: 1.1211)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.2e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.048515
+🧬 [Step 145] Avg Loss: 3.1804 (NTP: 2.6397, Gene: 0.0000, Rank: 1.0815)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.3e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.029128
+🧬 [Step 150] Avg Loss: 3.5525 (NTP: 2.9870, Gene: 0.0000, Rank: 1.1310)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.3e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.026896
+🧬 [Step 155] Avg Loss: 3.9249 (NTP: 3.3387, Gene: 0.0000, Rank: 1.1725)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.3e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: -0.022995
+🧬 [Step 160] Avg Loss: 3.5994 (NTP: 3.0478, Gene: 0.0000, Rank: 1.1032)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.4e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.023650
+🧬 [Step 165] Avg Loss: 3.4343 (NTP: 2.9693, Gene: 0.0000, Rank: 0.9301)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.4e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: -0.095654
+🧬 [Step 170] Avg Loss: 3.5431 (NTP: 3.0439, Gene: 0.0000, Rank: 0.9984)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.5e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: -0.003830
+🧬 [Step 175] Avg Loss: 3.4983 (NTP: 2.9379, Gene: 0.0000, Rank: 1.1208)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.5e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: -0.018328
+🧬 [Step 180] Avg Loss: 3.3889 (NTP: 2.8219, Gene: 0.0000, Rank: 1.1341)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.6e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: -0.320923
+🧬 [Step 185] Avg Loss: 3.4050 (NTP: 2.9101, Gene: 0.0000, Rank: 0.9898)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.6e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: -0.091702
+🧬 [Step 190] Avg Loss: 3.1929 (NTP: 2.6106, Gene: 0.0000, Rank: 1.1647)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.7e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.030159
+🧬 [Step 195] Avg Loss: 3.0888 (NTP: 2.5460, Gene: 0.0000, Rank: 1.0856)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.7e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: -0.014561
+🧬 [Step 200] Avg Loss: 3.5503 (NTP: 2.9365, Gene: 0.0000, Rank: 1.2277)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.7e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.013080
+💾 Checkpoint 已保存：/mnt/c20250607_hs/wanghaoran/wanghaoran/zyh/scshowo/stage1/bidirectional_step_200/checkpoint-step-200 (model_state=trainable_only, keys=115)
+🧬 [Step 205] Avg Loss: 3.1409 (NTP: 2.6052, Gene: 0.0000, Rank: 1.0713)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.8e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: -0.013522
+🧬 [Step 210] Avg Loss: 3.1692 (NTP: 2.5949, Gene: 0.0000, Rank: 1.1486)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.8e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.005887
+🧬 [Step 215] Avg Loss: 3.0995 (NTP: 2.5689, Gene: 0.0000, Rank: 1.0611)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.9e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.010525
+🧬 [Step 220] Avg Loss: 2.8158 (NTP: 2.2616, Gene: 0.0000, Rank: 1.1085)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.9e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.010604
+🧬 [Step 225] Avg Loss: 2.8601 (NTP: 2.3442, Gene: 0.0000, Rank: 1.0318)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 2.0e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: -0.005508
+🧬 [Step 230] Avg Loss: 2.8490 (NTP: 2.3031, Gene: 0.0000, Rank: 1.0919)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 2.0e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.017865
+🧬 [Step 235] Avg Loss: 2.8668 (NTP: 2.2724, Gene: 0.0000, Rank: 1.1890)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 2.0e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.022438
+🧬 [Step 240] Avg Loss: 2.8425 (NTP: 2.3315, Gene: 0.0000, Rank: 1.0219)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 2.1e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.036290
+🧬 [Step 245] Avg Loss: 2.6811 (NTP: 2.1499, Gene: 0.0000, Rank: 1.0623)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 2.1e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.185125
+🧬 [Step 250] Avg Loss: 2.8169 (NTP: 2.3021, Gene: 0.0000, Rank: 1.0296)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 2.2e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.224432
+🧬 [Step 255] Avg Loss: 2.8175 (NTP: 2.2697, Gene: 0.0000, Rank: 1.0957)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 2.2e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.047042
+🧬 [Step 260] Avg Loss: 2.7988 (NTP: 2.2461, Gene: 0.0000, Rank: 1.1054)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 2.3e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.031445
+🧬 [Step 265] Avg Loss: 2.6734 (NTP: 2.1598, Gene: 0.0000, Rank: 1.0271)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 2.3e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: -0.000230
+🧬 [Step 270] Avg Loss: 2.5623 (NTP: 2.0398, Gene: 0.0000, Rank: 1.0450)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 2.3e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.005290
+🧬 [Step 275] Avg Loss: 2.5630 (NTP: 1.9937, Gene: 0.0000, Rank: 1.1386)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 2.4e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.018646
+🧬 [Step 280] Avg Loss: 2.5919 (NTP: 2.0252, Gene: 0.0000, Rank: 1.1333)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 2.4e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.021605
+🧬 [Step 285] Avg Loss: 2.4661 (NTP: 1.9318, Gene: 0.0000, Rank: 1.0687)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 2.5e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.014965
+🧬 [Step 290] Avg Loss: 2.5021 (NTP: 1.9399, Gene: 0.0000, Rank: 1.1244)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 2.5e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.017869
+🧬 [Step 295] Avg Loss: 2.3453 (NTP: 1.8479, Gene: 0.0000, Rank: 0.9949)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 2.6e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.009188
+🧬 [Step 300] Avg Loss: 2.3930 (NTP: 1.8845, Gene: 0.0000, Rank: 1.0170)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 2.6e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.013475
+🧬 [Step 305] Avg Loss: 2.3980 (NTP: 1.8531, Gene: 0.0000, Rank: 1.0897)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 2.7e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.025812
+🧬 [Step 310] Avg Loss: 2.3595 (NTP: 1.8321, Gene: 0.0000, Rank: 1.0548)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 2.7e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.019077
+🧬 [Step 315] Avg Loss: 2.4742 (NTP: 1.9378, Gene: 0.0000, Rank: 1.0728)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 2.7e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.015010
+🧬 [Step 320] Avg Loss: 2.2474 (NTP: 1.7433, Gene: 0.0000, Rank: 1.0083)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 2.8e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.020697
+🧬 [Step 325] Avg Loss: 2.3589 (NTP: 1.8256, Gene: 0.0000, Rank: 1.0666)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 2.8e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.145236
+🧬 [Step 330] Avg Loss: 2.3884 (NTP: 1.8456, Gene: 0.0000, Rank: 1.0855)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 2.9e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.018403
+🧬 [Step 335] Avg Loss: 2.3853 (NTP: 1.8507, Gene: 0.0000, Rank: 1.0694)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 2.9e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.009951
+🧬 [Step 340] Avg Loss: 2.2936 (NTP: 1.7573, Gene: 0.0000, Rank: 1.0726)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 3.0e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.017627
+🧬 [Step 345] Avg Loss: 2.4089 (NTP: 1.8665, Gene: 0.0000, Rank: 1.0848)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 3.0e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.010485
+🧬 [Step 350] Avg Loss: 2.2614 (NTP: 1.7273, Gene: 0.0000, Rank: 1.0682)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 3.0e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.000424
+🧬 [Step 355] Avg Loss: 2.2691 (NTP: 1.7341, Gene: 0.0000, Rank: 1.0699)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 3.1e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.012508
+🧬 [Step 360] Avg Loss: 2.2785 (NTP: 1.7425, Gene: 0.0000, Rank: 1.0719)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 3.1e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.021197
+🧬 [Step 365] Avg Loss: 2.2156 (NTP: 1.6947, Gene: 0.0000, Rank: 1.0419)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 3.2e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.010948
+🧬 [Step 370] Avg Loss: 2.1007 (NTP: 1.5497, Gene: 0.0000, Rank: 1.1020)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 3.2e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.012509
+🧬 [Step 375] Avg Loss: 2.0865 (NTP: 1.5509, Gene: 0.0000, Rank: 1.0712)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 3.3e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.014038
+🧬 [Step 380] Avg Loss: 2.1090 (NTP: 1.5571, Gene: 0.0000, Rank: 1.1037)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 3.3e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.009443
+🧬 [Step 385] Avg Loss: 2.1643 (NTP: 1.6288, Gene: 0.0000, Rank: 1.0710)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 3.4e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.010528
+🧬 [Step 390] Avg Loss: 2.0988 (NTP: 1.5480, Gene: 0.0000, Rank: 1.1015)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 3.4e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.012238
+🧬 [Step 395] Avg Loss: 2.0776 (NTP: 1.5459, Gene: 0.0000, Rank: 1.0635)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 3.4e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.009471
+🧬 [Step 400] Avg Loss: 2.1188 (NTP: 1.6086, Gene: 0.0000, Rank: 1.0203)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 3.5e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.007983
+💾 Checkpoint 已保存：/mnt/c20250607_hs/wanghaoran/wanghaoran/zyh/scshowo/stage1/bidirectional_step_400/checkpoint-step-400 (model_state=trainable_only, keys=115)
+🧬 [Step 405] Avg Loss: 2.0617 (NTP: 1.5290, Gene: 0.0000, Rank: 1.0654)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 3.5e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.019245
+🧬 [Step 410] Avg Loss: 1.9983 (NTP: 1.4778, Gene: 0.0000, Rank: 1.0410)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 3.6e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.011863
+🧬 [Step 415] Avg Loss: 1.9899 (NTP: 1.4386, Gene: 0.0000, Rank: 1.1027)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 3.6e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.011900
+🧬 [Step 420] Avg Loss: 1.8543 (NTP: 1.3137, Gene: 0.0000, Rank: 1.0813)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 3.7e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.014215
+🧬 [Step 425] Avg Loss: 1.9658 (NTP: 1.4210, Gene: 0.0000, Rank: 1.0896)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 3.7e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.014342
+🧬 [Step 430] Avg Loss: 1.8948 (NTP: 1.3737, Gene: 0.0000, Rank: 1.0422)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 3.7e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.013551
+🧬 [Step 435] Avg Loss: 1.9142 (NTP: 1.3811, Gene: 0.0000, Rank: 1.0661)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 3.8e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.003963
+🧬 [Step 440] Avg Loss: 1.8143 (NTP: 1.3199, Gene: 0.0000, Rank: 0.9887)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 3.8e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.010784
+🧬 [Step 445] Avg Loss: 1.8537 (NTP: 1.3354, Gene: 0.0000, Rank: 1.0367)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 3.9e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.005018
+🧬 [Step 450] Avg Loss: 1.9364 (NTP: 1.3952, Gene: 0.0000, Rank: 1.0823)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 3.9e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: -0.001312
+🧬 [Step 455] Avg Loss: 1.7727 (NTP: 1.2009, Gene: 0.0000, Rank: 1.1437)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 4.0e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.010133
+🧬 [Step 460] Avg Loss: 1.8404 (NTP: 1.2951, Gene: 0.0000, Rank: 1.0905)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 4.0e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.008014
+🧬 [Step 465] Avg Loss: 1.7890 (NTP: 1.2814, Gene: 0.0000, Rank: 1.0151)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 4.1e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.014218
+🧬 [Step 470] Avg Loss: 1.9319 (NTP: 1.4059, Gene: 0.0000, Rank: 1.0519)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 4.1e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.010817
+🧬 [Step 475] Avg Loss: 1.7974 (NTP: 1.2473, Gene: 0.0000, Rank: 1.1003)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 4.1e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.027928
+🧬 [Step 480] Avg Loss: 1.7388 (NTP: 1.1899, Gene: 0.0000, Rank: 1.0976)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 4.2e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.011577
+🧬 [Step 485] Avg Loss: 1.7768 (NTP: 1.2332, Gene: 0.0000, Rank: 1.0874)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 4.2e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.007406
+🧬 [Step 490] Avg Loss: 1.6762 (NTP: 1.1351, Gene: 0.0000, Rank: 1.0822)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 4.3e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: -0.002806
+🧬 [Step 495] Avg Loss: 1.8356 (NTP: 1.3324, Gene: 0.0000, Rank: 1.0064)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 4.3e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.010089
+🧬 [Step 500] Avg Loss: 1.9636 (NTP: 1.4191, Gene: 0.0000, Rank: 1.0890)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 4.4e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.023777
+🧬 [Step 505] Avg Loss: 1.9104 (NTP: 1.3597, Gene: 0.0000, Rank: 1.1013)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 4.4e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.021052
+🧬 [Step 510] Avg Loss: 1.7792 (NTP: 1.2524, Gene: 0.0000, Rank: 1.0536)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 4.4e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.014962
+🧬 [Step 515] Avg Loss: 1.7226 (NTP: 1.1925, Gene: 0.0000, Rank: 1.0601)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 4.5e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.000542
+🧬 [Step 520] Avg Loss: 1.8628 (NTP: 1.3278, Gene: 0.0000, Rank: 1.0700)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 4.5e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.000008
+🧬 [Step 525] Avg Loss: 1.6277 (NTP: 1.1078, Gene: 0.0000, Rank: 1.0397)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 4.6e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.006039
+🧬 [Step 530] Avg Loss: 1.7954 (NTP: 1.2562, Gene: 0.0000, Rank: 1.0784)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 4.6e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.010676
+🧬 [Step 535] Avg Loss: 1.6064 (NTP: 1.0656, Gene: 0.0000, Rank: 1.0814)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 4.7e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.011515
+🧬 [Step 540] Avg Loss: 1.7919 (NTP: 1.2362, Gene: 0.0000, Rank: 1.1115)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 4.7e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.008950
+🧬 [Step 545] Avg Loss: 1.6831 (NTP: 1.1412, Gene: 0.0000, Rank: 1.0838)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 4.8e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.005747
+🧬 [Step 550] Avg Loss: 1.6060 (NTP: 1.0753, Gene: 0.0000, Rank: 1.0614)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 4.8e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.009950
+🧬 [Step 555] Avg Loss: 1.5719 (NTP: 1.0277, Gene: 0.0000, Rank: 1.0884)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 4.8e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.018508
+🧬 [Step 560] Avg Loss: 1.5806 (NTP: 1.0400, Gene: 0.0000, Rank: 1.0813)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 4.9e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.001058
+🧬 [Step 565] Avg Loss: 1.5451 (NTP: 1.0022, Gene: 0.0000, Rank: 1.0858)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 4.9e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.012964
+🧬 [Step 570] Avg Loss: 1.6410 (NTP: 1.0904, Gene: 0.0000, Rank: 1.1011)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 5.0e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.004533
+🧬 [Step 575] Avg Loss: 1.6134 (NTP: 1.0667, Gene: 0.0000, Rank: 1.0934)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 5.0e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.015848
+🧬 [Step 580] Avg Loss: 1.4734 (NTP: 0.9480, Gene: 0.0000, Rank: 1.0507)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 5.1e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.001854
+🧬 [Step 585] Avg Loss: 1.6976 (NTP: 1.1891, Gene: 0.0000, Rank: 1.0168)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 5.1e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: -0.034271
+🧬 [Step 590] Avg Loss: 1.9444 (NTP: 1.4141, Gene: 0.0000, Rank: 1.0607)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 5.1e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: -0.060240
+🧬 [Step 595] Avg Loss: 1.8340 (NTP: 1.2926, Gene: 0.0000, Rank: 1.0827)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 5.2e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: -0.000650
+🧬 [Step 600] Avg Loss: 1.7706 (NTP: 1.2908, Gene: 0.0000, Rank: 0.9596)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 5.2e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.009049
+💾 Checkpoint 已保存：/mnt/c20250607_hs/wanghaoran/wanghaoran/zyh/scshowo/stage1/bidirectional_step_600/checkpoint-step-600 (model_state=trainable_only, keys=115)
+🧬 [Step 605] Avg Loss: 1.7571 (NTP: 1.2491, Gene: 0.0000, Rank: 1.0160)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 5.3e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.027386
+🧬 [Step 610] Avg Loss: 1.7007 (NTP: 1.1965, Gene: 0.0000, Rank: 1.0083)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 5.3e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.010918
+🧬 [Step 615] Avg Loss: 1.8100 (NTP: 1.2936, Gene: 0.0000, Rank: 1.0327)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 5.4e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.007266
+🧬 [Step 620] Avg Loss: 1.5993 (NTP: 1.0913, Gene: 0.0000, Rank: 1.0159)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 5.4e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.026812
+🧬 [Step 625] Avg Loss: 1.6737 (NTP: 1.1337, Gene: 0.0000, Rank: 1.0801)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 5.4e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.017492
+🧬 [Step 630] Avg Loss: 1.7281 (NTP: 1.1714, Gene: 0.0000, Rank: 1.1134)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 5.5e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.039764
+🧬 [Step 635] Avg Loss: 1.6540 (NTP: 1.0844, Gene: 0.0000, Rank: 1.1393)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 5.5e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.034548
+🧬 [Step 640] Avg Loss: 1.5693 (NTP: 1.0426, Gene: 0.0000, Rank: 1.0533)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 5.6e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.020822
+🧬 [Step 645] Avg Loss: 1.4855 (NTP: 0.9623, Gene: 0.0000, Rank: 1.0465)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 5.6e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.027843
+🧬 [Step 650] Avg Loss: 1.6964 (NTP: 1.1578, Gene: 0.0000, Rank: 1.0773)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 5.7e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.022529
+🧬 [Step 655] Avg Loss: 1.5236 (NTP: 0.9965, Gene: 0.0000, Rank: 1.0542)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 5.7e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.025064
+🧬 [Step 660] Avg Loss: 1.7085 (NTP: 1.2033, Gene: 0.0000, Rank: 1.0103)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 5.8e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.024301
+🧬 [Step 665] Avg Loss: 1.5048 (NTP: 1.0059, Gene: 0.0000, Rank: 0.9978)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 5.8e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.029739
+🧬 [Step 670] Avg Loss: 1.6018 (NTP: 1.0750, Gene: 0.0000, Rank: 1.0536)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 5.8e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.019417
+🧬 [Step 675] Avg Loss: 1.5717 (NTP: 1.0952, Gene: 0.0000, Rank: 0.9530)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 5.9e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.020992
+🧬 [Step 680] Avg Loss: 1.6108 (NTP: 1.0590, Gene: 0.0000, Rank: 1.1036)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 5.9e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.022501
+🧬 [Step 685] Avg Loss: 1.5197 (NTP: 1.0039, Gene: 0.0000, Rank: 1.0316)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 6.0e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.022669
+🧬 [Step 690] Avg Loss: 1.6044 (NTP: 1.0747, Gene: 0.0000, Rank: 1.0594)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 6.0e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.013645
+🧬 [Step 695] Avg Loss: 1.6619 (NTP: 1.1630, Gene: 0.0000, Rank: 0.9977)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 6.1e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.018003
+🧬 [Step 700] Avg Loss: 1.4686 (NTP: 0.9358, Gene: 0.0000, Rank: 1.0655)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 6.1e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.012381
+🧬 [Step 705] Avg Loss: 1.5903 (NTP: 1.0804, Gene: 0.0000, Rank: 1.0199)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 6.1e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.023888
+🧬 [Step 710] Avg Loss: 1.5725 (NTP: 1.0318, Gene: 0.0000, Rank: 1.0814)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 6.2e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.009803
+🧬 [Step 715] Avg Loss: 1.5143 (NTP: 0.9997, Gene: 0.0000, Rank: 1.0293)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 6.2e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: -0.001912
+🧬 [Step 720] Avg Loss: 1.5808 (NTP: 1.0310, Gene: 0.0000, Rank: 1.0995)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 6.3e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.013912
+🧬 [Step 725] Avg Loss: 1.4389 (NTP: 0.9378, Gene: 0.0000, Rank: 1.0022)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 6.3e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.009968
+🧬 [Step 730] Avg Loss: 1.5686 (NTP: 1.0159, Gene: 0.0000, Rank: 1.1054)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 6.4e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.022855
+🧬 [Step 735] Avg Loss: 1.3976 (NTP: 0.8689, Gene: 0.0000, Rank: 1.0574)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 6.4e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.017012
+🧬 [Step 740] Avg Loss: 1.5579 (NTP: 1.0190, Gene: 0.0000, Rank: 1.0778)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 6.5e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.006598
+🧬 [Step 745] Avg Loss: 1.5865 (NTP: 1.0546, Gene: 0.0000, Rank: 1.0638)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 6.5e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.013805
+🧬 [Step 750] Avg Loss: 1.4255 (NTP: 0.8817, Gene: 0.0000, Rank: 1.0876)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 6.5e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.020474
+🧬 [Step 755] Avg Loss: 1.5055 (NTP: 0.9675, Gene: 0.0000, Rank: 1.0760)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 6.6e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.014741
+🧬 [Step 760] Avg Loss: 1.4633 (NTP: 0.9030, Gene: 0.0000, Rank: 1.1207)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 6.6e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.010912
+🧬 [Step 765] Avg Loss: 1.4214 (NTP: 0.8485, Gene: 0.0000, Rank: 1.1458)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 6.7e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.022545
+🧬 [Step 770] Avg Loss: 1.5538 (NTP: 0.9939, Gene: 0.0000, Rank: 1.1197)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 6.7e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.014575
+🧬 [Step 775] Avg Loss: 1.3917 (NTP: 0.8665, Gene: 0.0000, Rank: 1.0503)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 6.8e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.012199
+🧬 [Step 780] Avg Loss: 1.4736 (NTP: 0.9321, Gene: 0.0000, Rank: 1.0829)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 6.8e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.021311
+🧬 [Step 785] Avg Loss: 1.5414 (NTP: 1.0046, Gene: 0.0000, Rank: 1.0736)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 6.8e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.017483
+🧬 [Step 790] Avg Loss: 1.6560 (NTP: 1.1105, Gene: 0.0000, Rank: 1.0910)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 6.9e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.017466
+🧬 [Step 795] Avg Loss: 1.4945 (NTP: 0.9585, Gene: 0.0000, Rank: 1.0720)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 6.9e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.016861
+🧬 [Step 800] Avg Loss: 1.5571 (NTP: 1.0216, Gene: 0.0000, Rank: 1.0711)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 7.0e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.012679
+💾 Checkpoint 已保存：/mnt/c20250607_hs/wanghaoran/wanghaoran/zyh/scshowo/stage1/bidirectional_step_800/checkpoint-step-800 (model_state=trainable_only, keys=115)
+🧬 [Step 805] Avg Loss: 1.8679 (NTP: 1.3563, Gene: 0.0000, Rank: 1.0233)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 7.0e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: -0.049282
+🧬 [Step 810] Avg Loss: 2.0830 (NTP: 1.5489, Gene: 0.0000, Rank: 1.0681)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 7.1e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.001399
+🧬 [Step 815] Avg Loss: 2.1566 (NTP: 1.6425, Gene: 0.0000, Rank: 1.0282)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 7.1e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: -0.038202
+🧬 [Step 820] Avg Loss: 2.0317 (NTP: 1.4991, Gene: 0.0000, Rank: 1.0651)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 7.2e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.002278
+🧬 [Step 825] Avg Loss: 1.8250 (NTP: 1.2738, Gene: 0.0000, Rank: 1.1023)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 7.2e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.011123
+🧬 [Step 830] Avg Loss: 1.8085 (NTP: 1.2553, Gene: 0.0000, Rank: 1.1064)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 7.2e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.012331
+🧬 [Step 835] Avg Loss: 2.0690 (NTP: 1.5348, Gene: 0.0000, Rank: 1.0684)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 7.3e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.087616
+🧬 [Step 840] Avg Loss: 2.0224 (NTP: 1.4930, Gene: 0.0000, Rank: 1.0588)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 7.3e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: -0.015531
+🧬 [Step 845] Avg Loss: 2.0051 (NTP: 1.5029, Gene: 0.0000, Rank: 1.0044)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 7.4e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.074236
+🧬 [Step 850] Avg Loss: 2.1270 (NTP: 1.6070, Gene: 0.0000, Rank: 1.0401)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 7.4e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.061665
+🧬 [Step 855] Avg Loss: 2.0100 (NTP: 1.4740, Gene: 0.0000, Rank: 1.0720)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 7.5e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.069919
+🧬 [Step 860] Avg Loss: 1.8843 (NTP: 1.2976, Gene: 0.0000, Rank: 1.1734)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 7.5e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.062393
+🧬 [Step 865] Avg Loss: 1.9133 (NTP: 1.3224, Gene: 0.0000, Rank: 1.1818)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 7.5e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.088033
+🧬 [Step 870] Avg Loss: 1.9794 (NTP: 1.4202, Gene: 0.0000, Rank: 1.1184)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 7.6e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.081248
+🧬 [Step 875] Avg Loss: 1.6147 (NTP: 1.1279, Gene: 0.0000, Rank: 0.9736)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 7.6e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.061106
+🧬 [Step 880] Avg Loss: 1.7960 (NTP: 1.2617, Gene: 0.0000, Rank: 1.0685)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 7.7e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.052532
+🧬 [Step 885] Avg Loss: 1.5818 (NTP: 1.0955, Gene: 0.0000, Rank: 0.9726)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 7.7e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.050962
+🧬 [Step 890] Avg Loss: 1.6082 (NTP: 1.1651, Gene: 0.0000, Rank: 0.8863)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 7.8e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.049622
+🧬 [Step 895] Avg Loss: 1.7233 (NTP: 1.2022, Gene: 0.0000, Rank: 1.0422)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 7.8e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.047075
+🧬 [Step 900] Avg Loss: 1.7081 (NTP: 1.1802, Gene: 0.0000, Rank: 1.0558)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 7.9e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.036848
+🧬 [Step 905] Avg Loss: 1.6123 (NTP: 1.0907, Gene: 0.0000, Rank: 1.0432)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 7.9e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.031547
+🧬 [Step 910] Avg Loss: 1.6364 (NTP: 1.0974, Gene: 0.0000, Rank: 1.0780)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 7.9e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.032286
+🧬 [Step 915] Avg Loss: 1.6218 (NTP: 1.0510, Gene: 0.0000, Rank: 1.1415)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 8.0e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.033289
+🧬 [Step 920] Avg Loss: 1.5020 (NTP: 0.9844, Gene: 0.0000, Rank: 1.0352)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 8.0e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.038745
+🧬 [Step 925] Avg Loss: 1.3903 (NTP: 0.8851, Gene: 0.0000, Rank: 1.0103)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 8.1e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.032534
+🧬 [Step 930] Avg Loss: 1.5775 (NTP: 1.0635, Gene: 0.0000, Rank: 1.0281)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 8.1e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.032372
+🧬 [Step 935] Avg Loss: 1.6615 (NTP: 1.1073, Gene: 0.0000, Rank: 1.1086)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 8.2e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.026686
+🧬 [Step 940] Avg Loss: 1.4687 (NTP: 0.9295, Gene: 0.0000, Rank: 1.0783)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 8.2e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.028784
+🧬 [Step 945] Avg Loss: 1.4883 (NTP: 0.9755, Gene: 0.0000, Rank: 1.0256)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 8.2e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.024093
+🧬 [Step 950] Avg Loss: 1.4407 (NTP: 0.9036, Gene: 0.0000, Rank: 1.0741)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 8.3e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.027847
+🧬 [Step 955] Avg Loss: 1.4113 (NTP: 0.8861, Gene: 0.0000, Rank: 1.0504)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 8.3e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.029730
+🧬 [Step 960] Avg Loss: 1.4410 (NTP: 0.9320, Gene: 0.0000, Rank: 1.0180)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 8.4e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.030678
+🧬 [Step 965] Avg Loss: 1.3890 (NTP: 0.8387, Gene: 0.0000, Rank: 1.1007)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 8.4e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.028431
+🧬 [Step 970] Avg Loss: 1.4269 (NTP: 0.8833, Gene: 0.0000, Rank: 1.0871)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 8.5e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.025856
+🧬 [Step 975] Avg Loss: 1.4620 (NTP: 0.9401, Gene: 0.0000, Rank: 1.0438)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 8.5e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.025575
+🧬 [Step 980] Avg Loss: 1.5220 (NTP: 0.9935, Gene: 0.0000, Rank: 1.0570)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 8.6e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.027645
+🧬 [Step 985] Avg Loss: 1.5376 (NTP: 0.9712, Gene: 0.0000, Rank: 1.1328)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 8.6e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.026341
+🧬 [Step 990] Avg Loss: 1.4054 (NTP: 0.8804, Gene: 0.0000, Rank: 1.0500)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 8.6e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.025723
+🧬 [Step 995] Avg Loss: 1.5529 (NTP: 1.0293, Gene: 0.0000, Rank: 1.0473)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 8.7e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.029633
+🧬 [Step 1000] Avg Loss: 1.4019 (NTP: 0.8729, Gene: 0.0000, Rank: 1.0579)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 8.7e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.023865
+💾 Checkpoint 已保存：/mnt/c20250607_hs/wanghaoran/wanghaoran/zyh/scshowo/stage1/bidirectional_step_1000/checkpoint-step-1000 (model_state=trainable_only, keys=115)
+🧬 [Step 1005] Avg Loss: 1.4270 (NTP: 0.8947, Gene: 0.0000, Rank: 1.0646)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 8.8e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.026026
+🧬 [Step 1010] Avg Loss: 1.3983 (NTP: 0.8724, Gene: 0.0000, Rank: 1.0518)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 8.8e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.031694
+🧬 [Step 1015] Avg Loss: 1.4539 (NTP: 0.9417, Gene: 0.0000, Rank: 1.0244)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 8.9e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.027482
+🧬 [Step 1020] Avg Loss: 1.3522 (NTP: 0.8352, Gene: 0.0000, Rank: 1.0340)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 8.9e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.019519
+🧬 [Step 1025] Avg Loss: 1.4950 (NTP: 0.9463, Gene: 0.0000, Rank: 1.0974)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 8.9e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.023255
+🧬 [Step 1030] Avg Loss: 1.4108 (NTP: 0.8867, Gene: 0.0000, Rank: 1.0482)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 9.0e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.021265
+🧬 [Step 1035] Avg Loss: 1.5420 (NTP: 1.0114, Gene: 0.0000, Rank: 1.0611)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 9.0e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.025540
+🧬 [Step 1040] Avg Loss: 1.4002 (NTP: 0.8556, Gene: 0.0000, Rank: 1.0892)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 9.1e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.023823
+🧬 [Step 1045] Avg Loss: 1.3888 (NTP: 0.8708, Gene: 0.0000, Rank: 1.0359)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 9.1e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.024988
+🧬 [Step 1050] Avg Loss: 1.3944 (NTP: 0.9021, Gene: 0.0000, Rank: 0.9846)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 9.2e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.027421
+🧬 [Step 1055] Avg Loss: 1.3984 (NTP: 0.8673, Gene: 0.0000, Rank: 1.0622)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 9.2e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.025736
+🧬 [Step 1060] Avg Loss: 1.4675 (NTP: 0.9405, Gene: 0.0000, Rank: 1.0539)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 9.2e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.021041
+🧬 [Step 1065] Avg Loss: 1.3355 (NTP: 0.8231, Gene: 0.0000, Rank: 1.0248)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 9.3e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.012560
+🧬 [Step 1070] Avg Loss: 1.4321 (NTP: 0.9156, Gene: 0.0000, Rank: 1.0331)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 9.3e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.023977
+🧬 [Step 1075] Avg Loss: 1.4566 (NTP: 0.9439, Gene: 0.0000, Rank: 1.0254)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 9.4e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.025016
+🧬 [Step 1080] Avg Loss: 1.4058 (NTP: 0.9216, Gene: 0.0000, Rank: 0.9683)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 9.4e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.020480
+🧬 [Step 1085] Avg Loss: 1.3283 (NTP: 0.7949, Gene: 0.0000, Rank: 1.0669)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 9.5e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.024316
+🧬 [Step 1090] Avg Loss: 1.4119 (NTP: 0.8667, Gene: 0.0000, Rank: 1.0903)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 9.5e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.019896
+🧬 [Step 1095] Avg Loss: 1.4283 (NTP: 0.9187, Gene: 0.0000, Rank: 1.0192)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 9.6e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.020407
+🧬 [Step 1100] Avg Loss: 1.4261 (NTP: 0.8851, Gene: 0.0000, Rank: 1.0819)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 9.6e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.027240
+🧬 [Step 1105] Avg Loss: 1.3250 (NTP: 0.7908, Gene: 0.0000, Rank: 1.0684)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 9.6e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.029900
+🧬 [Step 1110] Avg Loss: 1.4643 (NTP: 0.9269, Gene: 0.0000, Rank: 1.0749)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 9.7e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.025749
+🧬 [Step 1115] Avg Loss: 1.4496 (NTP: 0.9356, Gene: 0.0000, Rank: 1.0279)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 9.7e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.021411
+🧬 [Step 1120] Avg Loss: 1.5631 (NTP: 1.0170, Gene: 0.0000, Rank: 1.0922)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 9.8e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.024084
+🧬 [Step 1125] Avg Loss: 1.3356 (NTP: 0.8154, Gene: 0.0000, Rank: 1.0405)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 9.8e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.021538
+🧬 [Step 1130] Avg Loss: 1.3674 (NTP: 0.8699, Gene: 0.0000, Rank: 0.9950)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 9.9e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.028588
+🧬 [Step 1135] Avg Loss: 1.3530 (NTP: 0.8360, Gene: 0.0000, Rank: 1.0340)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 9.9e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.022654
+🧬 [Step 1140] Avg Loss: 1.5194 (NTP: 0.9869, Gene: 0.0000, Rank: 1.0650)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 9.9e-05 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.020722
+🧬 [Step 1145] Avg Loss: 1.4695 (NTP: 0.9067, Gene: 0.0000, Rank: 1.1254)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.021931
+🧬 [Step 1150] Avg Loss: 1.4800 (NTP: 0.9456, Gene: 0.0000, Rank: 1.0687)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.022682
+🧬 [Step 1155] Avg Loss: 1.3650 (NTP: 0.8470, Gene: 0.0000, Rank: 1.0359)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.029765
+🧬 [Step 1160] Avg Loss: 1.3818 (NTP: 0.8498, Gene: 0.0000, Rank: 1.0641)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.029167
+🧬 [Step 1165] Avg Loss: 1.4407 (NTP: 0.8969, Gene: 0.0000, Rank: 1.0876)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.025730
+🧬 [Step 1170] Avg Loss: 1.3267 (NTP: 0.7926, Gene: 0.0000, Rank: 1.0681)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.047767
+🧬 [Step 1175] Avg Loss: 1.5403 (NTP: 1.0503, Gene: 0.0000, Rank: 0.9800)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.043756
+🧬 [Step 1180] Avg Loss: 1.5575 (NTP: 1.0401, Gene: 0.0000, Rank: 1.0348)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.039837
+🧬 [Step 1185] Avg Loss: 1.5368 (NTP: 0.9746, Gene: 0.0000, Rank: 1.1243)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.027969
+🧬 [Step 1190] Avg Loss: 1.4337 (NTP: 0.8960, Gene: 0.0000, Rank: 1.0753)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.035369
+🧬 [Step 1195] Avg Loss: 1.4648 (NTP: 0.9717, Gene: 0.0000, Rank: 0.9862)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.028012
+🧬 [Step 1200] Avg Loss: 1.5129 (NTP: 1.0099, Gene: 0.0000, Rank: 1.0060)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.026206
+💾 Checkpoint 已保存：/mnt/c20250607_hs/wanghaoran/wanghaoran/zyh/scshowo/stage1/bidirectional_step_1200/checkpoint-step-1200 (model_state=trainable_only, keys=115)
+🧬 [Step 1205] Avg Loss: 1.3724 (NTP: 0.8169, Gene: 0.0000, Rank: 1.1112)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.028737
+🧬 [Step 1210] Avg Loss: 1.5004 (NTP: 0.9654, Gene: 0.0000, Rank: 1.0700)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.028958
+🧬 [Step 1215] Avg Loss: 1.3999 (NTP: 0.8501, Gene: 0.0000, Rank: 1.0997)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.033262
+🧬 [Step 1220] Avg Loss: 1.2805 (NTP: 0.7444, Gene: 0.0000, Rank: 1.0722)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.030833
+🧬 [Step 1225] Avg Loss: 1.4113 (NTP: 0.8928, Gene: 0.0000, Rank: 1.0370)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.024408
+🧬 [Step 1230] Avg Loss: 1.3453 (NTP: 0.8194, Gene: 0.0000, Rank: 1.0517)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.027023
+🧬 [Step 1235] Avg Loss: 1.3487 (NTP: 0.8274, Gene: 0.0000, Rank: 1.0426)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.032093
+🧬 [Step 1240] Avg Loss: 1.3712 (NTP: 0.8255, Gene: 0.0000, Rank: 1.0915)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.026281
+🧬 [Step 1245] Avg Loss: 1.3824 (NTP: 0.8541, Gene: 0.0000, Rank: 1.0567)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.025300
+🧬 [Step 1250] Avg Loss: 1.2775 (NTP: 0.7473, Gene: 0.0000, Rank: 1.0605)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.025516
+🧬 [Step 1255] Avg Loss: 1.3360 (NTP: 0.8367, Gene: 0.0000, Rank: 0.9986)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.030310
+🧬 [Step 1260] Avg Loss: 1.3562 (NTP: 0.8226, Gene: 0.0000, Rank: 1.0673)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.026521
+🧬 [Step 1265] Avg Loss: 1.2672 (NTP: 0.7510, Gene: 0.0000, Rank: 1.0323)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.029371
+🧬 [Step 1270] Avg Loss: 1.4257 (NTP: 0.8966, Gene: 0.0000, Rank: 1.0581)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.026363
+🧬 [Step 1275] Avg Loss: 1.3702 (NTP: 0.8509, Gene: 0.0000, Rank: 1.0387)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.027351
+🧬 [Step 1280] Avg Loss: 1.5373 (NTP: 0.9835, Gene: 0.0000, Rank: 1.1076)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.027296
+🧬 [Step 1285] Avg Loss: 1.3434 (NTP: 0.8436, Gene: 0.0000, Rank: 0.9996)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.027502
+🧬 [Step 1290] Avg Loss: 1.2560 (NTP: 0.7217, Gene: 0.0000, Rank: 1.0686)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.029311
+🧬 [Step 1295] Avg Loss: 1.2882 (NTP: 0.7950, Gene: 0.0000, Rank: 0.9863)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.026400
+🧬 [Step 1300] Avg Loss: 1.3559 (NTP: 0.8234, Gene: 0.0000, Rank: 1.0650)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.024097
+🧬 [Step 1305] Avg Loss: 1.2625 (NTP: 0.7398, Gene: 0.0000, Rank: 1.0455)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.026296
+🧬 [Step 1310] Avg Loss: 1.3839 (NTP: 0.8558, Gene: 0.0000, Rank: 1.0562)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.025816
+🧬 [Step 1315] Avg Loss: 1.2094 (NTP: 0.6855, Gene: 0.0000, Rank: 1.0479)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.026152
+🧬 [Step 1320] Avg Loss: 1.4006 (NTP: 0.8781, Gene: 0.0000, Rank: 1.0451)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.028642
+🧬 [Step 1325] Avg Loss: 1.3595 (NTP: 0.8528, Gene: 0.0000, Rank: 1.0135)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.025641
+🧬 [Step 1330] Avg Loss: 1.2995 (NTP: 0.7776, Gene: 0.0000, Rank: 1.0439)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.025798
+🧬 [Step 1335] Avg Loss: 1.3061 (NTP: 0.7974, Gene: 0.0000, Rank: 1.0174)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.027501
+🧬 [Step 1340] Avg Loss: 1.2727 (NTP: 0.7477, Gene: 0.0000, Rank: 1.0501)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.027811
+🧬 [Step 1345] Avg Loss: 1.1884 (NTP: 0.6571, Gene: 0.0000, Rank: 1.0625)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.029159
+🧬 [Step 1350] Avg Loss: 1.2994 (NTP: 0.7606, Gene: 0.0000, Rank: 1.0776)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.027624
+🧬 [Step 1355] Avg Loss: 1.2978 (NTP: 0.7541, Gene: 0.0000, Rank: 1.0874)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.031418
+🧬 [Step 1360] Avg Loss: 1.2452 (NTP: 0.7348, Gene: 0.0000, Rank: 1.0208)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.029821
+🧬 [Step 1365] Avg Loss: 1.2862 (NTP: 0.7587, Gene: 0.0000, Rank: 1.0550)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.028732
+🧬 [Step 1370] Avg Loss: 1.3111 (NTP: 0.7926, Gene: 0.0000, Rank: 1.0372)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.027266
+🧬 [Step 1375] Avg Loss: 1.3783 (NTP: 0.8702, Gene: 0.0000, Rank: 1.0162)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.024818
+🧬 [Step 1380] Avg Loss: 1.2045 (NTP: 0.6987, Gene: 0.0000, Rank: 1.0117)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.030902
+🧬 [Step 1385] Avg Loss: 1.2615 (NTP: 0.7096, Gene: 0.0000, Rank: 1.1037)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.028087
+🧬 [Step 1390] Avg Loss: 1.2821 (NTP: 0.7533, Gene: 0.0000, Rank: 1.0577)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.031110
+🧬 [Step 1395] Avg Loss: 1.2659 (NTP: 0.7555, Gene: 0.0000, Rank: 1.0208)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.026317
+🧬 [Step 1400] Avg Loss: 1.2783 (NTP: 0.7398, Gene: 0.0000, Rank: 1.0770)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.027790
+💾 Checkpoint 已保存：/mnt/c20250607_hs/wanghaoran/wanghaoran/zyh/scshowo/stage1/bidirectional_step_1400/checkpoint-step-1400 (model_state=trainable_only, keys=115)
+🧬 [Step 1405] Avg Loss: 1.3087 (NTP: 0.7834, Gene: 0.0000, Rank: 1.0505)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.027789
+🧬 [Step 1410] Avg Loss: 1.2534 (NTP: 0.7207, Gene: 0.0000, Rank: 1.0653)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.024993
+🧬 [Step 1415] Avg Loss: 1.2250 (NTP: 0.7005, Gene: 0.0000, Rank: 1.0490)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.025605
+🧬 [Step 1420] Avg Loss: 1.3521 (NTP: 0.8362, Gene: 0.0000, Rank: 1.0319)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.026999
+🧬 [Step 1425] Avg Loss: 1.3472 (NTP: 0.8136, Gene: 0.0000, Rank: 1.0672)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.026099
+🧬 [Step 1430] Avg Loss: 1.2438 (NTP: 0.7226, Gene: 0.0000, Rank: 1.0426)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.029951
+🧬 [Step 1435] Avg Loss: 1.2644 (NTP: 0.7192, Gene: 0.0000, Rank: 1.0903)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.024748
+🧬 [Step 1440] Avg Loss: 1.3423 (NTP: 0.8330, Gene: 0.0000, Rank: 1.0187)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.026688
+🧬 [Step 1445] Avg Loss: 1.3488 (NTP: 0.8169, Gene: 0.0000, Rank: 1.0638)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.030284
+🧬 [Step 1450] Avg Loss: 1.3192 (NTP: 0.7745, Gene: 0.0000, Rank: 1.0895)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.028873
+🧬 [Step 1455] Avg Loss: 1.3308 (NTP: 0.8030, Gene: 0.0000, Rank: 1.0556)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.029945
+🧬 [Step 1460] Avg Loss: 1.4006 (NTP: 0.8633, Gene: 0.0000, Rank: 1.0747)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.029242
+🧬 [Step 1465] Avg Loss: 1.3045 (NTP: 0.7832, Gene: 0.0000, Rank: 1.0426)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.027549
+🧬 [Step 1470] Avg Loss: 1.3042 (NTP: 0.7886, Gene: 0.0000, Rank: 1.0314)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.031520
+🧬 [Step 1475] Avg Loss: 1.2886 (NTP: 0.7622, Gene: 0.0000, Rank: 1.0529)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.027234
+🧬 [Step 1480] Avg Loss: 1.2861 (NTP: 0.7709, Gene: 0.0000, Rank: 1.0303)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.028378
+🧬 [Step 1485] Avg Loss: 1.2706 (NTP: 0.7539, Gene: 0.0000, Rank: 1.0334)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.028155
+🧬 [Step 1490] Avg Loss: 1.2309 (NTP: 0.7237, Gene: 0.0000, Rank: 1.0143)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.027066
+🧬 [Step 1495] Avg Loss: 1.2186 (NTP: 0.7135, Gene: 0.0000, Rank: 1.0102)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.028652
+🧬 [Step 1500] Avg Loss: 1.3379 (NTP: 0.8281, Gene: 0.0000, Rank: 1.0195)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.027681
+🧬 [Step 1505] Avg Loss: 1.2162 (NTP: 0.7156, Gene: 0.0000, Rank: 1.0011)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.026909
+🧬 [Step 1510] Avg Loss: 1.3531 (NTP: 0.8355, Gene: 0.0000, Rank: 1.0353)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.027724
+🧬 [Step 1515] Avg Loss: 1.3621 (NTP: 0.8498, Gene: 0.0000, Rank: 1.0246)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.033115
+🧬 [Step 1520] Avg Loss: 1.2087 (NTP: 0.6942, Gene: 0.0000, Rank: 1.0290)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.029380
+🧬 [Step 1525] Avg Loss: 1.2805 (NTP: 0.7385, Gene: 0.0000, Rank: 1.0841)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.025945
+🧬 [Step 1530] Avg Loss: 1.2164 (NTP: 0.7061, Gene: 0.0000, Rank: 1.0206)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.027552
+🧬 [Step 1535] Avg Loss: 1.2164 (NTP: 0.6958, Gene: 0.0000, Rank: 1.0412)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.029297
+🧬 [Step 1540] Avg Loss: 1.2584 (NTP: 0.7624, Gene: 0.0000, Rank: 0.9920)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.028931
+🧬 [Step 1545] Avg Loss: 1.3468 (NTP: 0.8336, Gene: 0.0000, Rank: 1.0264)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.029643
+🧬 [Step 1550] Avg Loss: 1.1549 (NTP: 0.6655, Gene: 0.0000, Rank: 0.9789)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.031957
+🧬 [Step 1555] Avg Loss: 1.2796 (NTP: 0.7885, Gene: 0.0000, Rank: 0.9821)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.031421
+🧬 [Step 1560] Avg Loss: 1.3254 (NTP: 0.7976, Gene: 0.0000, Rank: 1.0555)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.028548
+🧬 [Step 1565] Avg Loss: 1.2124 (NTP: 0.6892, Gene: 0.0000, Rank: 1.0463)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.029931
+🧬 [Step 1570] Avg Loss: 1.3209 (NTP: 0.8147, Gene: 0.0000, Rank: 1.0123)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.032297
+🧬 [Step 1575] Avg Loss: 1.2716 (NTP: 0.7609, Gene: 0.0000, Rank: 1.0212)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.032235
+🧬 [Step 1580] Avg Loss: 1.3192 (NTP: 0.7927, Gene: 0.0000, Rank: 1.0531)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.029381
+🧬 [Step 1585] Avg Loss: 1.2395 (NTP: 0.7314, Gene: 0.0000, Rank: 1.0161)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.030176
+🧬 [Step 1590] Avg Loss: 1.2799 (NTP: 0.7781, Gene: 0.0000, Rank: 1.0037)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.030617
+🧬 [Step 1595] Avg Loss: 1.2266 (NTP: 0.7203, Gene: 0.0000, Rank: 1.0125)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.028726
+🧬 [Step 1600] Avg Loss: 1.2368 (NTP: 0.7094, Gene: 0.0000, Rank: 1.0549)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.026785
+💾 Checkpoint 已保存：/mnt/c20250607_hs/wanghaoran/wanghaoran/zyh/scshowo/stage1/bidirectional_step_1600/checkpoint-step-1600 (model_state=trainable_only, keys=115)
+🧬 [Step 1605] Avg Loss: 1.2607 (NTP: 0.7339, Gene: 0.0000, Rank: 1.0537)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.028343
+🧬 [Step 1610] Avg Loss: 1.2313 (NTP: 0.6981, Gene: 0.0000, Rank: 1.0663)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.029924
+🧬 [Step 1615] Avg Loss: 1.2329 (NTP: 0.7286, Gene: 0.0000, Rank: 1.0087)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.033077
+🧬 [Step 1620] Avg Loss: 1.2561 (NTP: 0.7373, Gene: 0.0000, Rank: 1.0376)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.034878
+🧬 [Step 1625] Avg Loss: 1.1248 (NTP: 0.6126, Gene: 0.0000, Rank: 1.0246)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.035856
+🧬 [Step 1630] Avg Loss: 1.3034 (NTP: 0.7721, Gene: 0.0000, Rank: 1.0626)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.035169
+🧬 [Step 1635] Avg Loss: 1.2747 (NTP: 0.7468, Gene: 0.0000, Rank: 1.0557)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.029750
+🧬 [Step 1640] Avg Loss: 1.2393 (NTP: 0.7027, Gene: 0.0000, Rank: 1.0734)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.030211
+🧬 [Step 1645] Avg Loss: 1.2766 (NTP: 0.7165, Gene: 0.0000, Rank: 1.1201)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.033027
+🧬 [Step 1650] Avg Loss: 1.2432 (NTP: 0.7121, Gene: 0.0000, Rank: 1.0622)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.032617
+🧬 [Step 1655] Avg Loss: 1.3946 (NTP: 0.8752, Gene: 0.0000, Rank: 1.0387)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.031449
+🧬 [Step 1660] Avg Loss: 1.2083 (NTP: 0.6964, Gene: 0.0000, Rank: 1.0238)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.035608
+🧬 [Step 1665] Avg Loss: 1.3332 (NTP: 0.8015, Gene: 0.0000, Rank: 1.0635)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.028959
+🧬 [Step 1670] Avg Loss: 1.3453 (NTP: 0.8233, Gene: 0.0000, Rank: 1.0440)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.036116
+🧬 [Step 1675] Avg Loss: 1.3006 (NTP: 0.7551, Gene: 0.0000, Rank: 1.0910)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.036201
+🧬 [Step 1680] Avg Loss: 1.2242 (NTP: 0.6994, Gene: 0.0000, Rank: 1.0496)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.033232
+🧬 [Step 1685] Avg Loss: 1.2623 (NTP: 0.7332, Gene: 0.0000, Rank: 1.0582)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.031812
+🧬 [Step 1690] Avg Loss: 1.1762 (NTP: 0.6628, Gene: 0.0000, Rank: 1.0269)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.032349
+🧬 [Step 1695] Avg Loss: 1.2182 (NTP: 0.6726, Gene: 0.0000, Rank: 1.0913)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.034355
+🧬 [Step 1700] Avg Loss: 1.1844 (NTP: 0.6692, Gene: 0.0000, Rank: 1.0303)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.027989
+🧬 [Step 1705] Avg Loss: 1.2122 (NTP: 0.7123, Gene: 0.0000, Rank: 0.9999)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.030539
+🧬 [Step 1710] Avg Loss: 1.2889 (NTP: 0.7837, Gene: 0.0000, Rank: 1.0104)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.033249
+🧬 [Step 1715] Avg Loss: 1.2157 (NTP: 0.6959, Gene: 0.0000, Rank: 1.0397)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.030705
+🧬 [Step 1720] Avg Loss: 1.2079 (NTP: 0.6912, Gene: 0.0000, Rank: 1.0334)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.026618
+🧬 [Step 1725] Avg Loss: 1.2426 (NTP: 0.7315, Gene: 0.0000, Rank: 1.0223)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.027847
+🧬 [Step 1730] Avg Loss: 1.1184 (NTP: 0.6205, Gene: 0.0000, Rank: 0.9959)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.032235
+🧬 [Step 1735] Avg Loss: 1.2896 (NTP: 0.7513, Gene: 0.0000, Rank: 1.0767)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.030838
+🧬 [Step 1740] Avg Loss: 1.1847 (NTP: 0.6715, Gene: 0.0000, Rank: 1.0264)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.030611
+🧬 [Step 1745] Avg Loss: 1.3069 (NTP: 0.7636, Gene: 0.0000, Rank: 1.0866)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.032120
+🧬 [Step 1750] Avg Loss: 1.2596 (NTP: 0.7285, Gene: 0.0000, Rank: 1.0623)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.030172
+🧬 [Step 1755] Avg Loss: 1.2981 (NTP: 0.7752, Gene: 0.0000, Rank: 1.0458)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.028508
+🧬 [Step 1760] Avg Loss: 1.2703 (NTP: 0.7330, Gene: 0.0000, Rank: 1.0746)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.028510
+🧬 [Step 1765] Avg Loss: 1.1760 (NTP: 0.6548, Gene: 0.0000, Rank: 1.0424)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.029257
+🧬 [Step 1770] Avg Loss: 1.2189 (NTP: 0.7094, Gene: 0.0000, Rank: 1.0190)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.032374
+🧬 [Step 1775] Avg Loss: 1.2406 (NTP: 0.7149, Gene: 0.0000, Rank: 1.0514)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.032008
+🧬 [Step 1780] Avg Loss: 1.1927 (NTP: 0.6911, Gene: 0.0000, Rank: 1.0033)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.027868
+🧬 [Step 1785] Avg Loss: 1.1320 (NTP: 0.6160, Gene: 0.0000, Rank: 1.0319)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.037658
+🧬 [Step 1790] Avg Loss: 1.1967 (NTP: 0.6713, Gene: 0.0000, Rank: 1.0507)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.031632
+🧬 [Step 1795] Avg Loss: 1.2169 (NTP: 0.7263, Gene: 0.0000, Rank: 0.9811)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.035758
+🧬 [Step 1800] Avg Loss: 1.2495 (NTP: 0.7379, Gene: 0.0000, Rank: 1.0232)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.030982
+💾 Checkpoint 已保存：/mnt/c20250607_hs/wanghaoran/wanghaoran/zyh/scshowo/stage1/bidirectional_step_1800/checkpoint-step-1800 (model_state=trainable_only, keys=115)
+🧬 [Step 1805] Avg Loss: 1.1920 (NTP: 0.6809, Gene: 0.0000, Rank: 1.0222)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.034066
+🧬 [Step 1810] Avg Loss: 1.1104 (NTP: 0.6123, Gene: 0.0000, Rank: 0.9963)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.033170
+🧬 [Step 1815] Avg Loss: 1.1592 (NTP: 0.6539, Gene: 0.0000, Rank: 1.0106)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.032616
+🧬 [Step 1820] Avg Loss: 1.1820 (NTP: 0.6606, Gene: 0.0000, Rank: 1.0428)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.032804
+🧬 [Step 1825] Avg Loss: 1.1792 (NTP: 0.6606, Gene: 0.0000, Rank: 1.0370)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.033176
+🧬 [Step 1830] Avg Loss: 1.1261 (NTP: 0.6353, Gene: 0.0000, Rank: 0.9817)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.035517
+🧬 [Step 1835] Avg Loss: 1.2419 (NTP: 0.7325, Gene: 0.0000, Rank: 1.0188)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.034228
+🧬 [Step 1840] Avg Loss: 1.2471 (NTP: 0.7318, Gene: 0.0000, Rank: 1.0306)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.034590
+🧬 [Step 1845] Avg Loss: 1.2181 (NTP: 0.6947, Gene: 0.0000, Rank: 1.0467)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.033539
+🧬 [Step 1850] Avg Loss: 1.2137 (NTP: 0.7039, Gene: 0.0000, Rank: 1.0196)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.030918
+🧬 [Step 1855] Avg Loss: 1.1781 (NTP: 0.6837, Gene: 0.0000, Rank: 0.9889)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.030125
+🧬 [Step 1860] Avg Loss: 1.1533 (NTP: 0.6359, Gene: 0.0000, Rank: 1.0348)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.030556
+🧬 [Step 1865] Avg Loss: 1.1179 (NTP: 0.6129, Gene: 0.0000, Rank: 1.0101)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.029427
+🧬 [Step 1870] Avg Loss: 1.2020 (NTP: 0.6882, Gene: 0.0000, Rank: 1.0276)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.029558
+🧬 [Step 1875] Avg Loss: 1.1686 (NTP: 0.6892, Gene: 0.0000, Rank: 0.9590)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.035093
+🧬 [Step 1880] Avg Loss: 1.1445 (NTP: 0.6460, Gene: 0.0000, Rank: 0.9970)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.029882
+🧬 [Step 1885] Avg Loss: 1.2390 (NTP: 0.7291, Gene: 0.0000, Rank: 1.0199)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.033167
+🧬 [Step 1890] Avg Loss: 1.2502 (NTP: 0.7109, Gene: 0.0000, Rank: 1.0785)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.034545
+🧬 [Step 1895] Avg Loss: 1.0698 (NTP: 0.5391, Gene: 0.0000, Rank: 1.0613)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.031769
+🧬 [Step 1900] Avg Loss: 1.2191 (NTP: 0.7026, Gene: 0.0000, Rank: 1.0329)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.032050
+🧬 [Step 1905] Avg Loss: 1.2861 (NTP: 0.7650, Gene: 0.0000, Rank: 1.0421)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.031504
+🧬 [Step 1910] Avg Loss: 1.2420 (NTP: 0.7075, Gene: 0.0000, Rank: 1.0690)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.032551
+🧬 [Step 1915] Avg Loss: 1.1577 (NTP: 0.6279, Gene: 0.0000, Rank: 1.0595)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.026732
+🧬 [Step 1920] Avg Loss: 1.1276 (NTP: 0.6334, Gene: 0.0000, Rank: 0.9884)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.028445
+🧬 [Step 1925] Avg Loss: 1.0816 (NTP: 0.5842, Gene: 0.0000, Rank: 0.9946)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.031659
+🧬 [Step 1930] Avg Loss: 1.2098 (NTP: 0.7128, Gene: 0.0000, Rank: 0.9941)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.029486
+🧬 [Step 1935] Avg Loss: 1.2118 (NTP: 0.6759, Gene: 0.0000, Rank: 1.0718)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.029434
+🧬 [Step 1940] Avg Loss: 1.2429 (NTP: 0.7333, Gene: 0.0000, Rank: 1.0191)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.030914
+🧬 [Step 1945] Avg Loss: 1.1678 (NTP: 0.6394, Gene: 0.0000, Rank: 1.0567)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.033860
+🧬 [Step 1950] Avg Loss: 1.2836 (NTP: 0.7700, Gene: 0.0000, Rank: 1.0274)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.031945
+🧬 [Step 1955] Avg Loss: 1.1673 (NTP: 0.6545, Gene: 0.0000, Rank: 1.0256)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.033691
+🧬 [Step 1960] Avg Loss: 1.2612 (NTP: 0.7402, Gene: 0.0000, Rank: 1.0419)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.030379

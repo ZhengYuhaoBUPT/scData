@@ -1,0 +1,573 @@
+W0423 09:51:25.306000 59011 site-packages/torch/distributed/run.py:852] 
+W0423 09:51:25.306000 59011 site-packages/torch/distributed/run.py:852] *****************************************
+W0423 09:51:25.306000 59011 site-packages/torch/distributed/run.py:852] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0423 09:51:25.306000 59011 site-packages/torch/distributed/run.py:852] *****************************************
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59173 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59173 [0] NCCL INFO Bootstrap: Using eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59173 [0] NCCL INFO cudaDriverVersion 12080
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59173 [0] NCCL INFO NCCL version 2.27.5+cuda12.9
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59173 [0] NCCL INFO Comm config Blocking set to 1
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59174 [1] NCCL INFO cudaDriverVersion 12080
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59174 [1] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59174 [1] NCCL INFO Bootstrap: Using eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59174 [1] NCCL INFO NCCL version 2.27.5+cuda12.9
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59174 [1] NCCL INFO Comm config Blocking set to 1
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59175 [2] NCCL INFO cudaDriverVersion 12080
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59175 [2] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59175 [2] NCCL INFO Bootstrap: Using eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59175 [2] NCCL INFO NCCL version 2.27.5+cuda12.9
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59175 [2] NCCL INFO Comm config Blocking set to 1
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59176 [3] NCCL INFO cudaDriverVersion 12080
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59176 [3] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59176 [3] NCCL INFO Bootstrap: Using eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59176 [3] NCCL INFO NCCL version 2.27.5+cuda12.9
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59176 [3] NCCL INFO Comm config Blocking set to 1
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59311 [1] NCCL INFO NET/Plugin: Could not find: libnccl-net.so. 
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59310 [0] NCCL INFO NET/Plugin: Could not find: libnccl-net.so. 
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59311 [1] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59310 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59311 [1] NCCL INFO NET/IB : No device found.
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59310 [0] NCCL INFO NET/IB : No device found.
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59311 [1] NCCL INFO NET/IB : Using [RO]; OOB eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59310 [0] NCCL INFO NET/IB : Using [RO]; OOB eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59311 [1] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59310 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59311 [1] NCCL INFO NET/Socket : Using [0]eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59310 [0] NCCL INFO NET/Socket : Using [0]eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59311 [1] NCCL INFO Initialized NET plugin Socket
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59310 [0] NCCL INFO Initialized NET plugin Socket
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59310 [0] NCCL INFO Assigned NET plugin Socket to comm
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59311 [1] NCCL INFO Assigned NET plugin Socket to comm
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59310 [0] NCCL INFO Using network Socket
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59311 [1] NCCL INFO Using network Socket
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59311 [1] NCCL INFO ncclCommInitRankConfig comm 0xc764520 rank 1 nranks 4 cudaDev 1 nvmlDev 1 busId 9b000 commId 0x1135a4e4dbdc6076 - Init START
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59310 [0] NCCL INFO ncclCommInitRankConfig comm 0xc092cf0 rank 0 nranks 4 cudaDev 0 nvmlDev 0 busId 5d000 commId 0x1135a4e4dbdc6076 - Init START
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59312 [2] NCCL INFO NET/Plugin: Could not find: libnccl-net.so. 
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59312 [2] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59312 [2] NCCL INFO NET/IB : No device found.
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59312 [2] NCCL INFO NET/IB : Using [RO]; OOB eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59312 [2] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59312 [2] NCCL INFO NET/Socket : Using [0]eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59312 [2] NCCL INFO Initialized NET plugin Socket
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59312 [2] NCCL INFO Assigned NET plugin Socket to comm
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59312 [2] NCCL INFO Using network Socket
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59313 [3] NCCL INFO NET/Plugin: Could not find: libnccl-net.so. 
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59313 [3] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59313 [3] NCCL INFO NET/IB : No device found.
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59313 [3] NCCL INFO NET/IB : Using [RO]; OOB eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59313 [3] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59313 [3] NCCL INFO NET/Socket : Using [0]eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59313 [3] NCCL INFO Initialized NET plugin Socket
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59313 [3] NCCL INFO Assigned NET plugin Socket to comm
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59313 [3] NCCL INFO Using network Socket
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59312 [2] NCCL INFO ncclCommInitRankConfig comm 0xd2d17c0 rank 2 nranks 4 cudaDev 2 nvmlDev 2 busId ab000 commId 0x1135a4e4dbdc6076 - Init START
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59311 [1] NCCL INFO RAS client listening socket at ::1<28028>
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59313 [3] NCCL INFO ncclCommInitRankConfig comm 0xbd2dd00 rank 3 nranks 4 cudaDev 3 nvmlDev 3 busId bb000 commId 0x1135a4e4dbdc6076 - Init START
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59313 [3] NCCL INFO RAS client listening socket at ::1<28028>
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59312 [2] NCCL INFO RAS client listening socket at ::1<28028>
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59310 [0] NCCL INFO RAS client listening socket at ::1<28028>
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59310 [0] NCCL INFO Bootstrap timings total 0.258176 (create 0.000056, send 0.000097, recv 0.000156, ring 0.000053, delay 0.000000)
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59313 [3] NCCL INFO Bootstrap timings total 0.001614 (create 0.000046, send 0.000111, recv 0.000094, ring 0.000987, delay 0.000000)
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59312 [2] NCCL INFO Bootstrap timings total 0.009257 (create 0.000049, send 0.000098, recv 0.007715, ring 0.000983, delay 0.000000)
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59311 [1] NCCL INFO Bootstrap timings total 0.258208 (create 0.000051, send 0.000101, recv 0.249092, ring 0.008515, delay 0.000001)
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59313 [3] NCCL INFO NCCL_P2P_DISABLE set by environment to 1
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59312 [2] NCCL INFO NCCL_P2P_DISABLE set by environment to 1
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59310 [0] NCCL INFO NCCL_P2P_DISABLE set by environment to 1
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59311 [1] NCCL INFO NCCL_P2P_DISABLE set by environment to 1
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59311 [1] NCCL INFO Setting affinity for GPU 1 to 48-89,165-185
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59311 [1] NCCL INFO NVLS multicast support is available on dev 1 (NVLS_NCHANNELS 16)
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59310 [0] NCCL INFO Setting affinity for GPU 0 to 96-116
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59310 [0] NCCL INFO NVLS multicast support is available on dev 0 (NVLS_NCHANNELS 16)
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59312 [2] NCCL INFO Setting affinity for GPU 2 to 48-89,165-185
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59313 [3] NCCL INFO Setting affinity for GPU 3 to 48-89,165-185
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59312 [2] NCCL INFO NVLS multicast support is available on dev 2 (NVLS_NCHANNELS 16)
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59313 [3] NCCL INFO NVLS multicast support is available on dev 3 (NVLS_NCHANNELS 16)
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59313 [3] NCCL INFO comm 0xbd2dd00 rank 3 nRanks 4 nNodes 1 localRanks 4 localRank 3 MNNVL 0
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59312 [2] NCCL INFO comm 0xd2d17c0 rank 2 nRanks 4 nNodes 1 localRanks 4 localRank 2 MNNVL 0
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59311 [1] NCCL INFO comm 0xc764520 rank 1 nRanks 4 nNodes 1 localRanks 4 localRank 1 MNNVL 0
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59313 [3] NCCL INFO Trees [0] -1/-1/-1->3->2 [1] -1/-1/-1->3->2 [2] -1/-1/-1->3->2 [3] -1/-1/-1->3->2 [4] -1/-1/-1->3->2 [5] -1/-1/-1->3->2 [6] -1/-1/-1->3->2 [7] -1/-1/-1->3->2 [8] -1/-1/-1->3->2 [9] -1/-1/-1->3->2 [10] -1/-1/-1->3->2 [11] -1/-1/-1->3->2 [12] -1/-1/-1->3->2 [13] -1/-1/-1->3->2 [14] -1/-1/-1->3->2 [15] -1/-1/-1->3->2
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59312 [2] NCCL INFO Trees [0] 3/-1/-1->2->1 [1] 3/-1/-1->2->1 [2] 3/-1/-1->2->1 [3] 3/-1/-1->2->1 [4] 3/-1/-1->2->1 [5] 3/-1/-1->2->1 [6] 3/-1/-1->2->1 [7] 3/-1/-1->2->1 [8] 3/-1/-1->2->1 [9] 3/-1/-1->2->1 [10] 3/-1/-1->2->1 [11] 3/-1/-1->2->1 [12] 3/-1/-1->2->1 [13] 3/-1/-1->2->1 [14] 3/-1/-1->2->1 [15] 3/-1/-1->2->1
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59313 [3] NCCL INFO P2P Chunksize set to 131072
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59312 [2] NCCL INFO P2P Chunksize set to 131072
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59311 [1] NCCL INFO Trees [0] 2/-1/-1->1->0 [1] 2/-1/-1->1->0 [2] 2/-1/-1->1->0 [3] 2/-1/-1->1->0 [4] 2/-1/-1->1->0 [5] 2/-1/-1->1->0 [6] 2/-1/-1->1->0 [7] 2/-1/-1->1->0 [8] 2/-1/-1->1->0 [9] 2/-1/-1->1->0 [10] 2/-1/-1->1->0 [11] 2/-1/-1->1->0 [12] 2/-1/-1->1->0 [13] 2/-1/-1->1->0 [14] 2/-1/-1->1->0 [15] 2/-1/-1->1->0
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59311 [1] NCCL INFO P2P Chunksize set to 131072
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59310 [0] NCCL INFO comm 0xc092cf0 rank 0 nRanks 4 nNodes 1 localRanks 4 localRank 0 MNNVL 0
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59310 [0] NCCL INFO Channel 00/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59310 [0] NCCL INFO Channel 01/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59310 [0] NCCL INFO Channel 02/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59310 [0] NCCL INFO Channel 03/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59310 [0] NCCL INFO Channel 04/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59310 [0] NCCL INFO Channel 05/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59310 [0] NCCL INFO Channel 06/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59310 [0] NCCL INFO Channel 07/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59310 [0] NCCL INFO Channel 08/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59310 [0] NCCL INFO Channel 09/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59310 [0] NCCL INFO Channel 10/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59310 [0] NCCL INFO Channel 11/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59310 [0] NCCL INFO Channel 12/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59310 [0] NCCL INFO Channel 13/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59310 [0] NCCL INFO Channel 14/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59310 [0] NCCL INFO Channel 15/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59310 [0] NCCL INFO Trees [0] 1/-1/-1->0->-1 [1] 1/-1/-1->0->-1 [2] 1/-1/-1->0->-1 [3] 1/-1/-1->0->-1 [4] 1/-1/-1->0->-1 [5] 1/-1/-1->0->-1 [6] 1/-1/-1->0->-1 [7] 1/-1/-1->0->-1 [8] 1/-1/-1->0->-1 [9] 1/-1/-1->0->-1 [10] 1/-1/-1->0->-1 [11] 1/-1/-1->0->-1 [12] 1/-1/-1->0->-1 [13] 1/-1/-1->0->-1 [14] 1/-1/-1->0->-1 [15] 1/-1/-1->0->-1
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59310 [0] NCCL INFO P2P Chunksize set to 131072
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59311 [1] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59313 [3] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59318 [1] NCCL INFO [Proxy Service] Device 1 CPU core 68
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59312 [2] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59319 [1] NCCL INFO [Proxy Service UDS] Device 1 CPU core 165
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59320 [3] NCCL INFO [Proxy Service] Device 3 CPU core 62
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59322 [2] NCCL INFO [Proxy Service] Device 2 CPU core 177
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59321 [3] NCCL INFO [Proxy Service UDS] Device 3 CPU core 63
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59323 [2] NCCL INFO [Proxy Service UDS] Device 2 CPU core 179
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59310 [0] NCCL INFO PROFILER/Plugin: Could not find: libnccl-profiler.so. 
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59310 [0] NCCL INFO Check P2P Type isAllDirectP2p 0 directMode 0
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59325 [0] NCCL INFO [Proxy Service UDS] Device 0 CPU core 101
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59324 [0] NCCL INFO [Proxy Service] Device 0 CPU core 98
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59311 [1] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59311 [1] NCCL INFO 16 coll channels, 16 collnet channels, 16 nvls channels, 16 p2p channels, 2 p2p channels per peer
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59312 [2] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59312 [2] NCCL INFO 16 coll channels, 16 collnet channels, 16 nvls channels, 16 p2p channels, 2 p2p channels per peer
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59313 [3] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59313 [3] NCCL INFO 16 coll channels, 16 collnet channels, 16 nvls channels, 16 p2p channels, 2 p2p channels per peer
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59310 [0] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59310 [0] NCCL INFO 16 coll channels, 16 collnet channels, 16 nvls channels, 16 p2p channels, 2 p2p channels per peer
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59310 [0] NCCL INFO CC Off, workFifoBytes 1048576
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59312 [2] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59312 [2] NCCL INFO ncclCommInitRankConfig comm 0xd2d17c0 rank 2 nranks 4 cudaDev 2 nvmlDev 2 busId ab000 commId 0x1135a4e4dbdc6076 - Init COMPLETE
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59312 [2] NCCL INFO Init timings - ncclCommInitRankConfig: rank 2 nranks 4 total 0.72 (kernels 0.29, alloc 0.06, bootstrap 0.01, allgathers 0.01, topo 0.27, graphs 0.00, connections 0.09, rest 0.00)
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59313 [3] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59313 [3] NCCL INFO ncclCommInitRankConfig comm 0xbd2dd00 rank 3 nranks 4 cudaDev 3 nvmlDev 3 busId bb000 commId 0x1135a4e4dbdc6076 - Init COMPLETE
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59313 [3] NCCL INFO Init timings - ncclCommInitRankConfig: rank 3 nranks 4 total 0.71 (kernels 0.29, alloc 0.05, bootstrap 0.00, allgathers 0.01, topo 0.27, graphs 0.00, connections 0.09, rest 0.01)
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59310 [0] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59310 [0] NCCL INFO ncclCommInitRankConfig comm 0xc092cf0 rank 0 nranks 4 cudaDev 0 nvmlDev 0 busId 5d000 commId 0x1135a4e4dbdc6076 - Init COMPLETE
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59310 [0] NCCL INFO Init timings - ncclCommInitRankConfig: rank 0 nranks 4 total 1.03 (kernels 0.34, alloc 0.07, bootstrap 0.26, allgathers 0.00, topo 0.26, graphs 0.01, connections 0.08, rest 0.01)
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59311 [1] NCCL INFO TUNER/Plugin: Could not find: libnccl-tuner.so. Using internal tuner plugin.
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59311 [1] NCCL INFO ncclCommInitRankConfig comm 0xc764520 rank 1 nranks 4 cudaDev 1 nvmlDev 1 busId 9b000 commId 0x1135a4e4dbdc6076 - Init COMPLETE
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59311 [1] NCCL INFO Init timings - ncclCommInitRankConfig: rank 1 nranks 4 total 1.01 (kernels 0.32, alloc 0.07, bootstrap 0.26, allgathers 0.01, topo 0.26, graphs 0.00, connections 0.09, rest 0.01)
+📄 使用配置: /mnt/c20250607/user/wanghaoran/zyh/scDataTest/config/config.json
+✅ 从配置加载模型参数:
+   - hidden_size: 3584
+   - num_diffusion_layers: 8
+   - attention_type: omni
+   - weight_decay: 0.0001
+   - clip_grad_norm: 1.0
+   - gradient_checkpointing: True
+   - disable_gene_position_ids: True
+   - gene_position_buckets: 100
+✅ 从配置加载模型参数:
+   - hidden_size: 3584
+   - num_diffusion_layers: 8
+   - attention_type: omni
+   - weight_decay: 0.0001
+   - clip_grad_norm: 1.0
+   - gradient_checkpointing: True
+   - disable_gene_position_ids: True
+   - gene_position_buckets: 100
+✅ 从配置加载模型参数:
+   - hidden_size: 3584
+   - num_diffusion_layers: 8
+   - attention_type: omni
+   - weight_decay: 0.0001
+   - clip_grad_norm: 1.0
+   - gradient_checkpointing: True
+   - disable_gene_position_ids: True
+   - gene_position_buckets: 100
+✅ 从配置加载模型参数:
+   - hidden_size: 3584
+   - num_diffusion_layers: 8
+   - attention_type: omni
+   - weight_decay: 0.0001
+   - clip_grad_norm: 1.0
+   - gradient_checkpointing: True
+   - disable_gene_position_ids: True
+   - gene_position_buckets: 100
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:04<00:12,  4.15s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:04<00:12,  4.10s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:04<00:12,  4.16s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:04<00:12,  4.13s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:07<00:07,  3.97s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:07<00:07,  3.95s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:08<00:07,  3.99s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:08<00:08,  4.01s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:11<00:03,  3.91s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:11<00:03,  3.93s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:11<00:03,  3.93s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:11<00:03,  3.90s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:15<00:00,  3.76s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:15<00:00,  3.84s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:15<00:00,  3.77s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:15<00:00,  3.86s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:15<00:00,  3.76s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:15<00:00,  3.77s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:15<00:00,  3.83s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:15<00:00,  3.85s/it]
+
+✅ Gradient Checkpointing 已启用
+✅ Gradient Checkpointing 已启用
+✅ Gradient Checkpointing 已启用
+✅ Gradient Checkpointing 已启用
+✅ 使用 compact codebook: codebook_tensor_compact.pt
+✅ 使用 compact codebook: codebook_tensor_compact.pt✅ 使用 compact codebook: codebook_tensor_compact.pt
+
+✅ 使用 compact codebook: codebook_tensor_compact.pt
+⚠️  gene_vocab_size 调整: 0 -> 741440
+⚠️  gene_vocab_size 调整: 0 -> 741440⚠️  gene_vocab_size 调整: 0 -> 741440
+
+⚠️  gene_vocab_size 调整: 0 -> 741440
+✅ 初始化 gene_embed_tokens: vocab=741440, base=11585 genes x 64 clusters, frozen
+✅ 初始化 gene_embed_tokens: vocab=741440, base=11585 genes x 64 clusters, frozen
+✅ 初始化 gene_embed_tokens: vocab=741440, base=11585 genes x 64 clusters, frozen
+✅ 初始化 gene_embed_tokens: vocab=741440, base=11585 genes x 64 clusters, frozen
+
+🔧 Diffusion Head 配置对齐 Qwen2.5 底座:
+   - Qwen hidden_size: 3584
+   - Qwen num_attention_heads: 28
+   - Qwen intermediate_size: 18944
+   - head_dim: 128
+
+🔧 Diffusion Head 配置对齐 Qwen2.5 底座:
+   - Qwen hidden_size: 3584
+   - Qwen num_attention_heads: 28
+   - Qwen intermediate_size: 18944
+   - head_dim: 128
+
+🔧 Diffusion Head 配置对齐 Qwen2.5 底座:
+   - Qwen hidden_size: 3584
+   - Qwen num_attention_heads: 28
+   - Qwen intermediate_size: 18944
+   - head_dim: 128
+
+🔧 Diffusion Head 配置对齐 Qwen2.5 底座:
+   - Qwen hidden_size: 3584
+   - Qwen num_attention_heads: 28
+   - Qwen intermediate_size: 18944
+   - head_dim: 128
+[BidirectionalStage1DS] initialized:
+   - max_genes: 1200
+   - understanding_ratio: 1.0
+   - generation_ratio: 0.0
+   - Rank 0/1
+[BidirectionalStage1DS] initialized:
+   - max_genes: 1200
+   - understanding_ratio: 1.0
+   - generation_ratio: 0.0
+   - Rank 0/1
+[BidirectionalStage1DS] compact gene vocab: 11585 genes x 64 = 741440 tokens
+[BidirectionalStage1DS] initialized:
+   - max_genes: 1200
+   - understanding_ratio: 1.0
+   - generation_ratio: 0.0
+   - Rank 0/1
+[BidirectionalStage1DS] compact gene vocab: 11585 genes x 64 = 741440 tokens
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59334 [3] NCCL INFO NVLS comm 0xbd2dd00 headRank 3 nHeads 4 nvlsRanks 4 buffSize 1048576 nvlsPerRankSize 33554432 nvlsTotalSize 134217728
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59335 [1] NCCL INFO NVLS comm 0xc764520 headRank 1 nHeads 4 nvlsRanks 4 buffSize 1048576 nvlsPerRankSize 33554432 nvlsTotalSize 134217728
+[BidirectionalStage1DS] compact gene vocab: 11585 genes x 64 = 741440 tokens
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59336 [2] NCCL INFO NVLS comm 0xd2d17c0 headRank 2 nHeads 4 nvlsRanks 4 buffSize 1048576 nvlsPerRankSize 33554432 nvlsTotalSize 134217728
+
+⚠️  Stage1 使用弱 rank signal + 1D RoPE
+
+🧬 初始化理解数据加载器...
+   模式分布: 100% 理解 [Gene->Text]
+[BidirectionalStage1DS] initialized:
+   - max_genes: 1200
+   - understanding_ratio: 1.0
+   - generation_ratio: 0.0
+   - Rank 0/1
+[BidirectionalStage1DS] compact gene vocab: 11585 genes x 64 = 741440 tokens
+
+============================================================
+[BidirectionalStage1DS] Distributed data allocation (global sample split + lazy keys)
+============================================================
+[BidirectionalStage1DS] Total cells(all ranks): 32,061,933
+[BidirectionalStage1DS] Per-rank target ~= 32,061,933 (+1 for first 0 ranks)
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59337 [0] NCCL INFO NVLS comm 0xc092cf0 headRank 0 nHeads 4 nvlsRanks 4 buffSize 1048576 nvlsPerRankSize 33554432 nvlsTotalSize 134217728
+[BidirectionalStage1DS] Rank 0: cells=32,061,933, blocks=35[BidirectionalStage1DS] Rank 0: cells=32,061,933, blocks=35[BidirectionalStage1DS] Rank 0: cells=32,061,933, blocks=35[BidirectionalStage1DS] Rank 0: cells=32,061,933, blocks=35
+
+
+
+⚠️ disable_gene_position_ids=True: 已关闭 rank_signal_injector 训练与注入
+
+📊 参数组统计:
+   总参数量: 11,207,733,274 (11.21B)
+   可训练参数量: 3,009,834,265 (3009.83M)
+   冻结参数量: 8,197,899,009 (8.20B)
+   训练比例: 26.85%
+swanlab: Tracking run with swanlab version 0.7.15
+swanlab: Run data will be saved locally in 
+/mnt/c20250607/user/wanghaoran/zyh/scDataTest/logs/swanlab/run-20260423_095224-3
+qt01r8twnivzurfk6l33
+swanlab: 👋 Hi yuhao_zheng,welcome to swanlab!
+swanlab: Syncing run stage1 to the cloud
+swanlab: 🏠 View project at 
+https://swanlab.cn/@yuhao_zheng/sc_showo_understanding_only
+swanlab: 🚀 View run at 
+https://swanlab.cn/@yuhao_zheng/sc_showo_understanding_only/runs/3qt01r8twnivzur
+fk6l33
+✅ SwanLab 初始化成功：sc_showo_understanding_only (exp: stage1)
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59174 [1] NCCL INFO Comm config Blocking set to 1
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59176 [3] NCCL INFO Comm config Blocking set to 1
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59175 [2] NCCL INFO Comm config Blocking set to 1
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59173 [0] NCCL INFO Comm config Blocking set to 1
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59371 [0] NCCL INFO Assigned NET plugin Socket to comm
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59371 [0] NCCL INFO Using network Socket
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59365 [3] NCCL INFO Assigned NET plugin Socket to comm
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59368 [2] NCCL INFO Assigned NET plugin Socket to comm
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59362 [1] NCCL INFO Assigned NET plugin Socket to comm
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59365 [3] NCCL INFO Using network Socket
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59368 [2] NCCL INFO Using network Socket
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59362 [1] NCCL INFO Using network Socket
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59371 [0] NCCL INFO ncclCommSplit comm 0x28efde80 rank 0 nranks 4 cudaDev 0 nvmlDev 0 busId 5d000 parent 0xc092cf0 splitCount 1 color 2003953581 key 0- Init START
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59365 [3] NCCL INFO ncclCommSplit comm 0x1013b0c0 rank 3 nranks 4 cudaDev 3 nvmlDev 3 busId bb000 parent 0xbd2dd00 splitCount 1 color 2003953581 key 3- Init START
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59368 [2] NCCL INFO ncclCommSplit comm 0x116de780 rank 2 nranks 4 cudaDev 2 nvmlDev 2 busId ab000 parent 0xd2d17c0 splitCount 1 color 2003953581 key 2- Init START
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59362 [1] NCCL INFO ncclCommSplit comm 0x10b71c00 rank 1 nranks 4 cudaDev 1 nvmlDev 1 busId 9b000 parent 0xc764520 splitCount 1 color 2003953581 key 1- Init START
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59362 [1] NCCL INFO Setting affinity for GPU 1 to 48-89,165-185
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59362 [1] NCCL INFO NVLS multicast support is available on dev 1 (NVLS_NCHANNELS 16)
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59371 [0] NCCL INFO Setting affinity for GPU 0 to 96-116
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59365 [3] NCCL INFO Setting affinity for GPU 3 to 48-89,165-185
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59371 [0] NCCL INFO NVLS multicast support is available on dev 0 (NVLS_NCHANNELS 16)
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59365 [3] NCCL INFO NVLS multicast support is available on dev 3 (NVLS_NCHANNELS 16)
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59368 [2] NCCL INFO Setting affinity for GPU 2 to 48-89,165-185
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59368 [2] NCCL INFO NVLS multicast support is available on dev 2 (NVLS_NCHANNELS 16)
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59365 [3] NCCL INFO comm 0x1013b0c0 rank 3 nRanks 4 nNodes 1 localRanks 4 localRank 3 MNNVL 0
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59368 [2] NCCL INFO comm 0x116de780 rank 2 nRanks 4 nNodes 1 localRanks 4 localRank 2 MNNVL 0
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59362 [1] NCCL INFO comm 0x10b71c00 rank 1 nRanks 4 nNodes 1 localRanks 4 localRank 1 MNNVL 0
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59371 [0] NCCL INFO comm 0x28efde80 rank 0 nRanks 4 nNodes 1 localRanks 4 localRank 0 MNNVL 0
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59365 [3] NCCL INFO Trees [0] -1/-1/-1->3->2 [1] -1/-1/-1->3->2 [2] -1/-1/-1->3->2 [3] -1/-1/-1->3->2 [4] -1/-1/-1->3->2 [5] -1/-1/-1->3->2 [6] -1/-1/-1->3->2 [7] -1/-1/-1->3->2 [8] -1/-1/-1->3->2 [9] -1/-1/-1->3->2 [10] -1/-1/-1->3->2 [11] -1/-1/-1->3->2 [12] -1/-1/-1->3->2 [13] -1/-1/-1->3->2 [14] -1/-1/-1->3->2 [15] -1/-1/-1->3->2
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59368 [2] NCCL INFO Trees [0] 3/-1/-1->2->1 [1] 3/-1/-1->2->1 [2] 3/-1/-1->2->1 [3] 3/-1/-1->2->1 [4] 3/-1/-1->2->1 [5] 3/-1/-1->2->1 [6] 3/-1/-1->2->1 [7] 3/-1/-1->2->1 [8] 3/-1/-1->2->1 [9] 3/-1/-1->2->1 [10] 3/-1/-1->2->1 [11] 3/-1/-1->2->1 [12] 3/-1/-1->2->1 [13] 3/-1/-1->2->1 [14] 3/-1/-1->2->1 [15] 3/-1/-1->2->1
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59365 [3] NCCL INFO P2P Chunksize set to 131072
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59368 [2] NCCL INFO P2P Chunksize set to 131072
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59362 [1] NCCL INFO Trees [0] 2/-1/-1->1->0 [1] 2/-1/-1->1->0 [2] 2/-1/-1->1->0 [3] 2/-1/-1->1->0 [4] 2/-1/-1->1->0 [5] 2/-1/-1->1->0 [6] 2/-1/-1->1->0 [7] 2/-1/-1->1->0 [8] 2/-1/-1->1->0 [9] 2/-1/-1->1->0 [10] 2/-1/-1->1->0 [11] 2/-1/-1->1->0 [12] 2/-1/-1->1->0 [13] 2/-1/-1->1->0 [14] 2/-1/-1->1->0 [15] 2/-1/-1->1->0
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59371 [0] NCCL INFO Channel 00/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59362 [1] NCCL INFO P2P Chunksize set to 131072
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59371 [0] NCCL INFO Channel 01/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59371 [0] NCCL INFO Channel 02/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59371 [0] NCCL INFO Channel 03/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59371 [0] NCCL INFO Channel 04/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59371 [0] NCCL INFO Channel 05/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59371 [0] NCCL INFO Channel 06/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59371 [0] NCCL INFO Channel 07/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59371 [0] NCCL INFO Channel 08/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59371 [0] NCCL INFO Channel 09/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59371 [0] NCCL INFO Channel 10/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59371 [0] NCCL INFO Channel 11/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59371 [0] NCCL INFO Channel 12/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59371 [0] NCCL INFO Channel 13/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59371 [0] NCCL INFO Channel 14/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59371 [0] NCCL INFO Channel 15/16 : 0 1 2 3
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59371 [0] NCCL INFO Trees [0] 1/-1/-1->0->-1 [1] 1/-1/-1->0->-1 [2] 1/-1/-1->0->-1 [3] 1/-1/-1->0->-1 [4] 1/-1/-1->0->-1 [5] 1/-1/-1->0->-1 [6] 1/-1/-1->0->-1 [7] 1/-1/-1->0->-1 [8] 1/-1/-1->0->-1 [9] 1/-1/-1->0->-1 [10] 1/-1/-1->0->-1 [11] 1/-1/-1->0->-1 [12] 1/-1/-1->0->-1 [13] 1/-1/-1->0->-1 [14] 1/-1/-1->0->-1 [15] 1/-1/-1->0->-1
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59371 [0] NCCL INFO P2P Chunksize set to 131072
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59371 [0] NCCL INFO Check P2P Type isAllDirectP2p 0 directMode 0
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59372 [3] NCCL INFO [Proxy Service] Device 3 CPU core 48
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59373 [3] NCCL INFO [Proxy Service UDS] Device 3 CPU core 50
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59374 [2] NCCL INFO [Proxy Service] Device 2 CPU core 84
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59375 [1] NCCL INFO [Proxy Service] Device 1 CPU core 167
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59377 [2] NCCL INFO [Proxy Service UDS] Device 2 CPU core 85
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59376 [0] NCCL INFO [Proxy Service] Device 0 CPU core 99
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59378 [1] NCCL INFO [Proxy Service UDS] Device 1 CPU core 168
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59379 [0] NCCL INFO [Proxy Service UDS] Device 0 CPU core 100
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59362 [1] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59362 [1] NCCL INFO 16 coll channels, 16 collnet channels, 16 nvls channels, 16 p2p channels, 2 p2p channels per peer
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59368 [2] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59368 [2] NCCL INFO 16 coll channels, 16 collnet channels, 16 nvls channels, 16 p2p channels, 2 p2p channels per peer
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59365 [3] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59365 [3] NCCL INFO 16 coll channels, 16 collnet channels, 16 nvls channels, 16 p2p channels, 2 p2p channels per peer
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59371 [0] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59371 [0] NCCL INFO 16 coll channels, 16 collnet channels, 16 nvls channels, 16 p2p channels, 2 p2p channels per peer
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59371 [0] NCCL INFO CC Off, workFifoBytes 1048576
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59365 [3] NCCL INFO ncclCommSplit comm 0x1013b0c0 rank 3 nranks 4 cudaDev 3 nvmlDev 3 busId bb000 parent 0xbd2dd00 splitCount 1 color 2003953581 key 3 - Init COMPLETE
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59362 [1] NCCL INFO ncclCommSplit comm 0x10b71c00 rank 1 nranks 4 cudaDev 1 nvmlDev 1 busId 9b000 parent 0xc764520 splitCount 1 color 2003953581 key 1 - Init COMPLETE
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59365 [3] NCCL INFO Init timings - ncclCommSplit: rank 3 nranks 4 total 5.97 (kernels 0.00, alloc 0.00, bootstrap 0.00, allgathers 0.00, topo 0.25, graphs 0.00, connections 0.08, rest 5.63)
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59362 [1] NCCL INFO Init timings - ncclCommSplit: rank 1 nranks 4 total 8.58 (kernels 0.00, alloc 0.00, bootstrap 0.00, allgathers 0.00, topo 0.25, graphs 0.00, connections 0.08, rest 8.23)
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59368 [2] NCCL INFO ncclCommSplit comm 0x116de780 rank 2 nranks 4 cudaDev 2 nvmlDev 2 busId ab000 parent 0xd2d17c0 splitCount 1 color 2003953581 key 2 - Init COMPLETE
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59368 [2] NCCL INFO Init timings - ncclCommSplit: rank 2 nranks 4 total 4.55 (kernels 0.00, alloc 0.00, bootstrap 0.00, allgathers 0.00, topo 0.25, graphs 0.00, connections 0.08, rest 4.21)
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59371 [0] NCCL INFO ncclCommSplit comm 0x28efde80 rank 0 nranks 4 cudaDev 0 nvmlDev 0 busId 5d000 parent 0xc092cf0 splitCount 1 color 2003953581 key 0 - Init COMPLETE
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59371 [0] NCCL INFO Init timings - ncclCommSplit: rank 0 nranks 4 total 0.34 (kernels 0.00, alloc 0.00, bootstrap 0.00, allgathers 0.00, topo 0.25, graphs 0.00, connections 0.08, rest 0.00)
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59380 [3] NCCL INFO Channel 00 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59383 [1] NCCL INFO Channel 00 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59381 [2] NCCL INFO Channel 00 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59383 [1] NCCL INFO Channel 01 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59380 [3] NCCL INFO Channel 01 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59382 [0] NCCL INFO Channel 00 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59381 [2] NCCL INFO Channel 01 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59383 [1] NCCL INFO Channel 02 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59380 [3] NCCL INFO Channel 02 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59381 [2] NCCL INFO Channel 02 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59382 [0] NCCL INFO Channel 01 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59383 [1] NCCL INFO Channel 03 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59380 [3] NCCL INFO Channel 03 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59382 [0] NCCL INFO Channel 02 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59381 [2] NCCL INFO Channel 03 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59383 [1] NCCL INFO Channel 04 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59381 [2] NCCL INFO Channel 04 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59380 [3] NCCL INFO Channel 04 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59382 [0] NCCL INFO Channel 03 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59383 [1] NCCL INFO Channel 05 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59381 [2] NCCL INFO Channel 05 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59380 [3] NCCL INFO Channel 05 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59382 [0] NCCL INFO Channel 04 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59383 [1] NCCL INFO Channel 06 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59382 [0] NCCL INFO Channel 05 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59381 [2] NCCL INFO Channel 06 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59380 [3] NCCL INFO Channel 06 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59383 [1] NCCL INFO Channel 07 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59382 [0] NCCL INFO Channel 06 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59381 [2] NCCL INFO Channel 07 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59380 [3] NCCL INFO Channel 07 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59383 [1] NCCL INFO Channel 08 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59381 [2] NCCL INFO Channel 08 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59382 [0] NCCL INFO Channel 07 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59380 [3] NCCL INFO Channel 08 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59383 [1] NCCL INFO Channel 09 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59381 [2] NCCL INFO Channel 09 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59382 [0] NCCL INFO Channel 08 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59380 [3] NCCL INFO Channel 09 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59383 [1] NCCL INFO Channel 10 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59381 [2] NCCL INFO Channel 10 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59382 [0] NCCL INFO Channel 09 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59380 [3] NCCL INFO Channel 10 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59383 [1] NCCL INFO Channel 11 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59382 [0] NCCL INFO Channel 10 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59381 [2] NCCL INFO Channel 11 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59383 [1] NCCL INFO Channel 12 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59380 [3] NCCL INFO Channel 11 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59382 [0] NCCL INFO Channel 11 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59381 [2] NCCL INFO Channel 12 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59382 [0] NCCL INFO Channel 12 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59383 [1] NCCL INFO Channel 13 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59380 [3] NCCL INFO Channel 12 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59382 [0] NCCL INFO Channel 13 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59380 [3] NCCL INFO Channel 13 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59381 [2] NCCL INFO Channel 13 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59383 [1] NCCL INFO Channel 14 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59380 [3] NCCL INFO Channel 14 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59382 [0] NCCL INFO Channel 14 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59381 [2] NCCL INFO Channel 14 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59383 [1] NCCL INFO Channel 15 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59380 [3] NCCL INFO Channel 15 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59382 [0] NCCL INFO Channel 15 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59381 [2] NCCL INFO Channel 15 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59380 [3] NCCL INFO Connected all rings, use ring PXN 0 GDR 1
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59381 [2] NCCL INFO Connected all rings, use ring PXN 0 GDR 1
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59383 [1] NCCL INFO Connected all rings, use ring PXN 0 GDR 1
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59382 [0] NCCL INFO Connected all rings, use ring PXN 0 GDR 1
+Before initializing optimizer states
+MA 23.72 GB         Max_MA 25.12 GB         CA 25.26 GB         Max_CA 25 GB 
+CPU Virtual Memory:  used = 7.43 GB, percent = 0.8%
+After initializing optimizer states
+MA 23.72 GB         Max_MA 26.52 GB         CA 28.06 GB         Max_CA 28 GB 
+CPU Virtual Memory:  used = 7.01 GB, percent = 0.8%
+After initializing ZeRO optimizer
+MA 23.72 GB         Max_MA 23.72 GB         CA 28.06 GB         Max_CA 28 GB 
+CPU Virtual Memory:  used = 7.01 GB, percent = 0.8%
+
+📊 训练配置:
+   - 数据步数: 2,003,870
+   - 优化步数: 57,254
+   - 梯度累积步数: 35
+   - Epochs: 1
+   - Scheduler: linear_warmup_cosine_decay
+   - Warmup Steps: 1,145
+   - Training Steps: 57,254
+
+🚀 从头开始训练 (未找到 checkpoint)
+🎭 Omni-Attention Mask: 文本=Causal, Gene=Bidirectional
+The attention layers in this model are transitioning from computing the RoPE embeddings internally through `position_ids` (2D tensor with the indexes of the tokens), to using externally computed `position_embeddings` (Tuple of tensors, containing cos and sin). In v4.46 `position_ids` will be removed and `position_embeddings` will be mandatory.
+The attention layers in this model are transitioning from computing the RoPE embeddings internally through `position_ids` (2D tensor with the indexes of the tokens), to using externally computed `position_embeddings` (Tuple of tensors, containing cos and sin). In v4.46 `position_ids` will be removed and `position_embeddings` will be mandatory.
+The attention layers in this model are transitioning from computing the RoPE embeddings internally through `position_ids` (2D tensor with the indexes of the tokens), to using externally computed `position_embeddings` (Tuple of tensors, containing cos and sin). In v4.46 `position_ids` will be removed and `position_embeddings` will be mandatory.
+The attention layers in this model are transitioning from computing the RoPE embeddings internally through `position_ids` (2D tensor with the indexes of the tokens), to using externally computed `position_embeddings` (Tuple of tensors, containing cos and sin). In v4.46 `position_ids` will be removed and `position_embeddings` will be mandatory.
+is-dcsn7qhxjihsjqes-devmachine-0:59175:59464 [2] NCCL INFO NVLS comm 0x116de780 headRank 2 nHeads 4 nvlsRanks 4 buffSize 1048576 nvlsPerRankSize 33554432 nvlsTotalSize 134217728
+is-dcsn7qhxjihsjqes-devmachine-0:59173:59465 [0] NCCL INFO NVLS comm 0x28efde80 headRank 0 nHeads 4 nvlsRanks 4 buffSize 1048576 nvlsPerRankSize 33554432 nvlsTotalSize 134217728
+is-dcsn7qhxjihsjqes-devmachine-0:59176:59466 [3] NCCL INFO NVLS comm 0x1013b0c0 headRank 3 nHeads 4 nvlsRanks 4 buffSize 1048576 nvlsPerRankSize 33554432 nvlsTotalSize 134217728
+is-dcsn7qhxjihsjqes-devmachine-0:59174:59467 [1] NCCL INFO NVLS comm 0x10b71c00 headRank 1 nHeads 4 nvlsRanks 4 buffSize 1048576 nvlsPerRankSize 33554432 nvlsTotalSize 134217728
+🧬 [Step 5] Avg Loss: 7.2021 (NTP: 7.2021, Gene: 0.0000)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 3.5e-07 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.103878
+🧬 [Step 10] Avg Loss: 7.7614 (NTP: 7.7614, Gene: 0.0000)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 7.9e-07 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.076562
+🧬 [Step 15] Avg Loss: 7.3367 (NTP: 7.3367, Gene: 0.0000)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.2e-06 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.061922
+🧬 [Step 20] Avg Loss: 6.2532 (NTP: 6.2532, Gene: 0.0000)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.7e-06 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.089840
+🧬 [Step 25] Avg Loss: 5.1461 (NTP: 5.1461, Gene: 0.0000)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 2.1e-06 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.088783
+🧬 [Step 30] Avg Loss: 4.5377 (NTP: 4.5377, Gene: 0.0000)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 2.5e-06 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.063459
+🧬 [Step 35] Avg Loss: 4.3618 (NTP: 4.3618, Gene: 0.0000)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 3.0e-06 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.029297
+🧬 [Step 40] Avg Loss: 4.2664 (NTP: 4.2664, Gene: 0.0000)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 3.4e-06 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.023355
+🧬 [Step 45] Avg Loss: 3.9704 (NTP: 3.9704, Gene: 0.0000)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 3.8e-06 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.016787
+🧬 [Step 50] Avg Loss: 3.5066 (NTP: 3.5066, Gene: 0.0000)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 4.3e-06 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.004725
+🧬 [Step 55] Avg Loss: 3.4610 (NTP: 3.4610, Gene: 0.0000)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 4.7e-06 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: -0.014098
+🧬 [Step 60] Avg Loss: 3.2284 (NTP: 3.2284, Gene: 0.0000)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 5.2e-06 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: -0.021727
+🧬 [Step 65] Avg Loss: 3.0372 (NTP: 3.0372, Gene: 0.0000)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 5.6e-06 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: -0.028490
+🧬 [Step 70] Avg Loss: 3.0429 (NTP: 3.0429, Gene: 0.0000)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 6.0e-06 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: -0.042849
+🧬 [Step 75] Avg Loss: 2.9579 (NTP: 2.9579, Gene: 0.0000)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 6.5e-06 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: -0.033148
+🧬 [Step 80] Avg Loss: 2.7346 (NTP: 2.7346, Gene: 0.0000)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 6.9e-06 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: -0.036053
+🧬 [Step 85] Avg Loss: 2.6238 (NTP: 2.6238, Gene: 0.0000)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 7.3e-06 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: -0.060503
+🧬 [Step 90] Avg Loss: 2.6604 (NTP: 2.6604, Gene: 0.0000)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 7.8e-06 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: -0.085161
+🧬 [Step 95] Avg Loss: 2.4329 (NTP: 2.4329, Gene: 0.0000)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 8.2e-06 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: -0.092545
+🧬 [Step 100] Avg Loss: 2.4122 (NTP: 2.4122, Gene: 0.0000)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 8.6e-06 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: -0.100603
+W0423 10:41:46.222000 59011 site-packages/torch/distributed/elastic/agent/server/api.py:739] Received Signals.SIGTERM death signal, shutting down workers
+W0423 10:41:46.226000 59011 site-packages/torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 59173 closing signal SIGTERM
+W0423 10:41:46.227000 59011 site-packages/torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 59174 closing signal SIGTERM
+W0423 10:41:46.227000 59011 site-packages/torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 59175 closing signal SIGTERM
+W0423 10:41:46.228000 59011 site-packages/torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 59176 closing signal SIGTERM
+Traceback (most recent call last):
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/bin/accelerate", line 6, in <module>
+    sys.exit(main())
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/commands/accelerate_cli.py", line 50, in main
+    args.func(args)
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/commands/launch.py", line 1220, in launch_command
+    deepspeed_launcher(args)
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/commands/launch.py", line 906, in deepspeed_launcher
+    distrib_run.run(args)
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/torch/distributed/run.py", line 982, in run
+    elastic_launch(
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 170, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 308, in launch_agent
+    result = agent.run()
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/torch/distributed/elastic/metrics/api.py", line 134, in wrapper
+    result = f(*args, **kwargs)
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/torch/distributed/elastic/agent/server/api.py", line 731, in run
+    result = self._invoke_run(role)
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/torch/distributed/elastic/agent/server/api.py", line 908, in _invoke_run
+    time.sleep(monitor_interval)
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/api.py", line 86, in _terminate_process_handler
+    raise SignalException(f"Process {os.getpid()} got signal: {sigval}", sigval=sigval)
+torch.distributed.elastic.multiprocessing.api.SignalException: Process 59011 got signal: 15

@@ -1,7 +1,7 @@
 compute_environment: LOCAL_MACHINE
 deepspeed_config:
   deepspeed_multinode_launcher: standard
-  gradient_accumulation_steps: 30
+  gradient_accumulation_steps: 35
   # 🚀 ZeRO-2 优化：A100 80GB 显存足够，关闭 CPU Offload 以获取最高训练速度
   offload_optimizer_device: none
   offload_param_device: none

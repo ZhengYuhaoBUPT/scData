@@ -1,3 +1,8 @@
+# Compatibility: Accelerate may import `datasets.IterableDataset` to detect
+# HuggingFace datasets. This local package is also named `datasets`, so expose
+# the torch base class to avoid shadowing-related import failures.
+from torch.utils.data import IterableDataset
+
 # Datasets are imported directly from their respective modules
 # to avoid circular import issues
 
