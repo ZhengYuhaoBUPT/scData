@@ -252,6 +252,7 @@ class BidirectionalStage1Dataset(Dataset):
         max_seq_len: Optional[int] = None,
         accelerator=None,
         understanding_ratio: float = 0.5,
+        skip_load_data: bool = False,
     ):
         super().__init__()
 
@@ -334,7 +335,8 @@ class BidirectionalStage1Dataset(Dataset):
         self.key_cache_dir.mkdir(parents=True, exist_ok=True)
         self._key_offsets_cache = {}
         self._key_bin_handles = {}
-        self._load_data()
+        if not skip_load_data:
+            self._load_data()
 
     def _build_gene_vocab(self):
         nclusters_path = self.codebook_dir / "gene_nclusters.json"
@@ -936,8 +938,9 @@ class WhitelistKeyDataset(Dataset):
     """
     基于白名单 key 列表的 Stage1 数据集包装器。
 
-    复用 BidirectionalStage1Dataset 的组件，但用 key-list 替代 position-based
-    索引，避免为了筛白名单而全量扫描样本。
+    复用 BidirectionalStage1Dataset 的所有组件（feature_loader、tokenizer、
+    _build_flat_gene_tokens、_sample_masked_gene_ids、_build_*_sample 等），
+    但用 key-list 替代 position-based 索引，完全避免全量扫描。
     """
 
     def __init__(
@@ -948,9 +951,11 @@ class WhitelistKeyDataset(Dataset):
     ):
         self.base = base_dataset
 
-        with open(whitelist_path, 'r', encoding='utf-8') as f:
+        # 读取白名单 JSON
+        with open(whitelist_path, "r", encoding="utf-8") as f:
             whitelist = json.load(f)
 
+        # 构建 entries: (cluster_db_name, key_str, caption_path, cluster_path, db_name)
         self.entries = []
         missing_dbs = []
         for db_name, keys in whitelist.items():
@@ -974,6 +979,7 @@ class WhitelistKeyDataset(Dataset):
         if missing_dbs and (accelerator is None or accelerator.is_main_process):
             print(f"[WhitelistKeyDS] Warning: {len(missing_dbs)} DBs not found in cluster_lmdb_dir, skipped")
 
+        # 按 rank 均分
         if accelerator is not None:
             rank = accelerator.process_index
             world_size = accelerator.num_processes
@@ -998,10 +1004,11 @@ class WhitelistKeyDataset(Dataset):
         )
 
     def _get_item_inner(self, idx):
-        cluster_db_name, key_str, caption_path, _, _ = self.entries[idx]
-        key_bytes = key_str.encode('utf-8')
+        cluster_db_name, key_str, caption_path, cluster_path, db_name = self.entries[idx]
+        key_bytes = key_str.encode("utf-8")
         base = self.base
 
+        # 1. 读取 gene record
         try:
             if base.use_cell_cls:
                 raw = base.cell_aware_loader.get_raw(cluster_db_name, key_bytes)
@@ -1009,48 +1016,66 @@ class WhitelistKeyDataset(Dataset):
                     return None
                 record, lookup = raw
                 fused_emb, token_ids_arr, valid_mask = base.cell_aware_loader._fuse(record, lookup)
+
                 flat_gene_tokens = []
                 for tid in token_ids_arr:
                     if tid >= 0:
-                        flat_gene_tokens.append(base.text_vocab_size + int(tid))
-                gene_payload = {
-                    'fused_gene_embedding': fused_emb,
-                    'flat_gene_tokens': flat_gene_tokens,
-                    'valid_mask': valid_mask,
-                }
+                        flat_gene_tokens.append(int(tid) + base.text_vocab_size)
+                    else:
+                        flat_gene_tokens.append(base.mask_gene_id)
+
+                scgpt_ids = record.scgpt_ids
+                gene_embeddings = torch.from_numpy(fused_emb).float()
+                non_zero_mask = torch.from_numpy(valid_mask.astype(np.bool_))
             else:
                 record = base.feature_loader.get(cluster_db_name, key_bytes)
                 if record is None:
                     return None
-                gene_payload = {
-                    'flat_gene_tokens': base._build_flat_gene_tokens(record['gene_ids'], record['cluster_ids'])
-                }
-        except Exception:
+                scgpt_ids = record.scgpt_ids
+                cluster_indices = record.cluster_indices
+                flat_gene_tokens = base._build_flat_gene_tokens(scgpt_ids, cluster_indices)
+                gene_embeddings = None
+                non_zero_mask = torch.tensor(scgpt_ids != 0, dtype=torch.bool)
+        except Exception as e:
+            print(f"[WhitelistKeyDS] Error reading gene record for {db_name}/{key_str}: {e}")
             return None
 
-        cap_env = base._get_caption_env(caption_path)
-        if cap_env is None:
-            return None
+        # 2. 读取 caption metadata
+        metadata = {}
         try:
-            with cap_env.begin(write=False) as txn:
-                caption_raw = txn.get(key_bytes)
+            caption_env = base._get_caption_env(caption_path)
+            if caption_env is not None:
+                with caption_env.begin(write=False) as txn:
+                    sample_data = txn.get(key_bytes)
+                    if sample_data:
+                        try:
+                            lmdb_res = json.loads(sample_data.decode("utf-8", errors="ignore"))
+                            metadata = {
+                                field: lmdb_res.get(field, "")
+                                for field in base.data_config.get("metadata_fields", [])
+                            }
+                        except Exception:
+                            pass
         except Exception:
-            return None
-        if caption_raw is None:
-            return None
+            pass
 
-        try:
-            metadata = json.loads(caption_raw.decode('utf-8'))
-        except Exception:
-            return None
-
-        celltype_name = base._extract_celltype_name(metadata)
-        celltype_id = base._stable_celltype_id(celltype_name)
+        # 3. mask & build sample
         is_understanding = random.random() < base.understanding_ratio
-        if is_understanding:
-            item = base._build_understanding_sample(gene_payload, metadata)
-        else:
-            item = base._build_generation_sample(gene_payload, metadata)
-        item['celltype_id'] = torch.tensor(celltype_id, dtype=torch.long)
-        return item
+        try:
+            original_gene_tokens, masked_gene_ids, gene_mask_inner, t = \
+                base._sample_masked_gene_ids(flat_gene_tokens)
+        except Exception:
+            return None
 
+        system_prompt = "You are a helpful assistant."
+
+        if is_understanding:
+            return base._build_understanding_sample(
+                metadata, original_gene_tokens, masked_gene_ids, gene_mask_inner,
+                t, non_zero_mask, idx, cluster_path, system_prompt, scgpt_ids, gene_embeddings
+            )
+        else:
+            return base._build_generation_sample(
+                metadata, original_gene_tokens, masked_gene_ids, gene_mask_inner,
+                t, non_zero_mask, idx, cluster_path, system_prompt, scgpt_ids, gene_embeddings
+            )

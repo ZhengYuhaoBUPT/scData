@@ -2039,3 +2039,161 @@ is-dcsn7qhxjihsjqes-devmachine-0:59943:60236 [1] NCCL INFO NVLS comm 0x112ff110 
    模式分布: 理解=700, 生成=0 (总计=700)
    LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
    Matched-vs-Mismatched gap: 0.030379
+🧬 [Step 1965] Avg Loss: 1.1195 (NTP: 0.6153, Gene: 0.0000, Rank: 1.0084)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.030702
+🧬 [Step 1970] Avg Loss: 1.2268 (NTP: 0.7227, Gene: 0.0000, Rank: 1.0080)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.034706
+🧬 [Step 1975] Avg Loss: 1.1506 (NTP: 0.6405, Gene: 0.0000, Rank: 1.0204)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.037918
+🧬 [Step 1980] Avg Loss: 1.1295 (NTP: 0.6108, Gene: 0.0000, Rank: 1.0374)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.033114
+🧬 [Step 1985] Avg Loss: 1.2524 (NTP: 0.7397, Gene: 0.0000, Rank: 1.0253)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.032055
+🧬 [Step 1990] Avg Loss: 1.2648 (NTP: 0.7766, Gene: 0.0000, Rank: 0.9765)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.033693
+🧬 [Step 1995] Avg Loss: 1.2091 (NTP: 0.6821, Gene: 0.0000, Rank: 1.0539)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.028615
+🧬 [Step 2000] Avg Loss: 1.2095 (NTP: 0.6949, Gene: 0.0000, Rank: 1.0291)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.031505
+💾 Checkpoint 已保存：/mnt/c20250607_hs/wanghaoran/wanghaoran/zyh/scshowo/stage1/bidirectional_step_2000/checkpoint-step-2000 (model_state=trainable_only, keys=115)
+🧬 [Step 2005] Avg Loss: 1.1700 (NTP: 0.6715, Gene: 0.0000, Rank: 0.9971)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.029748
+🧬 [Step 2010] Avg Loss: 1.0918 (NTP: 0.5995, Gene: 0.0000, Rank: 0.9846)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.031765
+🧬 [Step 2015] Avg Loss: 1.2070 (NTP: 0.7099, Gene: 0.0000, Rank: 0.9943)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.035026
+🧬 [Step 2020] Avg Loss: 1.1070 (NTP: 0.5970, Gene: 0.0000, Rank: 1.0201)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.033454
+🧬 [Step 2025] Avg Loss: 1.2114 (NTP: 0.6858, Gene: 0.0000, Rank: 1.0513)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.032005
+🧬 [Step 2030] Avg Loss: 1.1373 (NTP: 0.6211, Gene: 0.0000, Rank: 1.0324)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.032590
+🧬 [Step 2035] Avg Loss: 1.0743 (NTP: 0.5632, Gene: 0.0000, Rank: 1.0222)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.030913
+🧬 [Step 2040] Avg Loss: 1.1510 (NTP: 0.6330, Gene: 0.0000, Rank: 1.0360)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.034447
+🧬 [Step 2045] Avg Loss: 1.1293 (NTP: 0.6258, Gene: 0.0000, Rank: 1.0069)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.033363
+🧬 [Step 2050] Avg Loss: 1.1461 (NTP: 0.6548, Gene: 0.0000, Rank: 0.9826)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.036057
+🧬 [Step 2055] Avg Loss: 1.1204 (NTP: 0.6327, Gene: 0.0000, Rank: 0.9754)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.036219
+🧬 [Step 2060] Avg Loss: 1.1062 (NTP: 0.6203, Gene: 0.0000, Rank: 0.9719)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.037180
+🧬 [Step 2065] Avg Loss: 1.0983 (NTP: 0.6006, Gene: 0.0000, Rank: 0.9952)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.033331
+🧬 [Step 2070] Avg Loss: 1.1053 (NTP: 0.5862, Gene: 0.0000, Rank: 1.0383)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.031173
+🧬 [Step 2075] Avg Loss: 1.1597 (NTP: 0.6530, Gene: 0.0000, Rank: 1.0133)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.029828
+🧬 [Step 2080] Avg Loss: 1.1393 (NTP: 0.6107, Gene: 0.0000, Rank: 1.0572)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.030085
+🧬 [Step 2085] Avg Loss: 1.1478 (NTP: 0.6197, Gene: 0.0000, Rank: 1.0562)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.037414
+🧬 [Step 2090] Avg Loss: 1.2240 (NTP: 0.7120, Gene: 0.0000, Rank: 1.0240)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.036789
+🧬 [Step 2095] Avg Loss: 1.3087 (NTP: 0.7966, Gene: 0.0000, Rank: 1.0243)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.035005
+🧬 [Step 2100] Avg Loss: 1.1773 (NTP: 0.6595, Gene: 0.0000, Rank: 1.0357)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.040183
+🧬 [Step 2105] Avg Loss: 1.1945 (NTP: 0.6764, Gene: 0.0000, Rank: 1.0362)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.036680
+🧬 [Step 2110] Avg Loss: 1.1074 (NTP: 0.6137, Gene: 0.0000, Rank: 0.9874)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.034992
+🧬 [Step 2115] Avg Loss: 1.0729 (NTP: 0.5859, Gene: 0.0000, Rank: 0.9741)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.031205
+🧬 [Step 2120] Avg Loss: 1.1330 (NTP: 0.6071, Gene: 0.0000, Rank: 1.0517)
+   模式分布: 理解=700, 生成=0 (总计=700)
+   LR: 1.0e-04 (Show-o2: 理解→NTP, 生成→Gene)
+   Matched-vs-Mismatched gap: 0.035355
+W0424 03:40:17.347000 59780 site-packages/torch/distributed/elastic/agent/server/api.py:739] Received Signals.SIGTERM death signal, shutting down workers
+W0424 03:40:17.352000 59780 site-packages/torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 59942 closing signal SIGTERM
+W0424 03:40:17.353000 59780 site-packages/torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 59943 closing signal SIGTERM
+W0424 03:40:17.354000 59780 site-packages/torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 59944 closing signal SIGTERM
+W0424 03:40:17.354000 59780 site-packages/torch/distributed/elastic/multiprocessing/api.py:1010] Sending process 59945 closing signal SIGTERM
+Traceback (most recent call last):
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/bin/accelerate", line 6, in <module>
+    sys.exit(main())
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/commands/accelerate_cli.py", line 50, in main
+    args.func(args)
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/commands/launch.py", line 1220, in launch_command
+    deepspeed_launcher(args)
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/accelerate/commands/launch.py", line 906, in deepspeed_launcher
+    distrib_run.run(args)
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/torch/distributed/run.py", line 982, in run
+    elastic_launch(
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 170, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 308, in launch_agent
+    result = agent.run()
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/torch/distributed/elastic/metrics/api.py", line 134, in wrapper
+    result = f(*args, **kwargs)
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/torch/distributed/elastic/agent/server/api.py", line 731, in run
+    result = self._invoke_run(role)
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/torch/distributed/elastic/agent/server/api.py", line 908, in _invoke_run
+    time.sleep(monitor_interval)
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/zyh/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/api.py", line 86, in _terminate_process_handler
+    raise SignalException(f"Process {os.getpid()} got signal: {sigval}", sigval=sigval)
+torch.distributed.elastic.multiprocessing.api.SignalException: Process 59780 got signal: 15

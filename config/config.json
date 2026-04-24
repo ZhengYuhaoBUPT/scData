@@ -172,8 +172,8 @@
         "mm_gap_stage2_target": "stage2"
     },
     "checkpoint": {
-        "save_dir": "/mnt/c20250607_hs/wanghaoran/wanghaoran/zyh/scshowo/stage1",
-        "stage1_weights_path": "/mnt/c20250607_hs/wanghaoran/wanghaoran/ckpts_aligned_to_showo/stage1/bidirectional_step_1800/checkpoint-step-1800/state.pt",
+        "save_dir": "/mnt/c20250607_hs/wanghaoran/wanghaoran/zyh/scshowo/stage2",
+        "stage1_weights_path": "/mnt/c20250607_hs/wanghaoran/wanghaoran/zyh/scshowo/stage1/bidirectional_step_2000/checkpoint-step-2000/state.pt",
         "save_total_limit": 5,
         "resume_from": null,
         "save_optimizer_state": true,

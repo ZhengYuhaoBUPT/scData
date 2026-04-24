@@ -50,12 +50,28 @@ class CodebookLookupResult:
 
 
 def _normalize_db_name(db_name: DbType) -> str:
+    return Path(str(db_name)).name
+
+
+def _candidate_db_names(db_name: DbType) -> List[str]:
     s = Path(str(db_name)).name
+    candidates = [s]
     if s.endswith('_cluster.db'):
-        return s
-    if s.endswith('.db'):
-        return s[:-3] + '_cluster.db'
-    return s + '_cluster.db'
+        plain = s[:-len('_cluster.db')] + '.db'
+        if plain not in candidates:
+            candidates.append(plain)
+    elif s.endswith('.db'):
+        cluster = s[:-len('.db')] + '_cluster.db'
+        if cluster not in candidates:
+            candidates.append(cluster)
+    else:
+        cluster = s + '_cluster.db'
+        plain = s + '.db'
+        if cluster not in candidates:
+            candidates.append(cluster)
+        if plain not in candidates:
+            candidates.append(plain)
+    return candidates
 
 
 def _normalize_key(key: KeyType) -> bytes:
@@ -205,16 +221,31 @@ class ClusterFeatureLoader:
 
     def __init__(
         self,
-        cluster_lmdb_dir: Union[str, Path],
+        cluster_lmdb_dir: Union[str, Path, Sequence[Union[str, Path]]],
         readahead: bool = False,
         max_readers: int = 2048,
         codebook_dir: Optional[Union[str, Path]] = None,
         clusters_per_gene: int = 64,
         prefer_compact_codebook: bool = True,
     ):
-        self.cluster_lmdb_dir = Path(cluster_lmdb_dir)
-        if not self.cluster_lmdb_dir.exists():
-            raise FileNotFoundError(f'cluster_lmdb_dir not found: {self.cluster_lmdb_dir}')
+        if isinstance(cluster_lmdb_dir, (str, Path)):
+            cluster_dirs = [Path(cluster_lmdb_dir)]
+        else:
+            cluster_dirs = [Path(x) for x in cluster_lmdb_dir]
+
+        if len(cluster_dirs) == 0:
+            raise ValueError('cluster_lmdb_dir is empty')
+
+        self.cluster_lmdb_dirs = [d for d in cluster_dirs]
+        for d in self.cluster_lmdb_dirs:
+            if not d.exists():
+                raise FileNotFoundError(f'cluster_lmdb_dir not found: {d}')
+        self.cluster_lmdb_dir = self.cluster_lmdb_dirs[0]
+
+        self._db_name_to_path: Dict[str, Path] = {}
+        for base_dir in self.cluster_lmdb_dirs:
+            for db_path in base_dir.glob('*.db'):
+                self._db_name_to_path[db_path.name] = db_path
 
         self.readahead = readahead
         self.max_readers = max_readers
@@ -229,22 +260,37 @@ class ClusterFeatureLoader:
             )
 
     def close(self):
-        for env in self._envs.values():
+        envs = getattr(self, '_envs', None)
+        if not envs:
+            return
+        for env in envs.values():
             try:
                 env.close()
             except Exception:
                 pass
-        self._envs.clear()
+        envs.clear()
 
     def __del__(self):
         self.close()
 
+    def _resolve_db_path(self, db_name: DbType) -> Path:
+        candidates = _candidate_db_names(db_name)
+        for name in candidates:
+            db_path = self._db_name_to_path.get(name)
+            if db_path is not None:
+                return db_path
+        for base_dir in self.cluster_lmdb_dirs:
+            for name in candidates:
+                candidate = base_dir / name
+                if candidate.exists():
+                    self._db_name_to_path[name] = candidate
+                    return candidate
+        raise FileNotFoundError(f'cluster db not found: {candidates[0]} (tried {candidates}, searched {[str(d) for d in self.cluster_lmdb_dirs]})')
+
     def _get_env(self, db_name: DbType) -> lmdb.Environment:
         norm = _normalize_db_name(db_name)
         if norm not in self._envs:
-            db_path = self.cluster_lmdb_dir / norm
-            if not db_path.exists():
-                raise FileNotFoundError(f'cluster db not found: {db_path}')
+            db_path = self._resolve_db_path(norm)
             self._envs[norm] = lmdb.Environment(
                 str(db_path),
                 readonly=True,
@@ -308,7 +354,7 @@ class ClusterFeatureLoader:
         with ctx.Pool(
             processes=num_workers,
             initializer=_worker_init,
-            initargs=(str(self.cluster_lmdb_dir), self.readahead, self.max_readers),
+            initargs=([str(d) for d in self.cluster_lmdb_dirs], self.readahead, self.max_readers),
         ) as pool:
             out = pool.map(_worker_get, task_list)
         return out
@@ -354,26 +400,47 @@ class ClusterFeatureLoader:
 
 
 # -------- multiprocessing worker state --------
-_WORKER_DIR: Optional[Path] = None
+_WORKER_DIRS: List[Path] = []
+_WORKER_DB_PATHS: Dict[str, Path] = {}
 _WORKER_READAHEAD: bool = False
 _WORKER_MAX_READERS: int = 2048
 _WORKER_ENVS: Dict[str, lmdb.Environment] = {}
 
 
-def _worker_init(cluster_lmdb_dir: str, readahead: bool, max_readers: int):
-    global _WORKER_DIR, _WORKER_READAHEAD, _WORKER_MAX_READERS, _WORKER_ENVS
-    _WORKER_DIR = Path(cluster_lmdb_dir)
+def _worker_init(cluster_lmdb_dirs: Sequence[str], readahead: bool, max_readers: int):
+    global _WORKER_DIRS, _WORKER_DB_PATHS, _WORKER_READAHEAD, _WORKER_MAX_READERS, _WORKER_ENVS
+    _WORKER_DIRS = [Path(p) for p in cluster_lmdb_dirs]
+    _WORKER_DB_PATHS = {}
+    for base_dir in _WORKER_DIRS:
+        for db_path in base_dir.glob('*.db'):
+            _WORKER_DB_PATHS[db_path.name] = db_path
     _WORKER_READAHEAD = readahead
     _WORKER_MAX_READERS = max_readers
     _WORKER_ENVS = {}
 
 
 def _worker_env(db_name: str) -> lmdb.Environment:
-    global _WORKER_ENVS
+    global _WORKER_ENVS, _WORKER_DB_PATHS
     if db_name not in _WORKER_ENVS:
-        db_path = _WORKER_DIR / db_name
-        if not db_path.exists():
-            raise FileNotFoundError(f'cluster db not found: {db_path}')
+        db_path = None
+        for name in _candidate_db_names(db_name):
+            db_path = _WORKER_DB_PATHS.get(name)
+            if db_path is not None:
+                db_name = name
+                break
+        if db_path is None:
+            for base_dir in _WORKER_DIRS:
+                for name in _candidate_db_names(db_name):
+                    candidate = base_dir / name
+                    if candidate.exists():
+                        db_path = candidate
+                        _WORKER_DB_PATHS[name] = candidate
+                        db_name = name
+                        break
+                if db_path is not None:
+                    break
+        if db_path is None:
+            raise FileNotFoundError(f'cluster db not found: {db_name} (tried {_candidate_db_names(db_name)}, searched {[str(d) for d in _WORKER_DIRS]})')
         _WORKER_ENVS[db_name] = lmdb.Environment(
             str(db_path),
             readonly=True,

@@ -21,10 +21,87 @@ from torch.nn.utils.rnn import pad_sequence
 from .cluster_feature_loader import ClusterFeatureLoader
 
 
+# ============================================================
+# 模块级多进程 worker（用于 SFTDataset._load_cluster_data）
+# ============================================================
+_sft_worker_target_id_set = None
+_sft_worker_key_cache_dir = None
+
+
+def _sft_cache_name_for_db(db_path: Path) -> str:
+    """用完整路径的 md5 前缀避免不同目录下同名 DB 的 key_cache 冲突。"""
+    full_str = str(db_path.resolve())
+    tag = hashlib.md5(full_str.encode('utf-8')).hexdigest()[:16]
+    return f"{db_path.name}.{tag}"
+
+
+def _sft_init_worker(target_id_set, key_cache_dir):
+    """Pool initializer: 将 target_id_set / key_cache_dir 写入全局变量供 worker 复用。"""
+    global _sft_worker_target_id_set, _sft_worker_key_cache_dir
+    _sft_worker_target_id_set = target_id_set
+    _sft_worker_key_cache_dir = key_cache_dir
+
+
+def _sft_scan_db_worker(db_path_str: str):
+    """扫描单个 DB，优先复用 key_cache，否则回退到 LMDB cursor。返回 (cell_id_to_loc_dict, filtered_count)。"""
+    from pathlib import Path
+    import lmdb
+    import numpy as np
+
+    db_path = Path(db_path_str)
+    db_name = db_path.name
+    local_map = {}
+    filtered = 0
+    target_id_set = _sft_worker_target_id_set
+    key_cache_dir = _sft_worker_key_cache_dir
+
+    # 1) 优先尝试 key_cache（已预先生成，纯文件顺序读，跳过 LMDB 初始化）
+    if key_cache_dir is not None:
+        cache_name = _sft_cache_name_for_db(db_path)
+        bin_path = Path(key_cache_dir) / f"{cache_name}.keys.bin"
+        idx_path = Path(key_cache_dir) / f"{cache_name}.keys.idx.npy"
+        if bin_path.exists() and idx_path.exists():
+            try:
+                offsets = np.load(str(idx_path), mmap_mode='r')
+                n_keys = len(offsets) - 1
+                with open(bin_path, 'rb') as fh:
+                    for i in range(n_keys):
+                        length = int(offsets[i + 1] - offsets[i])
+                        key_bytes = fh.read(length)
+                        cell_id = key_bytes.decode("utf-8") if hasattr(key_bytes, "decode") else str(key_bytes)
+                        if target_id_set is not None and len(target_id_set) > 0:
+                            if cell_id not in target_id_set:
+                                filtered += 1
+                                continue
+                        local_map[cell_id] = (db_name, bytes(key_bytes))
+                return local_map, filtered
+            except Exception:
+                # key_cache 损坏或不兼容，回退到 LMDB
+                pass
+
+    # 2) 回退到 LMDB cursor
+    env = lmdb.Environment(str(db_path), readonly=True, lock=False, readahead=False, meminit=False)
+    with env.begin(write=False) as txn:
+        for key, _ in txn.cursor():
+            if key.startswith(b'-'):
+                continue
+            cell_id = key.decode("utf-8") if hasattr(key, "decode") else str(key)
+            if target_id_set is not None and len(target_id_set) > 0:
+                if cell_id not in target_id_set:
+                    filtered += 1
+                    continue
+            local_map[cell_id] = (db_name, bytes(key))
+    env.close()
+    return local_map, filtered
+
+
 class SFTDataset(Dataset):
     """
     SFT 多模态对齐数据集 - Map-style，读取 cluster LMDB。
     """
+
+    # 类级缓存：所有实例共享 cell_id_to_loc（cluster data 与 curriculum 无关）
+    _shared_cell_id_to_loc = None
 
     def __init__(self,
                  cluster_lmdb_dir: str = None,
@@ -44,6 +121,7 @@ class SFTDataset(Dataset):
         self.max_genes = self.dataset_config.get('max_genes', 1200)
         self.max_seq_len = self.dataset_config.get('max_seq_len', max_seq_len)
 
+        # Support multiple SFT LMDB directories; fall back to single cluster_lmdb_dir for backward compat
         _sft_dirs = self.data_config.get('sft_cluster_lmdb_dirs', [])
         if _sft_dirs:
             self.cluster_lmdb_dirs = [Path(d) for d in (_sft_dirs if isinstance(_sft_dirs, list) else [_sft_dirs])]
@@ -55,6 +133,7 @@ class SFTDataset(Dataset):
         self.codebook_dir = Path(codebook_dir) if codebook_dir else Path(self.data_config.get('codebook_dir', ''))
         self.scgpt_gene_vocab = scgpt_gene_vocab if scgpt_gene_vocab else self.data_config.get('scgpt_gene_vocab', '')
 
+        # Dedicated SFT key_cache dir; fall back to key_cache_dir/sft
         _sft_kc = self.data_config.get('sft_key_cache_dir', '')
         if _sft_kc:
             self.key_cache_dir = Path(_sft_kc)
@@ -185,93 +264,130 @@ class SFTDataset(Dataset):
             return []
         return []
 
-    def _build_sft_target_id_set(self):
-        paths = self.data_config.get('sft_target_id_json_paths', [])
-        if isinstance(paths, str):
-            paths = [paths]
-        target_ids = set()
-        for path in paths:
-            for tid in self._load_target_ids(path):
-                target_ids.add(str(tid))
-        return target_ids
-
     def _build_celltype_map_from_h5ad(self):
         # 对齐 run/okrcell_inference_sft.py 的两数据源
         default_sources = [
-            {
-                'h5ad_path': '/data/bgi/data/projects/multimodal/RNA_data/cellwhisper_data/cellxgene/full_data.h5ad',
-                'json_path': '/root/wanghaoran/zxy/project/sc_showo/run/cw_sft_data/all_census_target_ids.json',
-                'celltype_col': 'cell_type',
-            },
-            {
-                'h5ad_path': '/data/bgi/data/projects/multimodal/RNA_data/cellwhisper_data/archs4_geo/cellxgene.h5ad',
-                'json_path': '/root/wanghaoran/zxy/project/sc_showo/run/cw_sft_data/all_archs4_target_ids.json',
-                'celltype_col': 'cluster_label',
-            },
+            {                                                     
+          "h5ad_path": "/mnt/c20250607/user/wanghaoran/zyh/datasets/full_data.h5ad",                                                                                                             
+          "json_path": "/mnt/c20250607/user/wanghaoran/zxy/data_and_features/per-gene-feature/sft_data_gene_feature/sft_data_gene_feature/sft_data_gene_feature/cw_sft_data/all_census_target_ids.json",                                                                                                            
+          "celltype_col": "cell_type"                                                                                                                              
+            },                                                                                                                                                           
+            {                                                                                                                                                            
+          "h5ad_path": "/mnt/c20250607/user/wanghaoran/zyh/datasets/cellxgene.h5ad",                                                                                                                
+          "json_path": "/mnt/c20250607/user/wanghaoran/zxy/data_and_features/per-gene-feature/sft_data_gene_feature/sft_data_gene_feature/sft_data_gene_feature/cw_sft_data/all_archs4_target_ids.json",                                                                                                            
+          "celltype_col": "cluster_label"                                                                                                                          
+            }   
         ]
 
         sources = self.data_config.get('sft_celltype_sources', default_sources)
-        celltype_map: Dict[str, str] = {}
-
         is_main = (not torch.distributed.is_initialized()) or (torch.distributed.get_rank() == 0)
-        if is_main:
-            print(f"[SFTDataset-rankloss] Building celltype map from {len(sources)} h5ad sources...")
 
-        for src in sources:
-            h5ad_path = str(src.get('h5ad_path', ''))
-            json_path = str(src.get('json_path', ''))
-            if not h5ad_path or not Path(h5ad_path).exists():
-                continue
-            target_ids = self._load_target_ids(json_path) if json_path else []
-            target_set = set(target_ids) if target_ids else None
+        import pickle
+        _tmp_path = Path(self.key_cache_dir) / "_celltype_map.pkl" if self.key_cache_dir else Path("/tmp/_celltype_map.pkl")
 
-            try:
-                ad = sc.read_h5ad(h5ad_path, backed='r')
-            except Exception:
-                continue
-
-            preferred_col = str(src.get('celltype_col', '') or '')
-            col = self._resolve_celltype_column(list(ad.obs.columns), preferred=preferred_col)
-            if col is None:
-                try:
-                    ad.file.close()
-                except Exception:
-                    pass
-                continue
-
-            obs_names = [str(x) for x in ad.obs_names]
-            if target_set is not None and len(target_set) > 0:
-                matched_ids = [cid for cid in obs_names if cid in target_set]
-            else:
-                matched_ids = obs_names
-
-            if len(matched_ids) == 0:
-                try:
-                    ad.file.close()
-                except Exception:
-                    pass
-                continue
-
-            try:
-                values = ad.obs.loc[matched_ids, col].astype(str).tolist()
-            except Exception:
-                values = [""] * len(matched_ids)
-
-            for cid, val in zip(matched_ids, values):
-                if cid not in celltype_map:
-                    celltype_map[cid] = str(val or "")
-
-            try:
-                ad.file.close()
-            except Exception:
-                pass
-
+        # 复用类级缓存：同一进程中多个 SFTDataset 实例（如 EASY + COMPLEX）共享结果
+        if hasattr(SFTDataset, '_shared_celltype_map') and SFTDataset._shared_celltype_map is not None:
+            self.celltype_by_cell_id = SFTDataset._shared_celltype_map
             if is_main:
-                print(f"  - source={Path(h5ad_path).name}, col={col}, mapped={len(matched_ids):,}")
+                print(f"[SFTDataset-rankloss] Reusing in-memory celltype map: {len(self.celltype_by_cell_id):,} cells")
+            return
 
-        self.celltype_by_cell_id = celltype_map
-        if is_main:
-            print(f"[SFTDataset-rankloss] celltype map ready: {len(self.celltype_by_cell_id):,} cells")
+        # 复用已写入的缓存文件（避免重复读取 h5ad）
+        if _tmp_path.exists():
+            with open(_tmp_path, 'rb') as f:
+                celltype_map = pickle.load(f)
+            self.celltype_by_cell_id = celltype_map
+            SFTDataset._shared_celltype_map = celltype_map
+            if is_main:
+                print(f"[SFTDataset-rankloss] Reusing cached celltype map: {len(celltype_map):,} cells from {_tmp_path}")
+            return
+
+        try:
+            if is_main:
+                print(f"[SFTDataset-rankloss] Building celltype map from {len(sources)} h5ad sources...")
+                celltype_map: Dict[str, str] = {}
+
+                for src in sources:
+                    h5ad_path = str(src.get('h5ad_path', ''))
+                    json_path = str(src.get('json_path', ''))
+                    preferred_col = str(src.get('celltype_col', '') or '')
+
+                    print(f"  → try h5ad_path={h5ad_path}")
+                    print(f"    json_path={json_path}, preferred_col={preferred_col}")
+
+                    if not h5ad_path or not Path(h5ad_path).exists():
+                        print(f"    ⚠️ h5ad file NOT FOUND, skip")
+                        continue
+
+                    target_ids = self._load_target_ids(json_path) if json_path else []
+                    print(f"    loaded {len(target_ids):,} target_ids from json")
+                    target_set = set(target_ids) if target_ids else None
+
+                    try:
+                        ad = sc.read_h5ad(h5ad_path, backed='r')
+                        print(f"    h5ad loaded: n_obs={ad.n_obs:,}, n_vars={ad.n_vars:,}")
+                        print(f"    obs columns: {list(ad.obs.columns)}")
+                    except Exception as e:
+                        print(f"    ⚠️ h5ad read failed: {e}")
+                        continue
+
+                    col = self._resolve_celltype_column(list(ad.obs.columns), preferred=preferred_col)
+                    if col is None:
+                        print(f"    ⚠️ celltype column not found (tried '{preferred_col}'), skip")
+                        try:
+                            ad.file.close()
+                        except Exception:
+                            pass
+                        continue
+                    print(f"    using celltype column: '{col}'")
+
+                    obs_names = [str(x) for x in ad.obs_names]
+                    if target_set is not None and len(target_set) > 0:
+                        matched_ids = [cid for cid in obs_names if cid in target_set]
+                        print(f"    target_set size={len(target_set):,}, matched_ids={len(matched_ids):,}")
+                    else:
+                        matched_ids = obs_names
+                        print(f"    no target filter, all obs_names={len(matched_ids):,}")
+
+                    if len(matched_ids) == 0:
+                        print(f"    ⚠️ matched_ids empty, skip")
+                        try:
+                            ad.file.close()
+                        except Exception:
+                            pass
+                        continue
+
+                    try:
+                        values = ad.obs.loc[matched_ids, col].astype(str).tolist()
+                        print(f"    extracted {len(values):,} celltype values")
+                    except Exception as e:
+                        print(f"    ⚠️ extract celltype values failed: {e}, fallback to empty")
+                        values = [""] * len(matched_ids)
+
+                    for cid, val in zip(matched_ids, values):
+                        if cid not in celltype_map:
+                            celltype_map[cid] = str(val or "")
+
+                    try:
+                        ad.file.close()
+                    except Exception:
+                        pass
+
+                    print(f"    ✅ source={Path(h5ad_path).name}, col={col}, mapped={len(matched_ids):,}")
+
+                with open(_tmp_path, 'wb') as f:
+                    pickle.dump(celltype_map, f)
+                print(f"[SFTDataset-rankloss] celltype map ready: {len(celltype_map):,} cells, saved to {_tmp_path}")
+        finally:
+            if torch.distributed.is_initialized():
+                if is_main:
+                    print(f"[SFTDataset-rankloss] Rank {torch.distributed.get_rank()} entering celltype barrier...")
+                torch.distributed.barrier()
+                if is_main:
+                    print(f"[SFTDataset-rankloss] Rank {torch.distributed.get_rank()} passed celltype barrier.")
+
+        with open(_tmp_path, 'rb') as f:
+            self.celltype_by_cell_id = pickle.load(f)
 
     def _lookup_celltype_name(self, cell_id_str: str) -> str:
         return str(self.celltype_by_cell_id.get(str(cell_id_str), "") or "")
@@ -288,27 +404,113 @@ class SFTDataset(Dataset):
         if not torch.distributed.is_initialized() or torch.distributed.get_rank() == 0:
             print(f"[SFTDataset] compact gene vocab: {len(valid_genes)} genes x 64 = {self.gene_vocab_size} tokens")
 
-    def _load_cluster_data(self, is_main: bool):
-        glob_pattern = self.data_config.get('sft_db_glob_pattern', '*_cluster.db')
-        cluster_db_files = []
-        for cluster_dir in self.cluster_lmdb_dirs:
-            cluster_db_files.extend(sorted(cluster_dir.glob(glob_pattern)))
-        if len(cluster_db_files) == 0:
-            raise ValueError(f"No cluster DB files found in {self.cluster_lmdb_dirs}")
+    def _build_sft_target_id_set(self):
+        paths = self.data_config.get('sft_target_id_json_paths', [])
+        if isinstance(paths, str):
+            paths = [paths]
+        target_ids = set()
+        for jp in paths:
+            if not jp:
+                continue
+            p = Path(str(jp))
+            if not p.exists():
+                continue
+            ids = self._load_target_ids(str(p))
+            target_ids.update(ids)
+        return target_ids
 
-        if is_main:
-            print(f"[SFTDataset] Indexing {len(cluster_db_files)} cluster DBs...")
+    def _build_sft_key_cache_if_needed(self, db_path: Path):
+        """为单个 DB 生成 key_cache（如果不存在）。所有 rank 各自为自己分配的 DB 生成，无竞争。"""
+        if self.key_cache_dir is None:
+            return
+        cache_name = _sft_cache_name_for_db(db_path)
+        bin_path = self.key_cache_dir / f"{cache_name}.keys.bin"
+        idx_path = self.key_cache_dir / f"{cache_name}.keys.idx.npy"
+        if bin_path.exists() and idx_path.exists():
+            return
 
-        for db_path in cluster_db_files:
-            db_name = db_path.name
-            for key in self.feature_loader.list_keys(db_name, exclude_meta=True):
-                cell_id = key.decode("utf-8") if hasattr(key, "decode") else str(key)
-                if self.sft_use_target_id_filter and self.sft_target_id_set is not None and cell_id not in self.sft_target_id_set:
+        import numpy as np
+        env = lmdb.Environment(str(db_path), readonly=True, lock=False, readahead=False, meminit=False)
+        offsets = [0]
+        cur = 0
+        with env.begin(write=False) as txn, open(bin_path, 'wb') as f:
+            for k, _ in txn.cursor():
+                if k.startswith(b'-'):
                     continue
-                self.cell_id_to_loc[cell_id] = (db_name, key)
+                b = bytes(k)
+                f.write(b)
+                cur += len(b)
+                offsets.append(cur)
+        env.close()
+        arr = np.asarray(offsets, dtype=np.uint64)
+        np.save(idx_path, arr)
+
+    def _load_cluster_data(self, is_main: bool):
+        # 优先复用类级缓存（EASY 构建后 COMPLEX 直接复用，cluster data 与 curriculum 无关）
+        if SFTDataset._shared_cell_id_to_loc is not None:
+            self.cell_id_to_loc = SFTDataset._shared_cell_id_to_loc.copy()
+            if is_main:
+                print(f"[SFTDataset] Reusing cached cell_id_to_loc: {len(self.cell_id_to_loc):,} cells")
+            return
+
+        # 从多个目录收集 DB 文件，支持可配置 glob 模式
+        glob_pattern = self.data_config.get('sft_db_glob_pattern', '*.db')
+        cluster_db_files = []
+        for lmdb_dir in self.cluster_lmdb_dirs:
+            if lmdb_dir.exists():
+                cluster_db_files.extend(lmdb_dir.glob(glob_pattern))
+        cluster_db_files = sorted(set(cluster_db_files))
+        if len(cluster_db_files) == 0:
+            dirs_str = ', '.join(str(d) for d in self.cluster_lmdb_dirs)
+            raise ValueError(f"No DB files matching '{glob_pattern}' found in [{dirs_str}]")
 
         if is_main:
-            print(f"[SFTDataset] Indexed {len(self.cell_id_to_loc):,} cells from cluster DBs")
+            print(f"[SFTDataset] Total {len(cluster_db_files)} DBs found")
+            print(f"[SFTDataset] key_cache_dir={self.key_cache_dir}")
+
+        # key_cache 生成 + 扫描：只有 rank 0 执行，其他 rank 等待后读取共享缓存文件
+        import pickle
+        _tmp_path = Path(self.key_cache_dir) / "_shared_cell_id_to_loc.pkl" if self.key_cache_dir else Path("/tmp/_shared_cell_id_to_loc.pkl")
+
+        try:
+            if self.rank == 0:
+                # 1) 生成缺失的 key_cache
+                for db_path in cluster_db_files:
+                    self._build_sft_key_cache_if_needed(db_path)
+
+                # 2) rank 0 单进程扫描全部 DB（避免 multiprocessing Pool 在 NCCL 环境中死锁）
+                target_id_set = self.sft_target_id_set
+                cell_id_to_loc = {}
+                filtered_out = 0
+                _kc = str(self.key_cache_dir) if self.key_cache_dir else None
+                _sft_init_worker(target_id_set, _kc)
+                for db_path in cluster_db_files:
+                    local_map, filtered = _sft_scan_db_worker(str(db_path))
+                    cell_id_to_loc.update(local_map)
+                    filtered_out += filtered
+
+                # 3) 写入共享缓存文件
+                with open(_tmp_path, 'wb') as f:
+                    pickle.dump(cell_id_to_loc, f)
+                if is_main:
+                    print(f"[SFTDataset] Rank 0 indexed {len(cell_id_to_loc):,} cells, saved to {_tmp_path}")
+                    if self.sft_use_target_id_filter:
+                        n_target = len(self.sft_target_id_set) if self.sft_target_id_set is not None else 0
+                        print(f"[SFTDataset] target-id filter enabled: target_ids={n_target:,}, filtered_out={filtered_out:,}")
+        finally:
+            # 4) 所有 rank 同步：无论 rank 0 成功/失败/异常，都必须走到 barrier，否则其他 rank 会永远阻塞
+            if torch.distributed.is_initialized():
+                if is_main:
+                    print(f"[SFTDataset] Rank {self.rank} entering barrier...")
+                torch.distributed.barrier()
+                if is_main:
+                    print(f"[SFTDataset] Rank {self.rank} passed barrier.")
+
+        with open(_tmp_path, 'rb') as f:
+            cell_id_to_loc = pickle.load(f)
+
+        self.cell_id_to_loc = cell_id_to_loc
+        SFTDataset._shared_cell_id_to_loc = cell_id_to_loc  # 缓存到类变量
 
     def _classify_difficulty(self, item: Dict) -> str:
         conversations = item.get('conversations', [])
@@ -339,6 +541,7 @@ class SFTDataset(Dataset):
             world_size = dist.get_world_size()
             rank = dist.get_rank()
 
+            # 按 rank 分片，每张卡只保留 1/world_size 的样本
             self.valid_indices = all_valid_indices[rank::world_size]
             local_count = len(self.valid_indices)
 

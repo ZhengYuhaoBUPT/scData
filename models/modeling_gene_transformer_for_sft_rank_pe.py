@@ -283,6 +283,9 @@ class GeneTransformer(nn.Module):
         self.gene_embed_tokens.weight.requires_grad = False
         print(f"✅ 初始化 gene_embed_tokens: vocab={self.gene_vocab_size}, base={len(valid_genes)} genes x {self.clusters_per_gene} clusters, frozen")
 
+        # 保存文本 embedding 层引用，避免 LoRA 注入后 PeftModel 改变访问路径
+        self.text_embed_tokens = self.showo.model.embed_tokens
+
     def _set_gradient_checkpointing(self, module, value=False):
         self.gradient_checkpointing = True
 
@@ -321,9 +324,9 @@ class GeneTransformer(nn.Module):
         # 1. 解耦文本 / 基因 token embedding
         text_mask = input_ids < self.text_vocab_size
         gene_mask = ~text_mask
-        input_embeds = torch.empty(b, seq_len, self.hidden_size, dtype=self.showo.model.embed_tokens.weight.dtype, device=device)
+        input_embeds = torch.empty(b, seq_len, self.hidden_size, dtype=self.text_embed_tokens.weight.dtype, device=device)
         if text_mask.any():
-            input_embeds[text_mask] = self.showo.model.embed_tokens(input_ids[text_mask])
+            input_embeds[text_mask] = self.text_embed_tokens(input_ids[text_mask])
         if gene_mask.any():
             if gene_embeddings is not None:
                 # 与 stage1 对齐：优先按 modality_positions 的真实 gene span 对齐；mask 位强制用 mask token embedding
