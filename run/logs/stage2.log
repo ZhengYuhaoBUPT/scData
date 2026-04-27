@@ -49,7 +49,8 @@ nvcc warning : incompatible redefinition for option 'compiler-bindir', the last 
    - gradient_checkpointing: True
    - disable_gene_position_ids: True
    - gene_position_buckets: 100
-Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]✅ 从配置加载模型参数:
+
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]✅ 从配置加载模型参数:
    - hidden_size: 3584
    - num_diffusion_layers: 8
    - attention_type: omni
@@ -76,11 +77,1442 @@ nvcc warning : incompatible redefinition for option 'compiler-bindir', the last 
    - gradient_checkpointing: True
    - disable_gene_position_ids: True
    - gene_position_buckets: 100
-Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards:  25%|██▌       | 1/4 [00:04<00:12,  4.17s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:04<00:12,  4.03s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:04<00:12,  4.08s/it]Loading checkpoint shards:  25%|██▌       | 1/4 [00:04<00:12,  4.09s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:08<00:08,  4.01s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:07<00:07,  3.97s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:07<00:07,  3.94s/it]Loading checkpoint shards:  50%|█████     | 2/4 [00:07<00:07,  3.97s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:11<00:03,  3.95s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:11<00:03,  3.94s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:11<00:03,  3.93s/it]Loading checkpoint shards:  75%|███████▌  | 3/4 [00:11<00:03,  3.92s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:15<00:00,  3.80s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:15<00:00,  3.88s/it]
+
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]
+Loading checkpoint shards:  25%|██▌       | 1/4 [00:04<00:12,  4.17s/it]
+Loading checkpoint shards:  25%|██▌       | 1/4 [00:04<00:12,  4.03s/it]
+Loading checkpoint shards:  25%|██▌       | 1/4 [00:04<00:12,  4.08s/it]
+Loading checkpoint shards:  25%|██▌       | 1/4 [00:04<00:12,  4.09s/it]
+Loading checkpoint shards:  50%|█████     | 2/4 [00:08<00:08,  4.01s/it]
+Loading checkpoint shards:  50%|█████     | 2/4 [00:07<00:07,  3.97s/it]
+Loading checkpoint shards:  50%|█████     | 2/4 [00:07<00:07,  3.94s/it]
+Loading checkpoint shards:  50%|█████     | 2/4 [00:07<00:07,  3.97s/it]
+Loading checkpoint shards:  75%|███████▌  | 3/4 [00:11<00:03,  3.95s/it]
+Loading checkpoint shards:  75%|███████▌  | 3/4 [00:11<00:03,  3.94s/it]
+Loading checkpoint shards:  75%|███████▌  | 3/4 [00:11<00:03,  3.93s/it]
+Loading checkpoint shards:  75%|███████▌  | 3/4 [00:11<00:03,  3.92s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:15<00:00,  3.80s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:15<00:00,  3.88s/it]
 ✅ Gradient Checkpointing 已启用
-Loading checkpoint shards: 100%|██████████| 4/4 [00:15<00:00,  3.79s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:15<00:00,  3.86s/it]
-Loading checkpoint shards: 100%|██████████| 4/4 [00:15<00:00,  3.80s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:15<00:00,  3.86s/it]
+
+Loading checkpoint shards: 100%|██████████| 4/4 [00:15<00:00,  3.79s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:15<00:00,  3.86s/it]
+
+Loading checkpoint shards: 100%|██████████| 4/4 [00:15<00:00,  3.80s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:15<00:00,  3.86s/it]
 ✅ Gradient Checkpointing 已启用
-Loading checkpoint shards: 100%|██████████| 4/4 [00:15<00:00,  3.79s/it]Loading checkpoint shards: 100%|██████████| 4/4 [00:15<00:00,  3.85s/it]
+
+Loading checkpoint shards: 100%|██████████| 4/4 [00:15<00:00,  3.79s/it]
+Loading checkpoint shards: 100%|██████████| 4/4 [00:15<00:00,  3.85s/it]
 ✅ Gradient Checkpointing 已启用
 ✅ Gradient Checkpointing 已启用
+✅ 使用 compact codebook: codebook_tensor_compact.pt
+⚠️  gene_vocab_size 调整: 0 -> 741440
+✅ 使用 compact codebook: codebook_tensor_compact.pt✅ 使用 compact codebook: codebook_tensor_compact.pt
+
+✅ 使用 compact codebook: codebook_tensor_compact.pt
+⚠️  gene_vocab_size 调整: 0 -> 741440
+⚠️  gene_vocab_size 调整: 0 -> 741440
+⚠️  gene_vocab_size 调整: 0 -> 741440
+✅ 初始化 gene_embed_tokens: vocab=741440, base=11585 genes x 64 clusters, frozen
+✅ 初始化 gene_embed_tokens: vocab=741440, base=11585 genes x 64 clusters, frozen
+✅ 初始化 gene_embed_tokens: vocab=741440, base=11585 genes x 64 clusters, frozen
+✅ 初始化 gene_embed_tokens: vocab=741440, base=11585 genes x 64 clusters, frozen
+
+🔧 Diffusion Head 配置对齐 Qwen2.5 底座:
+   - Qwen hidden_size: 3584
+   - Qwen num_attention_heads: 28
+   - Qwen intermediate_size: 18944
+   - head_dim: 128
+
+🔧 Diffusion Head 配置对齐 Qwen2.5 底座:
+   - Qwen hidden_size: 3584
+   - Qwen num_attention_heads: 28
+   - Qwen intermediate_size: 18944
+   - head_dim: 128
+
+🔧 Diffusion Head 配置对齐 Qwen2.5 底座:
+   - Qwen hidden_size: 3584
+   - Qwen num_attention_heads: 28
+   - Qwen intermediate_size: 18944
+   - head_dim: 128
+
+🔧 Diffusion Head 配置对齐 Qwen2.5 底座:
+   - Qwen hidden_size: 3584
+   - Qwen num_attention_heads: 28
+   - Qwen intermediate_size: 18944
+   - head_dim: 128
+⚠️ disable_gene_position_ids=True: Stage2 LoRA 已冻结 rank_signal_injector
+📥 正在挂载一阶段对齐权重：/mnt/c20250607_hs/wanghaoran/wanghaoran/zyh/scshowo/stage1/bidirectional_step_2000/checkpoint-step-2000/state.pt
+✅ Stage1->Stage2 权重加载完成: missing=1469, unexpected=0
+   first_missing: ['showo.base_model.model.model.embed_tokens.weight', 'showo.base_model.model.model.layers.0.self_attn.q_proj.base_layer.weight', 'showo.base_model.model.model.layers.0.self_attn.q_proj.base_layer.bias', 'showo.base_model.model.model.layers.0.self_attn.q_proj.lora_A.default.weight', 'showo.base_model.model.model.layers.0.self_attn.q_proj.lora_B.default.weight', 'showo.base_model.model.model.layers.0.self_attn.k_proj.base_layer.weight', 'showo.base_model.model.model.layers.0.self_attn.k_proj.base_layer.bias', 'showo.base_model.model.model.layers.0.self_attn.k_proj.lora_A.default.weight', 'showo.base_model.model.model.layers.0.self_attn.k_proj.lora_B.default.weight', 'showo.base_model.model.model.layers.0.self_attn.v_proj.base_layer.weight']
+
+📊 参数统计:
+   总参数量: 11,369,213,978 (11.37B)
+   可训练参数量: 3,171,314,969 (3171.31M)
+   └─ LoRA 参数: 161,480,704 (161.48M)
+   └─ Base 参数 (gene_proj/rank_signal/diffusion): 3,009,834,265 (3009.83M)
+
+🎓 初始化课程学习数据加载器...
+
+🧬 加载 Stage 1 理解配对数据（严格复用 Stage 1 理解逻辑）...
+[BidirectionalStage1DS] initialized:
+   - max_genes: 1200
+   - understanding_ratio: 1.0
+   - generation_ratio: 0.0
+   - Rank 0/1
+[BidirectionalStage1DS] compact gene vocab: 11585 genes x 64 = 741440 tokens
+[BidirectionalStage1DS] initialized:
+   - max_genes: 1200
+   - understanding_ratio: 1.0
+   - generation_ratio: 0.0
+   - Rank 0/1
+[BidirectionalStage1DS] initialized:
+   - max_genes: 1200
+   - understanding_ratio: 1.0
+   - generation_ratio: 0.0
+   - Rank 0/1
+[BidirectionalStage1DS] compact gene vocab: 11585 genes x 64 = 741440 tokens
+[BidirectionalStage1DS] compact gene vocab: 11585 genes x 64 = 741440 tokens
+[BidirectionalStage1DS] initialized:
+   - max_genes: 1200
+   - understanding_ratio: 1.0
+   - generation_ratio: 0.0
+   - Rank 0/1
+[BidirectionalStage1DS] compact gene vocab: 11585 genes x 64 = 741440 tokens
+[WhitelistKeyDS] Rank 0: entries=403,750
+   Stage 1 paired 数据量: 403,750
+
+🟢 EASY: 简单单轮 SFT + Stage1 understanding paired
+
+============================================================
+🧠 初始化 SFTDataset... [EASY]
+============================================================
+[SFTDataset] compact gene vocab: 11585 genes x 64 = 741440 tokens
+📥 加载对话文件: /mnt/c20250607/user/wanghaoran/zxy/data_and_features/zxy/sft_conversations/conversations/pretrain_texts.json
+[WhitelistKeyDS] Rank 2: entries=403,750
+[WhitelistKeyDS] Rank 3: entries=403,749
+[WhitelistKeyDS] Rank 1: entries=403,750
+📥 加载对话文件: /mnt/c20250607/user/wanghaoran/zxy/data_and_features/zxy/sft_conversations/conversations/finetune_conversations.json
+✅ 共加载 865,803 条对话记录
+   - unique cell ids: 852,885
+[SFTDataset] Total 6 DBs found
+[SFTDataset] key_cache_dir=/mnt/c20250607/user/wanghaoran/zxy/data_and_features/per-gene-feature/sft_data_gene_feature/sft_data_gene_feature/sft_data_gene_feature/key_cache
+[rank2]:[W424 07:20:44.799143981 ProcessGroupNCCL.cpp:4115] [PG ID 0 PG GUID 0 Rank 2]  using GPU 2 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect.Specify device_ids in barrier() to force use of a particular device,or call init_process_group() with a device_id.
+[rank1]:[W424 07:20:45.496029365 ProcessGroupNCCL.cpp:4115] [PG ID 0 PG GUID 0 Rank 1]  using GPU 1 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect.Specify device_ids in barrier() to force use of a particular device,or call init_process_group() with a device_id.
+[rank3]:[W424 07:20:45.699118313 ProcessGroupNCCL.cpp:4115] [PG ID 0 PG GUID 0 Rank 3]  using GPU 3 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect.Specify device_ids in barrier() to force use of a particular device,or call init_process_group() with a device_id.
+[SFTDataset] Rank 0 indexed 1,082,213 cells, saved to /mnt/c20250607/user/wanghaoran/zxy/data_and_features/per-gene-feature/sft_data_gene_feature/sft_data_gene_feature/sft_data_gene_feature/key_cache/_shared_cell_id_to_loc.pkl
+[SFTDataset] target-id filter enabled: target_ids=1,082,213, filtered_out=200
+[SFTDataset] Rank 0 entering barrier...
+[rank0]:[W424 07:20:47.990330598 ProcessGroupNCCL.cpp:4115] [PG ID 0 PG GUID 0 Rank 0]  using GPU 0 to perform barrier as devices used by this process are currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect.Specify device_ids in barrier() to force use of a particular device,or call init_process_group() with a device_id.
+is-dcsn7qhxjihsjqes-devmachine-0:78869:78869 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:78869:78869 [0] NCCL INFO Bootstrap : Using eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:78869:78869 [0] NCCL INFO NET/Plugin: No plugin found (libnccl-net.so)
+is-dcsn7qhxjihsjqes-devmachine-0:78869:78869 [0] NCCL INFO NET/Plugin: Plugin load returned 2 : libnccl-net.so: cannot open shared object file: No such file or directory : when loading libnccl-net.so
+is-dcsn7qhxjihsjqes-devmachine-0:78869:78869 [0] NCCL INFO NET/Plugin: Using internal network plugin.
+is-dcsn7qhxjihsjqes-devmachine-0:78869:78869 [0] NCCL INFO cudaDriverVersion 12080
+NCCL version 2.21.5+cuda12.4
+is-dcsn7qhxjihsjqes-devmachine-0:78871:78871 [2] NCCL INFO cudaDriverVersion 12080
+is-dcsn7qhxjihsjqes-devmachine-0:78871:78871 [2] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:78871:78871 [2] NCCL INFO Bootstrap : Using eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:78871:78871 [2] NCCL INFO NET/Plugin: No plugin found (libnccl-net.so)
+is-dcsn7qhxjihsjqes-devmachine-0:78871:78871 [2] NCCL INFO NET/Plugin: Plugin load returned 2 : libnccl-net.so: cannot open shared object file: No such file or directory : when loading libnccl-net.so
+is-dcsn7qhxjihsjqes-devmachine-0:78871:78871 [2] NCCL INFO NET/Plugin: Using internal network plugin.
+is-dcsn7qhxjihsjqes-devmachine-0:78872:78872 [3] NCCL INFO cudaDriverVersion 12080
+is-dcsn7qhxjihsjqes-devmachine-0:78872:78872 [3] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:78872:78872 [3] NCCL INFO Bootstrap : Using eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:78870:78870 [1] NCCL INFO cudaDriverVersion 12080
+is-dcsn7qhxjihsjqes-devmachine-0:78870:78870 [1] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:78870:78870 [1] NCCL INFO Bootstrap : Using eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:78872:78872 [3] NCCL INFO NET/Plugin: No plugin found (libnccl-net.so)
+is-dcsn7qhxjihsjqes-devmachine-0:78872:78872 [3] NCCL INFO NET/Plugin: Plugin load returned 2 : libnccl-net.so: cannot open shared object file: No such file or directory : when loading libnccl-net.so
+is-dcsn7qhxjihsjqes-devmachine-0:78872:78872 [3] NCCL INFO NET/Plugin: Using internal network plugin.
+is-dcsn7qhxjihsjqes-devmachine-0:78870:78870 [1] NCCL INFO NET/Plugin: No plugin found (libnccl-net.so)
+is-dcsn7qhxjihsjqes-devmachine-0:78870:78870 [1] NCCL INFO NET/Plugin: Plugin load returned 2 : libnccl-net.so: cannot open shared object file: No such file or directory : when loading libnccl-net.so
+is-dcsn7qhxjihsjqes-devmachine-0:78870:78870 [1] NCCL INFO NET/Plugin: Using internal network plugin.
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO NET/IB : No device found.
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO NET/Socket : Using [0]eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO Using non-device net plugin version 0
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO Using network Socket
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO NET/IB : No device found.
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO NET/Socket : Using [0]eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO Using non-device net plugin version 0
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO Using network Socket
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO NET/IB : No device found.
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO NET/IB : No device found.
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO NCCL_SOCKET_IFNAME set by environment to eth0
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO NET/Socket : Using [0]eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO NET/Socket : Using [0]eth0:172.27.93.34<0>
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO Using non-device net plugin version 0
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO Using non-device net plugin version 0
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO Using network Socket
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO Using network Socket
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO ncclCommInitRank comm 0x55e2210b9ad0 rank 0 nranks 4 cudaDev 0 nvmlDev 0 busId 5d000 commId 0x1328d0b8c1b437f2 - Init START
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO ncclCommInitRank comm 0x556ea868f300 rank 3 nranks 4 cudaDev 3 nvmlDev 3 busId bb000 commId 0x1328d0b8c1b437f2 - Init START
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO ncclCommInitRank comm 0x55a0cb5a5b60 rank 2 nranks 4 cudaDev 2 nvmlDev 2 busId ab000 commId 0x1328d0b8c1b437f2 - Init START
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO ncclCommInitRank comm 0x5588ac538f00 rank 1 nranks 4 cudaDev 1 nvmlDev 1 busId 9b000 commId 0x1328d0b8c1b437f2 - Init START
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO NCCL_P2P_LEVEL set by environment to LOC
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO Setting affinity for GPU 2 to 03ffffe0,00000000,00000000,03ffffff,ffff0000,00000000
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO NVLS multicast support is available on dev 2
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO NCCL_P2P_LEVEL set by environment to LOC
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO Setting affinity for GPU 3 to 03ffffe0,00000000,00000000,03ffffff,ffff0000,00000000
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO NVLS multicast support is available on dev 3
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO NCCL_P2P_LEVEL set by environment to LOC
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO Setting affinity for GPU 1 to 03ffffe0,00000000,00000000,03ffffff,ffff0000,00000000
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO NVLS multicast support is available on dev 1
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO NCCL_P2P_LEVEL set by environment to LOC
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO Setting affinity for GPU 0 to 1fffff,00000000,00000000,00000000
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO NVLS multicast support is available on dev 0
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO comm 0x556ea868f300 rank 3 nRanks 4 nNodes 1 localRanks 4 localRank 3 MNNVL 0
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO comm 0x55a0cb5a5b60 rank 2 nRanks 4 nNodes 1 localRanks 4 localRank 2 MNNVL 0
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO comm 0x5588ac538f00 rank 1 nRanks 4 nNodes 1 localRanks 4 localRank 1 MNNVL 0
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO comm 0x55e2210b9ad0 rank 0 nRanks 4 nNodes 1 localRanks 4 localRank 0 MNNVL 0
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO Trees [0] -1/-1/-1->3->2 [1] -1/-1/-1->3->2 [2] -1/-1/-1->3->2 [3] -1/-1/-1->3->2 [4] -1/-1/-1->3->2 [5] -1/-1/-1->3->2 [6] -1/-1/-1->3->2 [7] -1/-1/-1->3->2 [8] -1/-1/-1->3->2 [9] -1/-1/-1->3->2 [10] -1/-1/-1->3->2 [11] -1/-1/-1->3->2 [12] -1/-1/-1->3->2 [13] -1/-1/-1->3->2 [14] -1/-1/-1->3->2 [15] -1/-1/-1->3->2
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO Trees [0] 3/-1/-1->2->1 [1] 3/-1/-1->2->1 [2] 3/-1/-1->2->1 [3] 3/-1/-1->2->1 [4] 3/-1/-1->2->1 [5] 3/-1/-1->2->1 [6] 3/-1/-1->2->1 [7] 3/-1/-1->2->1 [8] 3/-1/-1->2->1 [9] 3/-1/-1->2->1 [10] 3/-1/-1->2->1 [11] 3/-1/-1->2->1 [12] 3/-1/-1->2->1 [13] 3/-1/-1->2->1 [14] 3/-1/-1->2->1 [15] 3/-1/-1->2->1
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO Trees [0] 2/-1/-1->1->0 [1] 2/-1/-1->1->0 [2] 2/-1/-1->1->0 [3] 2/-1/-1->1->0 [4] 2/-1/-1->1->0 [5] 2/-1/-1->1->0 [6] 2/-1/-1->1->0 [7] 2/-1/-1->1->0 [8] 2/-1/-1->1->0 [9] 2/-1/-1->1->0 [10] 2/-1/-1->1->0 [11] 2/-1/-1->1->0 [12] 2/-1/-1->1->0 [13] 2/-1/-1->1->0 [14] 2/-1/-1->1->0 [15] 2/-1/-1->1->0
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO P2P Chunksize set to 131072
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO P2P Chunksize set to 131072
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO P2P Chunksize set to 131072
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO Channel 00/16 :    0   1   2   3
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO Channel 01/16 :    0   1   2   3
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO Channel 02/16 :    0   1   2   3
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO Channel 03/16 :    0   1   2   3
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO Channel 04/16 :    0   1   2   3
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO Channel 05/16 :    0   1   2   3
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO Channel 06/16 :    0   1   2   3
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO Channel 07/16 :    0   1   2   3
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO Channel 08/16 :    0   1   2   3
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO Channel 09/16 :    0   1   2   3
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO Channel 10/16 :    0   1   2   3
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO Channel 11/16 :    0   1   2   3
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO Channel 12/16 :    0   1   2   3
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO Channel 13/16 :    0   1   2   3
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO Channel 14/16 :    0   1   2   3
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO Channel 15/16 :    0   1   2   3
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO Trees [0] 1/-1/-1->0->-1 [1] 1/-1/-1->0->-1 [2] 1/-1/-1->0->-1 [3] 1/-1/-1->0->-1 [4] 1/-1/-1->0->-1 [5] 1/-1/-1->0->-1 [6] 1/-1/-1->0->-1 [7] 1/-1/-1->0->-1 [8] 1/-1/-1->0->-1 [9] 1/-1/-1->0->-1 [10] 1/-1/-1->0->-1 [11] 1/-1/-1->0->-1 [12] 1/-1/-1->0->-1 [13] 1/-1/-1->0->-1 [14] 1/-1/-1->0->-1 [15] 1/-1/-1->0->-1
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO P2P Chunksize set to 131072
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO Channel 00 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO Channel 01 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO Channel 02 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO Channel 03 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO Channel 04 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO Channel 05 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO Channel 06 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO Channel 07 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO Channel 08 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO Channel 09 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO Channel 10 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO Channel 11 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO Channel 12 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO Channel 13 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO Channel 00 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO Channel 14 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO Channel 01 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO Channel 15 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO Channel 00 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO Channel 02 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO Channel 01 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO Channel 03 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO Channel 02 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO Channel 04 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO Channel 03 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO Channel 05 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO Channel 04 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO Channel 06 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO Channel 05 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO Channel 07 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO Channel 06 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO Channel 08 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO Channel 07 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO Channel 09 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO Channel 08 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO Channel 10 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO Channel 09 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO Channel 11 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO Channel 10 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO Channel 12 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO Channel 11 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO Channel 13 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO Channel 12 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO Channel 14 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO Channel 13 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO Channel 15 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO Channel 14 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO Channel 15 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO Channel 00 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO Channel 01 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO Channel 02 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO Channel 03 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO Channel 04 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO Channel 05 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO Channel 06 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO Channel 07 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO Channel 08 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO Channel 09 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO Channel 10 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO Channel 11 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO Channel 12 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO Channel 13 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO Channel 14 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO Channel 15 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO Connected all rings
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO Connected all rings
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO Connected all rings
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO Connected all rings
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO Channel 00 : 3[3] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO Channel 01 : 3[3] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO Channel 02 : 3[3] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO Channel 03 : 3[3] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO Channel 04 : 3[3] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO Channel 05 : 3[3] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO Channel 06 : 3[3] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO Channel 07 : 3[3] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO Channel 08 : 3[3] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO Channel 09 : 3[3] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO Channel 10 : 3[3] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO Channel 11 : 3[3] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO Channel 12 : 3[3] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO Channel 13 : 3[3] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO Channel 14 : 3[3] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO Channel 15 : 3[3] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO Channel 00 : 1[1] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO Channel 01 : 1[1] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO Channel 02 : 1[1] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO Channel 03 : 1[1] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO Channel 04 : 1[1] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO Channel 05 : 1[1] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO Channel 06 : 1[1] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO Channel 07 : 1[1] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO Channel 08 : 1[1] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO Channel 09 : 1[1] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO Channel 10 : 1[1] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO Channel 11 : 1[1] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO Channel 12 : 1[1] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO Channel 13 : 1[1] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO Channel 14 : 1[1] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO Channel 15 : 1[1] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO Channel 00 : 2[2] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO Channel 01 : 2[2] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO Channel 02 : 2[2] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO Channel 03 : 2[2] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO Channel 04 : 2[2] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO Channel 05 : 2[2] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO Channel 06 : 2[2] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO Channel 07 : 2[2] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO Channel 08 : 2[2] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO Channel 09 : 2[2] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO Channel 10 : 2[2] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO Channel 11 : 2[2] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO Channel 12 : 2[2] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO Channel 13 : 2[2] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO Channel 14 : 2[2] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO Channel 15 : 2[2] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO Connected all trees
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO NVLS comm 0x556ea868f300 headRank 3 nHeads 4 buffSize 1048576 memSize 2097152 nvlsPerRankSize 100663296 nvlsTotalSize 402653184
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO Connected all trees
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO Connected all trees
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO Connected all trees
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO NVLS comm 0x55e2210b9ad0 headRank 0 nHeads 4 buffSize 1048576 memSize 2097152 nvlsPerRankSize 100663296 nvlsTotalSize 402653184
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO NVLS comm 0x55a0cb5a5b60 headRank 2 nHeads 4 buffSize 1048576 memSize 2097152 nvlsPerRankSize 100663296 nvlsTotalSize 402653184
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO NVLS comm 0x5588ac538f00 headRank 1 nHeads 4 buffSize 1048576 memSize 2097152 nvlsPerRankSize 100663296 nvlsTotalSize 402653184
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO 16 coll channels, 16 collnet channels, 16 nvls channels, 16 p2p channels, 2 p2p channels per peer
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO 16 coll channels, 16 collnet channels, 16 nvls channels, 16 p2p channels, 2 p2p channels per peer
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO 16 coll channels, 16 collnet channels, 16 nvls channels, 16 p2p channels, 2 p2p channels per peer
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO 16 coll channels, 16 collnet channels, 16 nvls channels, 16 p2p channels, 2 p2p channels per peer
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO TUNER/Plugin: Plugin load returned 2 : libnccl-net.so: cannot open shared object file: No such file or directory : when loading libnccl-tuner.so
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO TUNER/Plugin: Using internal tuner plugin.
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79245 [1] NCCL INFO ncclCommInitRank comm 0x5588ac538f00 rank 1 nranks 4 cudaDev 1 nvmlDev 1 busId 9b000 commId 0x1328d0b8c1b437f2 - Init COMPLETE
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO TUNER/Plugin: Plugin load returned 2 : libnccl-net.so: cannot open shared object file: No such file or directory : when loading libnccl-tuner.so
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO TUNER/Plugin: Using internal tuner plugin.
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79244 [3] NCCL INFO ncclCommInitRank comm 0x556ea868f300 rank 3 nranks 4 cudaDev 3 nvmlDev 3 busId bb000 commId 0x1328d0b8c1b437f2 - Init COMPLETE
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO TUNER/Plugin: Plugin load returned 2 : libnccl-net.so: cannot open shared object file: No such file or directory : when loading libnccl-tuner.so
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO TUNER/Plugin: Using internal tuner plugin.
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79243 [2] NCCL INFO ncclCommInitRank comm 0x55a0cb5a5b60 rank 2 nranks 4 cudaDev 2 nvmlDev 2 busId ab000 commId 0x1328d0b8c1b437f2 - Init COMPLETE
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO TUNER/Plugin: Plugin load returned 2 : libnccl-net.so: cannot open shared object file: No such file or directory : when loading libnccl-tuner.so
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO TUNER/Plugin: Using internal tuner plugin.
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79242 [0] NCCL INFO ncclCommInitRank comm 0x55e2210b9ad0 rank 0 nranks 4 cudaDev 0 nvmlDev 0 busId 5d000 commId 0x1328d0b8c1b437f2 - Init COMPLETE
+[SFTDataset] Rank 0 passed barrier.
+[SFTDataset-rankloss] Reusing cached celltype map: 1,082,213 cells from /mnt/c20250607/user/wanghaoran/zxy/data_and_features/per-gene-feature/sft_data_gene_feature/sft_data_gene_feature/sft_data_gene_feature/key_cache/_celltype_map.pkl
+✅ [EASY] Rank 2: 本卡有效样本 216,451，全球总计 865,803✅ [EASY] Rank 1: 本卡有效样本 216,451，全球总计 865,803✅ [EASY] Rank 3: 本卡有效样本 216,451，全球总计 865,803
+
+✅ [EASY] Rank 0: 本卡有效样本 216,451，全球总计 865,803
+
+   📊 各卡分布: [216451, 216451, 216451, 216450]
+   EASY 数据集: 216,451
+
+🟡 COMPLEX: 复杂单轮/多轮 SFT + Stage1 understanding paired
+
+============================================================
+🧠 初始化 SFTDataset... [COMPLEX]
+============================================================
+[SFTDataset] compact gene vocab: 11585 genes x 64 = 741440 tokens
+📥 加载对话文件: /mnt/c20250607/user/wanghaoran/zxy/data_and_features/zxy/sft_conversations/conversations/pretrain_texts.json
+📥 加载对话文件: /mnt/c20250607/user/wanghaoran/zxy/data_and_features/zxy/sft_conversations/conversations/finetune_conversations.json
+✅ 共加载 323,020 条对话记录
+   - unique cell ids: 301,351
+[SFTDataset] Reusing cached cell_id_to_loc: 1,082,213 cells
+[SFTDataset-rankloss] Reusing in-memory celltype map: 1,082,213 cells
+✅ [COMPLEX] Rank 1: 本卡有效样本 80,755，全球总计 323,020✅ [COMPLEX] Rank 3: 本卡有效样本 80,755，全球总计 323,020✅ [COMPLEX] Rank 2: 本卡有效样本 80,755，全球总计 323,020
+✅ [COMPLEX] Rank 0: 本卡有效样本 80,755，全球总计 323,020
+
+
+   📊 各卡分布: [80755, 80755, 80755, 80755]
+   COMPLEX 数据集: 80,755
+
+================================================================================
+📊 课程学习训练计划:
+   EASY SFT: 216,451 samples
+   COMPLEX SFT: 80,755 samples
+   Stage1 paired: 403,750 samples
+   world_size: 4
+   梯度累积步数: 40
+   EASY 每进程数据步/epoch: 155,051
+   COMPLEX 每进程数据步/epoch: 121,127
+   总优化步数(估算): 6,906
+================================================================================
+
+📊 Optimizer Config:
+   type: AdamW
+
+📊 Scheduler Config:
+   type: linear_warmup_cosine_decay
+   num_training_steps: 6,906
+   num_warmup_steps: 690
+   min_lr_ratio: 0.5
+[2026-04-24 07:21:03,068] [INFO] [config.py:733:__init__] Config mesh_device None world_size = 4
+[2026-04-24 07:21:03,078] [INFO] [config.py:733:__init__] Config mesh_device None world_size = 4
+[2026-04-24 07:21:03,078] [INFO] [config.py:733:__init__] Config mesh_device None world_size = 4
+nvcc warning : incompatible redefinition for option 'compiler-bindir', the last value of this option was used
+swanlab: Tracking run with swanlab version 0.7.11
+swanlab: Run data will be saved locally in 
+/mnt/c20250607/user/wanghaoran/zyh/scDataTest/logs/swanlab/run-20260424_072105-v
+ixgc596zonnhmte9jnz9
+swanlab: 👋 Hi yuhao_zheng,welcome to swanlab!
+swanlab: Syncing run stage1 to the cloud
+swanlab: 🏠 View project at 
+https://swanlab.cn/@yuhao_zheng/sc_showo_understanding_only
+swanlab: 🚀 View run at 
+https://swanlab.cn/@yuhao_zheng/sc_showo_understanding_only/runs/vixgc596zonnhmt
+e9jnz9
+✅ SwanLab 初始化成功：sc_showo_understanding_only (exp: stage1)
+[2026-04-24 07:21:07,114] [INFO] [logging.py:129:log_dist] [Rank 0] DeepSpeed info: version=0.15.3, git-hash=unknown, git-branch=unknown
+[2026-04-24 07:21:07,115] [INFO] [config.py:733:__init__] Config mesh_device None world_size = 4
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79290 [0] NCCL INFO Using non-device net plugin version 0
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79284 [1] NCCL INFO Using non-device net plugin version 0
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79287 [3] NCCL INFO Using non-device net plugin version 0
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79290 [0] NCCL INFO Using network Socket
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79287 [3] NCCL INFO Using network Socket
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79284 [1] NCCL INFO Using network Socket
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79281 [2] NCCL INFO Using non-device net plugin version 0
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79281 [2] NCCL INFO Using network Socket
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79281 [2] NCCL INFO bootstrapSplit: comm 0x55a067fa1810 parent 0x55a0cb5a5b60 rank 2 nranks 4 color 116666945 key 2 prev 1 next 3 - DONE
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79284 [1] NCCL INFO bootstrapSplit: comm 0x5588647eead0 parent 0x5588ac538f00 rank 1 nranks 4 color 116666945 key 1 prev 0 next 2 - DONE
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79281 [2] NCCL INFO ncclCommSplit comm 0x55a067fa1810 rank 2 nranks 4 cudaDev 2 nvmlDev 2 busId ab000 parent 0x55a0cb5a5b60 color 116666945 key 2 commId 0xdd0998c6139147b1 - Init START
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79290 [0] NCCL INFO bootstrapSplit: comm 0x55e1cb5c8530 parent 0x55e2210b9ad0 rank 0 nranks 4 color 116666945 key 0 prev 3 next 1 - DONE
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79287 [3] NCCL INFO bootstrapSplit: comm 0x556e618eb190 parent 0x556ea868f300 rank 3 nranks 4 color 116666945 key 3 prev 2 next 0 - DONE
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79284 [1] NCCL INFO ncclCommSplit comm 0x5588647eead0 rank 1 nranks 4 cudaDev 1 nvmlDev 1 busId 9b000 parent 0x5588ac538f00 color 116666945 key 1 commId 0xdd0998c6139147b1 - Init START
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79290 [0] NCCL INFO ncclCommSplit comm 0x55e1cb5c8530 rank 0 nranks 4 cudaDev 0 nvmlDev 0 busId 5d000 parent 0x55e2210b9ad0 color 116666945 key 0 commId 0xdd0998c6139147b1 - Init START
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79287 [3] NCCL INFO ncclCommSplit comm 0x556e618eb190 rank 3 nranks 4 cudaDev 3 nvmlDev 3 busId bb000 parent 0x556ea868f300 color 116666945 key 3 commId 0xdd0998c6139147b1 - Init START
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79284 [1] NCCL INFO Setting affinity for GPU 1 to 03ffffe0,00000000,00000000,03ffffff,ffff0000,00000000
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79284 [1] NCCL INFO NVLS multicast support is available on dev 1
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79281 [2] NCCL INFO Setting affinity for GPU 2 to 03ffffe0,00000000,00000000,03ffffff,ffff0000,00000000
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79281 [2] NCCL INFO NVLS multicast support is available on dev 2
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79287 [3] NCCL INFO Setting affinity for GPU 3 to 03ffffe0,00000000,00000000,03ffffff,ffff0000,00000000
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79287 [3] NCCL INFO NVLS multicast support is available on dev 3
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79290 [0] NCCL INFO Setting affinity for GPU 0 to 1fffff,00000000,00000000,00000000
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79290 [0] NCCL INFO NVLS multicast support is available on dev 0
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79287 [3] NCCL INFO comm 0x556e618eb190 rank 3 nRanks 4 nNodes 1 localRanks 4 localRank 3 MNNVL 0
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79290 [0] NCCL INFO comm 0x55e1cb5c8530 rank 0 nRanks 4 nNodes 1 localRanks 4 localRank 0 MNNVL 0
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79284 [1] NCCL INFO comm 0x5588647eead0 rank 1 nRanks 4 nNodes 1 localRanks 4 localRank 1 MNNVL 0
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79281 [2] NCCL INFO comm 0x55a067fa1810 rank 2 nRanks 4 nNodes 1 localRanks 4 localRank 2 MNNVL 0
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79287 [3] NCCL INFO Trees [0] -1/-1/-1->3->2 [1] -1/-1/-1->3->2 [2] -1/-1/-1->3->2 [3] -1/-1/-1->3->2 [4] -1/-1/-1->3->2 [5] -1/-1/-1->3->2 [6] -1/-1/-1->3->2 [7] -1/-1/-1->3->2 [8] -1/-1/-1->3->2 [9] -1/-1/-1->3->2 [10] -1/-1/-1->3->2 [11] -1/-1/-1->3->2 [12] -1/-1/-1->3->2 [13] -1/-1/-1->3->2 [14] -1/-1/-1->3->2 [15] -1/-1/-1->3->2
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79287 [3] NCCL INFO P2P Chunksize set to 131072
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79284 [1] NCCL INFO Trees [0] 2/-1/-1->1->0 [1] 2/-1/-1->1->0 [2] 2/-1/-1->1->0 [3] 2/-1/-1->1->0 [4] 2/-1/-1->1->0 [5] 2/-1/-1->1->0 [6] 2/-1/-1->1->0 [7] 2/-1/-1->1->0 [8] 2/-1/-1->1->0 [9] 2/-1/-1->1->0 [10] 2/-1/-1->1->0 [11] 2/-1/-1->1->0 [12] 2/-1/-1->1->0 [13] 2/-1/-1->1->0 [14] 2/-1/-1->1->0 [15] 2/-1/-1->1->0
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79290 [0] NCCL INFO Channel 00/16 :    0   1   2   3
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79281 [2] NCCL INFO Trees [0] 3/-1/-1->2->1 [1] 3/-1/-1->2->1 [2] 3/-1/-1->2->1 [3] 3/-1/-1->2->1 [4] 3/-1/-1->2->1 [5] 3/-1/-1->2->1 [6] 3/-1/-1->2->1 [7] 3/-1/-1->2->1 [8] 3/-1/-1->2->1 [9] 3/-1/-1->2->1 [10] 3/-1/-1->2->1 [11] 3/-1/-1->2->1 [12] 3/-1/-1->2->1 [13] 3/-1/-1->2->1 [14] 3/-1/-1->2->1 [15] 3/-1/-1->2->1
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79290 [0] NCCL INFO Channel 01/16 :    0   1   2   3
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79284 [1] NCCL INFO P2P Chunksize set to 131072
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79281 [2] NCCL INFO P2P Chunksize set to 131072
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79290 [0] NCCL INFO Channel 02/16 :    0   1   2   3
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79290 [0] NCCL INFO Channel 03/16 :    0   1   2   3
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79290 [0] NCCL INFO Channel 04/16 :    0   1   2   3
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79290 [0] NCCL INFO Channel 05/16 :    0   1   2   3
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79290 [0] NCCL INFO Channel 06/16 :    0   1   2   3
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79290 [0] NCCL INFO Channel 07/16 :    0   1   2   3
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79290 [0] NCCL INFO Channel 08/16 :    0   1   2   3
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79290 [0] NCCL INFO Channel 09/16 :    0   1   2   3
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79290 [0] NCCL INFO Channel 10/16 :    0   1   2   3
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79290 [0] NCCL INFO Channel 11/16 :    0   1   2   3
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79290 [0] NCCL INFO Channel 12/16 :    0   1   2   3
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79290 [0] NCCL INFO Channel 13/16 :    0   1   2   3
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79290 [0] NCCL INFO Channel 14/16 :    0   1   2   3
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79290 [0] NCCL INFO Channel 15/16 :    0   1   2   3
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79290 [0] NCCL INFO Trees [0] 1/-1/-1->0->-1 [1] 1/-1/-1->0->-1 [2] 1/-1/-1->0->-1 [3] 1/-1/-1->0->-1 [4] 1/-1/-1->0->-1 [5] 1/-1/-1->0->-1 [6] 1/-1/-1->0->-1 [7] 1/-1/-1->0->-1 [8] 1/-1/-1->0->-1 [9] 1/-1/-1->0->-1 [10] 1/-1/-1->0->-1 [11] 1/-1/-1->0->-1 [12] 1/-1/-1->0->-1 [13] 1/-1/-1->0->-1 [14] 1/-1/-1->0->-1 [15] 1/-1/-1->0->-1
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79290 [0] NCCL INFO P2P Chunksize set to 131072
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79284 [1] NCCL INFO Channel 00 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79281 [2] NCCL INFO Channel 00 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79287 [3] NCCL INFO Channel 00 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79290 [0] NCCL INFO Channel 00 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79284 [1] NCCL INFO Channel 01 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79281 [2] NCCL INFO Channel 01 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79287 [3] NCCL INFO Channel 01 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79290 [0] NCCL INFO Channel 01 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79284 [1] NCCL INFO Channel 02 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79281 [2] NCCL INFO Channel 02 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79287 [3] NCCL INFO Channel 02 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79290 [0] NCCL INFO Channel 02 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79281 [2] NCCL INFO Channel 03 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79284 [1] NCCL INFO Channel 03 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79287 [3] NCCL INFO Channel 03 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79290 [0] NCCL INFO Channel 03 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79281 [2] NCCL INFO Channel 04 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79284 [1] NCCL INFO Channel 04 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79287 [3] NCCL INFO Channel 04 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79290 [0] NCCL INFO Channel 04 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79281 [2] NCCL INFO Channel 05 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79284 [1] NCCL INFO Channel 05 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79287 [3] NCCL INFO Channel 05 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79290 [0] NCCL INFO Channel 05 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79281 [2] NCCL INFO Channel 06 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79284 [1] NCCL INFO Channel 06 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79287 [3] NCCL INFO Channel 06 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79290 [0] NCCL INFO Channel 06 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79281 [2] NCCL INFO Channel 07 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79284 [1] NCCL INFO Channel 07 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79287 [3] NCCL INFO Channel 07 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79290 [0] NCCL INFO Channel 07 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79281 [2] NCCL INFO Channel 08 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79284 [1] NCCL INFO Channel 08 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79287 [3] NCCL INFO Channel 08 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79290 [0] NCCL INFO Channel 08 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79281 [2] NCCL INFO Channel 09 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79284 [1] NCCL INFO Channel 09 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79287 [3] NCCL INFO Channel 09 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79290 [0] NCCL INFO Channel 09 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79281 [2] NCCL INFO Channel 10 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79284 [1] NCCL INFO Channel 10 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79287 [3] NCCL INFO Channel 10 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79290 [0] NCCL INFO Channel 10 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79281 [2] NCCL INFO Channel 11 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79284 [1] NCCL INFO Channel 11 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79287 [3] NCCL INFO Channel 11 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79290 [0] NCCL INFO Channel 11 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79281 [2] NCCL INFO Channel 12 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79284 [1] NCCL INFO Channel 12 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79287 [3] NCCL INFO Channel 12 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79290 [0] NCCL INFO Channel 12 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79281 [2] NCCL INFO Channel 13 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79284 [1] NCCL INFO Channel 13 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79287 [3] NCCL INFO Channel 13 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79290 [0] NCCL INFO Channel 13 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79281 [2] NCCL INFO Channel 14 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79284 [1] NCCL INFO Channel 14 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79287 [3] NCCL INFO Channel 14 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79290 [0] NCCL INFO Channel 14 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79281 [2] NCCL INFO Channel 15 : 2[2] -> 3[3] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79284 [1] NCCL INFO Channel 15 : 1[1] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79287 [3] NCCL INFO Channel 15 : 3[3] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79290 [0] NCCL INFO Channel 15 : 0[0] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79287 [3] NCCL INFO Connected all rings
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79287 [3] NCCL INFO Channel 00 : 3[3] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79287 [3] NCCL INFO Channel 01 : 3[3] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79287 [3] NCCL INFO Channel 02 : 3[3] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79287 [3] NCCL INFO Channel 03 : 3[3] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79287 [3] NCCL INFO Channel 04 : 3[3] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79287 [3] NCCL INFO Channel 05 : 3[3] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79287 [3] NCCL INFO Channel 06 : 3[3] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79287 [3] NCCL INFO Channel 07 : 3[3] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79287 [3] NCCL INFO Channel 08 : 3[3] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79287 [3] NCCL INFO Channel 09 : 3[3] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79287 [3] NCCL INFO Channel 10 : 3[3] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79287 [3] NCCL INFO Channel 11 : 3[3] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79287 [3] NCCL INFO Channel 12 : 3[3] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79281 [2] NCCL INFO Connected all rings
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79284 [1] NCCL INFO Connected all rings
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79290 [0] NCCL INFO Connected all rings
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79287 [3] NCCL INFO Channel 13 : 3[3] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79287 [3] NCCL INFO Channel 14 : 3[3] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79287 [3] NCCL INFO Channel 15 : 3[3] -> 2[2] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79284 [1] NCCL INFO Channel 00 : 1[1] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79284 [1] NCCL INFO Channel 01 : 1[1] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79284 [1] NCCL INFO Channel 02 : 1[1] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79284 [1] NCCL INFO Channel 03 : 1[1] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79284 [1] NCCL INFO Channel 04 : 1[1] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79284 [1] NCCL INFO Channel 05 : 1[1] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79284 [1] NCCL INFO Channel 06 : 1[1] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79281 [2] NCCL INFO Channel 00 : 2[2] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79284 [1] NCCL INFO Channel 07 : 1[1] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79281 [2] NCCL INFO Channel 01 : 2[2] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79284 [1] NCCL INFO Channel 08 : 1[1] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79281 [2] NCCL INFO Channel 02 : 2[2] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79284 [1] NCCL INFO Channel 09 : 1[1] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79281 [2] NCCL INFO Channel 03 : 2[2] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79284 [1] NCCL INFO Channel 10 : 1[1] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79281 [2] NCCL INFO Channel 04 : 2[2] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79284 [1] NCCL INFO Channel 11 : 1[1] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79284 [1] NCCL INFO Channel 12 : 1[1] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79281 [2] NCCL INFO Channel 05 : 2[2] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79284 [1] NCCL INFO Channel 13 : 1[1] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79281 [2] NCCL INFO Channel 06 : 2[2] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79284 [1] NCCL INFO Channel 14 : 1[1] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79281 [2] NCCL INFO Channel 07 : 2[2] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79284 [1] NCCL INFO Channel 15 : 1[1] -> 0[0] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79281 [2] NCCL INFO Channel 08 : 2[2] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79281 [2] NCCL INFO Channel 09 : 2[2] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79281 [2] NCCL INFO Channel 10 : 2[2] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79281 [2] NCCL INFO Channel 11 : 2[2] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79281 [2] NCCL INFO Channel 12 : 2[2] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79281 [2] NCCL INFO Channel 13 : 2[2] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79281 [2] NCCL INFO Channel 14 : 2[2] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79281 [2] NCCL INFO Channel 15 : 2[2] -> 1[1] via SHM/direct/direct
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79287 [3] NCCL INFO Connected all trees
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79287 [3] NCCL INFO NVLS comm 0x556e618eb190 headRank 3 nHeads 4 buffSize 1048576 memSize 2097152 nvlsPerRankSize 100663296 nvlsTotalSize 402653184
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79284 [1] NCCL INFO Connected all trees
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79281 [2] NCCL INFO Connected all trees
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79290 [0] NCCL INFO Connected all trees
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79284 [1] NCCL INFO NVLS comm 0x5588647eead0 headRank 1 nHeads 4 buffSize 1048576 memSize 2097152 nvlsPerRankSize 100663296 nvlsTotalSize 402653184
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79281 [2] NCCL INFO NVLS comm 0x55a067fa1810 headRank 2 nHeads 4 buffSize 1048576 memSize 2097152 nvlsPerRankSize 100663296 nvlsTotalSize 402653184
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79290 [0] NCCL INFO NVLS comm 0x55e1cb5c8530 headRank 0 nHeads 4 buffSize 1048576 memSize 2097152 nvlsPerRankSize 100663296 nvlsTotalSize 402653184
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79284 [1] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79284 [1] NCCL INFO 16 coll channels, 16 collnet channels, 16 nvls channels, 16 p2p channels, 2 p2p channels per peer
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79281 [2] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79281 [2] NCCL INFO 16 coll channels, 16 collnet channels, 16 nvls channels, 16 p2p channels, 2 p2p channels per peer
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79290 [0] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79290 [0] NCCL INFO 16 coll channels, 16 collnet channels, 16 nvls channels, 16 p2p channels, 2 p2p channels per peer
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79287 [3] NCCL INFO threadThresholds 8/8/64 | 32/8/64 | 512 | 512
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79287 [3] NCCL INFO 16 coll channels, 16 collnet channels, 16 nvls channels, 16 p2p channels, 2 p2p channels per peer
+is-dcsn7qhxjihsjqes-devmachine-0:78872:79287 [3] NCCL INFO ncclCommSplit comm 0x556e618eb190 rank 3 nranks 4 cudaDev 3 nvmlDev 3 busId bb000 parent 0x556ea868f300 color 116666945 key 3 commId 0xdd0998c6139147b1 - Init COMPLETE
+is-dcsn7qhxjihsjqes-devmachine-0:78870:79284 [1] NCCL INFO ncclCommSplit comm 0x5588647eead0 rank 1 nranks 4 cudaDev 1 nvmlDev 1 busId 9b000 parent 0x5588ac538f00 color 116666945 key 1 commId 0xdd0998c6139147b1 - Init COMPLETE
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79281 [2] NCCL INFO ncclCommSplit comm 0x55a067fa1810 rank 2 nranks 4 cudaDev 2 nvmlDev 2 busId ab000 parent 0x55a0cb5a5b60 color 116666945 key 2 commId 0xdd0998c6139147b1 - Init COMPLETE
+is-dcsn7qhxjihsjqes-devmachine-0:78869:79290 [0] NCCL INFO ncclCommSplit comm 0x55e1cb5c8530 rank 0 nranks 4 cudaDev 0 nvmlDev 0 busId 5d000 parent 0x55e2210b9ad0 color 116666945 key 0 commId 0xdd0998c6139147b1 - Init COMPLETE
+[2026-04-24 07:21:41,414] [INFO] [logging.py:129:log_dist] [Rank 0] DeepSpeed Flops Profiler Enabled: False
+[2026-04-24 07:21:41,421] [INFO] [logging.py:129:log_dist] [Rank 0] Using client Optimizer as basic optimizer
+[2026-04-24 07:21:41,421] [INFO] [logging.py:129:log_dist] [Rank 0] Removing param_group that has no 'params' in the basic Optimizer
+[2026-04-24 07:21:41,459] [INFO] [logging.py:129:log_dist] [Rank 0] DeepSpeed Basic Optimizer = AdamW
+[2026-04-24 07:21:41,460] [INFO] [utils.py:59:is_zero_supported_optimizer] Checking ZeRO support for optimizer=AdamW type=<class 'torch.optim.adamw.AdamW'>
+[2026-04-24 07:21:41,460] [INFO] [logging.py:129:log_dist] [Rank 0] Creating torch.bfloat16 ZeRO stage 2 optimizer
+[2026-04-24 07:21:41,460] [INFO] [stage_1_and_2.py:149:__init__] Reduce bucket size 500000000
+[2026-04-24 07:21:41,460] [INFO] [stage_1_and_2.py:150:__init__] Allgather bucket size 500000000
+[2026-04-24 07:21:41,460] [INFO] [stage_1_and_2.py:151:__init__] CPU Offload: False
+[2026-04-24 07:21:41,461] [INFO] [stage_1_and_2.py:152:__init__] Round robin gradient partitioning: False
+The attention layers in this model are transitioning from computing the RoPE embeddings internally through `position_ids` (2D tensor with the indexes of the tokens), to using externally computed `position_embeddings` (Tuple of tensors, containing cos and sin). In v4.46 `position_ids` will be removed and `position_embeddings` will be mandatory.
+[2026-04-24 07:21:52,659] [INFO] [utils.py:781:see_memory_usage] Before initializing optimizer states
+[2026-04-24 07:21:52,660] [INFO] [utils.py:782:see_memory_usage] MA 24.17 GB         Max_MA 25.58 GB         CA 25.89 GB         Max_CA 26 GB 
+[2026-04-24 07:21:52,662] [INFO] [utils.py:789:see_memory_usage] CPU Virtual Memory:  used = 54.58 GB, percent = 5.9%
+The attention layers in this model are transitioning from computing the RoPE embeddings internally through `position_ids` (2D tensor with the indexes of the tokens), to using externally computed `position_embeddings` (Tuple of tensors, containing cos and sin). In v4.46 `position_ids` will be removed and `position_embeddings` will be mandatory.
+The attention layers in this model are transitioning from computing the RoPE embeddings internally through `position_ids` (2D tensor with the indexes of the tokens), to using externally computed `position_embeddings` (Tuple of tensors, containing cos and sin). In v4.46 `position_ids` will be removed and `position_embeddings` will be mandatory.
+[2026-04-24 07:21:53,537] [INFO] [utils.py:781:see_memory_usage] After initializing optimizer states
+[2026-04-24 07:21:53,538] [INFO] [utils.py:782:see_memory_usage] MA 24.17 GB         Max_MA 27.13 GB         CA 28.69 GB         Max_CA 29 GB 
+[2026-04-24 07:21:53,540] [INFO] [utils.py:789:see_memory_usage] CPU Virtual Memory:  used = 54.94 GB, percent = 6.0%
+[2026-04-24 07:21:53,540] [INFO] [stage_1_and_2.py:544:__init__] optimizer state initialized
+[2026-04-24 07:21:54,321] [INFO] [utils.py:781:see_memory_usage] After initializing ZeRO optimizer
+[2026-04-24 07:21:54,321] [INFO] [utils.py:782:see_memory_usage] MA 24.17 GB         Max_MA 24.17 GB         CA 28.69 GB         Max_CA 29 GB 
+[2026-04-24 07:21:54,323] [INFO] [utils.py:789:see_memory_usage] CPU Virtual Memory:  used = 54.94 GB, percent = 6.0%
+[2026-04-24 07:21:54,328] [INFO] [logging.py:129:log_dist] [Rank 0] DeepSpeed Final Optimizer = DeepSpeedZeroOptimizer
+[2026-04-24 07:21:54,328] [INFO] [logging.py:129:log_dist] [Rank 0] DeepSpeed using configured LR scheduler = None
+[2026-04-24 07:21:54,328] [INFO] [logging.py:129:log_dist] [Rank 0] DeepSpeed LR Scheduler = None
+[2026-04-24 07:21:54,328] [INFO] [logging.py:129:log_dist] [Rank 0] step=0, skipped=0, lr=[2e-05, 0.0001], mom=[(0.9, 0.999), (0.9, 0.999)]
+[2026-04-24 07:21:54,335] [INFO] [config.py:999:print] DeepSpeedEngine configuration:
+[2026-04-24 07:21:54,335] [INFO] [config.py:1003:print]   activation_checkpointing_config  {
+    "partition_activations": false, 
+    "contiguous_memory_optimization": false, 
+    "cpu_checkpointing": false, 
+    "number_checkpoints": null, 
+    "synchronize_checkpoint_boundary": false, 
+    "profile": false
+}
+[2026-04-24 07:21:54,336] [INFO] [config.py:1003:print]   aio_config ................... {'block_size': 1048576, 'queue_depth': 8, 'thread_count': 1, 'single_submit': False, 'overlap_events': True, 'use_gds': False}
+[2026-04-24 07:21:54,336] [INFO] [config.py:1003:print]   amp_enabled .................. False
+[2026-04-24 07:21:54,336] [INFO] [config.py:1003:print]   amp_params ................... False
+[2026-04-24 07:21:54,336] [INFO] [config.py:1003:print]   autotuning_config ............ {
+    "enabled": false, 
+    "start_step": null, 
+    "end_step": null, 
+    "metric_path": null, 
+    "arg_mappings": null, 
+    "metric": "throughput", 
+    "model_info": null, 
+    "results_dir": "autotuning_results", 
+    "exps_dir": "autotuning_exps", 
+    "overwrite": true, 
+    "fast": true, 
+    "start_profile_step": 3, 
+    "end_profile_step": 5, 
+    "tuner_type": "gridsearch", 
+    "tuner_early_stopping": 5, 
+    "tuner_num_trials": 50, 
+    "model_info_path": null, 
+    "mp_size": 1, 
+    "max_train_batch_size": null, 
+    "min_train_batch_size": 1, 
+    "max_train_micro_batch_size_per_gpu": 1.024000e+03, 
+    "min_train_micro_batch_size_per_gpu": 1, 
+    "num_tuning_micro_batch_sizes": 3
+}
+[2026-04-24 07:21:54,336] [INFO] [config.py:1003:print]   bfloat16_enabled ............. True
+[2026-04-24 07:21:54,336] [INFO] [config.py:1003:print]   bfloat16_immediate_grad_update  False
+[2026-04-24 07:21:54,336] [INFO] [config.py:1003:print]   checkpoint_parallel_write_pipeline  False
+[2026-04-24 07:21:54,336] [INFO] [config.py:1003:print]   checkpoint_tag_validation_enabled  True
+[2026-04-24 07:21:54,336] [INFO] [config.py:1003:print]   checkpoint_tag_validation_fail  False
+[2026-04-24 07:21:54,336] [INFO] [config.py:1003:print]   comms_config ................. <deepspeed.comm.config.DeepSpeedCommsConfig object at 0x7f12557fcd00>
+[2026-04-24 07:21:54,337] [INFO] [config.py:1003:print]   communication_data_type ...... None
+[2026-04-24 07:21:54,337] [INFO] [config.py:1003:print]   compression_config ........... {'weight_quantization': {'shared_parameters': {'enabled': False, 'quantizer_kernel': False, 'schedule_offset': 0, 'quantize_groups': 1, 'quantize_verbose': False, 'quantization_type': 'symmetric', 'quantize_weight_in_forward': False, 'rounding': 'nearest', 'fp16_mixed_quantize': False, 'quantize_change_ratio': 0.001}, 'different_groups': {}}, 'activation_quantization': {'shared_parameters': {'enabled': False, 'quantization_type': 'symmetric', 'range_calibration': 'dynamic', 'schedule_offset': 1000}, 'different_groups': {}}, 'sparse_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'row_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'head_pruning': {'shared_parameters': {'enabled': False, 'method': 'topk', 'schedule_offset': 1000}, 'different_groups': {}}, 'channel_pruning': {'shared_parameters': {'enabled': False, 'method': 'l1', 'schedule_offset': 1000}, 'different_groups': {}}, 'layer_reduction': {'enabled': False}}
+[2026-04-24 07:21:54,337] [INFO] [config.py:1003:print]   curriculum_enabled_legacy .... False
+[2026-04-24 07:21:54,337] [INFO] [config.py:1003:print]   curriculum_params_legacy ..... False
+[2026-04-24 07:21:54,337] [INFO] [config.py:1003:print]   data_efficiency_config ....... {'enabled': False, 'seed': 1234, 'data_sampling': {'enabled': False, 'num_epochs': 1000, 'num_workers': 0, 'curriculum_learning': {'enabled': False}}, 'data_routing': {'enabled': False, 'random_ltd': {'enabled': False, 'layer_token_lr_schedule': {'enabled': False}}}}
+[2026-04-24 07:21:54,337] [INFO] [config.py:1003:print]   data_efficiency_enabled ...... False
+[2026-04-24 07:21:54,337] [INFO] [config.py:1003:print]   dataloader_drop_last ......... False
+[2026-04-24 07:21:54,337] [INFO] [config.py:1003:print]   disable_allgather ............ False
+[2026-04-24 07:21:54,337] [INFO] [config.py:1003:print]   dump_state ................... False
+[2026-04-24 07:21:54,337] [INFO] [config.py:1003:print]   dynamic_loss_scale_args ...... None
+[2026-04-24 07:21:54,337] [INFO] [config.py:1003:print]   eigenvalue_enabled ........... False
+[2026-04-24 07:21:54,337] [INFO] [config.py:1003:print]   eigenvalue_gas_boundary_resolution  1
+[2026-04-24 07:21:54,337] [INFO] [config.py:1003:print]   eigenvalue_layer_name ........ bert.encoder.layer
+[2026-04-24 07:21:54,337] [INFO] [config.py:1003:print]   eigenvalue_layer_num ......... 0
+[2026-04-24 07:21:54,337] [INFO] [config.py:1003:print]   eigenvalue_max_iter .......... 100
+[2026-04-24 07:21:54,338] [INFO] [config.py:1003:print]   eigenvalue_stability ......... 1e-06
+[2026-04-24 07:21:54,338] [INFO] [config.py:1003:print]   eigenvalue_tol ............... 0.01
+[2026-04-24 07:21:54,338] [INFO] [config.py:1003:print]   eigenvalue_verbose ........... False
+[2026-04-24 07:21:54,338] [INFO] [config.py:1003:print]   elasticity_enabled ........... False
+[2026-04-24 07:21:54,338] [INFO] [config.py:1003:print]   flops_profiler_config ........ {
+    "enabled": false, 
+    "recompute_fwd_factor": 0.0, 
+    "profile_step": 1, 
+    "module_depth": -1, 
+    "top_modules": 1, 
+    "detailed": true, 
+    "output_file": null
+}
+[2026-04-24 07:21:54,338] [INFO] [config.py:1003:print]   fp16_auto_cast ............... None
+[2026-04-24 07:21:54,338] [INFO] [config.py:1003:print]   fp16_enabled ................. False
+[2026-04-24 07:21:54,338] [INFO] [config.py:1003:print]   fp16_master_weights_and_gradients  False
+[2026-04-24 07:21:54,338] [INFO] [config.py:1003:print]   global_rank .................. 0
+[2026-04-24 07:21:54,338] [INFO] [config.py:1003:print]   grad_accum_dtype ............. None
+[2026-04-24 07:21:54,338] [INFO] [config.py:1003:print]   gradient_accumulation_steps .. 40
+[2026-04-24 07:21:54,338] [INFO] [config.py:1003:print]   gradient_clipping ............ 0.0
+[2026-04-24 07:21:54,338] [INFO] [config.py:1003:print]   gradient_predivide_factor .... 1.0
+[2026-04-24 07:21:54,338] [INFO] [config.py:1003:print]   graph_harvesting ............. False
+[2026-04-24 07:21:54,339] [INFO] [config.py:1003:print]   hybrid_engine ................ enabled=False max_out_tokens=512 inference_tp_size=1 release_inference_cache=False pin_parameters=True tp_gather_partition_size=8
+[2026-04-24 07:21:54,339] [INFO] [config.py:1003:print]   initial_dynamic_scale ........ 1
+[2026-04-24 07:21:54,339] [INFO] [config.py:1003:print]   load_universal_checkpoint .... False
+[2026-04-24 07:21:54,339] [INFO] [config.py:1003:print]   loss_scale ................... 1.0
+[2026-04-24 07:21:54,339] [INFO] [config.py:1003:print]   memory_breakdown ............. False
+[2026-04-24 07:21:54,339] [INFO] [config.py:1003:print]   mics_hierarchial_params_gather  False
+[2026-04-24 07:21:54,339] [INFO] [config.py:1003:print]   mics_shard_size .............. -1
+[2026-04-24 07:21:54,339] [INFO] [config.py:1003:print]   monitor_config ............... tensorboard=TensorBoardConfig(enabled=False, output_path='', job_name='DeepSpeedJobName') comet=CometConfig(enabled=False, samples_log_interval=100, project=None, workspace=None, api_key=None, experiment_name=None, experiment_key=None, online=None, mode=None) wandb=WandbConfig(enabled=False, group=None, team=None, project='deepspeed') csv_monitor=CSVConfig(enabled=False, output_path='', job_name='DeepSpeedJobName')
+[2026-04-24 07:21:54,339] [INFO] [config.py:1003:print]   nebula_config ................ {
+    "enabled": false, 
+    "persistent_storage_path": null, 
+    "persistent_time_interval": 100, 
+    "num_of_version_in_retention": 2, 
+    "enable_nebula_load": true, 
+    "load_path": null
+}
+[2026-04-24 07:21:54,339] [INFO] [config.py:1003:print]   optimizer_legacy_fusion ...... False
+[2026-04-24 07:21:54,339] [INFO] [config.py:1003:print]   optimizer_name ............... None
+[2026-04-24 07:21:54,339] [INFO] [config.py:1003:print]   optimizer_params ............. None
+[2026-04-24 07:21:54,339] [INFO] [config.py:1003:print]   pipeline ..................... {'stages': 'auto', 'partition': 'best', 'seed_layers': False, 'activation_checkpoint_interval': 0, 'pipe_partitioned': True, 'grad_partitioned': True}
+[2026-04-24 07:21:54,339] [INFO] [config.py:1003:print]   pld_enabled .................. False
+[2026-04-24 07:21:54,340] [INFO] [config.py:1003:print]   pld_params ................... False
+[2026-04-24 07:21:54,340] [INFO] [config.py:1003:print]   prescale_gradients ........... False
+[2026-04-24 07:21:54,340] [INFO] [config.py:1003:print]   scheduler_name ............... None
+[2026-04-24 07:21:54,340] [INFO] [config.py:1003:print]   scheduler_params ............. None
+[2026-04-24 07:21:54,340] [INFO] [config.py:1003:print]   seq_parallel_communication_data_type  torch.float32
+[2026-04-24 07:21:54,340] [INFO] [config.py:1003:print]   sparse_attention ............. None
+[2026-04-24 07:21:54,340] [INFO] [config.py:1003:print]   sparse_gradients_enabled ..... False
+[2026-04-24 07:21:54,340] [INFO] [config.py:1003:print]   steps_per_print .............. inf
+[2026-04-24 07:21:54,340] [INFO] [config.py:1003:print]   timers_config ................ enabled=True synchronized=True
+[2026-04-24 07:21:54,340] [INFO] [config.py:1003:print]   train_batch_size ............. 640
+[2026-04-24 07:21:54,340] [INFO] [config.py:1003:print]   train_micro_batch_size_per_gpu  4
+[2026-04-24 07:21:54,340] [INFO] [config.py:1003:print]   use_data_before_expert_parallel_  False
+[2026-04-24 07:21:54,340] [INFO] [config.py:1003:print]   use_node_local_storage ....... False
+[2026-04-24 07:21:54,340] [INFO] [config.py:1003:print]   wall_clock_breakdown ......... False
+[2026-04-24 07:21:54,340] [INFO] [config.py:1003:print]   weight_quantization_config ... None
+[2026-04-24 07:21:54,340] [INFO] [config.py:1003:print]   world_size ................... 4
+[2026-04-24 07:21:54,341] [INFO] [config.py:1003:print]   zero_allow_untested_optimizer  True
+[2026-04-24 07:21:54,341] [INFO] [config.py:1003:print]   zero_config .................. stage=2 contiguous_gradients=True reduce_scatter=True reduce_bucket_size=500000000 use_multi_rank_bucket_allreduce=True allgather_partitions=True allgather_bucket_size=500000000 overlap_comm=False load_from_fp32_weights=True elastic_checkpoint=False offload_param=DeepSpeedZeroOffloadParamConfig(device='none', nvme_path=None, buffer_count=5, buffer_size=100000000, max_in_cpu=1000000000, pin_memory=False) offload_optimizer=DeepSpeedZeroOffloadOptimizerConfig(device='none', nvme_path=None, buffer_count=4, pin_memory=False, pipeline_read=False, pipeline_write=False, fast_init=False, ratio=1.0) sub_group_size=1000000000 cpu_offload_param=None cpu_offload_use_pin_memory=None cpu_offload=None prefetch_bucket_size=50000000 param_persistence_threshold=100000 model_persistence_threshold=9223372036854775807 max_live_parameters=1000000000 max_reuse_distance=1000000000 gather_16bit_weights_on_model_save=False use_all_reduce_for_fetch_params=False stage3_gather_fp16_weights_on_model_save=False ignore_unused_parameters=True legacy_stage1=False round_robin_gradients=False zero_hpz_partition_size=1 zero_quantized_weights=False zero_quantized_nontrainable_weights=False zero_quantized_gradients=False mics_shard_size=-1 mics_hierarchical_params_gather=False memory_efficient_linear=True pipeline_loading_checkpoint=False override_module_apply=True
+[2026-04-24 07:21:54,341] [INFO] [config.py:1003:print]   zero_enabled ................. True
+[2026-04-24 07:21:54,341] [INFO] [config.py:1003:print]   zero_force_ds_cpu_optimizer .. True
+[2026-04-24 07:21:54,341] [INFO] [config.py:1003:print]   zero_optimization_stage ...... 2
+[2026-04-24 07:21:54,341] [INFO] [config.py:989:print_user_config]   json = {
+    "train_batch_size": 640, 
+    "train_micro_batch_size_per_gpu": 4, 
+    "gradient_accumulation_steps": 40, 
+    "zero_optimization": {
+        "stage": 2, 
+        "offload_optimizer": {
+            "device": "none", 
+            "nvme_path": null
+        }, 
+        "offload_param": {
+            "device": "none", 
+            "nvme_path": null
+        }, 
+        "stage3_gather_16bit_weights_on_model_save": false
+    }, 
+    "steps_per_print": inf, 
+    "bf16": {
+        "enabled": true
+    }, 
+    "fp16": {
+        "enabled": false
+    }, 
+    "zero_allow_untested_optimizer": true
+}
+
+🚀 未配置 resume_from，Stage 2 将从头开始训练
+
+🚀 Stage 2 从头开始训练 (未配置 resume_from)
+
+================================================================================
+🎓 开始训练阶段: EASY
+================================================================================
+
+🎭 Omni-Attention Mask: 文本=Causal, Gene=Bidirectional
+The attention layers in this model are transitioning from computing the RoPE embeddings internally through `position_ids` (2D tensor with the indexes of the tokens), to using externally computed `position_embeddings` (Tuple of tensors, containing cos and sin). In v4.46 `position_ids` will be removed and `position_embeddings` will be mandatory.
+🎓 [EASY] Step 5 | Avg Loss: 3.9187 (NTP: 3.5745, Gene: 0.0000, Rank: 0.6884)
+   Learning Rates -> LoRA: 1.2e-07, Base: 5.8e-07
+🎓 [EASY] Step 10 | Avg Loss: 4.0454 (NTP: 3.5269, Gene: 0.0000, Rank: 1.0370)
+   Learning Rates -> LoRA: 2.6e-07, Base: 1.3e-06
+   Matched-vs-Mismatched gap: -0.010770
+🎓 [EASY] Step 15 | Avg Loss: 3.9094 (NTP: 3.4558, Gene: 0.0000, Rank: 0.9071)
+   Learning Rates -> LoRA: 4.1e-07, Base: 2.0e-06
+   Matched-vs-Mismatched gap: 0.003848
+🎓 [EASY] Step 20 | Avg Loss: 3.7881 (NTP: 3.2372, Gene: 0.0000, Rank: 1.1020)
+   Learning Rates -> LoRA: 5.5e-07, Base: 2.8e-06
+   Matched-vs-Mismatched gap: -0.004963
+🎓 [EASY] Step 25 | Avg Loss: 3.6381 (NTP: 3.2450, Gene: 0.0000, Rank: 0.7861)
+   Learning Rates -> LoRA: 7.0e-07, Base: 3.5e-06
+   Matched-vs-Mismatched gap: 0.002052
+🎓 [EASY] Step 30 | Avg Loss: 3.6505 (NTP: 3.1669, Gene: 0.0000, Rank: 0.9673)
+   Learning Rates -> LoRA: 8.4e-07, Base: 4.2e-06
+   Matched-vs-Mismatched gap: -0.006349
+🎓 [EASY] Step 35 | Avg Loss: 3.1094 (NTP: 2.8297, Gene: 0.0000, Rank: 0.5593)
+   Learning Rates -> LoRA: 9.9e-07, Base: 4.9e-06
+🎓 [EASY] Step 40 | Avg Loss: 3.2599 (NTP: 2.8854, Gene: 0.0000, Rank: 0.7492)
+   Learning Rates -> LoRA: 1.1e-06, Base: 5.7e-06
+   Matched-vs-Mismatched gap: -0.005730
+🎓 [EASY] Step 45 | Avg Loss: 3.1825 (NTP: 2.7213, Gene: 0.0000, Rank: 0.9224)
+   Learning Rates -> LoRA: 1.3e-06, Base: 6.4e-06
+   Matched-vs-Mismatched gap: -0.004581
+🎓 [EASY] Step 50 | Avg Loss: 2.9519 (NTP: 2.5452, Gene: 0.0000, Rank: 0.8135)
+   Learning Rates -> LoRA: 1.4e-06, Base: 7.1e-06
+   Matched-vs-Mismatched gap: 0.000858
+🎓 [EASY] Step 55 | Avg Loss: 2.8810 (NTP: 2.4021, Gene: 0.0000, Rank: 0.9577)
+   Learning Rates -> LoRA: 1.6e-06, Base: 7.8e-06
+   Matched-vs-Mismatched gap: -0.002944
+🎓 [EASY] Step 60 | Avg Loss: 2.7200 (NTP: 2.3633, Gene: 0.0000, Rank: 0.7134)
+   Learning Rates -> LoRA: 1.7e-06, Base: 8.6e-06
+   Matched-vs-Mismatched gap: 0.006282
+🎓 [EASY] Step 65 | Avg Loss: 2.6070 (NTP: 2.1598, Gene: 0.0000, Rank: 0.8943)
+   Learning Rates -> LoRA: 1.9e-06, Base: 9.3e-06
+   Matched-vs-Mismatched gap: -0.000189
+🎓 [EASY] Step 70 | Avg Loss: 2.7576 (NTP: 2.2928, Gene: 0.0000, Rank: 0.9296)
+   Learning Rates -> LoRA: 2.0e-06, Base: 1.0e-05
+   Matched-vs-Mismatched gap: -0.014780
+🎓 [EASY] Step 75 | Avg Loss: 2.6913 (NTP: 2.1761, Gene: 0.0000, Rank: 1.0304)
+   Learning Rates -> LoRA: 2.1e-06, Base: 1.1e-05
+   Matched-vs-Mismatched gap: 0.025259
+🎓 [EASY] Step 80 | Avg Loss: 2.4681 (NTP: 2.0862, Gene: 0.0000, Rank: 0.7638)
+   Learning Rates -> LoRA: 2.3e-06, Base: 1.1e-05
+   Matched-vs-Mismatched gap: 0.002116
+🎓 [EASY] Step 85 | Avg Loss: 2.4071 (NTP: 2.0026, Gene: 0.0000, Rank: 0.8091)
+   Learning Rates -> LoRA: 2.4e-06, Base: 1.2e-05
+   Matched-vs-Mismatched gap: 0.000685
+🎓 [EASY] Step 90 | Avg Loss: 2.2255 (NTP: 1.8616, Gene: 0.0000, Rank: 0.7279)
+   Learning Rates -> LoRA: 2.6e-06, Base: 1.3e-05
+   Matched-vs-Mismatched gap: 0.001792
+🎓 [EASY] Step 95 | Avg Loss: 2.2650 (NTP: 1.8001, Gene: 0.0000, Rank: 0.9298)
+   Learning Rates -> LoRA: 2.7e-06, Base: 1.4e-05
+   Matched-vs-Mismatched gap: 0.001603
+🎓 [EASY] Step 100 | Avg Loss: 2.2016 (NTP: 1.7147, Gene: 0.0000, Rank: 0.9739)
+   Learning Rates -> LoRA: 2.9e-06, Base: 1.4e-05
+   Matched-vs-Mismatched gap: 0.003184
+🎓 [EASY] Step 105 | Avg Loss: 2.2403 (NTP: 1.7610, Gene: 0.0000, Rank: 0.9586)
+   Learning Rates -> LoRA: 3.0e-06, Base: 1.5e-05
+   Matched-vs-Mismatched gap: 0.006966
+🎓 [EASY] Step 110 | Avg Loss: 2.1657 (NTP: 1.6701, Gene: 0.0000, Rank: 0.9911)
+   Learning Rates -> LoRA: 3.2e-06, Base: 1.6e-05
+   Matched-vs-Mismatched gap: -0.002781
+🎓 [EASY] Step 115 | Avg Loss: 2.0614 (NTP: 1.5940, Gene: 0.0000, Rank: 0.9348)
+   Learning Rates -> LoRA: 3.3e-06, Base: 1.7e-05
+   Matched-vs-Mismatched gap: 0.003423
+🎓 [EASY] Step 120 | Avg Loss: 1.7308 (NTP: 1.4293, Gene: 0.0000, Rank: 0.6030)
+   Learning Rates -> LoRA: 3.4e-06, Base: 1.7e-05
+🎓 [EASY] Step 125 | Avg Loss: 2.0798 (NTP: 1.5976, Gene: 0.0000, Rank: 0.9643)
+   Learning Rates -> LoRA: 3.6e-06, Base: 1.8e-05
+   Matched-vs-Mismatched gap: -0.003963
+🎓 [EASY] Step 130 | Avg Loss: 1.5300 (NTP: 1.2921, Gene: 0.0000, Rank: 0.4758)
+   Learning Rates -> LoRA: 3.7e-06, Base: 1.9e-05
+🎓 [EASY] Step 135 | Avg Loss: 1.8626 (NTP: 1.4491, Gene: 0.0000, Rank: 0.8271)
+   Learning Rates -> LoRA: 3.9e-06, Base: 1.9e-05
+   Matched-vs-Mismatched gap: -0.001709
+🎓 [EASY] Step 140 | Avg Loss: 1.8142 (NTP: 1.4970, Gene: 0.0000, Rank: 0.6344)
+   Learning Rates -> LoRA: 4.0e-06, Base: 2.0e-05
+   Matched-vs-Mismatched gap: 0.002241
+🎓 [EASY] Step 145 | Avg Loss: 1.7286 (NTP: 1.4368, Gene: 0.0000, Rank: 0.5835)
+   Learning Rates -> LoRA: 4.2e-06, Base: 2.1e-05
+   Matched-vs-Mismatched gap: 0.003650
+🎓 [EASY] Step 150 | Avg Loss: 1.7648 (NTP: 1.4210, Gene: 0.0000, Rank: 0.6875)
+   Learning Rates -> LoRA: 4.3e-06, Base: 2.2e-05
+   Matched-vs-Mismatched gap: 0.006308
+🎓 [EASY] Step 155 | Avg Loss: 1.6385 (NTP: 1.2846, Gene: 0.0000, Rank: 0.7077)
+   Learning Rates -> LoRA: 4.5e-06, Base: 2.2e-05
+   Matched-vs-Mismatched gap: 0.009552
+🎓 [EASY] Step 160 | Avg Loss: 2.0361 (NTP: 1.5444, Gene: 0.0000, Rank: 0.9834)
+   Learning Rates -> LoRA: 4.6e-06, Base: 2.3e-05
+   Matched-vs-Mismatched gap: 0.000417
+🎓 [EASY] Step 165 | Avg Loss: 1.8591 (NTP: 1.4360, Gene: 0.0000, Rank: 0.8461)
+   Learning Rates -> LoRA: 4.8e-06, Base: 2.4e-05
+   Matched-vs-Mismatched gap: -0.002116
+🎓 [EASY] Step 170 | Avg Loss: 1.4685 (NTP: 1.0858, Gene: 0.0000, Rank: 0.7654)
+   Learning Rates -> LoRA: 4.9e-06, Base: 2.4e-05
+   Matched-vs-Mismatched gap: 0.009209
+🎓 [EASY] Step 175 | Avg Loss: 1.7373 (NTP: 1.2851, Gene: 0.0000, Rank: 0.9045)
+   Learning Rates -> LoRA: 5.0e-06, Base: 2.5e-05
+   Matched-vs-Mismatched gap: 0.008837
+🎓 [EASY] Step 180 | Avg Loss: 1.6360 (NTP: 1.2325, Gene: 0.0000, Rank: 0.8072)
+   Learning Rates -> LoRA: 5.2e-06, Base: 2.6e-05
+   Matched-vs-Mismatched gap: 0.000354
+🎓 [EASY] Step 185 | Avg Loss: 1.4936 (NTP: 1.0940, Gene: 0.0000, Rank: 0.7993)
+   Learning Rates -> LoRA: 5.3e-06, Base: 2.7e-05
+   Matched-vs-Mismatched gap: 0.010953
+🎓 [EASY] Step 190 | Avg Loss: 1.8748 (NTP: 1.3972, Gene: 0.0000, Rank: 0.9551)
+   Learning Rates -> LoRA: 5.5e-06, Base: 2.7e-05
+   Matched-vs-Mismatched gap: -0.001880
+🎓 [EASY] Step 195 | Avg Loss: 1.6266 (NTP: 1.1918, Gene: 0.0000, Rank: 0.8695)
+   Learning Rates -> LoRA: 5.6e-06, Base: 2.8e-05
+   Matched-vs-Mismatched gap: 0.004201
+🎓 [EASY] Step 200 | Avg Loss: 1.7824 (NTP: 1.3011, Gene: 0.0000, Rank: 0.9627)
+   Learning Rates -> LoRA: 5.8e-06, Base: 2.9e-05
+   Matched-vs-Mismatched gap: 0.003903
+💾 Checkpoint 已保存：/mnt/c20250607_hs/wanghaoran/wanghaoran/zyh/scshowo/stage2/easy_step_200/checkpoint-step-200 (model_state=trainable_only, keys=507)
+🎓 [EASY] Step 205 | Avg Loss: 1.7038 (NTP: 1.2718, Gene: 0.0000, Rank: 0.8639)
+   Learning Rates -> LoRA: 5.9e-06, Base: 3.0e-05
+   Matched-vs-Mismatched gap: -0.002977
+🎓 [EASY] Step 210 | Avg Loss: 1.4289 (NTP: 1.0500, Gene: 0.0000, Rank: 0.7578)
+   Learning Rates -> LoRA: 6.1e-06, Base: 3.0e-05
+   Matched-vs-Mismatched gap: -0.003286
+🎓 [EASY] Step 215 | Avg Loss: 1.7849 (NTP: 1.3066, Gene: 0.0000, Rank: 0.9566)
+   Learning Rates -> LoRA: 6.2e-06, Base: 3.1e-05
+   Matched-vs-Mismatched gap: 0.003284
+🎓 [EASY] Step 220 | Avg Loss: 1.6295 (NTP: 1.2720, Gene: 0.0000, Rank: 0.7149)
+   Learning Rates -> LoRA: 6.3e-06, Base: 3.2e-05
+   Matched-vs-Mismatched gap: 0.004350
+🎓 [EASY] Step 225 | Avg Loss: 1.6639 (NTP: 1.2177, Gene: 0.0000, Rank: 0.8925)
+   Learning Rates -> LoRA: 6.5e-06, Base: 3.2e-05
+   Matched-vs-Mismatched gap: 0.007541
+🎓 [EASY] Step 230 | Avg Loss: 1.1821 (NTP: 0.9423, Gene: 0.0000, Rank: 0.4795)
+   Learning Rates -> LoRA: 6.6e-06, Base: 3.3e-05
+   Matched-vs-Mismatched gap: -0.004725
+🎓 [EASY] Step 235 | Avg Loss: 1.3981 (NTP: 1.0315, Gene: 0.0000, Rank: 0.7331)
+   Learning Rates -> LoRA: 6.8e-06, Base: 3.4e-05
+🎓 [EASY] Step 240 | Avg Loss: 1.6773 (NTP: 1.2295, Gene: 0.0000, Rank: 0.8956)
+   Learning Rates -> LoRA: 6.9e-06, Base: 3.5e-05
+   Matched-vs-Mismatched gap: 0.002397
+🎓 [EASY] Step 245 | Avg Loss: 1.8129 (NTP: 1.2928, Gene: 0.0000, Rank: 1.0402)
+   Learning Rates -> LoRA: 7.1e-06, Base: 3.5e-05
+   Matched-vs-Mismatched gap: -0.006335
+🎓 [EASY] Step 250 | Avg Loss: 1.6557 (NTP: 1.2110, Gene: 0.0000, Rank: 0.8895)
+   Learning Rates -> LoRA: 7.2e-06, Base: 3.6e-05
+   Matched-vs-Mismatched gap: 0.000065
+🎓 [EASY] Step 255 | Avg Loss: 1.7871 (NTP: 1.2944, Gene: 0.0000, Rank: 0.9853)
+   Learning Rates -> LoRA: 7.4e-06, Base: 3.7e-05
+   Matched-vs-Mismatched gap: -0.000429
+🎓 [EASY] Step 260 | Avg Loss: 1.4477 (NTP: 1.0575, Gene: 0.0000, Rank: 0.7803)
+   Learning Rates -> LoRA: 7.5e-06, Base: 3.8e-05
+   Matched-vs-Mismatched gap: 0.006751
+🎓 [EASY] Step 265 | Avg Loss: 1.4585 (NTP: 1.0341, Gene: 0.0000, Rank: 0.8488)
+   Learning Rates -> LoRA: 7.7e-06, Base: 3.8e-05
+   Matched-vs-Mismatched gap: 0.005281
+🎓 [EASY] Step 270 | Avg Loss: 1.2121 (NTP: 0.9191, Gene: 0.0000, Rank: 0.5860)
+   Learning Rates -> LoRA: 7.8e-06, Base: 3.9e-05
+   Matched-vs-Mismatched gap: -0.006957
+🎓 [EASY] Step 275 | Avg Loss: 1.4050 (NTP: 1.0248, Gene: 0.0000, Rank: 0.7605)
+   Learning Rates -> LoRA: 7.9e-06, Base: 4.0e-05
+   Matched-vs-Mismatched gap: 0.002035
+🎓 [EASY] Step 280 | Avg Loss: 1.3795 (NTP: 1.0904, Gene: 0.0000, Rank: 0.5781)
+   Learning Rates -> LoRA: 8.1e-06, Base: 4.0e-05
+   Matched-vs-Mismatched gap: 0.000252
+🎓 [EASY] Step 285 | Avg Loss: 1.5352 (NTP: 1.0977, Gene: 0.0000, Rank: 0.8750)
+   Learning Rates -> LoRA: 8.2e-06, Base: 4.1e-05
+   Matched-vs-Mismatched gap: 0.001782
+🎓 [EASY] Step 290 | Avg Loss: 1.3157 (NTP: 0.9723, Gene: 0.0000, Rank: 0.6867)
+   Learning Rates -> LoRA: 8.4e-06, Base: 4.2e-05
+🎓 [EASY] Step 295 | Avg Loss: 1.2067 (NTP: 0.9323, Gene: 0.0000, Rank: 0.5489)
+   Learning Rates -> LoRA: 8.5e-06, Base: 4.3e-05
+🎓 [EASY] Step 300 | Avg Loss: 1.6370 (NTP: 1.1136, Gene: 0.0000, Rank: 1.0468)
+   Learning Rates -> LoRA: 8.7e-06, Base: 4.3e-05
+   Matched-vs-Mismatched gap: -0.004089
+🎓 [EASY] Step 305 | Avg Loss: 1.4239 (NTP: 0.9866, Gene: 0.0000, Rank: 0.8746)
+   Learning Rates -> LoRA: 8.8e-06, Base: 4.4e-05
+🎓 [EASY] Step 310 | Avg Loss: 1.6749 (NTP: 1.1869, Gene: 0.0000, Rank: 0.9760)
+   Learning Rates -> LoRA: 9.0e-06, Base: 4.5e-05
+   Matched-vs-Mismatched gap: 0.011104
+🎓 [EASY] Step 315 | Avg Loss: 1.3496 (NTP: 0.9913, Gene: 0.0000, Rank: 0.7167)
+   Learning Rates -> LoRA: 9.1e-06, Base: 4.6e-05
+   Matched-vs-Mismatched gap: 0.000708
+🎓 [EASY] Step 320 | Avg Loss: 1.1813 (NTP: 0.8951, Gene: 0.0000, Rank: 0.5723)
+   Learning Rates -> LoRA: 9.2e-06, Base: 4.6e-05
+   Matched-vs-Mismatched gap: 0.002678
+🎓 [EASY] Step 325 | Avg Loss: 1.4746 (NTP: 1.0227, Gene: 0.0000, Rank: 0.9039)
+   Learning Rates -> LoRA: 9.4e-06, Base: 4.7e-05
+🎓 [EASY] Step 330 | Avg Loss: 1.6149 (NTP: 1.2117, Gene: 0.0000, Rank: 0.8065)
+   Learning Rates -> LoRA: 9.5e-06, Base: 4.8e-05
+   Matched-vs-Mismatched gap: 0.002843
+🎓 [EASY] Step 335 | Avg Loss: 1.6067 (NTP: 1.1593, Gene: 0.0000, Rank: 0.8946)
+   Learning Rates -> LoRA: 9.7e-06, Base: 4.8e-05
+   Matched-vs-Mismatched gap: -0.016139
+🎓 [EASY] Step 340 | Avg Loss: 1.5454 (NTP: 1.1436, Gene: 0.0000, Rank: 0.8037)
+   Learning Rates -> LoRA: 9.8e-06, Base: 4.9e-05
+   Matched-vs-Mismatched gap: -0.000671
+🎓 [EASY] Step 345 | Avg Loss: 1.4546 (NTP: 1.0364, Gene: 0.0000, Rank: 0.8364)
+   Learning Rates -> LoRA: 1.0e-05, Base: 5.0e-05
+   Matched-vs-Mismatched gap: 0.007036
+🎓 [EASY] Step 350 | Avg Loss: 1.4937 (NTP: 1.0806, Gene: 0.0000, Rank: 0.8263)
+   Learning Rates -> LoRA: 1.0e-05, Base: 5.1e-05
+🎓 [EASY] Step 355 | Avg Loss: 1.4349 (NTP: 1.0520, Gene: 0.0000, Rank: 0.7658)
+   Learning Rates -> LoRA: 1.0e-05, Base: 5.1e-05
+   Matched-vs-Mismatched gap: -0.005400
+🎓 [EASY] Step 360 | Avg Loss: 1.3338 (NTP: 0.9716, Gene: 0.0000, Rank: 0.7244)
+   Learning Rates -> LoRA: 1.0e-05, Base: 5.2e-05
+   Matched-vs-Mismatched gap: 0.006090
+🎓 [EASY] Step 365 | Avg Loss: 1.6633 (NTP: 1.1498, Gene: 0.0000, Rank: 1.0268)
+   Learning Rates -> LoRA: 1.1e-05, Base: 5.3e-05
+   Matched-vs-Mismatched gap: 0.000412
+🎓 [EASY] Step 370 | Avg Loss: 1.2318 (NTP: 0.8456, Gene: 0.0000, Rank: 0.7725)
+   Learning Rates -> LoRA: 1.1e-05, Base: 5.3e-05
+   Matched-vs-Mismatched gap: -0.000973
+🎓 [EASY] Step 375 | Avg Loss: 1.2290 (NTP: 0.9295, Gene: 0.0000, Rank: 0.5990)
+   Learning Rates -> LoRA: 1.1e-05, Base: 5.4e-05
+   Matched-vs-Mismatched gap: -0.000964
+🎓 [EASY] Step 380 | Avg Loss: 1.3588 (NTP: 0.9521, Gene: 0.0000, Rank: 0.8134)
+   Learning Rates -> LoRA: 1.1e-05, Base: 5.5e-05
+   Matched-vs-Mismatched gap: -0.001290
+🎓 [EASY] Step 385 | Avg Loss: 1.6485 (NTP: 1.2200, Gene: 0.0000, Rank: 0.8571)
+   Learning Rates -> LoRA: 1.1e-05, Base: 5.6e-05
+   Matched-vs-Mismatched gap: -0.003642
+🎓 [EASY] Step 390 | Avg Loss: 1.4203 (NTP: 0.9876, Gene: 0.0000, Rank: 0.8653)
+   Learning Rates -> LoRA: 1.1e-05, Base: 5.6e-05
+   Matched-vs-Mismatched gap: -0.001992
+🎓 [EASY] Step 395 | Avg Loss: 1.5283 (NTP: 1.1178, Gene: 0.0000, Rank: 0.8210)
+   Learning Rates -> LoRA: 1.1e-05, Base: 5.7e-05
+🎓 [EASY] Step 400 | Avg Loss: 1.5968 (NTP: 1.1446, Gene: 0.0000, Rank: 0.9044)
+   Learning Rates -> LoRA: 1.2e-05, Base: 5.8e-05
+   Matched-vs-Mismatched gap: -0.012239
+💾 Checkpoint 已保存：/mnt/c20250607_hs/wanghaoran/wanghaoran/zyh/scshowo/stage2/easy_step_400/checkpoint-step-400 (model_state=trainable_only, keys=507)
+🎓 [EASY] Step 405 | Avg Loss: 1.4470 (NTP: 1.0087, Gene: 0.0000, Rank: 0.8766)
+   Learning Rates -> LoRA: 1.2e-05, Base: 5.9e-05
+   Matched-vs-Mismatched gap: -0.003198
+🎓 [EASY] Step 410 | Avg Loss: 1.6041 (NTP: 1.1114, Gene: 0.0000, Rank: 0.9854)
+   Learning Rates -> LoRA: 1.2e-05, Base: 5.9e-05
+   Matched-vs-Mismatched gap: -0.005547
+🎓 [EASY] Step 415 | Avg Loss: 1.7500 (NTP: 1.2572, Gene: 0.0000, Rank: 0.9856)
+   Learning Rates -> LoRA: 1.2e-05, Base: 6.0e-05
+   Matched-vs-Mismatched gap: -0.002606
+🎓 [EASY] Step 420 | Avg Loss: 1.2734 (NTP: 0.9339, Gene: 0.0000, Rank: 0.6790)
+   Learning Rates -> LoRA: 1.2e-05, Base: 6.1e-05
+   Matched-vs-Mismatched gap: -0.001744
+🎓 [EASY] Step 425 | Avg Loss: 1.0294 (NTP: 0.8101, Gene: 0.0000, Rank: 0.4386)
+   Learning Rates -> LoRA: 1.2e-05, Base: 6.1e-05
+   Matched-vs-Mismatched gap: -0.002296
+🎓 [EASY] Step 430 | Avg Loss: 1.2793 (NTP: 0.9192, Gene: 0.0000, Rank: 0.7201)
+   Learning Rates -> LoRA: 1.2e-05, Base: 6.2e-05
+   Matched-vs-Mismatched gap: -0.006431
+🎓 [EASY] Step 435 | Avg Loss: 1.4527 (NTP: 0.9622, Gene: 0.0000, Rank: 0.9811)
+   Learning Rates -> LoRA: 1.3e-05, Base: 6.3e-05
+   Matched-vs-Mismatched gap: -0.000667
+🎓 [EASY] Step 440 | Avg Loss: 1.6485 (NTP: 1.1929, Gene: 0.0000, Rank: 0.9112)
+   Learning Rates -> LoRA: 1.3e-05, Base: 6.4e-05
+   Matched-vs-Mismatched gap: 0.002429
+🎓 [EASY] Step 445 | Avg Loss: 1.1897 (NTP: 0.8182, Gene: 0.0000, Rank: 0.7431)
+   Learning Rates -> LoRA: 1.3e-05, Base: 6.4e-05
+   Matched-vs-Mismatched gap: 0.003386
+🎓 [EASY] Step 450 | Avg Loss: 1.2746 (NTP: 0.9146, Gene: 0.0000, Rank: 0.7201)
+   Learning Rates -> LoRA: 1.3e-05, Base: 6.5e-05
+   Matched-vs-Mismatched gap: -0.002530
+🎓 [EASY] Step 455 | Avg Loss: 1.5660 (NTP: 1.0755, Gene: 0.0000, Rank: 0.9811)
+   Learning Rates -> LoRA: 1.3e-05, Base: 6.6e-05
+   Matched-vs-Mismatched gap: -0.000117
+🎓 [EASY] Step 460 | Avg Loss: 1.5015 (NTP: 1.0668, Gene: 0.0000, Rank: 0.8694)
+   Learning Rates -> LoRA: 1.3e-05, Base: 6.7e-05
+🎓 [EASY] Step 465 | Avg Loss: 1.6388 (NTP: 1.1154, Gene: 0.0000, Rank: 1.0469)
+   Learning Rates -> LoRA: 1.3e-05, Base: 6.7e-05
+   Matched-vs-Mismatched gap: -0.005702
+🎓 [EASY] Step 470 | Avg Loss: 1.1787 (NTP: 0.8513, Gene: 0.0000, Rank: 0.6547)
+   Learning Rates -> LoRA: 1.4e-05, Base: 6.8e-05
+   Matched-vs-Mismatched gap: -0.001985
+🎓 [EASY] Step 475 | Avg Loss: 1.4393 (NTP: 1.0096, Gene: 0.0000, Rank: 0.8595)
+   Learning Rates -> LoRA: 1.4e-05, Base: 6.9e-05
+   Matched-vs-Mismatched gap: 0.005297
+🎓 [EASY] Step 480 | Avg Loss: 1.4566 (NTP: 1.0054, Gene: 0.0000, Rank: 0.9025)
+   Learning Rates -> LoRA: 1.4e-05, Base: 6.9e-05
+   Matched-vs-Mismatched gap: 0.008824
+🎓 [EASY] Step 485 | Avg Loss: 1.2513 (NTP: 0.8993, Gene: 0.0000, Rank: 0.7039)
+   Learning Rates -> LoRA: 1.4e-05, Base: 7.0e-05
+   Matched-vs-Mismatched gap: 0.008123
+🎓 [EASY] Step 490 | Avg Loss: 1.2217 (NTP: 0.8837, Gene: 0.0000, Rank: 0.6761)
+   Learning Rates -> LoRA: 1.4e-05, Base: 7.1e-05
+   Matched-vs-Mismatched gap: 0.000428
+🎓 [EASY] Step 495 | Avg Loss: 1.4331 (NTP: 0.9256, Gene: 0.0000, Rank: 1.0151)
+   Learning Rates -> LoRA: 1.4e-05, Base: 7.2e-05
+   Matched-vs-Mismatched gap: -0.014631
+🎓 [EASY] Step 500 | Avg Loss: 1.4422 (NTP: 0.9553, Gene: 0.0000, Rank: 0.9739)
+   Learning Rates -> LoRA: 1.4e-05, Base: 7.2e-05
+   Matched-vs-Mismatched gap: 0.004382
+🎓 [EASY] Step 505 | Avg Loss: 1.6608 (NTP: 1.1486, Gene: 0.0000, Rank: 1.0245)
+   Learning Rates -> LoRA: 1.5e-05, Base: 7.3e-05
+   Matched-vs-Mismatched gap: 0.000414
+🎓 [EASY] Step 510 | Avg Loss: 1.5864 (NTP: 1.0669, Gene: 0.0000, Rank: 1.0390)
+   Learning Rates -> LoRA: 1.5e-05, Base: 7.4e-05
+   Matched-vs-Mismatched gap: 0.005480
+🎓 [EASY] Step 515 | Avg Loss: 1.3853 (NTP: 0.9975, Gene: 0.0000, Rank: 0.7755)
+   Learning Rates -> LoRA: 1.5e-05, Base: 7.4e-05
+   Matched-vs-Mismatched gap: -0.000335
+🎓 [EASY] Step 520 | Avg Loss: 1.6565 (NTP: 1.1620, Gene: 0.0000, Rank: 0.9889)
+   Learning Rates -> LoRA: 1.5e-05, Base: 7.5e-05
+   Matched-vs-Mismatched gap: 0.000060
+🎓 [EASY] Step 525 | Avg Loss: 1.2057 (NTP: 0.8236, Gene: 0.0000, Rank: 0.7642)
+   Learning Rates -> LoRA: 1.5e-05, Base: 7.6e-05
+   Matched-vs-Mismatched gap: 0.005757
+🎓 [EASY] Step 530 | Avg Loss: 1.1311 (NTP: 0.8199, Gene: 0.0000, Rank: 0.6225)
+   Learning Rates -> LoRA: 1.5e-05, Base: 7.7e-05
+   Matched-vs-Mismatched gap: 0.000455
+🎓 [EASY] Step 535 | Avg Loss: 1.5157 (NTP: 1.0244, Gene: 0.0000, Rank: 0.9826)
+   Learning Rates -> LoRA: 1.5e-05, Base: 7.7e-05
+🎓 [EASY] Step 540 | Avg Loss: 1.4165 (NTP: 1.0328, Gene: 0.0000, Rank: 0.7675)
+   Learning Rates -> LoRA: 1.6e-05, Base: 7.8e-05
+🎓 [EASY] Step 545 | Avg Loss: 1.1031 (NTP: 0.7565, Gene: 0.0000, Rank: 0.6932)
+   Learning Rates -> LoRA: 1.6e-05, Base: 7.9e-05
+   Matched-vs-Mismatched gap: -0.002293
+🎓 [EASY] Step 550 | Avg Loss: 1.4059 (NTP: 0.9946, Gene: 0.0000, Rank: 0.8226)
+   Learning Rates -> LoRA: 1.6e-05, Base: 8.0e-05
+   Matched-vs-Mismatched gap: 0.000051
+🎓 [EASY] Step 555 | Avg Loss: 1.1727 (NTP: 0.8099, Gene: 0.0000, Rank: 0.7257)
+   Learning Rates -> LoRA: 1.6e-05, Base: 8.0e-05
+   Matched-vs-Mismatched gap: -0.004943
+🎓 [EASY] Step 560 | Avg Loss: 1.5051 (NTP: 1.0676, Gene: 0.0000, Rank: 0.8751)
+   Learning Rates -> LoRA: 1.6e-05, Base: 8.1e-05
+   Matched-vs-Mismatched gap: 0.011234
+🎓 [EASY] Step 565 | Avg Loss: 1.6140 (NTP: 1.1414, Gene: 0.0000, Rank: 0.9452)
+   Learning Rates -> LoRA: 1.6e-05, Base: 8.2e-05
+   Matched-vs-Mismatched gap: 0.004637
+🎓 [EASY] Step 570 | Avg Loss: 1.2164 (NTP: 0.8518, Gene: 0.0000, Rank: 0.7292)
+   Learning Rates -> LoRA: 1.6e-05, Base: 8.2e-05
+   Matched-vs-Mismatched gap: 0.008901
+🎓 [EASY] Step 575 | Avg Loss: 1.4410 (NTP: 0.9557, Gene: 0.0000, Rank: 0.9705)
+   Learning Rates -> LoRA: 1.7e-05, Base: 8.3e-05
+   Matched-vs-Mismatched gap: 0.025328
+🎓 [EASY] Step 580 | Avg Loss: 1.3277 (NTP: 0.9090, Gene: 0.0000, Rank: 0.8372)
+   Learning Rates -> LoRA: 1.7e-05, Base: 8.4e-05
+🎓 [EASY] Step 585 | Avg Loss: 1.2843 (NTP: 0.8885, Gene: 0.0000, Rank: 0.7916)
+   Learning Rates -> LoRA: 1.7e-05, Base: 8.5e-05
+   Matched-vs-Mismatched gap: 0.006559
+🎓 [EASY] Step 590 | Avg Loss: 1.0356 (NTP: 0.7143, Gene: 0.0000, Rank: 0.6427)
+   Learning Rates -> LoRA: 1.7e-05, Base: 8.5e-05
+   Matched-vs-Mismatched gap: 0.008193
+🎓 [EASY] Step 595 | Avg Loss: 1.3822 (NTP: 0.9122, Gene: 0.0000, Rank: 0.9401)
+   Learning Rates -> LoRA: 1.7e-05, Base: 8.6e-05
+   Matched-vs-Mismatched gap: 0.002043
+🎓 [EASY] Step 600 | Avg Loss: 1.2053 (NTP: 0.8149, Gene: 0.0000, Rank: 0.7809)
+   Learning Rates -> LoRA: 1.7e-05, Base: 8.7e-05
+   Matched-vs-Mismatched gap: -0.003695
+💾 Checkpoint 已保存：/mnt/c20250607_hs/wanghaoran/wanghaoran/zyh/scshowo/stage2/easy_step_600/checkpoint-step-600 (model_state=trainable_only, keys=507)
+🎓 [EASY] Step 605 | Avg Loss: 1.2931 (NTP: 0.9424, Gene: 0.0000, Rank: 0.7015)
+   Learning Rates -> LoRA: 1.8e-05, Base: 8.8e-05
+   Matched-vs-Mismatched gap: 0.009045
+🎓 [EASY] Step 610 | Avg Loss: 1.2168 (NTP: 0.8333, Gene: 0.0000, Rank: 0.7670)
+   Learning Rates -> LoRA: 1.8e-05, Base: 8.8e-05
+   Matched-vs-Mismatched gap: -0.003366
+🎓 [EASY] Step 615 | Avg Loss: 1.3489 (NTP: 0.9478, Gene: 0.0000, Rank: 0.8021)
+   Learning Rates -> LoRA: 1.8e-05, Base: 8.9e-05
+   Matched-vs-Mismatched gap: 0.015643
+🎓 [EASY] Step 620 | Avg Loss: 0.9782 (NTP: 0.6997, Gene: 0.0000, Rank: 0.5569)
+   Learning Rates -> LoRA: 1.8e-05, Base: 9.0e-05
+   Matched-vs-Mismatched gap: 0.000928
+🎓 [EASY] Step 625 | Avg Loss: 1.3017 (NTP: 0.9250, Gene: 0.0000, Rank: 0.7533)
+   Learning Rates -> LoRA: 1.8e-05, Base: 9.0e-05
+   Matched-vs-Mismatched gap: 0.002854
+🎓 [EASY] Step 630 | Avg Loss: 1.2774 (NTP: 0.8692, Gene: 0.0000, Rank: 0.8163)
+   Learning Rates -> LoRA: 1.8e-05, Base: 9.1e-05
+🎓 [EASY] Step 635 | Avg Loss: 1.3563 (NTP: 0.9685, Gene: 0.0000, Rank: 0.7755)
+   Learning Rates -> LoRA: 1.8e-05, Base: 9.2e-05
+   Matched-vs-Mismatched gap: 0.012747
+🎓 [EASY] Step 640 | Avg Loss: 1.3930 (NTP: 0.9622, Gene: 0.0000, Rank: 0.8616)
+   Learning Rates -> LoRA: 1.9e-05, Base: 9.3e-05
+   Matched-vs-Mismatched gap: -0.004598
+🎓 [EASY] Step 645 | Avg Loss: 1.3305 (NTP: 0.9356, Gene: 0.0000, Rank: 0.7899)
+   Learning Rates -> LoRA: 1.9e-05, Base: 9.3e-05
+   Matched-vs-Mismatched gap: 0.023165
+🎓 [EASY] Step 650 | Avg Loss: 1.3884 (NTP: 0.9415, Gene: 0.0000, Rank: 0.8937)
+   Learning Rates -> LoRA: 1.9e-05, Base: 9.4e-05
+   Matched-vs-Mismatched gap: -0.014192
+🎓 [EASY] Step 655 | Avg Loss: 1.3838 (NTP: 0.9393, Gene: 0.0000, Rank: 0.8890)
+   Learning Rates -> LoRA: 1.9e-05, Base: 9.5e-05
+   Matched-vs-Mismatched gap: 0.020839
+🎓 [EASY] Step 660 | Avg Loss: 1.5632 (NTP: 1.0513, Gene: 0.0000, Rank: 1.0238)
+   Learning Rates -> LoRA: 1.9e-05, Base: 9.6e-05
+   Matched-vs-Mismatched gap: 0.028035
+🎓 [EASY] Step 665 | Avg Loss: 1.1911 (NTP: 0.9160, Gene: 0.0000, Rank: 0.5501)
+   Learning Rates -> LoRA: 1.9e-05, Base: 9.6e-05
+   Matched-vs-Mismatched gap: 0.057075
+🎓 [EASY] Step 670 | Avg Loss: 1.4698 (NTP: 1.0085, Gene: 0.0000, Rank: 0.9226)
+   Learning Rates -> LoRA: 1.9e-05, Base: 9.7e-05
+   Matched-vs-Mismatched gap: -0.003903
+🎓 [EASY] Step 675 | Avg Loss: 1.1099 (NTP: 0.7563, Gene: 0.0000, Rank: 0.7073)
+   Learning Rates -> LoRA: 2.0e-05, Base: 9.8e-05
+   Matched-vs-Mismatched gap: 0.013355
+🎓 [EASY] Step 680 | Avg Loss: 1.1289 (NTP: 0.7277, Gene: 0.0000, Rank: 0.8023)
+   Learning Rates -> LoRA: 2.0e-05, Base: 9.8e-05
+🎓 [EASY] Step 685 | Avg Loss: 1.1616 (NTP: 0.7987, Gene: 0.0000, Rank: 0.7259)
+   Learning Rates -> LoRA: 2.0e-05, Base: 9.9e-05
+   Matched-vs-Mismatched gap: 0.036003
+🎓 [EASY] Step 690 | Avg Loss: 1.4093 (NTP: 0.9939, Gene: 0.0000, Rank: 0.8309)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.038588
+🎓 [EASY] Step 695 | Avg Loss: 1.2542 (NTP: 0.8981, Gene: 0.0000, Rank: 0.7121)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.018137
+🎓 [EASY] Step 700 | Avg Loss: 1.2569 (NTP: 0.8556, Gene: 0.0000, Rank: 0.8025)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.053731
+🎓 [EASY] Step 705 | Avg Loss: 1.5818 (NTP: 1.1514, Gene: 0.0000, Rank: 0.8609)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.072077
+🎓 [EASY] Step 710 | Avg Loss: 1.2771 (NTP: 0.8923, Gene: 0.0000, Rank: 0.7696)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.048081
+🎓 [EASY] Step 715 | Avg Loss: 1.0551 (NTP: 0.7725, Gene: 0.0000, Rank: 0.5652)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.121201
+🎓 [EASY] Step 720 | Avg Loss: 1.4193 (NTP: 0.9977, Gene: 0.0000, Rank: 0.8431)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.060366
+🎓 [EASY] Step 725 | Avg Loss: 1.2860 (NTP: 0.8781, Gene: 0.0000, Rank: 0.8157)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.000878
+🎓 [EASY] Step 730 | Avg Loss: 1.3324 (NTP: 0.9137, Gene: 0.0000, Rank: 0.8373)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: -0.015070
+🎓 [EASY] Step 735 | Avg Loss: 1.2271 (NTP: 0.8181, Gene: 0.0000, Rank: 0.8179)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.030022
+🎓 [EASY] Step 740 | Avg Loss: 1.5151 (NTP: 1.0839, Gene: 0.0000, Rank: 0.8623)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.079076
+🎓 [EASY] Step 745 | Avg Loss: 1.4044 (NTP: 1.0012, Gene: 0.0000, Rank: 0.8065)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.015545
+🎓 [EASY] Step 750 | Avg Loss: 1.2019 (NTP: 0.8800, Gene: 0.0000, Rank: 0.6439)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.006123
+🎓 [EASY] Step 755 | Avg Loss: 1.3293 (NTP: 0.8990, Gene: 0.0000, Rank: 0.8605)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.005000
+🎓 [EASY] Step 760 | Avg Loss: 1.1601 (NTP: 0.8380, Gene: 0.0000, Rank: 0.6442)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.024190
+🎓 [EASY] Step 765 | Avg Loss: 1.2798 (NTP: 0.8694, Gene: 0.0000, Rank: 0.8207)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.056406
+🎓 [EASY] Step 770 | Avg Loss: 1.0557 (NTP: 0.7480, Gene: 0.0000, Rank: 0.6154)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.050415
+🎓 [EASY] Step 775 | Avg Loss: 1.1802 (NTP: 0.8117, Gene: 0.0000, Rank: 0.7370)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+🎓 [EASY] Step 780 | Avg Loss: 1.2035 (NTP: 0.8787, Gene: 0.0000, Rank: 0.6496)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.002123
+🎓 [EASY] Step 785 | Avg Loss: 1.3682 (NTP: 1.0107, Gene: 0.0000, Rank: 0.7151)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+🎓 [EASY] Step 790 | Avg Loss: 1.4359 (NTP: 0.9727, Gene: 0.0000, Rank: 0.9264)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.076039
+🎓 [EASY] Step 795 | Avg Loss: 1.4103 (NTP: 0.9432, Gene: 0.0000, Rank: 0.9344)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.031811
+🎓 [EASY] Step 800 | Avg Loss: 1.4432 (NTP: 1.0523, Gene: 0.0000, Rank: 0.7818)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.038910
+💾 Checkpoint 已保存：/mnt/c20250607_hs/wanghaoran/wanghaoran/zyh/scshowo/stage2/easy_step_800/checkpoint-step-800 (model_state=trainable_only, keys=507)
+🎓 [EASY] Step 805 | Avg Loss: 1.2140 (NTP: 0.7625, Gene: 0.0000, Rank: 0.9029)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.028526
+🎓 [EASY] Step 810 | Avg Loss: 1.2653 (NTP: 0.8479, Gene: 0.0000, Rank: 0.8349)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.016056
+🎓 [EASY] Step 815 | Avg Loss: 1.1237 (NTP: 0.7794, Gene: 0.0000, Rank: 0.6886)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.010755
+🎓 [EASY] Step 820 | Avg Loss: 1.2783 (NTP: 0.8777, Gene: 0.0000, Rank: 0.8011)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.050295
+🎓 [EASY] Step 825 | Avg Loss: 1.0857 (NTP: 0.8108, Gene: 0.0000, Rank: 0.5499)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.069055
+🎓 [EASY] Step 830 | Avg Loss: 1.1616 (NTP: 0.7577, Gene: 0.0000, Rank: 0.8078)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.077757
+🎓 [EASY] Step 835 | Avg Loss: 1.1416 (NTP: 0.8671, Gene: 0.0000, Rank: 0.5489)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.040661
+🎓 [EASY] Step 840 | Avg Loss: 1.1588 (NTP: 0.8086, Gene: 0.0000, Rank: 0.7003)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: -0.036860
+🎓 [EASY] Step 845 | Avg Loss: 1.1201 (NTP: 0.8009, Gene: 0.0000, Rank: 0.6384)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.040513
+🎓 [EASY] Step 850 | Avg Loss: 1.1313 (NTP: 0.8287, Gene: 0.0000, Rank: 0.6052)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.035866
+🎓 [EASY] Step 855 | Avg Loss: 1.3658 (NTP: 1.0048, Gene: 0.0000, Rank: 0.7220)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.051907
+🎓 [EASY] Step 860 | Avg Loss: 1.0409 (NTP: 0.7929, Gene: 0.0000, Rank: 0.4960)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.017527
+🎓 [EASY] Step 865 | Avg Loss: 1.4280 (NTP: 0.9743, Gene: 0.0000, Rank: 0.9075)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.035355
+🎓 [EASY] Step 870 | Avg Loss: 1.2740 (NTP: 0.8979, Gene: 0.0000, Rank: 0.7523)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.025887
+🎓 [EASY] Step 875 | Avg Loss: 1.3128 (NTP: 0.9170, Gene: 0.0000, Rank: 0.7914)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.045465
+🎓 [EASY] Step 880 | Avg Loss: 1.1528 (NTP: 0.7849, Gene: 0.0000, Rank: 0.7357)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.051714
+🎓 [EASY] Step 885 | Avg Loss: 1.1085 (NTP: 0.7540, Gene: 0.0000, Rank: 0.7089)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.030164
+🎓 [EASY] Step 890 | Avg Loss: 1.2634 (NTP: 0.8320, Gene: 0.0000, Rank: 0.8629)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.025315
+🎓 [EASY] Step 895 | Avg Loss: 0.8920 (NTP: 0.6221, Gene: 0.0000, Rank: 0.5398)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+🎓 [EASY] Step 900 | Avg Loss: 1.3661 (NTP: 0.9602, Gene: 0.0000, Rank: 0.8118)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.032395
+🎓 [EASY] Step 905 | Avg Loss: 1.2894 (NTP: 0.8409, Gene: 0.0000, Rank: 0.8971)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.007456
+🎓 [EASY] Step 910 | Avg Loss: 1.1656 (NTP: 0.8318, Gene: 0.0000, Rank: 0.6676)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.042675
+🎓 [EASY] Step 915 | Avg Loss: 1.3104 (NTP: 0.9393, Gene: 0.0000, Rank: 0.7422)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.069995
+🎓 [EASY] Step 920 | Avg Loss: 1.4514 (NTP: 1.0357, Gene: 0.0000, Rank: 0.8313)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.024215
+🎓 [EASY] Step 925 | Avg Loss: 1.0659 (NTP: 0.7635, Gene: 0.0000, Rank: 0.6048)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.053546
+🎓 [EASY] Step 930 | Avg Loss: 1.3608 (NTP: 0.9892, Gene: 0.0000, Rank: 0.7431)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.048472
+🎓 [EASY] Step 935 | Avg Loss: 1.2430 (NTP: 0.8737, Gene: 0.0000, Rank: 0.7387)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+🎓 [EASY] Step 940 | Avg Loss: 1.1218 (NTP: 0.7995, Gene: 0.0000, Rank: 0.6447)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.028978
+🎓 [EASY] Step 945 | Avg Loss: 1.1497 (NTP: 0.8188, Gene: 0.0000, Rank: 0.6619)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.030270
+🎓 [EASY] Step 950 | Avg Loss: 1.0517 (NTP: 0.7468, Gene: 0.0000, Rank: 0.6098)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+🎓 [EASY] Step 955 | Avg Loss: 1.2723 (NTP: 0.9021, Gene: 0.0000, Rank: 0.7405)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.124894
+🎓 [EASY] Step 960 | Avg Loss: 1.1423 (NTP: 0.7844, Gene: 0.0000, Rank: 0.7160)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: -0.002557
+🎓 [EASY] Step 965 | Avg Loss: 1.1050 (NTP: 0.7535, Gene: 0.0000, Rank: 0.7031)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+🎓 [EASY] Step 970 | Avg Loss: 1.2118 (NTP: 0.8023, Gene: 0.0000, Rank: 0.8191)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+
+================================================================================
+🎓 开始训练阶段: COMPLEX
+================================================================================
+
+🎓 [COMPLEX] Step 975 | Avg Loss: 0.8026 (NTP: 0.7078, Gene: 0.0000, Rank: 0.1897)
+   Learning Rates -> LoRA: 2.0e-05, Base: 1.0e-04
+   Matched-vs-Mismatched gap: 0.026798
+[rank2]: Traceback (most recent call last):
+[rank2]:   File "/mnt/c20250607/user/wanghaoran/zyh/scDataTest/train/train_stage2_curriculum_lora_rankloss.py", line 1092, in <module>
+[rank2]:     main()
+[rank2]:   File "/mnt/c20250607/user/wanghaoran/zyh/scDataTest/train/train_stage2_curriculum_lora_rankloss.py", line 1069, in main
+[rank2]:     global_step = train_stage(
+[rank2]:   File "/mnt/c20250607/user/wanghaoran/zyh/scDataTest/train/train_stage2_curriculum_lora_rankloss.py", line 643, in train_stage
+[rank2]:     accelerator.backward(total_loss)
+[rank2]:   File "/mnt/c20250607/user/wanghaoran/envs/envs/sc_showo/lib/python3.10/site-packages/accelerate/accelerator.py", line 1958, in backward
+[rank2]:     self.deepspeed_engine_wrapped.backward(loss, **kwargs)
+[rank2]:   File "/mnt/c20250607/user/wanghaoran/envs/envs/sc_showo/lib/python3.10/site-packages/accelerate/utils/deepspeed.py", line 167, in backward
+[rank2]:     self.engine.backward(loss, **kwargs)
+[rank2]:   File "/mnt/c20250607/user/wanghaoran/envs/envs/sc_showo/lib/python3.10/site-packages/deepspeed/utils/nvtx.py", line 18, in wrapped_fn
+[rank2]:     ret_val = func(*args, **kwargs)
+[rank2]:   File "/mnt/c20250607/user/wanghaoran/envs/envs/sc_showo/lib/python3.10/site-packages/deepspeed/runtime/engine.py", line 2020, in backward
+[rank2]:     self.optimizer.backward(loss, retain_graph=retain_graph)
+[rank2]:   File "/mnt/c20250607/user/wanghaoran/envs/envs/sc_showo/lib/python3.10/site-packages/deepspeed/runtime/zero/stage_1_and_2.py", line 2063, in backward
+[rank2]:     self.loss_scaler.backward(loss.float(), retain_graph=retain_graph)
+[rank2]:   File "/mnt/c20250607/user/wanghaoran/envs/envs/sc_showo/lib/python3.10/site-packages/deepspeed/runtime/fp16/loss_scaler.py", line 63, in backward
+[rank2]:     scaled_loss.backward(retain_graph=retain_graph)
+[rank2]:   File "/mnt/c20250607/user/wanghaoran/envs/envs/sc_showo/lib/python3.10/site-packages/torch/_tensor.py", line 581, in backward
+[rank2]:     torch.autograd.backward(
+[rank2]:   File "/mnt/c20250607/user/wanghaoran/envs/envs/sc_showo/lib/python3.10/site-packages/torch/autograd/__init__.py", line 347, in backward
+[rank2]:     _engine_run_backward(
+[rank2]:   File "/mnt/c20250607/user/wanghaoran/envs/envs/sc_showo/lib/python3.10/site-packages/torch/autograd/graph.py", line 825, in _engine_run_backward
+[rank2]:     return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+[rank2]: torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 4.31 GiB. GPU 2 has a total capacity of 79.11 GiB of which 1.78 GiB is free. Process 4187296 has 77.31 GiB memory in use. Of the allocated memory 68.17 GiB is allocated by PyTorch, and 6.88 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+is-dcsn7qhxjihsjqes-devmachine-0:78871:79248 [2] NCCL INFO [Service thread] Connection closed by localRank 2
+is-dcsn7qhxjihsjqes-devmachine-0:78871:82165 [2] NCCL INFO comm 0x55a0cb5a5b60 rank 2 nranks 4 cudaDev 2 busId ab000 - Abort COMPLETE
+W0424 19:20:57.203000 78736 site-packages/torch/distributed/elastic/multiprocessing/api.py:897] Sending process 78869 closing signal SIGTERM
+W0424 19:20:57.208000 78736 site-packages/torch/distributed/elastic/multiprocessing/api.py:897] Sending process 78870 closing signal SIGTERM
+W0424 19:20:57.211000 78736 site-packages/torch/distributed/elastic/multiprocessing/api.py:897] Sending process 78872 closing signal SIGTERM
+E0424 19:20:59.357000 78736 site-packages/torch/distributed/elastic/multiprocessing/api.py:869] failed (exitcode: 1) local_rank: 2 (pid: 78871) of binary: /mnt/c20250607/user/wanghaoran/envs/envs/sc_showo/bin/python3.10
+Traceback (most recent call last):
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/sc_showo/bin/accelerate", line 6, in <module>
+    sys.exit(main())
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/sc_showo/lib/python3.10/site-packages/accelerate/commands/accelerate_cli.py", line 47, in main
+    args.func(args)
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/sc_showo/lib/python3.10/site-packages/accelerate/commands/launch.py", line 1008, in launch_command
+    deepspeed_launcher(args)
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/sc_showo/lib/python3.10/site-packages/accelerate/commands/launch.py", line 724, in deepspeed_launcher
+    distrib_run.run(args)
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/sc_showo/lib/python3.10/site-packages/torch/distributed/run.py", line 910, in run
+    elastic_launch(
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/sc_showo/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 138, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/mnt/c20250607/user/wanghaoran/envs/envs/sc_showo/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 269, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+/mnt/c20250607/user/wanghaoran/zyh/scDataTest/train/train_stage2_curriculum_lora_rankloss.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-04-24_19:20:57
+  host      : is-dcsn7qhxjihsjqes-devmachine-0
+  rank      : 2 (local_rank: 2)
+  exitcode  : 1 (pid: 78871)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
